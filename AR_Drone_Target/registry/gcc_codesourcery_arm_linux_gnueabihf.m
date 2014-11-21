@@ -120,7 +120,7 @@ archiver.setName([info.ToolChainName, ' Archiver']);
 archiver.setCommand('arm-none-linux-gnueabi-ar');
 archiver.setDirective('OutputFlag', '');
 archiver.setFileExtension('Static Library', '.lib');
-% archiver.setPath('$(CODE_SOURCERY)');
+archiver.setPath('$(CODE_SOURCERY)');
 
 % ------------------------------
 % Download Tool
