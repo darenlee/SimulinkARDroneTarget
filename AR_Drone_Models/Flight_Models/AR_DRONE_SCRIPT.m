@@ -1,3 +1,4 @@
+% Copyright 2014 The MathWorks, Inc.
 %-------------------------------
 % AR DRONE 2.0 Code Generation Data Dictionary
 %-------------------------------

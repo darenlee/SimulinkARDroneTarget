@@ -1,3 +1,4 @@
+% Copyright 2014 The MathWorks, Inc.
 classdef BatteryFault_ModeType < Simulink.IntEnumType
     % MATLAB enumeration class definition generated from template
     %   to track the active child state of Free_Flight_Pitch_Test_III/Flight Controller/Supervisory Flight Controller/Fault_Check/BatteryFault_Check.

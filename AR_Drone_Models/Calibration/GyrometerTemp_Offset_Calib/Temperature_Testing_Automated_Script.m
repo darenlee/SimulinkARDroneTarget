@@ -1,3 +1,4 @@
+% Copyright 2014 The MathWorks, Inc.
 %This script assumes that you have: 
 % a) First collected data of gyro drift and temperature
 % b) Ran the TempCorrect_OfflineTest to filter the data

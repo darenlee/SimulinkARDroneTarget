@@ -1,3 +1,4 @@
+% Copyright 2014 The MathWorks, Inc.
 function [fitresult, gof] = createFit_Automate(TempMeasureRefined, GyroDrift_Roll,PlotName)
 %CREATEFIT(TEMPMEASUREREFINED,GYRODRIFT_ROLL)
 %  Create a fit.

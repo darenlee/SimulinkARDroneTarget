@@ -1,3 +1,4 @@
+% Copyright 2014 The MathWorks, Inc.
 classdef Drone_StateModeType < Simulink.IntEnumType
     % MATLAB enumeration class definition generated from template
     %   to track the active child state of AR_Drone_Full_Controller/Flight Controller1/Supervisory Flight Controller/Drone_State.

@@ -1,3 +1,4 @@
+% Copyright 2014 The MathWorks, Inc.
 function sl_customization(cm)
 %SL_CUSTOMIZATION Register individual targets with Coder Target
  

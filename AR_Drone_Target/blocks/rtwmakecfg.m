@@ -1,3 +1,4 @@
+% Copyright 2014 The MathWorks, Inc.
 function makeInfo = rtwmakecfg()
 %RTWMAKECFG adds include and source directories to the make files.
 %   makeInfo=RTWMAKECFG returns a structured array containing build info.

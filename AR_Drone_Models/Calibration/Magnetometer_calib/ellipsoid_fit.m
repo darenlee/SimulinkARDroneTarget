@@ -1,3 +1,4 @@
+% Copyright 2014 The MathWorks, Inc.
 function [ center, radii, evecs, v ] = ellipsoid_fit( X, flag, equals )
 %
 % Fit an ellispoid/sphere to a set of xyz data points:

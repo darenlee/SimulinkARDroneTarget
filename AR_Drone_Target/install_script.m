@@ -1,4 +1,4 @@
-
+% Copyright 2014 The MathWorks, Inc.
 
 disp('===================================================================')
 disp('          Please browse to location of Code Sourcery Directory     ')

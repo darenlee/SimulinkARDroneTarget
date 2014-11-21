@@ -1,3 +1,4 @@
+% Copyright 2014 The MathWorks, Inc.
 function blkStruct = slblocks
 blkStruct.Name = 'AR Drone 2 Library Blocks'; %Display name
 blkStruct.OpenFcn = 'AR_Drone_2_Library'; %Library name

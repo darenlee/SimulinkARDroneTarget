@@ -1,4 +1,4 @@
-
+% Copyright 2014 The MathWorks, Inc.
 def = legacy_code('initialize');
 def.SourceFiles = {'motor.c'};
 def.HeaderFiles = {'motor.h'};

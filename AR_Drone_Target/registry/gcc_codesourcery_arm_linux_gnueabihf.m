@@ -1,3 +1,4 @@
+% Copyright 2014 The MathWorks, Inc.
 function [tc, results] = gcc_codesourcery_arm_linux_gnueabihf()
 %gcc_codesourcery_arm_linux_gnueabihf
 

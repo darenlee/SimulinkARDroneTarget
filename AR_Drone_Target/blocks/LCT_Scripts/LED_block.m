@@ -1,3 +1,4 @@
+% Copyright 2014 The MathWorks, Inc.
 def = legacy_code('initialize');
 def.SourceFiles = {'led.c'};
 def.HeaderFiles = {'led.h'};

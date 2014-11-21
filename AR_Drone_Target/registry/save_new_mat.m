@@ -1,3 +1,4 @@
+% Copyright 2014 The MathWorks, Inc.
 % [tc lol] =  gcc_linaro_arm_linux_gnueabihf();
 % 
 % tc = tc(1);

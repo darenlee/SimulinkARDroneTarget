@@ -1,3 +1,4 @@
+% Copyright 2014 The MathWorks, Inc.
 %%
 %------------Start Drone specific characteristics --------------%
 load Config_Set.mat

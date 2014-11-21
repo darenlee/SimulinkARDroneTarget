@@ -1,3 +1,4 @@
+% Copyright 2014 The MathWorks, Inc.
 function my_function()
     ab = getActiveConfigSet(gcs);
     IP_String  = codertarget.data.getParameterValue(ab,'IP');

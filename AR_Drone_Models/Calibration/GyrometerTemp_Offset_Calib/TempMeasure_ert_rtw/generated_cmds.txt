@@ -1,1 +1,0 @@
-cd update;chmod 777 TempMeasure.elf;./TempMeasure.elf -w

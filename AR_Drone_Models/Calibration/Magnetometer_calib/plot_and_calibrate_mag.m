@@ -1,4 +1,4 @@
-
+% Copyright 2014 The MathWorks, Inc.
 function MagCurveFit_Results_Struct = plot_and_calibrate_mag(MagData)
 close all
 

@@ -1,3 +1,4 @@
+% Copyright 2014 The MathWorks, Inc.
 clear all
 load SYS_ID_DATA_II.mat
 % load SYS_ID_DATA_III.MAT

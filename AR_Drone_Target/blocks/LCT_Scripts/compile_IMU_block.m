@@ -1,3 +1,4 @@
+% Copyright 2014 The MathWorks, Inc.
 % your_relative_path = 'C:\Pi_builds_2013_july\practice_build\'; %change this to whatever path
 
 

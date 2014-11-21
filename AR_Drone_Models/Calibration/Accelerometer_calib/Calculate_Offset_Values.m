@@ -1,3 +1,4 @@
+% Copyright 2014 The MathWorks, Inc.
 % these values were obtained by running PlayBack_Data and obtaining a
 % running average value in different configurations
 
