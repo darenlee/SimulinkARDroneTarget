@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<productinfo>
+    <name>AR Drone 2</name>
+    
+    <parametergroup>
+        <name>AR Drone IP Address</name>
+        <parameter Alignment="1" Callback="widgetChangedCallback" ColSpan="[1,3]" Data="" DialogRefresh="1" DoNotStore="false" Enabled="1" Entries="" Name="IP Address:" RowSpan="[0,0]" SaveValueAsString="true" Storage="IP" Tag="Drone_IP_Address" Type="edit" Value="192.168.1.1" Visible="1"/>
+    </parametergroup>
+    
+    <parametergroup>
+        <name>Clocking</name>
+        <parameter Alignment="1" Callback="widgetChangedCallback" ColSpan="[1,3]" Data="" DialogRefresh="1" DoNotStore="false" Enabled="1" Entries="" Name="CPU Clock (MHz):" RowSpan="[0,0]" SaveValueAsString="true" Storage="Clocking.cpuClockRateMHz" Tag="CPU_Clock_in_MHz" Type="edit" Value="800" Visible="1"/>
+    </parametergroup>
+    <parametergroup>
+        <name>Linux</name>
+        <parameter Alignment="1" Callback="widgetChangedCallback" ColSpan="[1,3]" Data="" DialogRefresh="1" DoNotStore="false" Enabled="1" Entries="" Name="Base Rate Task Priority:" RowSpan="[0,0]" SaveValueAsString="true" Storage="Linux.baseratetaskpriority" Tag="Base_Rate_Task_Priority" Type="edit" Value="40" Visible="1"/>
+    </parametergroup>
+    <parametergroup>
+        <name>Build options</name>
+        <parameter Alignment="1" Callback="widgetChangedCallback" ColSpan="[1,3]" Data="" DialogRefresh="0" DoNotStore="false" Enabled="1" Entries="Build; Build, load and run" Name="Build action:" RowSpan="[1,1]" SaveValueAsString="true" Storage="Runtime.BuildAction" Tag="Build_action" Type="combobox" Value="Build, load and run" Visible="1"/>
+    </parametergroup>
+</productinfo>

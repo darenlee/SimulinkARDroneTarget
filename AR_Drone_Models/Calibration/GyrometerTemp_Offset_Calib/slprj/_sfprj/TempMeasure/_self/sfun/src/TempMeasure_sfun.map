@@ -1,0 +1,855 @@
+ TempMeasure_sfun
+
+ Timestamp is 53d7d2c7 (Tue Jul 29 12:58:47 2014)
+
+ Preferred load address is 0000000180000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 000292b4H .text                   CODE
+ 0001:000292c0 00000092H .text$x                 CODE
+ 0002:00000000 00000488H .idata$5                DATA
+ 0002:00000488 00000008H .CRT$XCA                DATA
+ 0002:00000490 00000008H .CRT$XCZ                DATA
+ 0002:00000498 00000008H .CRT$XIA                DATA
+ 0002:000004a0 00000008H .CRT$XIAA               DATA
+ 0002:000004a8 00000008H .CRT$XIZ                DATA
+ 0002:000004b0 000006c4H .rdata                  DATA
+ 0002:00000b78 00000008H .rtc$IAA                DATA
+ 0002:00000b80 00000008H .rtc$IZZ                DATA
+ 0002:00000b88 00000008H .rtc$TAA                DATA
+ 0002:00000b90 00000008H .rtc$TZZ                DATA
+ 0002:00000b98 00000e38H .xdata                  DATA
+ 0002:000019d0 00000078H .idata$2                DATA
+ 0002:00001a48 00000014H .idata$3                DATA
+ 0002:00001a60 00000488H .idata$4                DATA
+ 0002:00001ee8 00000cc8H .idata$6                DATA
+ 0002:00002bb0 00000056H .edata                  DATA
+ 0003:00000000 00006c08H .data                   DATA
+ 0003:00006c10 000006f8H .bss                    DATA
+ 0004:00000000 00001338H .pdata                  DATA
+
+  Address         Publics by Value              Rva+Base               Lib:Object
+
+ 0000:00000000       ___safe_se_handler_count   0000000000000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   0000000000000000     <absolute>
+ 0000:00000000       __ImageBase                0000000180000000     <linker-defined>
+ 0001:00000000       TempMeasure_initializer    0000000180001000 f   TempMeasure_sfun.obj
+ 0001:00000010       TempMeasure_terminator     0000000180001010 f   TempMeasure_sfun.obj
+ 0001:00000020       sf_TempMeasure_method_dispatcher 0000000180001020 f   TempMeasure_sfun.obj
+ 0001:00000110       sf_TempMeasure_process_testpoint_info_call 0000000180001110 f   TempMeasure_sfun.obj
+ 0001:00000300       sf_TempMeasure_process_check_sum_call 0000000180001300 f   TempMeasure_sfun.obj
+ 0001:00000790       sf_TempMeasure_autoinheritance_info 0000000180001790 f   TempMeasure_sfun.obj
+ 0001:00000aa0       sf_TempMeasure_get_eml_resolved_functions_info 0000000180001aa0 f   TempMeasure_sfun.obj
+ 0001:00000d20       sf_TempMeasure_third_party_uses_info 0000000180001d20 f   TempMeasure_sfun.obj
+ 0001:00000f90       sf_TempMeasure_updateBuildInfo_args_info 0000000180001f90 f   TempMeasure_sfun.obj
+ 0001:00001200       TempMeasure_debug_initialize 0000000180002200 f   TempMeasure_sfun.obj
+ 0001:00001280       TempMeasure_register_exported_symbols 0000000180002280 f   TempMeasure_sfun.obj
+ 0001:00001290       load_TempMeasure_optimization_info 0000000180002290 f   TempMeasure_sfun.obj
+ 0001:000012e0       unload_TempMeasure_optimization_info 00000001800022e0 f   TempMeasure_sfun.obj
+ 0001:00001310       sf_c1_TempMeasure_get_eml_resolved_functions_info 0000000180002310 f   c1_TempMeasure.obj
+ 0001:00002550       sf_c1_TempMeasure_get_check_sum 0000000180003550 f   c1_TempMeasure.obj
+ 0001:000025d0       sf_c1_TempMeasure_get_autoinheritance_info 00000001800035d0 f   c1_TempMeasure.obj
+ 0001:00002c90       sf_c1_TempMeasure_third_party_uses_info 0000000180003c90 f   c1_TempMeasure.obj
+ 0001:00002cc0       sf_c1_TempMeasure_updateBuildInfo_args_info 0000000180003cc0 f   c1_TempMeasure.obj
+ 0001:00002cf0       sf_internal_get_sim_state_c1_TempMeasure 0000000180003cf0 f   c1_TempMeasure.obj
+ 0001:00003120       sf_internal_set_sim_state_c1_TempMeasure 0000000180004120 f   c1_TempMeasure.obj
+ 0001:00003550       c1_TempMeasure_method_dispatcher 0000000180004550 f   c1_TempMeasure.obj
+ 0001:00005710       sf_c2_TempMeasure_get_eml_resolved_functions_info 0000000180006710 f   c2_TempMeasure.obj
+ 0001:00005790       sf_c2_TempMeasure_get_check_sum 0000000180006790 f   c2_TempMeasure.obj
+ 0001:00005810       sf_c2_TempMeasure_get_autoinheritance_info 0000000180006810 f   c2_TempMeasure.obj
+ 0001:00005d80       sf_c2_TempMeasure_third_party_uses_info 0000000180006d80 f   c2_TempMeasure.obj
+ 0001:00005db0       sf_c2_TempMeasure_updateBuildInfo_args_info 0000000180006db0 f   c2_TempMeasure.obj
+ 0001:00005de0       sf_internal_get_sim_state_c2_TempMeasure 0000000180006de0 f   c2_TempMeasure.obj
+ 0001:000062e0       sf_internal_set_sim_state_c2_TempMeasure 00000001800072e0 f   c2_TempMeasure.obj
+ 0001:00006e70       sf_c2_TempMeasure_get_testpoint_info 0000000180007e70 f   c2_TempMeasure.obj
+ 0001:00006eb0       c2_TempMeasure_method_dispatcher 0000000180007eb0 f   c2_TempMeasure.obj
+ 0001:0000b2c0       sf_c3_TempMeasure_get_eml_resolved_functions_info 000000018000c2c0 f   c3_TempMeasure.obj
+ 0001:0000b340       sf_c3_TempMeasure_get_check_sum 000000018000c340 f   c3_TempMeasure.obj
+ 0001:0000b3c0       sf_c3_TempMeasure_get_autoinheritance_info 000000018000c3c0 f   c3_TempMeasure.obj
+ 0001:0000b930       sf_c3_TempMeasure_third_party_uses_info 000000018000c930 f   c3_TempMeasure.obj
+ 0001:0000b960       sf_c3_TempMeasure_updateBuildInfo_args_info 000000018000c960 f   c3_TempMeasure.obj
+ 0001:0000b990       sf_internal_get_sim_state_c3_TempMeasure 000000018000c990 f   c3_TempMeasure.obj
+ 0001:0000be90       sf_internal_set_sim_state_c3_TempMeasure 000000018000ce90 f   c3_TempMeasure.obj
+ 0001:0000ca20       sf_c3_TempMeasure_get_testpoint_info 000000018000da20 f   c3_TempMeasure.obj
+ 0001:0000ca60       c3_TempMeasure_method_dispatcher 000000018000da60 f   c3_TempMeasure.obj
+ 0001:00010e70       sf_c4_TempMeasure_get_eml_resolved_functions_info 0000000180011e70 f   c4_TempMeasure.obj
+ 0001:00010ef0       sf_c4_TempMeasure_get_check_sum 0000000180011ef0 f   c4_TempMeasure.obj
+ 0001:00010f70       sf_c4_TempMeasure_get_autoinheritance_info 0000000180011f70 f   c4_TempMeasure.obj
+ 0001:000114e0       sf_c4_TempMeasure_third_party_uses_info 00000001800124e0 f   c4_TempMeasure.obj
+ 0001:00011510       sf_c4_TempMeasure_updateBuildInfo_args_info 0000000180012510 f   c4_TempMeasure.obj
+ 0001:00011540       sf_internal_get_sim_state_c4_TempMeasure 0000000180012540 f   c4_TempMeasure.obj
+ 0001:00011a30       sf_internal_set_sim_state_c4_TempMeasure 0000000180012a30 f   c4_TempMeasure.obj
+ 0001:000125b0       sf_c4_TempMeasure_get_testpoint_info 00000001800135b0 f   c4_TempMeasure.obj
+ 0001:000125f0       c4_TempMeasure_method_dispatcher 00000001800135f0 f   c4_TempMeasure.obj
+ 0001:00016a00       sf_c5_TempMeasure_get_eml_resolved_functions_info 0000000180017a00 f   c5_TempMeasure.obj
+ 0001:00016a80       sf_c5_TempMeasure_get_check_sum 0000000180017a80 f   c5_TempMeasure.obj
+ 0001:00016b00       sf_c5_TempMeasure_get_autoinheritance_info 0000000180017b00 f   c5_TempMeasure.obj
+ 0001:00017070       sf_c5_TempMeasure_third_party_uses_info 0000000180018070 f   c5_TempMeasure.obj
+ 0001:000170a0       sf_c5_TempMeasure_updateBuildInfo_args_info 00000001800180a0 f   c5_TempMeasure.obj
+ 0001:000170d0       sf_internal_get_sim_state_c5_TempMeasure 00000001800180d0 f   c5_TempMeasure.obj
+ 0001:000175d0       sf_internal_set_sim_state_c5_TempMeasure 00000001800185d0 f   c5_TempMeasure.obj
+ 0001:00018150       sf_c5_TempMeasure_get_testpoint_info 0000000180019150 f   c5_TempMeasure.obj
+ 0001:00018190       c5_TempMeasure_method_dispatcher 0000000180019190 f   c5_TempMeasure.obj
+ 0001:0001c5a0       sf_c7_TempMeasure_get_eml_resolved_functions_info 000000018001d5a0 f   c7_TempMeasure.obj
+ 0001:0001c620       sf_c7_TempMeasure_get_check_sum 000000018001d620 f   c7_TempMeasure.obj
+ 0001:0001c6a0       sf_c7_TempMeasure_get_autoinheritance_info 000000018001d6a0 f   c7_TempMeasure.obj
+ 0001:0001cc10       sf_c7_TempMeasure_third_party_uses_info 000000018001dc10 f   c7_TempMeasure.obj
+ 0001:0001cc40       sf_c7_TempMeasure_updateBuildInfo_args_info 000000018001dc40 f   c7_TempMeasure.obj
+ 0001:0001cc70       sf_internal_get_sim_state_c7_TempMeasure 000000018001dc70 f   c7_TempMeasure.obj
+ 0001:0001d170       sf_internal_set_sim_state_c7_TempMeasure 000000018001e170 f   c7_TempMeasure.obj
+ 0001:0001dcf0       sf_c7_TempMeasure_get_testpoint_info 000000018001ecf0 f   c7_TempMeasure.obj
+ 0001:0001dd30       c7_TempMeasure_method_dispatcher 000000018001ed30 f   c7_TempMeasure.obj
+ 0001:000220e0       sf_process_check_sum_call  00000001800230e0 f   TempMeasure_sfun_registry.obj
+ 0001:00022130       sf_process_testpoint_info_call 0000000180023130 f   TempMeasure_sfun_registry.obj
+ 0001:00022180       sf_process_autoinheritance_call 0000000180023180 f   TempMeasure_sfun_registry.obj
+ 0001:00022320       sf_process_get_third_party_uses_info_call 0000000180023320 f   TempMeasure_sfun_registry.obj
+ 0001:000224c0       sf_process_get_updateBuildInfo_args_info_call 00000001800234c0 f   TempMeasure_sfun_registry.obj
+ 0001:00022660       sf_process_get_eml_resolved_functions_info_call 0000000180023660 f   TempMeasure_sfun_registry.obj
+ 0001:000227e0       sf_mex_unlock_call         00000001800237e0 f   TempMeasure_sfun_registry.obj
+ 0001:00022890       sf_machine_global_initializer_called 0000000180023890 f   TempMeasure_sfun_registry.obj
+ 0001:000228c0       sf_machine_global_method_dispatcher 00000001800238c0 f   TempMeasure_sfun_registry.obj
+ 0001:00022920       sf_machine_global_terminator 0000000180023920 f   TempMeasure_sfun_registry.obj
+ 0001:00022970       sf_register_machine_exported_symbols 0000000180023970 f   TempMeasure_sfun_registry.obj
+ 0001:00022990       callCustomFcn              0000000180023990 f   TempMeasure_sfun_registry.obj
+ 0001:000229a0       sf_machine_global_initializer 00000001800239a0 f   TempMeasure_sfun_registry.obj
+ 0001:00022a20       mdlGetSimState             0000000180023a20 f   TempMeasure_sfun_registry.obj
+ 0001:00022aa0       mdlSetSimState             0000000180023aa0 f   TempMeasure_sfun_registry.obj
+ 0001:00022ae0       _ssSetStateAbsTol          0000000180023ae0 f   TempMeasure_sfun_registry.obj
+ 0001:00022bc0       _ssGetAbsTol               0000000180023bc0 f   TempMeasure_sfun_registry.obj
+ 0001:00022c30       _ssSetInputPortMatrixDimensions 0000000180023c30 f   TempMeasure_sfun_registry.obj
+ 0001:00022d40       _ssSetOutputPortMatrixDimensions 0000000180023d40 f   TempMeasure_sfun_registry.obj
+ 0001:00022e50       _ssSetInputPortVectorDimension 0000000180023e50 f   TempMeasure_sfun_registry.obj
+ 0001:00022f20       _ssSetOutputPortVectorDimension 0000000180023f20 f   TempMeasure_sfun_registry.obj
+ 0001:00022ff0       ssIsRunTimeParamTunable    0000000180023ff0 f   TempMeasure_sfun_registry.obj
+ 0001:00023060       ssGetSFuncBlockHandle      0000000180024060 f   TempMeasure_sfun_registry.obj
+ 0001:000230d0       _ssGetCurrentInputPortWidth 00000001800240d0 f   TempMeasure_sfun_registry.obj
+ 0001:000231f0       _ssGetCurrentOutputPortWidth 00000001800241f0 f   TempMeasure_sfun_registry.obj
+ 0001:00023310       _ssGetCallSystemNumFcnCallDestinations 0000000180024310 f   TempMeasure_sfun_registry.obj
+ 0001:00023380       ssWarning                  0000000180024380 f   TempMeasure_sfun_registry.obj
+ 0001:00023490       ssGetIsZeroCrossControlDisabled 0000000180024490 f   TempMeasure_sfun_registry.obj
+ 0001:00023500       ssSetIsInputPortUsedForContZcSignal 0000000180024500 f   TempMeasure_sfun_registry.obj
+ 0001:00023570       ssSetZcSignalIsZcElementDisc 0000000180024570 f   TempMeasure_sfun_registry.obj
+ 0001:00023620       ssSetZcSignalName          0000000180024620 f   TempMeasure_sfun_registry.obj
+ 0001:00023690       ssSetZcSignalWidth         0000000180024690 f   TempMeasure_sfun_registry.obj
+ 0001:00023700       ssSetZcSignalZcEventType   0000000180024700 f   TempMeasure_sfun_registry.obj
+ 0001:00023770       ssSetZcSignalType          0000000180024770 f   TempMeasure_sfun_registry.obj
+ 0001:000237e0       ssSetZcSignalZcTol         00000001800247e0 f   TempMeasure_sfun_registry.obj
+ 0001:00023850       ssSetZcSignalNeedsEventNotification 0000000180024850 f   TempMeasure_sfun_registry.obj
+ 0001:000238c0       ssCreateAndAddZcSignalInfo 00000001800248c0 f   TempMeasure_sfun_registry.obj
+ 0001:00023930       ssCloneAndAddZcSignalInfo  0000000180024930 f   TempMeasure_sfun_registry.obj
+ 0001:000239a0       ssGetNumZcSignals          00000001800249a0 f   TempMeasure_sfun_registry.obj
+ 0001:00023a10       ssGetZcSignalVector        0000000180024a10 f   TempMeasure_sfun_registry.obj
+ 0001:00023a80       ssGetZcSignalZcEvents      0000000180024a80 f   TempMeasure_sfun_registry.obj
+ 0001:00023af0       ssGetZcSignalName          0000000180024af0 f   TempMeasure_sfun_registry.obj
+ 0001:00023b60       ssGetZcSignalWidth         0000000180024b60 f   TempMeasure_sfun_registry.obj
+ 0001:00023bd0       ssGetZcSignalZcEventType   0000000180024bd0 f   TempMeasure_sfun_registry.obj
+ 0001:00023c40       ssGetZcSignalType          0000000180024c40 f   TempMeasure_sfun_registry.obj
+ 0001:00023cb0       ssGetZcSignalZcTol         0000000180024cb0 f   TempMeasure_sfun_registry.obj
+ 0001:00023d30       ssGetZcSignalNeedsEventNotification 0000000180024d30 f   TempMeasure_sfun_registry.obj
+ 0001:00023da0       ssGetZcSignalIsZcElementDisc 0000000180024da0 f   TempMeasure_sfun_registry.obj
+ 0001:00023e40       ssGetIsInputPortElementContinuous 0000000180024e40 f   TempMeasure_sfun_registry.obj
+ 0001:00023ee0       _ssGetInputPortSignalPtrsFcn 0000000180024ee0 f   TempMeasure_sfun_registry.obj
+ 0001:000241a0       _ssGetInputPortSignalFcn   00000001800251a0 f   TempMeasure_sfun_registry.obj
+ 0001:000243c0       _ssSetInputPortDirectFeedThroughFcn 00000001800253c0 f   TempMeasure_sfun_registry.obj
+ 0001:00024520       _ssSetInputPortReusableFcn 0000000180025520 f   TempMeasure_sfun_registry.obj
+ 0001:00024610       _ssSetOutputPortReusableFcn 0000000180025610 f   TempMeasure_sfun_registry.obj
+ 0001:000246f0       ssGetDTypeIdFromMxArray    00000001800256f0 f   TempMeasure_sfun_registry.obj
+ 0001:00024810       ssWriteRTWStr              0000000180025810 f   TempMeasure_sfun_registry.obj
+ 0001:00024870       ssWriteRTWMxVectParam      0000000180025870 f   TempMeasure_sfun_registry.obj
+ 0001:000248d0       ssWriteRTWMx2dMatParam     00000001800258d0 f   TempMeasure_sfun_registry.obj
+ 0001:00024950       ssWriteRTWNameValuePair    0000000180025950 f   TempMeasure_sfun_registry.obj
+ 0001:00024e40       ssWriteRTWParameters       0000000180025e40 f   TempMeasure_sfun_registry.obj
+ 0001:00025440       ssWriteRTWParamSettings    0000000180026440 f   TempMeasure_sfun_registry.obj
+ 0001:00025b10       ssWriteRTWWorkVect         0000000180026b10 f   TempMeasure_sfun_registry.obj
+ 0001:00026010       mexFunction                0000000180027010 f   TempMeasure_sfun_registry.obj
+ 0001:000284c0       ProcessMexSfunctionEveryCall 00000001800294c0 f   TempMeasure_sfun_registry.obj
+ 0001:00028642       sf_debug_set_machine_data_thresholds 0000000180029642 f   sf_runtime:sf_runtime.dll
+ 0001:00028648       sf_debug_set_machine_event_thresholds 0000000180029648 f   sf_runtime:sf_runtime.dll
+ 0001:0002864e       sf_debug_initialize_machine 000000018002964e f   sf_runtime:sf_runtime.dll
+ 0001:00028654       sf_load_rtw_optimization_info 0000000180029654 f   sf_runtime:sf_runtime.dll
+ 0001:0002865a       sf_mex_emlrtNameCapturePostProcessR2012a 000000018002965a f   sf_runtime:sf_runtime.dll
+ 0001:00028660       sf_mex_assign              0000000180029660 f   sf_runtime:sf_runtime.dll
+ 0001:00028666       sf_mex_createstruct        0000000180029666 f   sf_runtime:sf_runtime.dll
+ 0001:0002866c       sf_mex_destroy             000000018002966c f   sf_runtime:sf_runtime.dll
+ 0001:00028672       sf_mex_duplicatearraysafe  0000000180029672 f   sf_runtime:sf_runtime.dll
+ 0001:00028678       sf_mex_createcellmatrix    0000000180029678 f   sf_runtime:sf_runtime.dll
+ 0001:0002867e       sf_mex_addfield            000000018002967e f   sf_runtime:sf_runtime.dll
+ 0001:00028684       sf_mex_create              0000000180029684 f   sf_runtime:sf_runtime.dll
+ 0001:0002868a       sf_mex_error_message       000000018002968a f   sf_runtime:sf_runtime.dll
+ 0001:00028690       sf_mex_call_matlab         0000000180029690 f   sf_runtime:sf_runtime.dll
+ 0001:00028696       sf_mex_setcell             0000000180029696 f   sf_runtime:sf_runtime.dll
+ 0001:0002869c       sf_mex_decode_encoded_mx_struct_array 000000018002969c f   sf_runtime:sf_runtime.dll
+ 0001:000286a2       sf_mex_getcell             00000001800296a2 f   sf_runtime:sf_runtime.dll
+ 0001:000286a8       sf_mex_dup                 00000001800296a8 f   sf_runtime:sf_runtime.dll
+ 0001:000286ae       sf_mex_import              00000001800296ae f   sf_runtime:sf_runtime.dll
+ 0001:000286b4       sf_set_rtw_dwork_info      00000001800296b4 f   sf_runtime:sf_runtime.dll
+ 0001:000286ba       sf_mark_chart_reusable_outputs 00000001800296ba f   sf_runtime:sf_runtime.dll
+ 0001:000286c0       sf_mark_chart_expressionable_inputs 00000001800296c0 f   sf_runtime:sf_runtime.dll
+ 0001:000286c6       sf_update_buildInfo        00000001800296c6 f   sf_runtime:sf_runtime.dll
+ 0001:000286cc       sf_rtw_info_uint_prop      00000001800296cc f   sf_runtime:sf_runtime.dll
+ 0001:000286d2       sf_is_chart_inlinable      00000001800296d2 f   sf_runtime:sf_runtime.dll
+ 0001:000286d8       sim_mode_is_external       00000001800296d8 f   sf_runtime:sf_runtime.dll
+ 0001:000286de       sim_mode_is_rtw_gen        00000001800296de f   sf_runtime:sf_runtime.dll
+ 0001:000286e4       sf_debug_reset_current_state_configuration 00000001800296e4 f   sf_runtime:sf_runtime.dll
+ 0001:000286ea       sf_debug_set_instance_data_value_ptr 00000001800296ea f   sf_runtime:sf_runtime.dll
+ 0001:000286f0       sf_debug_set_chart_data_compiled_props 00000001800296f0 f   sf_runtime:sf_runtime.dll
+ 0001:000286f6       cv_eml_init_if             00000001800296f6 f   sf_runtime:sf_runtime.dll
+ 0001:000286fc       cv_eml_init_fcn            00000001800296fc f   sf_runtime:sf_runtime.dll
+ 0001:00028702       cv_eml_init_script         0000000180029702 f   sf_runtime:sf_runtime.dll
+ 0001:00028708       sf_debug_cv_init_trans     0000000180029708 f   sf_runtime:sf_runtime.dll
+ 0001:0002870e       sf_debug_cv_init_state     000000018002970e f   sf_runtime:sf_runtime.dll
+ 0001:00028714       sf_debug_cv_init_chart     0000000180029714 f   sf_runtime:sf_runtime.dll
+ 0001:0002871a       sf_debug_set_chart_decomposition 000000018002971a f   sf_runtime:sf_runtime.dll
+ 0001:00028720       sf_debug_set_chart_substate_count 0000000180029720 f   sf_runtime:sf_runtime.dll
+ 0001:00028726       sf_debug_set_chart_state_info 0000000180029726 f   sf_runtime:sf_runtime.dll
+ 0001:0002872c       sf_debug_set_chart_data_props 000000018002972c f   sf_runtime:sf_runtime.dll
+ 0001:00028732       sf_debug_set_chart_event_thresholds 0000000180029732 f   sf_runtime:sf_runtime.dll
+ 0001:00028738       sf_debug_set_chart_disable_implicit_casting 0000000180029738 f   sf_runtime:sf_runtime.dll
+ 0001:0002873e       sf_debug_initialize_chart  000000018002973e f   sf_runtime:sf_runtime.dll
+ 0001:00028744       sf_get_time                0000000180029744 f   sf_runtime:sf_runtime.dll
+ 0001:0002874a       sf_debug_check_for_state_inconsistency 000000018002974a f   sf_runtime:sf_runtime.dll
+ 0001:00028750       sf_debug_symbol_scope_pop  0000000180029750 f   sf_runtime:sf_runtime.dll
+ 0001:00028756       eml_debug_line_call        0000000180029756 f   sf_runtime:sf_runtime.dll
+ 0001:0002875c       cv_eml_eval                000000018002975c f   sf_runtime:sf_runtime.dll
+ 0001:00028762       sf_debug_symbol_scope_add_eml 0000000180029762 f   sf_runtime:sf_runtime.dll
+ 0001:00028768       sf_debug_symbol_scope_add_eml_importable 0000000180029768 f   sf_runtime:sf_runtime.dll
+ 0001:0002876e       sf_debug_symbol_scope_push_eml 000000018002976e f   sf_runtime:sf_runtime.dll
+ 0001:00028774       sf_debug_data_range_wrapper 0000000180029774 f   sf_runtime:sf_runtime.dll
+ 0001:0002877a       sf_debug_call              000000018002977a f   sf_runtime:sf_runtime.dll
+ 0001:00028780       sf_debug_symbol_scope_push 0000000180029780 f   sf_runtime:sf_runtime.dll
+ 0001:00028786       sf_clear_rtw_identifier    0000000180029786 f   sf_runtime:sf_runtime.dll
+ 0001:0002878c       sf_debug_animate           000000018002978c f   sf_runtime:sf_runtime.dll
+ 0001:00028792       sf_debug_set_honor_breakpoints 0000000180029792 f   sf_runtime:sf_runtime.dll
+ 0001:00028798       sf_debug_set_animation     0000000180029798 f   sf_runtime:sf_runtime.dll
+ 0001:0002879e       sf_debug_get_animation     000000018002979e f   sf_runtime:sf_runtime.dll
+ 0001:000287a4       sf_set_encoded_dwork_info  00000001800297a4 f   sf_runtime:sf_runtime.dll
+ 0001:000287aa       sf_debug_set_chart_state_substate_count 00000001800297aa f   sf_runtime:sf_runtime.dll
+ 0001:000287b0       sf_debug_set_chart_substate_index 00000001800297b0 f   sf_runtime:sf_runtime.dll
+ 0001:000287b6       sf_get_dwork_info_from_mat_file 00000001800297b6 f   sf_runtime:sf_runtime.dll
+ 0001:000287bc       sf_debug_temporal_threshold 00000001800297bc f   sf_runtime:sf_runtime.dll
+ 0001:000287c2       cv_eval_point              00000001800297c2 f   sf_runtime:sf_runtime.dll
+ 0001:000287c8       sf_mex_sub                 00000001800297c8 f   sf_runtime:sf_runtime.dll
+ 0001:000287ce       sf_debug_eml_data_array_bounds_error_check 00000001800297ce f   sf_runtime:sf_runtime.dll
+ 0001:000287d4       sf_debug_terminate         00000001800297d4 f   sf_runtime:sf_runtime.dll
+ 0001:000287da       sf_debug_create_debug_instance_struct 00000001800297da f   sf_runtime:sf_runtime.dll
+ 0001:000287e0       sf_debug_api               00000001800297e0 f   sf_runtime:sf_runtime.dll
+ 0001:000287e6       callMdlMethodAndReportError 00000001800297e6 f   sf_runtime:sf_runtime.dll
+ 0001:000287ec       call_sf_machine_global_method_dispatcher 00000001800297ec f   sf_runtime:sf_runtime.dll
+ 0001:000287f2       sf_clear_error_manager_info 00000001800297f2 f   sf_runtime:sf_runtime.dll
+ 0001:000287f8       sf_mex_error_direct_call   00000001800297f8 f   sf_runtime:sf_runtime.dll
+ 0001:000287fe       mxCreateDoubleMatrix_730   00000001800297fe f   libmx:libmx.dll
+ 0001:00028804       mxGetScalar                0000000180029804 f   libmx:libmx.dll
+ 0001:0002880a       mxGetString_730            000000018002980a f   libmx:libmx.dll
+ 0001:00028810       mxIsChar                   0000000180029810 f   libmx:libmx.dll
+ 0001:00028816       mxGetPr                    0000000180029816 f   libmx:libmx.dll
+ 0001:0002881c       mxDestroyArray             000000018002981c f   libmx:libmx.dll
+ 0001:00028822       mxDuplicateArray           0000000180029822 f   libmx:libmx.dll
+ 0001:00028828       mxCreateDoubleScalar       0000000180029828 f   libmx:libmx.dll
+ 0001:0002882e       mxSetField_730             000000018002982e f   libmx:libmx.dll
+ 0001:00028834       mxCreateString             0000000180029834 f   libmx:libmx.dll
+ 0001:0002883a       mxCreateStructMatrix_730   000000018002983a f   libmx:libmx.dll
+ 0001:00028840       mxCreateCellMatrix_730     0000000180029840 f   libmx:libmx.dll
+ 0001:00028846       mxGetClassID               0000000180029846 f   libmx:libmx.dll
+ 0001:0002884c       mxIsNumeric                000000018002984c f   libmx:libmx.dll
+ 0001:00028852       mxIsComplex                0000000180029852 f   libmx:libmx.dll
+ 0001:00028858       mxGetN                     0000000180029858 f   libmx:libmx.dll
+ 0001:0002885e       mxGetM                     000000018002985e f   libmx:libmx.dll
+ 0001:00028864       mxCalloc                   0000000180029864 f   libmx:libmx.dll
+ 0001:0002886a       mexMakeArrayPersistent     000000018002986a f   libmex:libmex.dll
+ 0001:00028870       mexUnlock                  0000000180029870 f   libmex:libmex.dll
+ 0001:00028876       mexIsLocked                0000000180029876 f   libmex:libmex.dll
+ 0001:0002887c       mexWarnMsgTxt              000000018002987c f   libmex:libmex.dll
+ 0001:00028882       mexCallMATLAB              0000000180029882 f   libmex:libmex.dll
+ 0001:00028888       mexErrMsgTxt               0000000180029888 f   libmex:libmex.dll
+ 0001:0002888e       mexLock                    000000018002988e f   libmex:libmex.dll
+ 0001:00028894       utMalloc                   0000000180029894 f   libut:libut.dll
+ 0001:0002889a       utFree                     000000018002989a f   libut:libut.dll
+ 0001:000288a0       __GSHandlerCheckCommon     00000001800298a0 f   MSVCRT:gshandler.obj
+ 0001:00028904       __GSHandlerCheck           0000000180029904 f   MSVCRT:gshandler.obj
+ 0001:00028922       strcmp                     0000000180029922 f   MSVCRT:MSVCR100.dll
+ 0001:00028940       __security_check_cookie    0000000180029940 f   MSVCRT:amdsecgs.obj
+ 0001:00028960       strlen                     0000000180029960 f   MSVCRT:MSVCR100.dll
+ 0001:00028966       memset                     0000000180029966 f   MSVCRT:MSVCR100.dll
+ 0001:0002896c       free                       000000018002996c f   MSVCRT:MSVCR100.dll
+ 0001:00028972       sprintf                    0000000180029972 f   MSVCRT:MSVCR100.dll
+ 0001:00028978       malloc                     0000000180029978 f   MSVCRT:MSVCR100.dll
+ 0001:0002897e       strcat                     000000018002997e f   MSVCRT:MSVCR100.dll
+ 0001:00028984       memcpy                     0000000180029984 f   MSVCRT:MSVCR100.dll
+ 0001:0002898c       NtCurrentTeb               000000018002998c f i MSVCRT:crtdll.obj
+ 0001:000289f8       _CRT_INIT                  00000001800299f8 f   MSVCRT:crtdll.obj
+ 0001:00028d90       _DllMainCRTStartup         0000000180029d90 f   MSVCRT:crtdll.obj
+ 0001:00028dd0       __report_gsfailure         0000000180029dd0 f   MSVCRT:gs_report.obj
+ 0001:00028f1c       __clean_type_info_names    0000000180029f1c f   MSVCRT:tncleanup.obj
+ 0001:00028f28       _onexit                    0000000180029f28 f   MSVCRT:atonexit.obj
+ 0001:00028fd8       atexit                     0000000180029fd8 f   MSVCRT:atonexit.obj
+ 0001:00028ff0       _RTC_Initialize            0000000180029ff0 f   MSVCRT:_initsect_.obj
+ 0001:00029028       _RTC_Terminate             000000018002a028 f   MSVCRT:_initsect_.obj
+ 0001:00029060       _malloc_crt                000000018002a060 f   MSVCRT:MSVCR100.dll
+ 0001:00029070       _ValidateImageBase         000000018002a070 f   MSVCRT:pesect.obj
+ 0001:000290a0       _FindPESection             000000018002a0a0 f   MSVCRT:pesect.obj
+ 0001:000290f0       _IsNonwritableInCurrentImage 000000018002a0f0 f   MSVCRT:pesect.obj
+ 0001:00029132       _initterm                  000000018002a132 f   MSVCRT:MSVCR100.dll
+ 0001:00029138       _initterm_e                000000018002a138 f   MSVCRT:MSVCR100.dll
+ 0001:0002913e       _encoded_null              000000018002a13e f   MSVCRT:MSVCR100.dll
+ 0001:00029144       _amsg_exit                 000000018002a144 f   MSVCRT:MSVCR100.dll
+ 0001:0002914a       __C_specific_handler       000000018002a14a f   MSVCRT:MSVCR100.dll
+ 0001:00029150       __CppXcptFilter            000000018002a150 f   MSVCRT:MSVCR100.dll
+ 0001:00029158       DllMain                    000000018002a158 f   MSVCRT:dllmain.obj
+ 0001:0002917c       __security_init_cookie     000000018002a17c f   MSVCRT:gs_support.obj
+ 0001:00029230       __crt_debugger_hook        000000018002a230 f   MSVCRT:MSVCR100.dll
+ 0001:00029236       __clean_type_info_names_internal 000000018002a236 f   MSVCRT:MSVCR100.dll
+ 0001:0002923c       _unlock                    000000018002a23c f   MSVCRT:MSVCR100.dll
+ 0001:00029242       __dllonexit                000000018002a242 f   MSVCRT:MSVCR100.dll
+ 0001:00029248       _lock                      000000018002a248 f   MSVCRT:MSVCR100.dll
+ 0001:0002924e       EncodePointer              000000018002a24e f   kernel32:KERNEL32.dll
+ 0001:00029254       DecodePointer              000000018002a254 f   kernel32:KERNEL32.dll
+ 0001:0002925a       Sleep                      000000018002a25a f   kernel32:KERNEL32.dll
+ 0001:00029260       TerminateProcess           000000018002a260 f   kernel32:KERNEL32.dll
+ 0001:00029266       GetCurrentProcess          000000018002a266 f   kernel32:KERNEL32.dll
+ 0001:0002926c       UnhandledExceptionFilter   000000018002a26c f   kernel32:KERNEL32.dll
+ 0001:00029272       SetUnhandledExceptionFilter 000000018002a272 f   kernel32:KERNEL32.dll
+ 0001:00029278       IsDebuggerPresent          000000018002a278 f   kernel32:KERNEL32.dll
+ 0001:0002927e       RtlVirtualUnwind           000000018002a27e f   kernel32:KERNEL32.dll
+ 0001:00029284       RtlLookupFunctionEntry     000000018002a284 f   kernel32:KERNEL32.dll
+ 0001:0002928a       RtlCaptureContext          000000018002a28a f   kernel32:KERNEL32.dll
+ 0001:00029290       DisableThreadLibraryCalls  000000018002a290 f   kernel32:KERNEL32.dll
+ 0001:00029296       QueryPerformanceCounter    000000018002a296 f   kernel32:KERNEL32.dll
+ 0001:0002929c       GetTickCount               000000018002a29c f   kernel32:KERNEL32.dll
+ 0001:000292a2       GetCurrentThreadId         000000018002a2a2 f   kernel32:KERNEL32.dll
+ 0001:000292a8       GetCurrentProcessId        000000018002a2a8 f   kernel32:KERNEL32.dll
+ 0001:000292ae       GetSystemTimeAsFileTime    000000018002a2ae f   kernel32:KERNEL32.dll
+ 0002:00000000       __imp_GetCurrentProcessId  000000018002b000     kernel32:KERNEL32.dll
+ 0002:00000008       __imp_GetCurrentThreadId   000000018002b008     kernel32:KERNEL32.dll
+ 0002:00000010       __imp_GetTickCount         000000018002b010     kernel32:KERNEL32.dll
+ 0002:00000018       __imp_QueryPerformanceCounter 000000018002b018     kernel32:KERNEL32.dll
+ 0002:00000020       __imp_DisableThreadLibraryCalls 000000018002b020     kernel32:KERNEL32.dll
+ 0002:00000028       __imp_RtlCaptureContext    000000018002b028     kernel32:KERNEL32.dll
+ 0002:00000030       __imp_RtlLookupFunctionEntry 000000018002b030     kernel32:KERNEL32.dll
+ 0002:00000038       __imp_RtlVirtualUnwind     000000018002b038     kernel32:KERNEL32.dll
+ 0002:00000040       __imp_IsDebuggerPresent    000000018002b040     kernel32:KERNEL32.dll
+ 0002:00000048       __imp_SetUnhandledExceptionFilter 000000018002b048     kernel32:KERNEL32.dll
+ 0002:00000050       __imp_UnhandledExceptionFilter 000000018002b050     kernel32:KERNEL32.dll
+ 0002:00000058       __imp_GetCurrentProcess    000000018002b058     kernel32:KERNEL32.dll
+ 0002:00000060       __imp_TerminateProcess     000000018002b060     kernel32:KERNEL32.dll
+ 0002:00000068       __imp_Sleep                000000018002b068     kernel32:KERNEL32.dll
+ 0002:00000070       __imp_DecodePointer        000000018002b070     kernel32:KERNEL32.dll
+ 0002:00000078       __imp_EncodePointer        000000018002b078     kernel32:KERNEL32.dll
+ 0002:00000080       __imp_GetSystemTimeAsFileTime 000000018002b080     kernel32:KERNEL32.dll
+ 0002:00000088       \177KERNEL32_NULL_THUNK_DATA 000000018002b088     kernel32:KERNEL32.dll
+ 0002:00000090       __imp__onexit              000000018002b090     MSVCRT:MSVCR100.dll
+ 0002:00000098       __imp__lock                000000018002b098     MSVCRT:MSVCR100.dll
+ 0002:000000a0       __imp___dllonexit          000000018002b0a0     MSVCRT:MSVCR100.dll
+ 0002:000000a8       __imp__unlock              000000018002b0a8     MSVCRT:MSVCR100.dll
+ 0002:000000b0       __imp___clean_type_info_names_internal 000000018002b0b0     MSVCRT:MSVCR100.dll
+ 0002:000000b8       __imp___crt_debugger_hook  000000018002b0b8     MSVCRT:MSVCR100.dll
+ 0002:000000c0       __imp___CppXcptFilter      000000018002b0c0     MSVCRT:MSVCR100.dll
+ 0002:000000c8       __imp___C_specific_handler 000000018002b0c8     MSVCRT:MSVCR100.dll
+ 0002:000000d0       __imp__amsg_exit           000000018002b0d0     MSVCRT:MSVCR100.dll
+ 0002:000000d8       __imp__encoded_null        000000018002b0d8     MSVCRT:MSVCR100.dll
+ 0002:000000e0       __imp__initterm_e          000000018002b0e0     MSVCRT:MSVCR100.dll
+ 0002:000000e8       __imp__initterm            000000018002b0e8     MSVCRT:MSVCR100.dll
+ 0002:000000f0       __imp__malloc_crt          000000018002b0f0     MSVCRT:MSVCR100.dll
+ 0002:000000f8       __imp_memcpy               000000018002b0f8     MSVCRT:MSVCR100.dll
+ 0002:00000100       __imp_strcat               000000018002b100     MSVCRT:MSVCR100.dll
+ 0002:00000108       __imp_malloc               000000018002b108     MSVCRT:MSVCR100.dll
+ 0002:00000110       __imp_sprintf              000000018002b110     MSVCRT:MSVCR100.dll
+ 0002:00000118       __imp_free                 000000018002b118     MSVCRT:MSVCR100.dll
+ 0002:00000120       __imp_memset               000000018002b120     MSVCRT:MSVCR100.dll
+ 0002:00000128       __imp_strlen               000000018002b128     MSVCRT:MSVCR100.dll
+ 0002:00000130       __imp_strcmp               000000018002b130     MSVCRT:MSVCR100.dll
+ 0002:00000138       \177MSVCR100_NULL_THUNK_DATA 000000018002b138     MSVCRT:MSVCR100.dll
+ 0002:00000140       __imp_mexLock              000000018002b140     libmex:libmex.dll
+ 0002:00000148       __imp_mexErrMsgTxt         000000018002b148     libmex:libmex.dll
+ 0002:00000150       __imp_mexCallMATLAB        000000018002b150     libmex:libmex.dll
+ 0002:00000158       __imp_mexWarnMsgTxt        000000018002b158     libmex:libmex.dll
+ 0002:00000160       __imp_mexIsLocked          000000018002b160     libmex:libmex.dll
+ 0002:00000168       __imp_mexUnlock            000000018002b168     libmex:libmex.dll
+ 0002:00000170       __imp_mexMakeArrayPersistent 000000018002b170     libmex:libmex.dll
+ 0002:00000178       \177libmex_NULL_THUNK_DATA 000000018002b178     libmex:libmex.dll
+ 0002:00000180       __imp_mxCalloc             000000018002b180     libmx:libmx.dll
+ 0002:00000188       __imp_mxGetM               000000018002b188     libmx:libmx.dll
+ 0002:00000190       __imp_mxGetN               000000018002b190     libmx:libmx.dll
+ 0002:00000198       __imp_mxIsComplex          000000018002b198     libmx:libmx.dll
+ 0002:000001a0       __imp_mxIsNumeric          000000018002b1a0     libmx:libmx.dll
+ 0002:000001a8       __imp_mxGetClassID         000000018002b1a8     libmx:libmx.dll
+ 0002:000001b0       __imp_mxCreateCellMatrix_730 000000018002b1b0     libmx:libmx.dll
+ 0002:000001b8       __imp_mxCreateStructMatrix_730 000000018002b1b8     libmx:libmx.dll
+ 0002:000001c0       __imp_mxCreateString       000000018002b1c0     libmx:libmx.dll
+ 0002:000001c8       __imp_mxSetField_730       000000018002b1c8     libmx:libmx.dll
+ 0002:000001d0       __imp_mxCreateDoubleScalar 000000018002b1d0     libmx:libmx.dll
+ 0002:000001d8       __imp_mxDestroyArray       000000018002b1d8     libmx:libmx.dll
+ 0002:000001e0       __imp_mxGetPr              000000018002b1e0     libmx:libmx.dll
+ 0002:000001e8       __imp_mxIsChar             000000018002b1e8     libmx:libmx.dll
+ 0002:000001f0       __imp_mxGetString_730      000000018002b1f0     libmx:libmx.dll
+ 0002:000001f8       __imp_mxGetScalar          000000018002b1f8     libmx:libmx.dll
+ 0002:00000200       __imp_mxCreateDoubleMatrix_730 000000018002b200     libmx:libmx.dll
+ 0002:00000208       __imp_mxDuplicateArray     000000018002b208     libmx:libmx.dll
+ 0002:00000210       \177libmx_NULL_THUNK_DATA  000000018002b210     libmx:libmx.dll
+ 0002:00000218       __imp_utMalloc             000000018002b218     libut:libut.dll
+ 0002:00000220       __imp_utFree               000000018002b220     libut:libut.dll
+ 0002:00000228       \177libut_NULL_THUNK_DATA  000000018002b228     libut:libut.dll
+ 0002:00000230       __imp_callMdlMethodAndReportError 000000018002b230     sf_runtime:sf_runtime.dll
+ 0002:00000238       __imp_call_sf_machine_global_method_dispatcher 000000018002b238     sf_runtime:sf_runtime.dll
+ 0002:00000240       __imp_sf_debug_eml_data_array_bounds_error_check 000000018002b240     sf_runtime:sf_runtime.dll
+ 0002:00000248       __imp_sf_mex_error_direct_call 000000018002b248     sf_runtime:sf_runtime.dll
+ 0002:00000250       __imp_sf_mex_sub           000000018002b250     sf_runtime:sf_runtime.dll
+ 0002:00000258       __imp_cv_eval_point        000000018002b258     sf_runtime:sf_runtime.dll
+ 0002:00000260       __imp_sf_debug_temporal_threshold 000000018002b260     sf_runtime:sf_runtime.dll
+ 0002:00000268       __imp_sf_get_dwork_info_from_mat_file 000000018002b268     sf_runtime:sf_runtime.dll
+ 0002:00000270       __imp_sf_debug_set_chart_substate_index 000000018002b270     sf_runtime:sf_runtime.dll
+ 0002:00000278       __imp_sf_debug_set_chart_state_substate_count 000000018002b278     sf_runtime:sf_runtime.dll
+ 0002:00000280       __imp_sf_mex_import        000000018002b280     sf_runtime:sf_runtime.dll
+ 0002:00000288       __imp_sf_set_encoded_dwork_info 000000018002b288     sf_runtime:sf_runtime.dll
+ 0002:00000290       __imp_sf_debug_get_animation 000000018002b290     sf_runtime:sf_runtime.dll
+ 0002:00000298       __imp_sf_debug_set_animation 000000018002b298     sf_runtime:sf_runtime.dll
+ 0002:000002a0       __imp_sf_debug_api         000000018002b2a0     sf_runtime:sf_runtime.dll
+ 0002:000002a8       __imp_sf_debug_animate     000000018002b2a8     sf_runtime:sf_runtime.dll
+ 0002:000002b0       __imp_sf_clear_rtw_identifier 000000018002b2b0     sf_runtime:sf_runtime.dll
+ 0002:000002b8       __imp_sf_debug_symbol_scope_push 000000018002b2b8     sf_runtime:sf_runtime.dll
+ 0002:000002c0       __imp_sf_debug_call        000000018002b2c0     sf_runtime:sf_runtime.dll
+ 0002:000002c8       __imp_sf_debug_data_range_wrapper 000000018002b2c8     sf_runtime:sf_runtime.dll
+ 0002:000002d0       __imp_sf_debug_symbol_scope_push_eml 000000018002b2d0     sf_runtime:sf_runtime.dll
+ 0002:000002d8       __imp_sf_debug_symbol_scope_add_eml_importable 000000018002b2d8     sf_runtime:sf_runtime.dll
+ 0002:000002e0       __imp_sf_debug_symbol_scope_add_eml 000000018002b2e0     sf_runtime:sf_runtime.dll
+ 0002:000002e8       __imp_cv_eml_eval          000000018002b2e8     sf_runtime:sf_runtime.dll
+ 0002:000002f0       __imp_eml_debug_line_call  000000018002b2f0     sf_runtime:sf_runtime.dll
+ 0002:000002f8       __imp_sf_debug_symbol_scope_pop 000000018002b2f8     sf_runtime:sf_runtime.dll
+ 0002:00000300       __imp_sf_debug_check_for_state_inconsistency 000000018002b300     sf_runtime:sf_runtime.dll
+ 0002:00000308       __imp_sf_get_time          000000018002b308     sf_runtime:sf_runtime.dll
+ 0002:00000310       __imp_sf_debug_initialize_chart 000000018002b310     sf_runtime:sf_runtime.dll
+ 0002:00000318       __imp_sf_debug_set_chart_disable_implicit_casting 000000018002b318     sf_runtime:sf_runtime.dll
+ 0002:00000320       __imp_sf_debug_set_chart_event_thresholds 000000018002b320     sf_runtime:sf_runtime.dll
+ 0002:00000328       __imp_sf_debug_create_debug_instance_struct 000000018002b328     sf_runtime:sf_runtime.dll
+ 0002:00000330       __imp_sf_debug_set_honor_breakpoints 000000018002b330     sf_runtime:sf_runtime.dll
+ 0002:00000338       __imp_sf_debug_terminate   000000018002b338     sf_runtime:sf_runtime.dll
+ 0002:00000340       __imp_sf_debug_set_chart_data_props 000000018002b340     sf_runtime:sf_runtime.dll
+ 0002:00000348       __imp_sf_debug_set_chart_state_info 000000018002b348     sf_runtime:sf_runtime.dll
+ 0002:00000350       __imp_sf_debug_set_chart_substate_count 000000018002b350     sf_runtime:sf_runtime.dll
+ 0002:00000358       __imp_sf_debug_set_chart_decomposition 000000018002b358     sf_runtime:sf_runtime.dll
+ 0002:00000360       __imp_sf_debug_cv_init_chart 000000018002b360     sf_runtime:sf_runtime.dll
+ 0002:00000368       __imp_sf_debug_cv_init_state 000000018002b368     sf_runtime:sf_runtime.dll
+ 0002:00000370       __imp_sf_debug_cv_init_trans 000000018002b370     sf_runtime:sf_runtime.dll
+ 0002:00000378       __imp_cv_eml_init_script   000000018002b378     sf_runtime:sf_runtime.dll
+ 0002:00000380       __imp_cv_eml_init_fcn      000000018002b380     sf_runtime:sf_runtime.dll
+ 0002:00000388       __imp_cv_eml_init_if       000000018002b388     sf_runtime:sf_runtime.dll
+ 0002:00000390       __imp_sf_debug_set_chart_data_compiled_props 000000018002b390     sf_runtime:sf_runtime.dll
+ 0002:00000398       __imp_sf_debug_set_instance_data_value_ptr 000000018002b398     sf_runtime:sf_runtime.dll
+ 0002:000003a0       __imp_sf_debug_reset_current_state_configuration 000000018002b3a0     sf_runtime:sf_runtime.dll
+ 0002:000003a8       __imp_sim_mode_is_rtw_gen  000000018002b3a8     sf_runtime:sf_runtime.dll
+ 0002:000003b0       __imp_sim_mode_is_external 000000018002b3b0     sf_runtime:sf_runtime.dll
+ 0002:000003b8       __imp_sf_is_chart_inlinable 000000018002b3b8     sf_runtime:sf_runtime.dll
+ 0002:000003c0       __imp_sf_rtw_info_uint_prop 000000018002b3c0     sf_runtime:sf_runtime.dll
+ 0002:000003c8       __imp_sf_update_buildInfo  000000018002b3c8     sf_runtime:sf_runtime.dll
+ 0002:000003d0       __imp_sf_mark_chart_expressionable_inputs 000000018002b3d0     sf_runtime:sf_runtime.dll
+ 0002:000003d8       __imp_sf_mark_chart_reusable_outputs 000000018002b3d8     sf_runtime:sf_runtime.dll
+ 0002:000003e0       __imp_sf_set_rtw_dwork_info 000000018002b3e0     sf_runtime:sf_runtime.dll
+ 0002:000003e8       __imp_sf_mex_dup           000000018002b3e8     sf_runtime:sf_runtime.dll
+ 0002:000003f0       __imp_sf_mex_getcell       000000018002b3f0     sf_runtime:sf_runtime.dll
+ 0002:000003f8       __imp_sf_mex_decode_encoded_mx_struct_array 000000018002b3f8     sf_runtime:sf_runtime.dll
+ 0002:00000400       __imp_sf_mex_setcell       000000018002b400     sf_runtime:sf_runtime.dll
+ 0002:00000408       __imp_sf_mex_call_matlab   000000018002b408     sf_runtime:sf_runtime.dll
+ 0002:00000410       __imp_sf_mex_error_message 000000018002b410     sf_runtime:sf_runtime.dll
+ 0002:00000418       __imp_sf_mex_create        000000018002b418     sf_runtime:sf_runtime.dll
+ 0002:00000420       __imp_sf_mex_addfield      000000018002b420     sf_runtime:sf_runtime.dll
+ 0002:00000428       __imp_sf_mex_createcellmatrix 000000018002b428     sf_runtime:sf_runtime.dll
+ 0002:00000430       __imp_sf_mex_duplicatearraysafe 000000018002b430     sf_runtime:sf_runtime.dll
+ 0002:00000438       __imp_sf_mex_destroy       000000018002b438     sf_runtime:sf_runtime.dll
+ 0002:00000440       __imp_sf_mex_createstruct  000000018002b440     sf_runtime:sf_runtime.dll
+ 0002:00000448       __imp_sf_mex_assign        000000018002b448     sf_runtime:sf_runtime.dll
+ 0002:00000450       __imp_sf_mex_emlrtNameCapturePostProcessR2012a 000000018002b450     sf_runtime:sf_runtime.dll
+ 0002:00000458       __imp_sf_load_rtw_optimization_info 000000018002b458     sf_runtime:sf_runtime.dll
+ 0002:00000460       __imp_sf_debug_initialize_machine 000000018002b460     sf_runtime:sf_runtime.dll
+ 0002:00000468       __imp_sf_debug_set_machine_event_thresholds 000000018002b468     sf_runtime:sf_runtime.dll
+ 0002:00000470       __imp_sf_clear_error_manager_info 000000018002b470     sf_runtime:sf_runtime.dll
+ 0002:00000478       __imp_sf_debug_set_machine_data_thresholds 000000018002b478     sf_runtime:sf_runtime.dll
+ 0002:00000480       \177sf_runtime_NULL_THUNK_DATA 000000018002b480     sf_runtime:sf_runtime.dll
+ 0002:00000488       __xc_a                     000000018002b488     MSVCRT:cinitexe.obj
+ 0002:00000490       __xc_z                     000000018002b490     MSVCRT:cinitexe.obj
+ 0002:00000498       __xi_a                     000000018002b498     MSVCRT:cinitexe.obj
+ 0002:000004a8       __xi_z                     000000018002b4a8     MSVCRT:cinitexe.obj
+ 0002:000004b0       __real@41efd5bb1fe00000    000000018002b4b0     TempMeasure_sfun.obj
+ 0002:000004b8       __real@41ed7e2f02000000    000000018002b4b8     TempMeasure_sfun.obj
+ 0002:000004c0       __real@41e297482f000000    000000018002b4c0     TempMeasure_sfun.obj
+ 0002:000004c8       __real@41eaabff70a00000    000000018002b4c8     TempMeasure_sfun.obj
+ 0002:000004d0       __real@41ad4b2baa000000    000000018002b4d0     TempMeasure_sfun.obj
+ 0002:000004d8       __real@41e4f54984000000    000000018002b4d8     TempMeasure_sfun.obj
+ 0002:000004e0       __real@41e2ce78c3a00000    000000018002b4e0     TempMeasure_sfun.obj
+ 0002:000004e8       __real@41e6fa90b7000000    000000018002b4e8     TempMeasure_sfun.obj
+ 0002:000004f0       __real@41c6065a01800000    000000018002b4f0     TempMeasure_sfun.obj
+ 0002:000004f8       __real@41e89227c0200000    000000018002b4f8     TempMeasure_sfun.obj
+ 0002:00000500       __real@41bf8a41e3000000    000000018002b500     TempMeasure_sfun.obj
+ 0002:00000508       __real@41debc7ad4c00000    000000018002b508     TempMeasure_sfun.obj
+ 0002:00000510       __real@41ab3d548c000000    000000018002b510     TempMeasure_sfun.obj
+ 0002:00000518       __real@41be26fbbd000000    000000018002b518     TempMeasure_sfun.obj
+ 0002:00000520       __real@41e1a84475c00000    000000018002b520     TempMeasure_sfun.obj
+ 0002:00000528       __real@41efc9e75c000000    000000018002b528     TempMeasure_sfun.obj
+ 0002:00000530       __real@41e9ea8348400000    000000018002b530     c1_TempMeasure.obj
+ 0002:00000538       __real@41e4137ffc800000    000000018002b538     c1_TempMeasure.obj
+ 0002:00000540       __real@41d354d216000000    000000018002b540     c1_TempMeasure.obj
+ 0002:00000548       __real@41eae9ee30000000    000000018002b548     c1_TempMeasure.obj
+ 0002:00000550       __real@4024000000000000    000000018002b550     c1_TempMeasure.obj
+ 0002:00000558       __real@3ff0000000000000    000000018002b558     c1_TempMeasure.obj
+ 0002:00000560       __real@403a8d916872b021    000000018002b560     c1_TempMeasure.obj
+ 0002:00000568       __real@408b800000000000    000000018002b568     c1_TempMeasure.obj
+ 0002:00000570       __real@40c3880000000000    000000018002b570     c1_TempMeasure.obj
+ 0002:00000578       __real@4000000000000000    000000018002b578     c1_TempMeasure.obj
+ 0002:00000580       __real@418948fb28000000    000000018002b580     c2_TempMeasure.obj
+ 0002:00000588       __real@41e85002b2400000    000000018002b588     c2_TempMeasure.obj
+ 0002:00000590       __real@41e424aed7e00000    000000018002b590     c2_TempMeasure.obj
+ 0002:00000598       __real@41db5802d4400000    000000018002b598     c2_TempMeasure.obj
+ 0002:000005a0       __real@0000000000000000    000000018002b5a0     c2_TempMeasure.obj
+ 0002:000005b0       DYNAMIC_DIMENSION_DEF      000000018002b5b0     TempMeasure_sfun_registry.obj
+ 0002:000005d0       _ssBadLevel2InputAccessMsg 000000018002b5d0     TempMeasure_sfun_registry.obj
+ 0002:00000760       _ssBadLevel2DirectFeedMsg  000000018002b760     TempMeasure_sfun_registry.obj
+ 0002:000008a0       _ssBadLevel2DirectFeedSolutionMsg 000000018002b8a0     TempMeasure_sfun_registry.obj
+ 0002:00000910       _ssBadLevel2ZeroDirectFeedMsg 000000018002b910     TempMeasure_sfun_registry.obj
+ 0002:00000a50       _ssBadLevel2ZeroDirectFeedMsg2 000000018002ba50     TempMeasure_sfun_registry.obj
+ 0002:00000b38       __real@bff0000000000000    000000018002bb38     TempMeasure_sfun_registry.obj
+ 0002:00000b40       __real@41602cbca0000000    000000018002bb40     TempMeasure_sfun_registry.obj
+ 0002:00000b48       _pDefaultRawDllMain        000000018002bb48     MSVCRT:crtdll.obj
+ 0002:00000b48       _pRawDllMain               000000018002bb48     MSVCRT:crtdll.obj
+ 0002:00000b60       ?ProcessDetach@NativeDll@<CrtImplementationDetails>@@0IB 000000018002bb60     MSVCRT:tncleanup.obj
+ 0002:00000b64       ?ProcessAttach@NativeDll@<CrtImplementationDetails>@@0IB 000000018002bb64     MSVCRT:tncleanup.obj
+ 0002:00000b68       ?ThreadAttach@NativeDll@<CrtImplementationDetails>@@0IB 000000018002bb68     MSVCRT:tncleanup.obj
+ 0002:00000b6c       ?ThreadDetach@NativeDll@<CrtImplementationDetails>@@0IB 000000018002bb6c     MSVCRT:tncleanup.obj
+ 0002:00000b70       ?ProcessVerifier@NativeDll@<CrtImplementationDetails>@@0IB 000000018002bb70     MSVCRT:tncleanup.obj
+ 0002:00000b78       __rtc_iaa                  000000018002bb78     MSVCRT:_initsect_.obj
+ 0002:00000b80       __rtc_izz                  000000018002bb80     MSVCRT:_initsect_.obj
+ 0002:00000b88       __rtc_taa                  000000018002bb88     MSVCRT:_initsect_.obj
+ 0002:00000b90       __rtc_tzz                  000000018002bb90     MSVCRT:_initsect_.obj
+ 0002:000019d0       __IMPORT_DESCRIPTOR_sf_runtime 000000018002c9d0     sf_runtime:sf_runtime.dll
+ 0002:000019e4       __IMPORT_DESCRIPTOR_libmx  000000018002c9e4     libmx:libmx.dll
+ 0002:000019f8       __IMPORT_DESCRIPTOR_libmex 000000018002c9f8     libmex:libmex.dll
+ 0002:00001a0c       __IMPORT_DESCRIPTOR_libut  000000018002ca0c     libut:libut.dll
+ 0002:00001a20       __IMPORT_DESCRIPTOR_MSVCR100 000000018002ca20     MSVCRT:MSVCR100.dll
+ 0002:00001a34       __IMPORT_DESCRIPTOR_KERNEL32 000000018002ca34     kernel32:KERNEL32.dll
+ 0002:00001a48       __NULL_IMPORT_DESCRIPTOR   000000018002ca48     sf_runtime:sf_runtime.dll
+ 0003:00005fd8       DYNAMIC_DIMENSION          0000000180033fd8     TempMeasure_sfun_registry.obj
+ 0003:00006be8       __security_cookie          0000000180034be8     MSVCRT:gs_cookie.obj
+ 0003:00006bf0       __security_cookie_complement 0000000180034bf0     MSVCRT:gs_cookie.obj
+ 0003:00006bf8       _fltused                   0000000180034bf8     MSVCRT:dllsupp.obj
+ 0003:00006c00       __native_dllmain_reason    0000000180034c00     MSVCRT:natstart.obj
+ 0003:00006c04       __native_vcclrit_reason    0000000180034c04     MSVCRT:natstart.obj
+ 0003:00006d48       sfGlobalDebugInstanceStruct 0000000180034d48     TempMeasure_sfun_registry.obj
+ 0003:000072d0       ?__type_info_root_node@@3U__type_info_node@@A 00000001800352d0     MSVCRT:tncleanup.obj
+ 0003:000072e0       _TempMeasureMachineNumber_ 00000001800352e0     <common>
+ 0003:000072e4       __native_startup_state     00000001800352e4     <common>
+ 0003:000072e8       __native_startup_lock      00000001800352e8     <common>
+ 0003:000072f0       __onexitend                00000001800352f0     <common>
+ 0003:000072f8       __onexitbegin              00000001800352f8     <common>
+ 0003:00007300       __dyn_tls_init_callback    0000000180035300     <common>
+
+ entry point at        0001:00028d90
+
+ Static symbols
+
+ 0001:00001380       c1_info_helper             0000000180002380 f   c1_TempMeasure.obj
+ 0001:00002450       c1_emlrt_marshallOut       0000000180003450 f   c1_TempMeasure.obj
+ 0001:000024e0       c1_b_emlrt_marshallOut     00000001800034e0 f   c1_TempMeasure.obj
+ 0001:00002df0       get_sim_state_c1_TempMeasure 0000000180003df0 f   c1_TempMeasure.obj
+ 0001:00003060       sf_get_sim_state_info_c1_TempMeasure 0000000180004060 f   c1_TempMeasure.obj
+ 0001:00003230       set_sim_state_c1_TempMeasure 0000000180004230 f   c1_TempMeasure.obj
+ 0001:00003350       c1_update_debugger_state_c1_TempMeasure 0000000180004350 f   c1_TempMeasure.obj
+ 0001:00003360       c1_emlrt_marshallIn        0000000180004360 f   c1_TempMeasure.obj
+ 0001:000033d0       c1_b_emlrt_marshallIn      00000001800043d0 f   c1_TempMeasure.obj
+ 0001:00003460       c1_d_emlrt_marshallIn      0000000180004460 f   c1_TempMeasure.obj
+ 0001:000034c0       c1_e_emlrt_marshallIn      00000001800044c0 f   c1_TempMeasure.obj
+ 0001:000035c0       mdlProcessParameters_c1_TempMeasure 00000001800045c0 f   c1_TempMeasure.obj
+ 0001:000036a0       initialize_params_c1_TempMeasure 00000001800046a0 f   c1_TempMeasure.obj
+ 0001:000036b0       mdlSetWorkWidths_c1_TempMeasure 00000001800046b0 f   c1_TempMeasure.obj
+ 0001:00003bb0       sf_get_instance_specialization 0000000180004bb0 f   c1_TempMeasure.obj
+ 0001:00003bc0       mdlStart_c1_TempMeasure    0000000180004bc0 f   c1_TempMeasure.obj
+ 0001:00003df0       init_dsm_address_info      0000000180004df0 f   c1_TempMeasure.obj
+ 0001:00003e00       chart_debug_initialization 0000000180004e00 f   c1_TempMeasure.obj
+ 0001:00004870       init_script_number_translation 0000000180005870 f   c1_TempMeasure.obj
+ 0001:00004890       c1_sf_marshallOut          0000000180005890 f   c1_TempMeasure.obj
+ 0001:00004940       c1_sf_marshallIn           0000000180005940 f   c1_TempMeasure.obj
+ 0001:000049e0       sf_opaque_initialize_c1_TempMeasure 00000001800059e0 f   c1_TempMeasure.obj
+ 0001:00004a20       initialize_c1_TempMeasure  0000000180005a20 f   c1_TempMeasure.obj
+ 0001:00004a70       sf_opaque_enable_c1_TempMeasure 0000000180005a70 f   c1_TempMeasure.obj
+ 0001:00004a90       enable_c1_TempMeasure      0000000180005a90 f   c1_TempMeasure.obj
+ 0001:00004ac0       sf_opaque_disable_c1_TempMeasure 0000000180005ac0 f   c1_TempMeasure.obj
+ 0001:00004ae0       disable_c1_TempMeasure     0000000180005ae0 f   c1_TempMeasure.obj
+ 0001:00004b10       sf_opaque_gateway_c1_TempMeasure 0000000180005b10 f   c1_TempMeasure.obj
+ 0001:00004b30       sf_gateway_c1_TempMeasure  0000000180005b30 f   c1_TempMeasure.obj
+ 0001:000055a0       sf_opaque_get_sim_state_c1_TempMeasure 00000001800065a0 f   c1_TempMeasure.obj
+ 0001:000055c0       sf_opaque_set_sim_state_c1_TempMeasure 00000001800065c0 f   c1_TempMeasure.obj
+ 0001:000055f0       sf_opaque_terminate_c1_TempMeasure 00000001800065f0 f   c1_TempMeasure.obj
+ 0001:00005690       finalize_c1_TempMeasure    0000000180006690 f   c1_TempMeasure.obj
+ 0001:000056a0       sf_opaque_init_subchart_simstructs 00000001800066a0 f   c1_TempMeasure.obj
+ 0001:000056c0       initSimStructsc1_TempMeasure 00000001800066c0 f   c1_TempMeasure.obj
+ 0001:000056d0       mdlRTW_c1_TempMeasure      00000001800066d0 f   c1_TempMeasure.obj
+ 0001:00005ee0       get_sim_state_c2_TempMeasure 0000000180006ee0 f   c2_TempMeasure.obj
+ 0001:00006220       sf_get_sim_state_info_c2_TempMeasure 0000000180007220 f   c2_TempMeasure.obj
+ 0001:000063f0       set_sim_state_c2_TempMeasure 00000001800073f0 f   c2_TempMeasure.obj
+ 0001:000065c0       c2_update_debugger_state_c2_TempMeasure 00000001800075c0 f   c2_TempMeasure.obj
+ 0001:00006ab0       c2_emlrt_marshallIn        0000000180007ab0 f   c2_TempMeasure.obj
+ 0001:00006b20       c2_b_emlrt_marshallIn      0000000180007b20 f   c2_TempMeasure.obj
+ 0001:00006bb0       c2_e_emlrt_marshallIn      0000000180007bb0 f   c2_TempMeasure.obj
+ 0001:00006c10       c2_f_emlrt_marshallIn      0000000180007c10 f   c2_TempMeasure.obj
+ 0001:00006ca0       c2_g_emlrt_marshallIn      0000000180007ca0 f   c2_TempMeasure.obj
+ 0001:00006d00       c2_h_emlrt_marshallIn      0000000180007d00 f   c2_TempMeasure.obj
+ 0001:00006d90       c2_i_emlrt_marshallIn      0000000180007d90 f   c2_TempMeasure.obj
+ 0001:00006e10       c2_j_emlrt_marshallIn      0000000180007e10 f   c2_TempMeasure.obj
+ 0001:00006f20       mdlProcessParameters_c2_TempMeasure 0000000180007f20 f   c2_TempMeasure.obj
+ 0001:00007000       initialize_params_c2_TempMeasure 0000000180008000 f   c2_TempMeasure.obj
+ 0001:00007010       mdlSetWorkWidths_c2_TempMeasure 0000000180008010 f   c2_TempMeasure.obj
+ 0001:00007510       sf_get_instance_specialization 0000000180008510 f   c2_TempMeasure.obj
+ 0001:00007520       sf_set_sfun_dwork_info     0000000180008520 f   c2_TempMeasure.obj
+ 0001:00007560       mdlStart_c2_TempMeasure    0000000180008560 f   c2_TempMeasure.obj
+ 0001:000077a0       init_dsm_address_info      00000001800087a0 f   c2_TempMeasure.obj
+ 0001:000077b0       chart_debug_initialization 00000001800087b0 f   c2_TempMeasure.obj
+ 0001:000088a0       init_script_number_translation 00000001800098a0 f   c2_TempMeasure.obj
+ 0001:000088c0       c2_sf_marshallOut          00000001800098c0 f   c2_TempMeasure.obj
+ 0001:00008970       c2_sf_marshallIn           0000000180009970 f   c2_TempMeasure.obj
+ 0001:00008a10       c2_b_sf_marshallOut        0000000180009a10 f   c2_TempMeasure.obj
+ 0001:00008ac0       sf_opaque_initialize_c2_TempMeasure 0000000180009ac0 f   c2_TempMeasure.obj
+ 0001:00008b10       initialize_c2_TempMeasure  0000000180009b10 f   c2_TempMeasure.obj
+ 0001:00008bf0       sf_check_dwork_consistency 0000000180009bf0 f   c2_TempMeasure.obj
+ 0001:00008ce0       sf_opaque_enable_c2_TempMeasure 0000000180009ce0 f   c2_TempMeasure.obj
+ 0001:00008d00       enable_c2_TempMeasure      0000000180009d00 f   c2_TempMeasure.obj
+ 0001:00008d30       sf_opaque_disable_c2_TempMeasure 0000000180009d30 f   c2_TempMeasure.obj
+ 0001:00008d50       disable_c2_TempMeasure     0000000180009d50 f   c2_TempMeasure.obj
+ 0001:00008d80       sf_opaque_gateway_c2_TempMeasure 0000000180009d80 f   c2_TempMeasure.obj
+ 0001:00008da0       sf_gateway_c2_TempMeasure  0000000180009da0 f   c2_TempMeasure.obj
+ 0001:0000ae80       c2_set_sim_state_side_effects_c2_TempMeasure 000000018000be80 f   c2_TempMeasure.obj
+ 0001:0000af30       c2_b_sf_marshallIn         000000018000bf30 f   c2_TempMeasure.obj
+ 0001:0000afd0       c2_c_emlrt_marshallIn      000000018000bfd0 f   c2_TempMeasure.obj
+ 0001:0000b060       c2_updateDataWrittenToVector 000000018000c060 f   c2_TempMeasure.obj
+ 0001:0000b0e0       sf_opaque_ext_mode_exec_c2_TempMeasure 000000018000c0e0 f   c2_TempMeasure.obj
+ 0001:0000b100       ext_mode_exec_c2_TempMeasure 000000018000c100 f   c2_TempMeasure.obj
+ 0001:0000b120       sf_opaque_get_sim_state_c2_TempMeasure 000000018000c120 f   c2_TempMeasure.obj
+ 0001:0000b140       sf_opaque_set_sim_state_c2_TempMeasure 000000018000c140 f   c2_TempMeasure.obj
+ 0001:0000b170       sf_opaque_terminate_c2_TempMeasure 000000018000c170 f   c2_TempMeasure.obj
+ 0001:0000b210       finalize_c2_TempMeasure    000000018000c210 f   c2_TempMeasure.obj
+ 0001:0000b240       sf_opaque_init_subchart_simstructs 000000018000c240 f   c2_TempMeasure.obj
+ 0001:0000b260       initSimStructsc2_TempMeasure 000000018000c260 f   c2_TempMeasure.obj
+ 0001:0000b270       sf_get_sfun_dwork_checksum 000000018000c270 f   c2_TempMeasure.obj
+ 0001:0000b280       mdlRTW_c2_TempMeasure      000000018000c280 f   c2_TempMeasure.obj
+ 0001:0000ba90       get_sim_state_c3_TempMeasure 000000018000ca90 f   c3_TempMeasure.obj
+ 0001:0000bdd0       sf_get_sim_state_info_c3_TempMeasure 000000018000cdd0 f   c3_TempMeasure.obj
+ 0001:0000bfa0       set_sim_state_c3_TempMeasure 000000018000cfa0 f   c3_TempMeasure.obj
+ 0001:0000c170       c3_update_debugger_state_c3_TempMeasure 000000018000d170 f   c3_TempMeasure.obj
+ 0001:0000c660       c3_emlrt_marshallIn        000000018000d660 f   c3_TempMeasure.obj
+ 0001:0000c6d0       c3_b_emlrt_marshallIn      000000018000d6d0 f   c3_TempMeasure.obj
+ 0001:0000c760       c3_e_emlrt_marshallIn      000000018000d760 f   c3_TempMeasure.obj
+ 0001:0000c7c0       c3_f_emlrt_marshallIn      000000018000d7c0 f   c3_TempMeasure.obj
+ 0001:0000c850       c3_g_emlrt_marshallIn      000000018000d850 f   c3_TempMeasure.obj
+ 0001:0000c8b0       c3_h_emlrt_marshallIn      000000018000d8b0 f   c3_TempMeasure.obj
+ 0001:0000c940       c3_i_emlrt_marshallIn      000000018000d940 f   c3_TempMeasure.obj
+ 0001:0000c9c0       c3_j_emlrt_marshallIn      000000018000d9c0 f   c3_TempMeasure.obj
+ 0001:0000cad0       mdlProcessParameters_c3_TempMeasure 000000018000dad0 f   c3_TempMeasure.obj
+ 0001:0000cbb0       initialize_params_c3_TempMeasure 000000018000dbb0 f   c3_TempMeasure.obj
+ 0001:0000cbc0       mdlSetWorkWidths_c3_TempMeasure 000000018000dbc0 f   c3_TempMeasure.obj
+ 0001:0000d0c0       sf_get_instance_specialization 000000018000e0c0 f   c3_TempMeasure.obj
+ 0001:0000d0d0       sf_set_sfun_dwork_info     000000018000e0d0 f   c3_TempMeasure.obj
+ 0001:0000d110       mdlStart_c3_TempMeasure    000000018000e110 f   c3_TempMeasure.obj
+ 0001:0000d350       init_dsm_address_info      000000018000e350 f   c3_TempMeasure.obj
+ 0001:0000d360       chart_debug_initialization 000000018000e360 f   c3_TempMeasure.obj
+ 0001:0000e450       init_script_number_translation 000000018000f450 f   c3_TempMeasure.obj
+ 0001:0000e470       c3_sf_marshallOut          000000018000f470 f   c3_TempMeasure.obj
+ 0001:0000e520       c3_sf_marshallIn           000000018000f520 f   c3_TempMeasure.obj
+ 0001:0000e5c0       c3_b_sf_marshallOut        000000018000f5c0 f   c3_TempMeasure.obj
+ 0001:0000e670       sf_opaque_initialize_c3_TempMeasure 000000018000f670 f   c3_TempMeasure.obj
+ 0001:0000e6c0       initialize_c3_TempMeasure  000000018000f6c0 f   c3_TempMeasure.obj
+ 0001:0000e7a0       sf_check_dwork_consistency 000000018000f7a0 f   c3_TempMeasure.obj
+ 0001:0000e890       sf_opaque_enable_c3_TempMeasure 000000018000f890 f   c3_TempMeasure.obj
+ 0001:0000e8b0       enable_c3_TempMeasure      000000018000f8b0 f   c3_TempMeasure.obj
+ 0001:0000e8e0       sf_opaque_disable_c3_TempMeasure 000000018000f8e0 f   c3_TempMeasure.obj
+ 0001:0000e900       disable_c3_TempMeasure     000000018000f900 f   c3_TempMeasure.obj
+ 0001:0000e930       sf_opaque_gateway_c3_TempMeasure 000000018000f930 f   c3_TempMeasure.obj
+ 0001:0000e950       sf_gateway_c3_TempMeasure  000000018000f950 f   c3_TempMeasure.obj
+ 0001:00010a30       c3_set_sim_state_side_effects_c3_TempMeasure 0000000180011a30 f   c3_TempMeasure.obj
+ 0001:00010ae0       c3_b_sf_marshallIn         0000000180011ae0 f   c3_TempMeasure.obj
+ 0001:00010b80       c3_c_emlrt_marshallIn      0000000180011b80 f   c3_TempMeasure.obj
+ 0001:00010c10       c3_updateDataWrittenToVector 0000000180011c10 f   c3_TempMeasure.obj
+ 0001:00010c90       sf_opaque_ext_mode_exec_c3_TempMeasure 0000000180011c90 f   c3_TempMeasure.obj
+ 0001:00010cb0       ext_mode_exec_c3_TempMeasure 0000000180011cb0 f   c3_TempMeasure.obj
+ 0001:00010cd0       sf_opaque_get_sim_state_c3_TempMeasure 0000000180011cd0 f   c3_TempMeasure.obj
+ 0001:00010cf0       sf_opaque_set_sim_state_c3_TempMeasure 0000000180011cf0 f   c3_TempMeasure.obj
+ 0001:00010d20       sf_opaque_terminate_c3_TempMeasure 0000000180011d20 f   c3_TempMeasure.obj
+ 0001:00010dc0       finalize_c3_TempMeasure    0000000180011dc0 f   c3_TempMeasure.obj
+ 0001:00010df0       sf_opaque_init_subchart_simstructs 0000000180011df0 f   c3_TempMeasure.obj
+ 0001:00010e10       initSimStructsc3_TempMeasure 0000000180011e10 f   c3_TempMeasure.obj
+ 0001:00010e20       sf_get_sfun_dwork_checksum 0000000180011e20 f   c3_TempMeasure.obj
+ 0001:00010e30       mdlRTW_c3_TempMeasure      0000000180011e30 f   c3_TempMeasure.obj
+ 0001:00011640       get_sim_state_c4_TempMeasure 0000000180012640 f   c4_TempMeasure.obj
+ 0001:00011970       sf_get_sim_state_info_c4_TempMeasure 0000000180012970 f   c4_TempMeasure.obj
+ 0001:00011b40       set_sim_state_c4_TempMeasure 0000000180012b40 f   c4_TempMeasure.obj
+ 0001:00011d10       c4_update_debugger_state_c4_TempMeasure 0000000180012d10 f   c4_TempMeasure.obj
+ 0001:000121f0       c4_emlrt_marshallIn        00000001800131f0 f   c4_TempMeasure.obj
+ 0001:00012260       c4_b_emlrt_marshallIn      0000000180013260 f   c4_TempMeasure.obj
+ 0001:000122f0       c4_e_emlrt_marshallIn      00000001800132f0 f   c4_TempMeasure.obj
+ 0001:00012350       c4_f_emlrt_marshallIn      0000000180013350 f   c4_TempMeasure.obj
+ 0001:000123e0       c4_g_emlrt_marshallIn      00000001800133e0 f   c4_TempMeasure.obj
+ 0001:00012440       c4_h_emlrt_marshallIn      0000000180013440 f   c4_TempMeasure.obj
+ 0001:000124d0       c4_i_emlrt_marshallIn      00000001800134d0 f   c4_TempMeasure.obj
+ 0001:00012550       c4_j_emlrt_marshallIn      0000000180013550 f   c4_TempMeasure.obj
+ 0001:00012660       mdlProcessParameters_c4_TempMeasure 0000000180013660 f   c4_TempMeasure.obj
+ 0001:00012740       initialize_params_c4_TempMeasure 0000000180013740 f   c4_TempMeasure.obj
+ 0001:00012750       mdlSetWorkWidths_c4_TempMeasure 0000000180013750 f   c4_TempMeasure.obj
+ 0001:00012c50       sf_get_instance_specialization 0000000180013c50 f   c4_TempMeasure.obj
+ 0001:00012c60       sf_set_sfun_dwork_info     0000000180013c60 f   c4_TempMeasure.obj
+ 0001:00012ca0       mdlStart_c4_TempMeasure    0000000180013ca0 f   c4_TempMeasure.obj
+ 0001:00012ee0       init_dsm_address_info      0000000180013ee0 f   c4_TempMeasure.obj
+ 0001:00012ef0       chart_debug_initialization 0000000180013ef0 f   c4_TempMeasure.obj
+ 0001:00013fe0       init_script_number_translation 0000000180014fe0 f   c4_TempMeasure.obj
+ 0001:00014000       c4_sf_marshallOut          0000000180015000 f   c4_TempMeasure.obj
+ 0001:000140b0       c4_sf_marshallIn           00000001800150b0 f   c4_TempMeasure.obj
+ 0001:00014150       c4_b_sf_marshallOut        0000000180015150 f   c4_TempMeasure.obj
+ 0001:00014200       sf_opaque_initialize_c4_TempMeasure 0000000180015200 f   c4_TempMeasure.obj
+ 0001:00014250       initialize_c4_TempMeasure  0000000180015250 f   c4_TempMeasure.obj
+ 0001:00014330       sf_check_dwork_consistency 0000000180015330 f   c4_TempMeasure.obj
+ 0001:00014420       sf_opaque_enable_c4_TempMeasure 0000000180015420 f   c4_TempMeasure.obj
+ 0001:00014440       enable_c4_TempMeasure      0000000180015440 f   c4_TempMeasure.obj
+ 0001:00014470       sf_opaque_disable_c4_TempMeasure 0000000180015470 f   c4_TempMeasure.obj
+ 0001:00014490       disable_c4_TempMeasure     0000000180015490 f   c4_TempMeasure.obj
+ 0001:000144c0       sf_opaque_gateway_c4_TempMeasure 00000001800154c0 f   c4_TempMeasure.obj
+ 0001:000144e0       sf_gateway_c4_TempMeasure  00000001800154e0 f   c4_TempMeasure.obj
+ 0001:000165c0       c4_set_sim_state_side_effects_c4_TempMeasure 00000001800175c0 f   c4_TempMeasure.obj
+ 0001:00016670       c4_b_sf_marshallIn         0000000180017670 f   c4_TempMeasure.obj
+ 0001:00016710       c4_c_emlrt_marshallIn      0000000180017710 f   c4_TempMeasure.obj
+ 0001:000167a0       c4_updateDataWrittenToVector 00000001800177a0 f   c4_TempMeasure.obj
+ 0001:00016820       sf_opaque_ext_mode_exec_c4_TempMeasure 0000000180017820 f   c4_TempMeasure.obj
+ 0001:00016840       ext_mode_exec_c4_TempMeasure 0000000180017840 f   c4_TempMeasure.obj
+ 0001:00016860       sf_opaque_get_sim_state_c4_TempMeasure 0000000180017860 f   c4_TempMeasure.obj
+ 0001:00016880       sf_opaque_set_sim_state_c4_TempMeasure 0000000180017880 f   c4_TempMeasure.obj
+ 0001:000168b0       sf_opaque_terminate_c4_TempMeasure 00000001800178b0 f   c4_TempMeasure.obj
+ 0001:00016950       finalize_c4_TempMeasure    0000000180017950 f   c4_TempMeasure.obj
+ 0001:00016980       sf_opaque_init_subchart_simstructs 0000000180017980 f   c4_TempMeasure.obj
+ 0001:000169a0       initSimStructsc4_TempMeasure 00000001800179a0 f   c4_TempMeasure.obj
+ 0001:000169b0       sf_get_sfun_dwork_checksum 00000001800179b0 f   c4_TempMeasure.obj
+ 0001:000169c0       mdlRTW_c4_TempMeasure      00000001800179c0 f   c4_TempMeasure.obj
+ 0001:000171d0       get_sim_state_c5_TempMeasure 00000001800181d0 f   c5_TempMeasure.obj
+ 0001:00017510       sf_get_sim_state_info_c5_TempMeasure 0000000180018510 f   c5_TempMeasure.obj
+ 0001:000176e0       set_sim_state_c5_TempMeasure 00000001800186e0 f   c5_TempMeasure.obj
+ 0001:000178b0       c5_update_debugger_state_c5_TempMeasure 00000001800188b0 f   c5_TempMeasure.obj
+ 0001:00017d90       c5_emlrt_marshallIn        0000000180018d90 f   c5_TempMeasure.obj
+ 0001:00017e00       c5_b_emlrt_marshallIn      0000000180018e00 f   c5_TempMeasure.obj
+ 0001:00017e90       c5_e_emlrt_marshallIn      0000000180018e90 f   c5_TempMeasure.obj
+ 0001:00017ef0       c5_f_emlrt_marshallIn      0000000180018ef0 f   c5_TempMeasure.obj
+ 0001:00017f80       c5_g_emlrt_marshallIn      0000000180018f80 f   c5_TempMeasure.obj
+ 0001:00017fe0       c5_h_emlrt_marshallIn      0000000180018fe0 f   c5_TempMeasure.obj
+ 0001:00018070       c5_i_emlrt_marshallIn      0000000180019070 f   c5_TempMeasure.obj
+ 0001:000180f0       c5_j_emlrt_marshallIn      00000001800190f0 f   c5_TempMeasure.obj
+ 0001:00018200       mdlProcessParameters_c5_TempMeasure 0000000180019200 f   c5_TempMeasure.obj
+ 0001:000182e0       initialize_params_c5_TempMeasure 00000001800192e0 f   c5_TempMeasure.obj
+ 0001:000182f0       mdlSetWorkWidths_c5_TempMeasure 00000001800192f0 f   c5_TempMeasure.obj
+ 0001:000187f0       sf_get_instance_specialization 00000001800197f0 f   c5_TempMeasure.obj
+ 0001:00018800       sf_set_sfun_dwork_info     0000000180019800 f   c5_TempMeasure.obj
+ 0001:00018840       mdlStart_c5_TempMeasure    0000000180019840 f   c5_TempMeasure.obj
+ 0001:00018a80       init_dsm_address_info      0000000180019a80 f   c5_TempMeasure.obj
+ 0001:00018a90       chart_debug_initialization 0000000180019a90 f   c5_TempMeasure.obj
+ 0001:00019b80       init_script_number_translation 000000018001ab80 f   c5_TempMeasure.obj
+ 0001:00019ba0       c5_sf_marshallOut          000000018001aba0 f   c5_TempMeasure.obj
+ 0001:00019c50       c5_sf_marshallIn           000000018001ac50 f   c5_TempMeasure.obj
+ 0001:00019cf0       c5_b_sf_marshallOut        000000018001acf0 f   c5_TempMeasure.obj
+ 0001:00019da0       sf_opaque_initialize_c5_TempMeasure 000000018001ada0 f   c5_TempMeasure.obj
+ 0001:00019df0       initialize_c5_TempMeasure  000000018001adf0 f   c5_TempMeasure.obj
+ 0001:00019ed0       sf_check_dwork_consistency 000000018001aed0 f   c5_TempMeasure.obj
+ 0001:00019fc0       sf_opaque_enable_c5_TempMeasure 000000018001afc0 f   c5_TempMeasure.obj
+ 0001:00019fe0       enable_c5_TempMeasure      000000018001afe0 f   c5_TempMeasure.obj
+ 0001:0001a010       sf_opaque_disable_c5_TempMeasure 000000018001b010 f   c5_TempMeasure.obj
+ 0001:0001a030       disable_c5_TempMeasure     000000018001b030 f   c5_TempMeasure.obj
+ 0001:0001a060       sf_opaque_gateway_c5_TempMeasure 000000018001b060 f   c5_TempMeasure.obj
+ 0001:0001a080       sf_gateway_c5_TempMeasure  000000018001b080 f   c5_TempMeasure.obj
+ 0001:0001c160       c5_set_sim_state_side_effects_c5_TempMeasure 000000018001d160 f   c5_TempMeasure.obj
+ 0001:0001c210       c5_b_sf_marshallIn         000000018001d210 f   c5_TempMeasure.obj
+ 0001:0001c2b0       c5_c_emlrt_marshallIn      000000018001d2b0 f   c5_TempMeasure.obj
+ 0001:0001c340       c5_updateDataWrittenToVector 000000018001d340 f   c5_TempMeasure.obj
+ 0001:0001c3c0       sf_opaque_ext_mode_exec_c5_TempMeasure 000000018001d3c0 f   c5_TempMeasure.obj
+ 0001:0001c3e0       ext_mode_exec_c5_TempMeasure 000000018001d3e0 f   c5_TempMeasure.obj
+ 0001:0001c400       sf_opaque_get_sim_state_c5_TempMeasure 000000018001d400 f   c5_TempMeasure.obj
+ 0001:0001c420       sf_opaque_set_sim_state_c5_TempMeasure 000000018001d420 f   c5_TempMeasure.obj
+ 0001:0001c450       sf_opaque_terminate_c5_TempMeasure 000000018001d450 f   c5_TempMeasure.obj
+ 0001:0001c4f0       finalize_c5_TempMeasure    000000018001d4f0 f   c5_TempMeasure.obj
+ 0001:0001c520       sf_opaque_init_subchart_simstructs 000000018001d520 f   c5_TempMeasure.obj
+ 0001:0001c540       initSimStructsc5_TempMeasure 000000018001d540 f   c5_TempMeasure.obj
+ 0001:0001c550       sf_get_sfun_dwork_checksum 000000018001d550 f   c5_TempMeasure.obj
+ 0001:0001c560       mdlRTW_c5_TempMeasure      000000018001d560 f   c5_TempMeasure.obj
+ 0001:0001cd70       get_sim_state_c7_TempMeasure 000000018001dd70 f   c7_TempMeasure.obj
+ 0001:0001d0b0       sf_get_sim_state_info_c7_TempMeasure 000000018001e0b0 f   c7_TempMeasure.obj
+ 0001:0001d280       set_sim_state_c7_TempMeasure 000000018001e280 f   c7_TempMeasure.obj
+ 0001:0001d450       c7_update_debugger_state_c7_TempMeasure 000000018001e450 f   c7_TempMeasure.obj
+ 0001:0001d930       c7_emlrt_marshallIn        000000018001e930 f   c7_TempMeasure.obj
+ 0001:0001d9a0       c7_b_emlrt_marshallIn      000000018001e9a0 f   c7_TempMeasure.obj
+ 0001:0001da30       c7_e_emlrt_marshallIn      000000018001ea30 f   c7_TempMeasure.obj
+ 0001:0001da90       c7_f_emlrt_marshallIn      000000018001ea90 f   c7_TempMeasure.obj
+ 0001:0001db20       c7_g_emlrt_marshallIn      000000018001eb20 f   c7_TempMeasure.obj
+ 0001:0001db80       c7_h_emlrt_marshallIn      000000018001eb80 f   c7_TempMeasure.obj
+ 0001:0001dc10       c7_i_emlrt_marshallIn      000000018001ec10 f   c7_TempMeasure.obj
+ 0001:0001dc90       c7_j_emlrt_marshallIn      000000018001ec90 f   c7_TempMeasure.obj
+ 0001:0001dda0       mdlProcessParameters_c7_TempMeasure 000000018001eda0 f   c7_TempMeasure.obj
+ 0001:0001de80       initialize_params_c7_TempMeasure 000000018001ee80 f   c7_TempMeasure.obj
+ 0001:0001de90       mdlSetWorkWidths_c7_TempMeasure 000000018001ee90 f   c7_TempMeasure.obj
+ 0001:0001e390       sf_get_instance_specialization 000000018001f390 f   c7_TempMeasure.obj
+ 0001:0001e3a0       sf_set_sfun_dwork_info     000000018001f3a0 f   c7_TempMeasure.obj
+ 0001:0001e3e0       mdlStart_c7_TempMeasure    000000018001f3e0 f   c7_TempMeasure.obj
+ 0001:0001e620       init_dsm_address_info      000000018001f620 f   c7_TempMeasure.obj
+ 0001:0001e630       chart_debug_initialization 000000018001f630 f   c7_TempMeasure.obj
+ 0001:0001f720       init_script_number_translation 0000000180020720 f   c7_TempMeasure.obj
+ 0001:0001f740       c7_sf_marshallOut          0000000180020740 f   c7_TempMeasure.obj
+ 0001:0001f7f0       c7_sf_marshallIn           00000001800207f0 f   c7_TempMeasure.obj
+ 0001:0001f890       c7_b_sf_marshallOut        0000000180020890 f   c7_TempMeasure.obj
+ 0001:0001f940       sf_opaque_initialize_c7_TempMeasure 0000000180020940 f   c7_TempMeasure.obj
+ 0001:0001f990       initialize_c7_TempMeasure  0000000180020990 f   c7_TempMeasure.obj
+ 0001:0001fa70       sf_check_dwork_consistency 0000000180020a70 f   c7_TempMeasure.obj
+ 0001:0001fb60       sf_opaque_enable_c7_TempMeasure 0000000180020b60 f   c7_TempMeasure.obj
+ 0001:0001fb80       enable_c7_TempMeasure      0000000180020b80 f   c7_TempMeasure.obj
+ 0001:0001fbb0       sf_opaque_disable_c7_TempMeasure 0000000180020bb0 f   c7_TempMeasure.obj
+ 0001:0001fbd0       disable_c7_TempMeasure     0000000180020bd0 f   c7_TempMeasure.obj
+ 0001:0001fc00       sf_opaque_gateway_c7_TempMeasure 0000000180020c00 f   c7_TempMeasure.obj
+ 0001:0001fc20       sf_gateway_c7_TempMeasure  0000000180020c20 f   c7_TempMeasure.obj
+ 0001:00021ca0       c7_set_sim_state_side_effects_c7_TempMeasure 0000000180022ca0 f   c7_TempMeasure.obj
+ 0001:00021d50       c7_b_sf_marshallIn         0000000180022d50 f   c7_TempMeasure.obj
+ 0001:00021df0       c7_c_emlrt_marshallIn      0000000180022df0 f   c7_TempMeasure.obj
+ 0001:00021e80       c7_updateDataWrittenToVector 0000000180022e80 f   c7_TempMeasure.obj
+ 0001:00021f00       sf_opaque_ext_mode_exec_c7_TempMeasure 0000000180022f00 f   c7_TempMeasure.obj
+ 0001:00021f20       ext_mode_exec_c7_TempMeasure 0000000180022f20 f   c7_TempMeasure.obj
+ 0001:00021f40       sf_opaque_get_sim_state_c7_TempMeasure 0000000180022f40 f   c7_TempMeasure.obj
+ 0001:00021f60       sf_opaque_set_sim_state_c7_TempMeasure 0000000180022f60 f   c7_TempMeasure.obj
+ 0001:00021f90       sf_opaque_terminate_c7_TempMeasure 0000000180022f90 f   c7_TempMeasure.obj
+ 0001:00022030       finalize_c7_TempMeasure    0000000180023030 f   c7_TempMeasure.obj
+ 0001:00022060       sf_opaque_init_subchart_simstructs 0000000180023060 f   c7_TempMeasure.obj
+ 0001:00022080       initSimStructsc7_TempMeasure 0000000180023080 f   c7_TempMeasure.obj
+ 0001:00022090       sf_get_sfun_dwork_checksum 0000000180023090 f   c7_TempMeasure.obj
+ 0001:000220a0       mdlRTW_c7_TempMeasure      00000001800230a0 f   c7_TempMeasure.obj
+ 0001:00022a60       getChartInfoFromSimStruct  0000000180023a60 f   TempMeasure_sfun_registry.obj
+ 0001:00024100       _ssFatalError              0000000180025100 f   TempMeasure_sfun_registry.obj
+ 0001:000271b0       ProcessMexSfunctionCmdLineCall 00000001800281b0 f   TempMeasure_sfun_registry.obj
+ 0001:00027310       sf_debug_api_wrapper       0000000180028310 f   TempMeasure_sfun_registry.obj
+ 0001:00027360       mdlStart                   0000000180028360 f   TempMeasure_sfun_registry.obj
+ 0001:00027390       mdl_start_processing       0000000180028390 f   TempMeasure_sfun_registry.obj
+ 0001:00027420       mdlTerminate               0000000180028420 f   TempMeasure_sfun_registry.obj
+ 0001:00027450       mdl_terminate_processing   0000000180028450 f   TempMeasure_sfun_registry.obj
+ 0001:000274d0       mdlInitializeSampleTimes   00000001800284d0 f   TempMeasure_sfun_registry.obj
+ 0001:00027500       mdlZeroCrossings           0000000180028500 f   TempMeasure_sfun_registry.obj
+ 0001:00027530       mdl_zeroCrossings_processing 0000000180028530 f   TempMeasure_sfun_registry.obj
+ 0001:00027570       mdlDerivatives             0000000180028570 f   TempMeasure_sfun_registry.obj
+ 0001:000275a0       mdl_derivatives_processing 00000001800285a0 f   TempMeasure_sfun_registry.obj
+ 0001:000275f0       mdlInitializeConditions    00000001800285f0 f   TempMeasure_sfun_registry.obj
+ 0001:00027620       mdl_initialize_conditions_processing 0000000180028620 f   TempMeasure_sfun_registry.obj
+ 0001:00027670       mdlEnable                  0000000180028670 f   TempMeasure_sfun_registry.obj
+ 0001:000276a0       mdl_enable_processing      00000001800286a0 f   TempMeasure_sfun_registry.obj
+ 0001:000276e0       mdlDisable                 00000001800286e0 f   TempMeasure_sfun_registry.obj
+ 0001:00027710       mdl_disable_processing     0000000180028710 f   TempMeasure_sfun_registry.obj
+ 0001:00027750       mdlOutputs                 0000000180028750 f   TempMeasure_sfun_registry.obj
+ 0001:00027780       mdl_outputs_processing     0000000180028780 f   TempMeasure_sfun_registry.obj
+ 0001:00027860       mdl_outputs_continuous_legacy 0000000180028860 f   TempMeasure_sfun_registry.obj
+ 0001:00027950       mdlGetTimeOfNextVarHit     0000000180028950 f   TempMeasure_sfun_registry.obj
+ 0001:000279a0       _ProcessMexSfunctionCmdLineCall 00000001800289a0 f   TempMeasure_sfun_registry.obj
+ 0001:000280f0       mdlSetWorkWidths           00000001800290f0 f   TempMeasure_sfun_registry.obj
+ 0001:00028120       mdlProcessParameters       0000000180029120 f   TempMeasure_sfun_registry.obj
+ 0001:00028150       mdlInitializeSizes         0000000180029150 f   TempMeasure_sfun_registry.obj
+ 0001:00028180       mdlExtModeExec             0000000180029180 f   TempMeasure_sfun_registry.obj
+ 0001:000281b0       mdl_ext_mode_exec_processing 00000001800291b0 f   TempMeasure_sfun_registry.obj
+ 0001:000281f0       mdlRTW                     00000001800291f0 f   TempMeasure_sfun_registry.obj
+ 0001:00028230       _CreateSimStruct           0000000180029230 f   TempMeasure_sfun_registry.obj
+ 0001:000283c0       _RegNumInputPortsCB        00000001800293c0 f   TempMeasure_sfun_registry.obj
+ 0001:00028440       _RegNumOutputPortsCB       0000000180029440 f   TempMeasure_sfun_registry.obj
+ 0001:00028998       pre_c_init                 0000000180029998 f   MSVCRT:crtdll.obj
+ 0001:00028c54       __DllMainCRTStartup        0000000180029c54 f   MSVCRT:crtdll.obj
+ 0001:000292c0       __DllMainCRTStartup$filt$0 000000018002a2c0 f   MSVCRT:crtdll.obj
+ 0001:000292f0       __DllMainCRTStartup$fin$1  000000018002a2f0 f   MSVCRT:crtdll.obj
+ 0001:0002930a       _onexit$fin$0              000000018002a30a f   MSVCRT:atonexit.obj
+ 0001:00029330       _IsNonwritableInCurrentImage$filt$0 000000018002a330 f   MSVCRT:pesect.obj

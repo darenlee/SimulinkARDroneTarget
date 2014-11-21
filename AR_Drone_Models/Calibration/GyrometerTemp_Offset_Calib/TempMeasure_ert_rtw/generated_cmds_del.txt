@@ -1,0 +1,1 @@
+killall -9 program.elf.respawner.sh;killall -9 program.elf;killall -9 TempMeasure.elf;cd update;rm TempMeasure.elf;exit 

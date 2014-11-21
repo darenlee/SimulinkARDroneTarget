@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<productinfo>
+   <name>AR Drone Timer Alternate</name>
+   <configurestartcall>configureTimer(modelBaseRate)</configurestartcall>
+   <interruptenablecall> </interruptenablecall>
+   <interruptdisablecall> </interruptdisablecall>
+   <sourcefile>$(TARGET_ROOT)/src/AR_Drone_Scheduler.c</sourcefile>
+   <includefile>AR_Drone_Scheduler.h</includefile>
+</productinfo>
