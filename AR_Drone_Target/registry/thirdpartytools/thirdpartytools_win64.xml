@@ -2,6 +2,6 @@
 <productinfo>
    <name>Code Sourcery ARM GNU-Linux Cross Compiler</name>
    <thirdpartytool>
-      <thirdpartytoolattribute Category="toolchain" RootFolder="C:\Users\Slovakad\MentorGraphics\Sourcery_CodeBench_Lite_for_ARM_GNU_Linux\bin" TokenName="CODE_SOURCERY" ToolName="Code Sourcery ARM-Linux"/>
+      <thirdpartytoolattribute Category="toolchain" RootFolder="C:\Program Files (x86)\CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_GNU_Linux\bin" TokenName="CODE_SOURCERY" ToolName="Code Sourcery ARM-Linux"/>
    </thirdpartytool>
 </productinfo>
