@@ -21,4 +21,8 @@ We would also like to thank:
 
 - Egoitz Martinez, Aimar Cordero Garcia and Asier Urcelay for providing us with the 3D VRML model of the AR Drone. Please contact this group on any questions related to the 3D model of the drone (Contact: egoitzml@gmail.com)
 
-- the Paparazzi community for developing and providing source code for drivers of the AR Drone 2.0.
+- The Paparazzi community for developing and providing source code for drivers of the AR Drone 2.0.
+
+- Omar Osorio for providing us a CAD model for the AR Drone 2.0 for Sim-Mechanics Import
+http://grabcad.com/library/drone-2-0/
+
