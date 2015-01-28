@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SimMechanicsImportXML version="1.0" xmlns="urn:mathworks:simmechanics:import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Created by="" on="10/01/14||11:47:56" using="SimMechanics Link Version 4.1" from="SolidWorks 22.0.0"/>
+<ModelUnits mass="kilogram" length="millimeter"/>
+<DataUnits mass="kilogram" length="meter"/>
+<RootAssembly name="Drone_Complete_Indoor_02" uid="Drone_Complete_Indoor_02" version="124">
+<AssemblyFile name="Drone_Complete_Indoor_02.SLDASM" type="SolidWorks Assembly"/>
+<InstanceTree>
+<Instance name="Plate-1" uid="Plate-1" entityUid="Plate*:*Default">
+<Transform>
+<Rotation>-1 0 0 0 1 0 0 0 -1</Rotation>
+<Translation>0 -0.0600427 0</Translation>
+</Transform>
+<VisualProperties>
+<Ambient r="0.0980392" g="0.0980392" b="0.0980392" a="1"/>
+<Diffuse r="0.0980392" g="0.0980392" b="0.0980392" a="1"/>
+<Specular r="0.0392157" g="0.0392157" b="0.0392157" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.4</Shininess>
+</VisualProperties>
+</Instance>
+<Instance name="Indoor_Hull_1-1" uid="Indoor_Hull_1-1" entityUid="Indoor_Hull_1*:*Default">
+<Transform>
+<Rotation>-1 0 0 0 -1 0 0 0 1</Rotation>
+<Translation>-0.000131015 -0.0369165 0.0419613</Translation>
+</Transform>
+</Instance>
+<Instance name="Body_06_indoor-1" uid="Body_06_indoor-1" entityUid="Body_06_indoor*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0 0 0</Translation>
+</Transform>
+<VisualProperties>
+<Ambient r="0.0980392" g="0.0980392" b="0.0980392" a="1"/>
+<Diffuse r="0.0980392" g="0.0980392" b="0.0980392" a="1"/>
+<Specular r="0.0392157" g="0.0392157" b="0.0392157" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.4</Shininess>
+</VisualProperties>
+</Instance>
+<Instance name="Cross_linkA2-1" uid="Cross_linkA2-1" entityUid="Cross_linkA2" rigid="true">
+<Transform>
+<Rotation>-0.709865 0.704338 0 -0.704338 -0.709865 0 0 0 1</Rotation>
+<Translation>-0.00090558 -0.0561482 0.0248987</Translation>
+</Transform>
+<VisualProperties>
+<Ambient r="0.0980392" g="0.0980392" b="0.0980392" a="1"/>
+<Diffuse r="0.0980392" g="0.0980392" b="0.0980392" a="1"/>
+<Specular r="0.0392157" g="0.0392157" b="0.0392157" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.4</Shininess>
+</VisualProperties>
+<Instance name="Cross_linkl-1" uid="Cross_linkl-1" entityUid="Cross_linkl*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0 0 0</Translation>
+</Transform>
+</Instance>
+<Instance name="Rotor_A2-1" uid="Rotor_A2-1" entityUid="Rotor_A2" rigid="true">
+<Transform>
+<Rotation>0 1 -0.000781246 -1 0 0 0 0.000781246 1</Rotation>
+<Translation>-3.01054e-005 -0.1583 -0.00831146</Translation>
+</Transform>
+<Instance name="Motor_mount_02-1" uid="Motor_mount_02-1" entityUid="Motor_mount_02*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0 0 0</Translation>
+</Transform>
+</Instance>
+<Instance name="motor_01-1" uid="motor_01-1" entityUid="motor_01*:*Default">
+<Transform>
+<Rotation>-0.999999 -0.00119362 0 0.00119362 -0.999999 0 0 0 1</Rotation>
+<Translation>0.00315 0 -0.0205981</Translation>
+</Transform>
+</Instance>
+<Instance name="Gear_small-1" uid="Gear_small-1" entityUid="Gear_small*:*Default">
+<Transform>
+<Rotation>-0.844672 -0.535284 0 0.535284 -0.844672 0 0 0 1</Rotation>
+<Translation>0.00315 0 0.0165459</Translation>
+</Transform>
+</Instance>
+<Instance name="Pine-1" uid="Pine-1" entityUid="Pine*:*Default">
+<Transform>
+<Rotation>0.778169 0.628055 0 0.628055 -0.778169 0 0 0 -1</Rotation>
+<Translation>0.02315 0 0.0169</Translation>
+</Transform>
+</Instance>
+<Instance name="Gear_01-1" uid="Gear_01-1" entityUid="Gear_01*:*Default">
+<Transform>
+<Rotation>-0.840958 -0.5411 0 0.5411 -0.840958 0 0 0 1</Rotation>
+<Translation>0.02315 0 0.01525</Translation>
+</Transform>
+</Instance>
+<Instance name="Wing_06-1" uid="Wing_06-1" entityUid="Wing_06*:*Default">
+<Transform>
+<Rotation>-0.840958 -0.5411 0 0.5411 -0.840958 0 0 0 1</Rotation>
+<Translation>0.0937592 -0.0378132 0.03395</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-1" uid="screw-1" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 -0.383049 -0.923728 0 0.923728 -0.383049 1 0 0</Rotation>
+<Translation>0.000865523 0.003877 0.00894345</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-2" uid="screw-2" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 -1 0 1 0 1 0 0</Rotation>
+<Translation>0.000934654 -0.00391692 0.00894345</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-3" uid="screw-3" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 -1 0 1 0 1 0 0</Rotation>
+<Translation>0.00764982 3.99131e-005 0.00894345</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-4" uid="screw-4" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 1 0 1 0 -1 0 0</Rotation>
+<Translation>-0.0194201 -0.00643855 -0.00344153</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-5" uid="screw-5" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 1 0 1 0 -1 0 0</Rotation>
+<Translation>-0.0191748 0.00633364 -0.00344153</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-6" uid="screw-6" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 1 0 1 0 -1 0 0</Rotation>
+<Translation>0.0215288 0.00354154 -0.00344153</Translation>
+</Transform>
+</Instance>
+<Instance name="Rod-1" uid="Rod-1" entityUid="Rod*:*Default">
+<Transform>
+<Rotation>0 0 -1 -1 0 0 0 1 0</Rotation>
+<Translation>-0.01865 3.32817e-005 0.00406563</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="Rotor_A2-2" uid="Rotor_A2-2" entityUid="Rotor_A2" rigid="true">
+<Transform>
+<Rotation>-1 9.4369e-016 0 -9.4369e-016 -1 -5.67261e-016 0 -5.67261e-016 1</Rotation>
+<Translation>-0.1583 2.93041e-005 -0.00831563</Translation>
+</Transform>
+<Instance name="Motor_mount_02-1" uid="Motor_mount_02-1" entityUid="Motor_mount_02*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0 0 0</Translation>
+</Transform>
+</Instance>
+<Instance name="motor_01-1" uid="motor_01-1" entityUid="motor_01*:*Default">
+<Transform>
+<Rotation>-0.999999 -0.00119362 0 0.00119362 -0.999999 0 0 0 1</Rotation>
+<Translation>0.00315 0 -0.0205981</Translation>
+</Transform>
+</Instance>
+<Instance name="Gear_small-1" uid="Gear_small-1" entityUid="Gear_small*:*Default">
+<Transform>
+<Rotation>-0.844672 -0.535284 0 0.535284 -0.844672 0 0 0 1</Rotation>
+<Translation>0.00315 0 0.0165459</Translation>
+</Transform>
+</Instance>
+<Instance name="Pine-1" uid="Pine-1" entityUid="Pine*:*Default">
+<Transform>
+<Rotation>0.778169 0.628055 0 0.628055 -0.778169 0 0 0 -1</Rotation>
+<Translation>0.02315 0 0.0169</Translation>
+</Transform>
+</Instance>
+<Instance name="Gear_01-1" uid="Gear_01-1" entityUid="Gear_01*:*Default">
+<Transform>
+<Rotation>-0.840958 -0.5411 0 0.5411 -0.840958 0 0 0 1</Rotation>
+<Translation>0.02315 0 0.01525</Translation>
+</Transform>
+</Instance>
+<Instance name="Wing_06-1" uid="Wing_06-1" entityUid="Wing_06*:*Default">
+<Transform>
+<Rotation>-0.840958 -0.5411 0 0.5411 -0.840958 0 0 0 1</Rotation>
+<Translation>0.0937592 -0.0378132 0.03395</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-1" uid="screw-1" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 -0.383049 -0.923728 0 0.923728 -0.383049 1 0 0</Rotation>
+<Translation>0.000865523 0.003877 0.00894345</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-2" uid="screw-2" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 -1 0 1 0 1 0 0</Rotation>
+<Translation>0.000934654 -0.00391692 0.00894345</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-3" uid="screw-3" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 -1 0 1 0 1 0 0</Rotation>
+<Translation>0.00764982 3.99131e-005 0.00894345</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-4" uid="screw-4" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 1 0 1 0 -1 0 0</Rotation>
+<Translation>-0.0194201 -0.00643855 -0.00344153</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-5" uid="screw-5" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 1 0 1 0 -1 0 0</Rotation>
+<Translation>-0.0191748 0.00633364 -0.00344153</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-6" uid="screw-6" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 1 0 1 0 -1 0 0</Rotation>
+<Translation>0.0215288 0.00354154 -0.00344153</Translation>
+</Transform>
+</Instance>
+<Instance name="Rod-1" uid="Rod-1" entityUid="Rod*:*Default">
+<Transform>
+<Rotation>0 0 -1 -1 0 0 0 1 0</Rotation>
+<Translation>-0.01865 3.32817e-005 0.00406563</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="Rotor_A2-3" uid="Rotor_A2-3" entityUid="Rotor_A2" rigid="true">
+<Transform>
+<Rotation>0 -1 -0.000781246 1 0 0 0 -0.000781246 1</Rotation>
+<Translation>3.6458e-005 0.1583 -0.00831141</Translation>
+</Transform>
+<Instance name="Motor_mount_02-1" uid="Motor_mount_02-1" entityUid="Motor_mount_02*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0 0 0</Translation>
+</Transform>
+</Instance>
+<Instance name="motor_01-1" uid="motor_01-1" entityUid="motor_01*:*Default">
+<Transform>
+<Rotation>-0.999999 -0.00119362 0 0.00119362 -0.999999 0 0 0 1</Rotation>
+<Translation>0.00315 0 -0.0205981</Translation>
+</Transform>
+</Instance>
+<Instance name="Gear_small-1" uid="Gear_small-1" entityUid="Gear_small*:*Default">
+<Transform>
+<Rotation>-0.844672 -0.535284 0 0.535284 -0.844672 0 0 0 1</Rotation>
+<Translation>0.00315 0 0.0165459</Translation>
+</Transform>
+</Instance>
+<Instance name="Pine-1" uid="Pine-1" entityUid="Pine*:*Default">
+<Transform>
+<Rotation>0.778169 0.628055 0 0.628055 -0.778169 0 0 0 -1</Rotation>
+<Translation>0.02315 0 0.0169</Translation>
+</Transform>
+</Instance>
+<Instance name="Gear_01-1" uid="Gear_01-1" entityUid="Gear_01*:*Default">
+<Transform>
+<Rotation>-0.840958 -0.5411 0 0.5411 -0.840958 0 0 0 1</Rotation>
+<Translation>0.02315 0 0.01525</Translation>
+</Transform>
+</Instance>
+<Instance name="Wing_06-1" uid="Wing_06-1" entityUid="Wing_06*:*Default">
+<Transform>
+<Rotation>-0.840958 -0.5411 0 0.5411 -0.840958 0 0 0 1</Rotation>
+<Translation>0.0937592 -0.0378132 0.03395</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-1" uid="screw-1" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 -0.383049 -0.923728 0 0.923728 -0.383049 1 0 0</Rotation>
+<Translation>0.000865523 0.003877 0.00894345</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-2" uid="screw-2" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 -1 0 1 0 1 0 0</Rotation>
+<Translation>0.000934654 -0.00391692 0.00894345</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-3" uid="screw-3" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 -1 0 1 0 1 0 0</Rotation>
+<Translation>0.00764982 3.99131e-005 0.00894345</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-4" uid="screw-4" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 1 0 1 0 -1 0 0</Rotation>
+<Translation>-0.0194201 -0.00643855 -0.00344153</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-5" uid="screw-5" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 1 0 1 0 -1 0 0</Rotation>
+<Translation>-0.0191748 0.00633364 -0.00344153</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-6" uid="screw-6" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 1 0 1 0 -1 0 0</Rotation>
+<Translation>0.0215288 0.00354154 -0.00344153</Translation>
+</Transform>
+</Instance>
+<Instance name="Rod-1" uid="Rod-1" entityUid="Rod*:*Default">
+<Transform>
+<Rotation>0 0 -1 -1 0 0 0 1 0</Rotation>
+<Translation>-0.01865 3.32817e-005 0.00406563</Translation>
+</Transform>
+</Instance>
+</Instance>
+<Instance name="Rotor_A2-4" uid="Rotor_A2-4" entityUid="Rotor_A2" rigid="true">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0.1583 -3.72593e-005 -0.00831563</Translation>
+</Transform>
+<Instance name="Motor_mount_02-1" uid="Motor_mount_02-1" entityUid="Motor_mount_02*:*Default">
+<Transform>
+<Rotation>1 0 0 0 1 0 0 0 1</Rotation>
+<Translation>0 0 0</Translation>
+</Transform>
+</Instance>
+<Instance name="motor_01-1" uid="motor_01-1" entityUid="motor_01*:*Default">
+<Transform>
+<Rotation>-0.999999 -0.00119362 0 0.00119362 -0.999999 0 0 0 1</Rotation>
+<Translation>0.00315 0 -0.0205981</Translation>
+</Transform>
+</Instance>
+<Instance name="Gear_small-1" uid="Gear_small-1" entityUid="Gear_small*:*Default">
+<Transform>
+<Rotation>-0.844672 -0.535284 0 0.535284 -0.844672 0 0 0 1</Rotation>
+<Translation>0.00315 0 0.0165459</Translation>
+</Transform>
+</Instance>
+<Instance name="Pine-1" uid="Pine-1" entityUid="Pine*:*Default">
+<Transform>
+<Rotation>0.778169 0.628055 0 0.628055 -0.778169 0 0 0 -1</Rotation>
+<Translation>0.02315 0 0.0169</Translation>
+</Transform>
+</Instance>
+<Instance name="Gear_01-1" uid="Gear_01-1" entityUid="Gear_01*:*Default">
+<Transform>
+<Rotation>-0.840958 -0.5411 0 0.5411 -0.840958 0 0 0 1</Rotation>
+<Translation>0.02315 0 0.01525</Translation>
+</Transform>
+</Instance>
+<Instance name="Wing_06-1" uid="Wing_06-1" entityUid="Wing_06*:*Default">
+<Transform>
+<Rotation>-0.840958 -0.5411 0 0.5411 -0.840958 0 0 0 1</Rotation>
+<Translation>0.0937592 -0.0378132 0.03395</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-1" uid="screw-1" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 -0.383049 -0.923728 0 0.923728 -0.383049 1 0 0</Rotation>
+<Translation>0.000865523 0.003877 0.00894345</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-2" uid="screw-2" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 -1 0 1 0 1 0 0</Rotation>
+<Translation>0.000934654 -0.00391692 0.00894345</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-3" uid="screw-3" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 -1 0 1 0 1 0 0</Rotation>
+<Translation>0.00764982 3.99131e-005 0.00894345</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-4" uid="screw-4" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 1 0 1 0 -1 0 0</Rotation>
+<Translation>-0.0194201 -0.00643855 -0.00344153</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-5" uid="screw-5" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 1 0 1 0 -1 0 0</Rotation>
+<Translation>-0.0191748 0.00633364 -0.00344153</Translation>
+</Transform>
+</Instance>
+<Instance name="screw-6" uid="screw-6" entityUid="screw*:*Default">
+<Transform>
+<Rotation>0 0 1 0 1 0 -1 0 0</Rotation>
+<Translation>0.0215288 0.00354154 -0.00344153</Translation>
+</Transform>
+</Instance>
+<Instance name="Rod-1" uid="Rod-1" entityUid="Rod*:*Default">
+<Transform>
+<Rotation>0 0 -1 -1 0 0 0 1 0</Rotation>
+<Translation>-0.01865 3.32817e-005 0.00406563</Translation>
+</Transform>
+</Instance>
+</Instance>
+</Instance>
+</InstanceTree>
+<Constraints>
+</Constraints>
+</RootAssembly>
+<Assemblies>
+<Assembly name="Cross_linkA2" uid="Cross_linkA2" version="102">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<AssemblyFile name="Cross_linkA2.sldasm" type="SolidWorks Assembly"/>
+</Assembly>
+<Assembly name="Rotor_A2" uid="Rotor_A2" version="102">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<AssemblyFile name="Rotor_A2.sldasm" type="SolidWorks Assembly"/>
+</Assembly>
+</Assemblies>
+<Parts>
+<Part name="Body_06_indoor" uid="Body_06_indoor*:*Default" version="103">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Body_06_indoor.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.418483</Mass>
+<CenterOfMass>0.000114274 -0.0483935 0.0267249</CenterOfMass>
+<Inertia>0.00203216 0.000304231 0.002217 1.69392e-005 -2.01656e-007 -3.84505e-006</Inertia>
+</MassProperties>
+<GeometryFile name="Body_06_indoor_Default_sldprt.STL" type="STL"/>
+<VisualProperties>
+<Ambient r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Diffuse r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Specular r="0.396078" g="0.409804" b="0.466667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.4</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Cross_linkl" uid="Cross_linkl*:*Default" version="103">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Cross_linkl.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.0171267</Mass>
+<CenterOfMass>-1.61333e-008 4.17842e-007 -0.00420914</CenterOfMass>
+<Inertia>4.76471e-006 4.76488e-006 9.30695e-006 -1.77054e-012 1.01308e-014 -1.49028e-015</Inertia>
+</MassProperties>
+<GeometryFile name="Cross_linkl_Default_sldprt.STL" type="STL"/>
+<VisualProperties>
+<Ambient r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Diffuse r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Specular r="0.396078" g="0.409804" b="0.466667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.4</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Gear_01" uid="Gear_01*:*Default" version="103">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Gear_01.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.00186531</Mass>
+<CenterOfMass>1.54229e-005 0 0.000405093</CenterOfMass>
+<Inertia>1.3349e-007 1.56387e-007 2.80862e-007 0 1.38364e-010 0</Inertia>
+</MassProperties>
+<GeometryFile name="Gear_01_Default_sldprt.STL" type="STL"/>
+<VisualProperties>
+<Ambient r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Diffuse r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Specular r="0.396078" g="0.409804" b="0.466667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.4</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Gear_small" uid="Gear_small*:*Default" version="103">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Gear_small.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.00010372</Mass>
+<CenterOfMass>1.84658e-007 3.98028e-008 -0.00358645</CenterOfMass>
+<Inertia>5.6337e-010 5.63476e-010 3.93855e-010 -7.98127e-015 -3.65557e-014 3.83829e-014</Inertia>
+</MassProperties>
+<GeometryFile name="Gear_small_Default_sldprt.STL" type="STL"/>
+<VisualProperties>
+<Ambient r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Diffuse r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Specular r="0.396078" g="0.409804" b="0.466667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.4</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Indoor_Hull_1" uid="Indoor_Hull_1*:*Default" version="103">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Indoor_Hull_1.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>2.14785</Mass>
+<CenterOfMass>-0.000200925 0.0308074 0.00540153</CenterOfMass>
+<Inertia>0.0390005 0.0372418 0.0750547 0.00131889 7.56753e-008 -2.7372e-006</Inertia>
+</MassProperties>
+<GeometryFile name="Indoor_Hull_1_Default_sldprt.STL" type="STL"/>
+<VisualProperties>
+<Ambient r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Diffuse r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Specular r="0.396078" g="0.409804" b="0.466667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.4</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Motor_mount_02" uid="Motor_mount_02*:*Default" version="103">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Motor_mount_02.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.00818885</Mass>
+<CenterOfMass>0.000829627 2.07108e-005 0.000698707</CenterOfMass>
+<Inertia>1.5514e-006 2.71188e-006 1.81928e-006 -1.21566e-009 -1.89172e-007 1.34359e-009</Inertia>
+</MassProperties>
+<GeometryFile name="Motor_mount_02_Default_sldprt.STL" type="STL"/>
+<VisualProperties>
+<Ambient r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Diffuse r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Specular r="0.396078" g="0.409804" b="0.466667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.4</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Pine" uid="Pine*:*Default" version="103">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Pine.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.00012124</Mass>
+<CenterOfMass>0 0 0.00115716</CenterOfMass>
+<Inertia>1.4607e-008 1.4607e-008 7.24314e-011 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="Pine_Default_sldprt.STL" type="STL"/>
+<VisualProperties>
+<Ambient r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Diffuse r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Specular r="0.396078" g="0.409804" b="0.466667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.4</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Plate" uid="Plate*:*Default" version="103">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Plate.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.00578095</Mass>
+<CenterOfMass>-7.44027e-005 -0.00547587 0.00025</CenterOfMass>
+<Inertia>7.7697e-006 3.71941e-006 1.14889e-005 0 0 2.37085e-008</Inertia>
+</MassProperties>
+<GeometryFile name="Plate_Default_sldprt.STL" type="STL"/>
+<VisualProperties>
+<Ambient r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Diffuse r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Specular r="0.396078" g="0.409804" b="0.466667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.4</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Rod" uid="Rod*:*Default" version="103">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Rod.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.00439791</Mass>
+<CenterOfMass>0 -0.000196581 0.059</CenterOfMass>
+<Inertia>6.39766e-006 6.39783e-006 2.39647e-008 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="Rod_Default_sldprt.STL" type="STL"/>
+<VisualProperties>
+<Ambient r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Diffuse r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Specular r="0.396078" g="0.409804" b="0.466667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.4</Shininess>
+</VisualProperties>
+</Part>
+<Part name="Wing_06" uid="Wing_06*:*Default" version="103">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="Wing_06.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.00388885</Mass>
+<CenterOfMass>0.0798145 0.00634833 -0.0027517</CenterOfMass>
+<Inertia>1.83886e-007 9.51514e-006 9.59603e-006 -2.45141e-010 5.6363e-010 -3.74325e-007</Inertia>
+</MassProperties>
+<GeometryFile name="Wing_06_Default_sldprt.STL" type="STL"/>
+<VisualProperties>
+<Ambient r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Diffuse r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Specular r="0.396078" g="0.409804" b="0.466667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.4</Shininess>
+</VisualProperties>
+</Part>
+<Part name="motor_01" uid="motor_01*:*Default" version="103">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="motor_01.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.00551781</Mass>
+<CenterOfMass>0.00217345 6.31963e-007 0.0152996</CenterOfMass>
+<Inertia>3.54107e-007 8.31733e-007 6.56825e-007 1.04735e-012 3.60204e-009 1.40965e-009</Inertia>
+</MassProperties>
+<GeometryFile name="motor_01_Default_sldprt.STL" type="STL"/>
+<VisualProperties>
+<Ambient r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Diffuse r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Specular r="0.396078" g="0.409804" b="0.466667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.4</Shininess>
+</VisualProperties>
+</Part>
+<Part name="screw" uid="screw*:*Default" version="103">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="screw.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>1.08855e-005</Mass>
+<CenterOfMass>0.00218636 -1.41383e-008 -2.50242e-009</CenterOfMass>
+<Inertia>6.75931e-012 1.71924e-011 1.71922e-011 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="screw_Default_sldprt.STL" type="STL"/>
+<VisualProperties>
+<Ambient r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Diffuse r="0.792157" g="0.819608" b="0.933333" a="1"/>
+<Specular r="0.396078" g="0.409804" b="0.466667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.4</Shininess>
+</VisualProperties>
+</Part>
+</Parts>
+</SimMechanicsImportXML>
