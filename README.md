@@ -26,3 +26,7 @@ We would also like to thank:
 - Omar Osorio for providing us a CAD model for the AR Drone 2.0 for Sim-Mechanics Import
 http://grabcad.com/library/drone-2-0/
 
+NOTE:
+If you have issues downloading the compiler, try this link 
+https://sourcery.mentor.com/sgpp/lite/arm/portal/package8738/public/arm-none-linux-gnueabi/arm-2011.03-41-arm-none-linux-gnueabi.exe
+
