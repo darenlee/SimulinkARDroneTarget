@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<productinfo>
+    <name>AR Drone 2 - Thread Timer Scheduler</name>
+    <deviceid>ARM Cortex</deviceid>
+    <subfamily>ARM Cortex</subfamily>
+    <productionhwdevicetype>ARM Compatible-&gt;ARM Cortex</productionhwdevicetype>
+    <toolchaininfo>Code Sourcery</toolchaininfo>
+    <parameterinfo>$(TARGET_ROOT)/registry/parameters/arm_cortex_a8_ParameterInfo.xml</parameterinfo>
+    <attributeinfo>$(TARGET_ROOT)/registry/attributes/arm_cortex_a8_AttributeInfo_linux_thread.xml</attributeinfo>
+    <rtosinfo>$(MATLAB_ROOT)/toolbox/target/codertarget/rtos/registry/linux.xml</rtosinfo> 
+    <loadcommandinfo>"$(TARGET_PKG_INSTALLDIR)/ssh_download.bat"</loadcommandinfo>
+    <loadcommandargs>"$(MATLAB_ROOT)/toolbox/idelink/foundation/hostapps" root root $(AR_DRONE_IP_ADDRESS) /root</loadcommandargs>
+</productinfo>

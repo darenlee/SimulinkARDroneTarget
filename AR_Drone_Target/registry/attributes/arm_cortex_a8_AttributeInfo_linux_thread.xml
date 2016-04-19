@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<productinfo>
+   <name>AR Drone 2</name>
+   <globalinterruptenablecall> </globalinterruptenablecall>
+   <globalinterruptdisablecall> </globalinterruptdisablecall>
+   <compileflags>-march=armv7-a -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=softfp -std=gnu99</compileflags>
+   <assemblyflags>-march=armv7-a -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=softfp -std=gnu99</assemblyflags>
+   <linkflags>-march=armv7-a -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=softfp -std=gnu99</linkflags>
+   <externalmodesourcefile>$(MATLAB_ROOT)/rtw/c/src/ext_mode/common/rtiostream_interface.c</externalmodesourcefile>
+   <externalmodesourcefile>$(MATLAB_ROOT)/rtw/c/src/rtiostream/rtiostreamtcpip/rtiostream_tcpip.c</externalmodesourcefile>
+   <externalmodesourcefile>$(TARGET_ROOT)/src/AR_Drone_ext_work.c</externalmodesourcefile>
+   <externalmodesourcefile>$(TARGET_ROOT)/src/AR_Drone_ext_svr.c</externalmodesourcefile>
+   <includepath>$(TARGET_ROOT)/include</includepath>
+   <define>ARM_PROJECT</define>
+   <externalmodesourcefiletoskip>ext_work.c</externalmodesourcefiletoskip>
+   <externalmodesourcefiletoskip>ext_svr.c</externalmodesourcefiletoskip>
+   <rtos>Linux</rtos>
+   <onaftercodegenhook>codertarget.arm_cortex_a_drone.internal.onAfterCodeGen</onaftercodegenhook>
+
+</productinfo>
