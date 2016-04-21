@@ -82,7 +82,7 @@ void videoInit1(void)
 		printf("ioctl() VIDIOC_QUERYCAP failed.\n");
     }
 
-//     printf("2 driver = %s, card = %s, version = %d, capabilities = 0x%x\n", cap.driver, cap.card, cap.version, cap.capabilities);
+     printf("2 driver = %s, card = %s, version = %d, capabilities = 0x%x\n", cap.driver, cap.card, cap.version, cap.capabilities);
 
     CLEAR(fmt);
     fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
@@ -328,11 +328,11 @@ void videorabImage1(unsigned char* mybuf) {
 	assert(buf.index < vid1.n_buffers);
 
 	vid1.seq++;	
-	vid1.img = img1;
-	vid1.img->timestamp = util_timestamp();
-	vid1.img->seq = vid1.seq;
+	//vid1.img = img1;
+	//vid1.img->timestamp = util_timestamp();
+	//vid1.img->seq = vid1.seq;
  	
-	memcpy(vid1.img->buf, vid1.buffers[buf.index].buf, vid1.w*vid1.h*2);
+	//memcpy(vid1.img->buf, vid1.buffers[buf.index].buf, vid1.w*vid1.h*2);
 	memcpy(mybuf, vid1.buffers[buf.index].buf, vid1.w*vid1.h*2);
 	
 	if (ioctl(vid1.fd, VIDIOC_QBUF, &buf) < 0) {
