@@ -1,0 +1,3 @@
+=== Simultaneous localization and mapping with the AR.Drone - Nick Dijkshoorn - July 14, 2012 ===
+
+http://dare.uva.nl/cgi/arno/show.cgi?fid=451715

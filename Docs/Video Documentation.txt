@@ -1,0 +1,21 @@
+=== YCbCr Color format ===
+
+https://en.wikipedia.org/wiki/YCbCr
+
+
+=== 4:2:2 subsampling explanation ===
+
+https://en.wikipedia.org/wiki/Chroma_subsampling#Sampling_systems_and_ratios
+
+
+=== TI Display driver guide using Video4Linux ===
+
+http://processors.wiki.ti.com/index.php/UserGuideDisplayDrivers_PSP_03.00.00.05
+
+=== Using gstreamer to view video from the Parrot AR Drone 2.0 ===
+
+https://wiki.paparazziuav.org/wiki/AR_Drone_2#View_ARDrone_2_live_video
+
+=== Video4Linux2 Documentation ===
+
+http://linuxtv.org/downloads/v4l-dvb-apis/index.html

@@ -1,0 +1,11 @@
+=== Parrot AR Drone 2.0 official specifications  ===
+
+http://www.parrot.com/products/ardrone-2
+
+=== IFIXIT Parrot AR.Drone 2.0 Repair Guide ===
+
+https://www.ifixit.com/Device/Parrot_AR.Drone_2.0
+
+=== IFIXIT Parrot AR.Drone Teardown ===
+
+https://www.ifixit.com/Teardown/Parrot+AR.Drone+Teardown/3984
