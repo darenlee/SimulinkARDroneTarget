@@ -162,7 +162,7 @@ void videoInit2(void)
 	vid2.device = (char*)"/dev/video2";
 	vid2.w=320;
 	vid2.h=240;
-	vid2.n_buffers = 4;
+	vid2.n_buffers = 1;
 	
 	img2 = (img_struct*)malloc(sizeof(img_struct));
 	img2->w=vid2.w;
