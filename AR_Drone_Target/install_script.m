@@ -40,9 +40,9 @@ disp('                              Updating Path Settings')
 disp('===============================================================================')
 disp(char(10));
 
-addpath([pwd]);
-addpath([pwd '\blocks']);
-addpath([pwd '\registry']);
+% addpath([pwd]);
+% addpath([pwd '\blocks']);
+% addpath([pwd '\registry']);
 savepath
 % save_path
 % 
