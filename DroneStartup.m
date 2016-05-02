@@ -25,6 +25,10 @@ if exist('AR_Drone_Target/blocks/videolib/ARdrone_video_lib.slx') == 0
    run('AR_Drone_Target/blocks/videolib/ARdrone_legacy.m')
 end
 
+%% update paths of folders that are generated
+
+addpath([pwd '\registry']);
+
 %% Initialise the config
 
 run('AR_Drone_Models\Flight_Models\AR_DRONE_SCRIPT.m')
