@@ -25,10 +25,13 @@ if exist('AR_Drone_Target/blocks/videolib/ARdrone_video_lib.slx') == 0
    run('AR_Drone_Target/blocks/videolib/ARdrone_legacy.m')
 end
 
-%% update paths of folders that are generated
+%% update paths 
 
-addpath([pwd '\registry']);
+addpath([pwd '\registry']); % folder is generated post download
+addpath([pwd '\Docs']); % include the documentation
 
+
+%% register the compiler
 sl_refresh_customizations;
 
 %% Initialise the config

@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="MATLAB R2016a"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><title>Example 1: Connecting to the AR Drone 2.0</title><style type="text/css">
+* {margin: 0; padding: 0;}
+body {text-align: start; line-height: 17.2339992523193px; min-height: 0px; white-space: normal; color: rgb(0, 0, 0); font-family: Consolas, Inconsolata, Menlo, monospace; font-style: normal; font-size: 14px; font-weight: normal; text-decoration: none; white-space: normal; }
+h1, h2 {font-weight: normal;}
+.content { padding: 30px; }
+
+.S0 { margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S1 { line-height: 26.4000015258789px; min-height: 24px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-size: 22px; white-space: pre-wrap; margin-left: 4px; margin-top: 3px; margin-bottom: 14.9999990463257px; margin-right: 10px;  }
+.S2 { min-height: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S3 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S4 { line-height: 20.576000213623px; min-height: 20px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; white-space: pre-wrap; margin-left: 4px; margin-top: 14.9999990463257px; margin-bottom: 9px; margin-right: 10px;  }
+.S5 { margin-left: 3px; margin-top: 10px; margin-bottom: 10px; margin-right: 3px;  }
+.S6 { line-height: 15.5926666259766px; min-height: 18px; white-space: nowrap; font-size: 12.6666669845581px; white-space: nowrap; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S7 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S8 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; color: rgb(160, 32, 240); font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S9 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 45px;  }
+.S10 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 10px; margin-bottom: 9px; margin-right: 10px;  }
+
+.LineNodeBlock {margin: 10px 0 10px 0;}
+.LineNodeBlock+.paragraphNode {margin-top: 10px;}
+.lineNode {padding-left: 10px; background-color: #F7F7F7; border-left: 1px solid #E9E9E9; border-right: 1px solid #E9E9E9;}
+.inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
+.inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
+.lineNode .textBox {white-space: pre;}
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Example 1: Connecting to the AR Drone 2.0</span></h1><p class = "S3"><span class = "S2">This example shows how to get a simple Simulink model running on the drone in external mode. The example shows how simple it is to retrieve sensor information from the drone on your own Simulink computer in real time as well as changing parameters during runtime to change the drone behaviour.</span></p><p class = "S3"><span class = "S2"></span></p><h2 class = "S4"><span class = "S2">Setting up the WIFI connection</span></h2><p class = "S3"><span class = "S2">The AR Drone 2.0 creates it's own WIFI network on startup called 'ardrone2'. Connecting a PC to this unsecured network allows the uploading of code to the drone. By default the AR Drone 2.0 will give itself the IP Adress '192.168.1.1' and the PC will have '192.168.1.2'.</span></p><p class = "S3"><span class = "S2"></span></p><h2 class = "S4"><span class = "S2">Running custom code on the AR Drone 2.0</span></h2><p class = "S3"><span class = "S2">In order to get familiar with the tools we will start off by opening a simple m</span><span class = "S2">odel and running it on the AR Drone 2.0. </span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">open(</span><span class = "S8">'AR_Drone_Models\Example_Models\Example1_Connecting_To_The_AR_Drone.slx'</span><span class = "S9">);</span></p></div></div><p class = "S10"><span class = "S2">This model is allready configured to run on the AR Drone 2.0 using external mode. Opening the Configuration Parameters can be done by pressing the </span><img class="imageNode" width="23" height="21" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAZCAIAAACtotlwAAADL0lEQVR4AdWUuUtrURDG/Tser3RBVARjIWJiETDBFRfUSMT9qXGLghFELRKJokWikLgb3BBJFAUVjBaihYhiE3DpUsQFLKL+Be+HB+Qm3rxbWbwpLjPnfN935syZuXFvP2BxP6D5pix6c3PzR2KEinnIi768vMzMzPDFZmdnR0ZG0MJwCMW6AMgeICMKZ3BwsK6urre3l29bW5vH43l/fw+Hw4uLi4RfW8AAf9eNFn1+fh4YGGhpabm+vp6YmNjd3YUmFF9fX5+enh4eHtbX161W68HBQWNjI2AoUbrRok6ns6qq6urq6uPT7u7uOjo6kpKSfn1aYmJiU1PT6elpIBCgGtvb24ChKIhybGtr6+joKJqXl5fIJSQkVFRUkLvJZGpoaEhOTmbF5/OxS5qAlTMFUVJS4vV67+/v09LSNBqN2WyurKwsLi4uLS1tbm6empoCkJKSQmUcDge+gujFxcX4+DgS4Pr7+1UqFW+FLleHjOEUFhYuLy9nZ2dT0P39/bKyMigQpRWIqKlOp+M609PTvExubm5tbS0HILSzsyM4OIQWi8Vms+Xk5BweHuLX1NRAjCmq1WopJYqhUAhOV1cXtyZBKYGQrlpYWACwt7dHcTc3NyFKMRGZkp3onmAwmJeXRwWqq6uZJinBYDDQp2trawCE4urqKkQpJkKUw7kyNaIfkUOUmqrVar/fLzg4hLwVmdIS5Nje3s5tIMYUPT8/ZxC5y+3tLZ1fX1/vcrm6u7vLy8uHhobsdrtwzs7OKD1HMmA8IxSIMUXZeHx8zMzM5K1oQ7JgELkdISNEkzOv8CcnJ6nJ3Nwc3QYYilQRP+L6QlSv19OPzMzx8XFnZyeZut3ujY0NmpdS9vX1cRgrS0tLdC5gZVEulZqaurW1xRSS7NHR0djYGJMqfn4M1fDw8Pz8PIpkig8YikKmNFNRUVFGRsbKygoPDY2+oR+/uocnQrqgoIAqp6enA4aiIMo2oPz8/Pj4eB6aL8PKyIvuMRqNpPa1Bey7IgrRNRVnAu3p6eGLUVOGku7hxbKysgjFugBE5ShCeVEp9OTk5LfECKW7sr6yqCzt34v/j+hfp2UcmXeX8ZcAAAAASUVORK5CYII="><span class = "S2"> button in Simulink or by pressing 'ctrl + E'. This will bring you to a Configuration Reference window where the specific Configuration can be selected. For this example we will run the model in External mode allowing us to send commands and retrieve data from the drone while the model runs on the drone which is why the 'AR_Drone_ConfigSet' is selected. Later on we will want to try to run the drone in normal mode and select a different Config set for that.</span></p><p class = "S3"><span class = "S2"></span></p><p class = "S3"><span class = "S2">Inside the model a couple of blocks are available from</span><span class = "S2"> the AR Drone 2 Library. These blocks are implemented as Simulink blocks by calling the Legacy Code Tool to compile *.c files that can run on the drone into a block that we can use in Simulink.</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">open(</span><span class = "S8">'AR_Drone_Target\blocks\AR_Drone_2_Library.slx'</span><span class = "S9">);</span></p></div></div><p class = "S10"><span class = "S2">Before any components of the AR Drone 2.0 can be controlled they first need to be initialized. The 'Initialize Motor and LED Module' block takes care of the initialization of these components and needs to be present in any model where the goal is to control the drone's LEDs and/or motors. The battery measurement block can function without initialization and because this example will be run in external mode we can show the battery voltage on a display within Simulink.</span></p><p class = "S3"><span class = "S2">Make sure the model is set to External mode and then build the model using the </span><img class="imageNode" width="21" height="22" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAaCAIAAADJ6rCnAAABT0lEQVR4AWP4QG3AQG0DP2Axkds+H80aYkTgWrCYCJcjj4HFRGJchKkGbj2NTVy56wTQcggCsoHWEiMCdx2Ege7G4LLpQBOBJFwdMSJwxUAGuomPn73UCK0HknBFxIjAFWMxEVmOPDbCjS9ev2tafyFu1jGSEFALUCOy3QgTgXLFK89vufb24uvfRKK1F18BtQA1YjcxYvKB1RdeEGkWXBlQC1AjdhP9OrddePUbiCCph3g2UCN2E13r1xx/8hOIICYSzwZqxG6iTemi3Xe+k4GAGrGbaJI9c8Plr2QgoEbsJmonTVxy+jMQQXxNPBuoEbuJypEd849/AiKIiUSyp+9/DdSI3UTpwIbWtRe23/hKEgJqAWrEbqJ38XSztAmTt124+PonMejog49AxUAtQI3YTQSWCG65E/mcikhCQC3IxQrQaEQuRLaHEvbINBEAZLm3famr06AAAAAASUVORK5CYII="><span class = "S2"> button or pressing 'ctrl + B'. The configuration set by default has the 'Build load and run' option selected meaning the software will be automatically transfered to the drone over FTP and made ready for a connection with Simulink. Once the process is complete a console window will popup with the text '**starting the model**' and some codes relevant to the motor initialization. At this point click 'Connect to target' </span><img class="imageNode" width="25" height="23" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAZCAIAAACtotlwAAAC7klEQVR4AbWS+09SYRjH+Tdq9YtrWla22MqWcy4VvM0LXnKgaLlCKp2nYtUsbzkhKqZmpDTNcFKaU1BQvFAqocMLXvKC4i1RM/JGXmpZYU+jgZeXBW6ePTt7zuf7Pp895+zg9Htw4fbAqbdB2tpZnZYTRk/BGwt6IMidrJWWiDMv3j6RU4S19VUp1aXSjkcZ+SQgwHd6rZLKlRIKdqy5XWQwGL79XNCt9Yzqxd1fnhXURwOHdJvXKimWFsDOjdvY2Phl+EGhhn5aVWqWylW67KZpxg2OC6S7kfpfcGjplK7/Xltdn8XhcCEUQv98kXKWJdPGccR+kNos7R3oIJIPtfaIFr9rdGtdIIXLP/y0fCaxejyGLfGDdGRcvdlr1eu7kexETVmTy+/G9BKjFO7EUIcSdcSdYk9INxuht0pKoROv3vPtn+f3zvE6PnMUM0myyWvlGipXFRaU4ATpbqQ1DcKT7gcyS6MVM8mNUzdrP9LKhiNzVedpOa7AIf2PVKZQxSY99bqUaizogcAMh5vheHZ/eDyeVerDrPBlvHD3unwUCPBtRnjc8vq8VxKPqMS4B/z8+q5i+SDcr7AKgQCHo1XSCn/KucPO+4wFPZCdxi3SuuZ2NzLjiVChmFo11nvtSt3IYjK/HjikpvkhzaCpRzbmTakYk5aaZzJCI9euVA8vPG+ZCLrOgRQ5j4RmqXMAPU+iBJdPWITpv6no02W91USw30CKnEfCf9Lh0Qm8d0yhrNu4qcn7sk2bUvkhML0EUuQ8Epo3dfKgckV/Pyh8yubJZUIwGfZ93DAUy291wfIgRc4joVkaGM0gY6zGia8NY0ti9Zygc/oUkYS9bvd+WOMYiEGKnEdCs7SqttH+DOkuTyhQTfMU40zpQLygzfN+2ZEoFnBIkfNIaJZCzM4usMP7uUfeojIFIekC1wSuvTcdCHDksCW4RQqHhBIZIZh28DjBWNADsTRsiW+Xms6ph0ZMva2NRamtos3n90T6BxHdqAtEYX7/AAAAAElFTkSuQmCC"><span class = "S2"> in Simulink  which will transfer any parameters that are tunable in real time (in this case the desired LED color). Once this is done the 'Run' </span><img class="imageNode" width="22" height="20" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAXCAIAAABxgXNEAAAEoUlEQVR4AZWT+zfbdxjH+3fscHSOVtfpulpT055Th6PWU1kkQYnUpbaqjqKqblurjlJFe1pddWw6Yq06WqQucYkKQRC3iDRCbpKIEHKVSJDYEwmxzH7Y5zzn+/1+Pp/n/TrP7XtIddDiiKcJ1NI84s20OvyewRYO4eogheXskMOFcJH3tP1eHjGJzqeq9cots1G/KVcauEu6MY68i8Qqu9cYCw7g5iB0ZA3NUNJrY0Z4fdu7y2Te1G+uqAy8Jd24SEvhqoisVUIjIx/cwNkBZ4+LxqakvY5Z1S7vcixvk3ljNy5g9cypmoA1vvycIihIqQkDyX6cjSWQclOqrziAgLVp0us2ZArDrExHn9d0zykbpleqxpaf0RbzOnhZIAHhHs7GetiQSeP0WCLZt8zbJsOWSmMUr6yzpGs0gbqDo6yfWqkcXXoyKL3fI079czgehP9gsQRT6YS4fRDLp3nbjDiD+NjXYim8fkKs7eOpWtiKNwx5+YisuF/6S7c4iSSMSajEgNyKs8T1orWI+qkTotjDQfuMW5rPdhY+KpgjJQs1XbOQ4Go1FGtosaBvIZMs+qmZH13acxXkdlby7zGLKq5hSwl6o0kDeUHvtBtSKwueR93dHpamsBW1DHkFfenxACQoSe2Yv9YwF1k1cQ3kdlZE8SWlgac2zms3JGAao0hl5CvWZ1xdXQ8f/tzFxcXZ2dnJyeki6tw76s87QWWRRYltgphaNr58IgzkNpZ0WRpWeBEqItczocZg8nXmsn5yUUc/ceIrDw+P48e/PHbsC3d39yNHjrq5ud1+gG5lJ9qCYuKe00NBvstaWgjJDxBreyVr/Qtrgzs2AJWGCfD2Puvl9S0Cceb0aYSn5zenTnmePPl1xiNMl+hGCz/aGlQxDQtye46YXH+u6gNf3SpQkwTqdr66jadqnlM2+vsH+Pn5+/r6+fj4nj/vExWHappIJosSoH31nCuvpsKfjYQ8oKJBbmfFloSNSghQ2hlFHRhb8fbT6mvWanVQEAaFQiORKEwwuqw+oVeSDmVqF8a+n42sZuJejIYWDmByyXiQ21mFb3JrqDkM+W/Qph0rn5S/hN7j8ZE4HD738Q0yN4siuQ1DQBJehd4RpiNejl+G7HIoqKTaEJDbWQzORHj+dyOyIhhCuqwYPoZlhX2CvNT0xPqBDAjnozi5c/46NO7dLIBwACoZCs7tDbrTGYjM8QG5nQVfyaXxFd1JMM1g1AWw7F5JBsQCw90lioe8iLyouhl8FRNXNna5hIYFUHoXMp6AAaEVBE/b/zgr5CAzLzSzU0HcLb4JBQYENB7KDBSo9F+siD8mw2ACigax9y2gwBQiFiQgdGTBvoNGCkg7954Z1yqIhp+DyI2CGr+dwdewIioZ4RDOk+Hggn7M3R5UWkdgchPW95Y3SPZA9risR+2DbQGpvvkfcBAFdAq6DmP962goUCwt6w3KJCNTSJdiK1HgBs77QY4s2HMEnOuPfrhwxzu7PvRpf3QRDVvQj4aksrq/zyKF//gqyOeWFziAmwPoAJbVY5w9drciG52JPBuP2DPYwiFc/ZtiPbHV/r+u/9f530hr7eBflvUrAAAAAElFTkSuQmCC"><span class = "S2"> button will turn green, press it to start the model on the drone. The drone battery voltage will now appear in the Battery Voltage Display on your PC and you will be able to change the color of the drone LEDs using the color selector.</span></p><p class = "S3"><span class = "S2"></span></p><p class = "S3"><span class = "S2">When you are done with this example you can stop it's execution using the 'Stop' </span><img class="imageNode" width="20" height="18" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAXCAIAAABxgXNEAAADBUlEQVR4AZ2USU9aURiG/R3t3q7t2q7t1qS7mnQFCxMWLtEFiSZsiJIQ40qxEYkD2mggilOECDgwKDIo4khxViiigmP7xGO4F3pNk365IWd43+f7zuGcU/XrjTg4OJibmxseHv4uC7oMMqVoqvp79OjoyG63j4yMbG9v39zc/JYFXQaZQoCswlvJ2tjYsFqtGGSEyubT01MikUCGWI4rY8Xj8b6+Pqafn58rAbI+rPv7+4uLC8RYSjiJdXh42NPTg+Lh4QG1zFvWJA2Cu7u729vb09NTLBgFTmLZbLb19fVCoYDu8fFRsTQGmaKoYrHI3l1dXa2trWEsY+3u7pIhn8+jQIcaD9XJiXIQRV1fX+dyuWw2293djR3ca13j4+OBQIA5cOjAUd27N0KAKAr/5eXlysoKdonV1dXFskmCQlTHYt+/EVQkQJlMhv3luGGXWHq9/vz8nCTgRHUYqqs/KH5y0NnZ2cnJCfZXFn9HW1sbvyUcExhqaj4qfuQTFQkQC8IusXQ63fHxscBRNlIMtbWfFD/KJ6sAcfp3dnawS2tsaWlJpVLgKBgRUoh1dZ8VPwRkRZxOp7kh0WgUu8RiweFweG9vjzyCiLq+/oviRz5k5N7a2opEIj6fT9ovkNyGsbExMiSTyf39fbYAYkPDN8UPCuviMnJQl5aWBgcHxc17PV+bm5vNzc3Ly8urq6uxWIyrixootp8vQYP/njNJMu4gi/D7/R6PhydIq9Vil9ZIq729nau/sLBAqmAwSE7qh4tTBFWDCIVCHE6v1zs/Pz81NWU2mzFiJ6T7yGY1NTXxMM3OzrpcLqBsBFyKJWgsLi5SiNvtphan04mSpxELxkoWfbI1NjZyV9FNTEyQdnp6emZmBjq/dCcnJx0OBzvLc9jf348YiwCV1SWGyIyis7NzaGgI6Ojo6I+XoIGfQgYGBiwWi9FoRIa4BFJgMcQGt7a2qtXqjo6O0lvf29vL1hAGg0GlUiEQb8M/WGKanTaZTBqN5qss6DLIlBxRakt7Xxr678Yf3eRG2yUs37IAAAAASUVORK5CYII="><span class = "S2"> button in Simulink. Without having to reboot the drone you can still run any desired model on the drone by building it.</span></p></div></div>
+<!-- 
+##### SOURCE BEGIN #####
+%% Example 1: Connecting to the AR Drone 2.0
+% This example shows how to get a simple Simulink model running on the drone 
+% in external mode. The example shows how simple it is to retrieve sensor information 
+% from the drone on your own Simulink computer in real time as well as changing 
+% parameters during runtime to change the drone behaviour.
+% 
+% 
+%% Setting up the WIFI connection
+% The AR Drone 2.0 creates it's own WIFI network on startup called 'ardrone2'. 
+% Connecting a PC to this unsecured network allows the uploading of code to the 
+% drone. By default the AR Drone 2.0 will give itself the IP Adress '192.168.1.1' 
+% and the PC will have '192.168.1.2'.
+% 
+% 
+%% Running custom code on the AR Drone 2.0
+% In order to get familiar with the tools we will start off by opening a simple 
+% model and running it on the AR Drone 2.0. 
+
+open('AR_Drone_Models\Example_Models\Example1_Connecting_To_The_AR_Drone.slx');
+%% 
+% This model is allready configured to run on the AR Drone 2.0 using external 
+% mode. Opening the Configuration Parameters can be done by pressing the   button 
+% in Simulink or by pressing 'ctrl + E'. This will bring you to a Configuration 
+% Reference window where the specific Configuration can be selected. For this 
+% example we will run the model in External mode allowing us to send commands 
+% and retrieve data from the drone while the model runs on the drone which is 
+% why the 'AR_Drone_ConfigSet' is selected. Later on we will want to try to run 
+% the drone in normal mode and select a different Config set for that.
+% 
+% 
+% 
+% Inside the model a couple of blocks are available from the AR Drone 2 Library. 
+% These blocks are implemented as Simulink blocks by calling the Legacy Code Tool 
+% to compile *.c files that can run on the drone into a block that we can use 
+% in Simulink.
+
+open('AR_Drone_Target\blocks\AR_Drone_2_Library.slx');
+%% 
+% Before any components of the AR Drone 2.0 can be controlled they first 
+% need to be initialized. The 'Initialize Motor and LED Module' block takes care 
+% of the initialization of these components and needs to be present in any model 
+% where the goal is to control the drone's LEDs and/or motors. The battery measurement 
+% block can function without initialization and because this example will be run 
+% in external mode we can show the battery voltage on a display within Simulink.
+% 
+% Make sure the model is set to External mode and then build the model using 
+% the   button or pressing 'ctrl + B'. The configuration set by default has the 
+% 'Build load and run' option selected meaning the software will be automatically 
+% transfered to the drone over FTP and made ready for a connection with Simulink. 
+% Once the process is complete a console window will popup with the text '**starting 
+% the model**' and some codes relevant to the motor initialization. At this point 
+% click 'Connect to target'   in Simulink  which will transfer any parameters 
+% that are tunable in real time (in this case the desired LED color). Once this 
+% is done the 'Run'   button will turn green, press it to start the model on the 
+% drone. The drone battery voltage will now appear in the Battery Voltage Display 
+% on your PC and you will be able to change the color of the drone LEDs using 
+% the color selector.
+% 
+% 
+% 
+% When you are done with this example you can stop it's execution using the 
+% 'Stop'   button in Simulink. Without having to reboot the drone you can still 
+% run any desired model on the drone by building it.
+##### SOURCE END #####
+--></body></html>
