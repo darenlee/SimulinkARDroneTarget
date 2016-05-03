@@ -1,0 +1,34 @@
+=== Frequently Asked Questions ===
+
+Q: What software versions are supported?
+A:  For the Drone firmware version 2.4.8 has been tested
+    On the computer side Windows 10 x64 is tested with MATLAB 2016a x64
+    
+Q: What C compiler is needed with MATLAB?
+A:  This project has been tested with the MinGW64 compiler available through the Add-On manager
+    and with the Microsoft C++ 2015 Professional (C) compiler.
+    You can type 'mex -setup c' to see which compiler you have currently set up to use in MATLAB
+
+Q: Which ARM compilers are supported?
+A:  The only tested ARM compiler is the Code Sourcery CodeBench Lite for ARM 2011.03-41
+    Currently Mentor no longer links to the used version on their website but it can still be downloaded
+    using the direct link (as of May 2016): 
+    https://sourcery.mentor.com/sgpp/lite/arm/portal/package8738/public/arm-none-linux-gnueabi/arm-2011.03-41-arm-none-linux-gnueabi.exe
+
+Q: Do I need to modify the Parrot AR Drone 2.0 before using this package?
+A:  No Modifications are necessary, simply connect your PC to the WIFI network set up by the AR Drone 2.0
+    and you will be able to build and run the Simulink models on the AR Drone 2.0
+
+Q: Will uploading any of the provided models to the Drone prohibit the factory flight options? (flying with the app?)
+A:  The process of uploading the custom Simulink model onto the drone kills the default Program.elf running on the drone responsible for factory flight,
+    however when the Drone reboots it will execute it's default Program.elf again putting the drone back in factory flight mode.
+
+Q: How can I acces the Drone filesystem?
+A:  Using your favorite Telnet protocol you can acces the Drone at it's default IP of 192.168.1.1 (e.g. type 'telnet 192.168.1.1' into a Windows command prompt)
+    The drone uses a small version of BusyBox for shell commands limiting what is available to you. Usefull commands are 'reboot' in case the AR Drone becomes non responsive,
+    Or checking out the various files on the drone with vi, such as the firmware version located in /firmware/version.txt
+
+Q: How do I kill a program running on the AR Drone without using external mode?
+A:  Rebooting the AR Drone (either unplugging the battery typing reboot in a telnet session with the AR Drone 2.0) will kill any custom program.
+    To specifically kill just a single program type 'top' in a telnet console to see all running programs and their PID (Process ID).
+    Typing 'kill 'xxxx'' will kill the process with PID 'xxxx'
