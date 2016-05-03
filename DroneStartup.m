@@ -29,6 +29,8 @@ end
 
 addpath([pwd '\registry']);
 
+sl_refresh_customizations;
+
 %% Initialise the config
 
 run('AR_Drone_Models\Flight_Models\AR_DRONE_SCRIPT.m')
