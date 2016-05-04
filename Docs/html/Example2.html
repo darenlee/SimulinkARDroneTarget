@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="MATLAB R2016a"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><title>Example 2: Streaming video in external mode</title><style type="text/css">
+* {margin: 0; padding: 0;}
+body {text-align: start; line-height: 17.2339992523193px; min-height: 0px; white-space: normal; color: rgb(0, 0, 0); font-family: Consolas, Inconsolata, Menlo, monospace; font-style: normal; font-size: 14px; font-weight: normal; text-decoration: none; white-space: normal; }
+h1, h2 {font-weight: normal;}
+.content { padding: 30px; }
+
+.S0 { margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S1 { line-height: 26.4000015258789px; min-height: 24px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-size: 22px; white-space: pre-wrap; margin-left: 4px; margin-top: 3px; margin-bottom: 14.9999990463257px; margin-right: 10px;  }
+.S2 { min-height: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S3 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S4 { line-height: 20.576000213623px; min-height: 20px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; white-space: pre-wrap; margin-left: 4px; margin-top: 14.9999990463257px; margin-bottom: 9px; margin-right: 10px;  }
+.S5 { margin-left: 3px; margin-top: 10px; margin-bottom: 10px; margin-right: 3px;  }
+.S6 { line-height: 15.5926666259766px; min-height: 18px; white-space: nowrap; font-size: 12.6666669845581px; white-space: nowrap; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S7 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S8 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; color: rgb(160, 32, 240); font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S9 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 45px;  }
+.S10 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 10px; margin-bottom: 9px; margin-right: 10px;  }
+
+.LineNodeBlock {margin: 10px 0 10px 0;}
+.LineNodeBlock+.paragraphNode {margin-top: 10px;}
+.lineNode {padding-left: 10px; background-color: #F7F7F7; border-left: 1px solid #E9E9E9; border-right: 1px solid #E9E9E9;}
+.inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
+.inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
+.lineNode .textBox {white-space: pre;}
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Example 2: Streaming video in external mode</span></h1><p class = "S3"><span class = "S2">This example will show you how to show the video feed from the AR Drone 2.0 within Simulink using External mode. </span></p><p class = "S3"><span class = "S2"></span></p><h2 class = "S4"><span class = "S2">Displaying video in External mode</span></h2><p class = "S3"><span class = "S2">There are many different ways to display video in Simulink using various Simulink Video Display blocks for different target hardware platforms. The AR Drone 2.0 however does not support direct video output meaning that any code compiled for the AR Drone 2.0 can not assume the drone is capable of displaying video. Example 2 contains an implementation which is capable of streaming video from the drone to Simulink in external mode which you can open via:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">open(</span><span class = "S8">'AR_Drone_Models\Example_Models\Example2_Streaming_Video_In_External_Mode.slx'</span><span class = "S9">);</span></p></div></div><p class = "S10"><span class = "S2"> Within this example the ARDroneVideoViewer block is what enables the video stream to be displayed in Simulink. It is a level-2 MATLAB S-Function which has been configured to work as a Sim Viewing Device. This causes Embedded Coder to ignore all code within the ARDroneVideoViewer S-Function when compiling for the AR Drone 2.0 target. The signal which goes into the ARDroneVideoViewer is sent to Simulink using the external mode connectivity which transfers the RGB conversion to the Simulink PC to ease the computational burden on the drone. Displaying the video feed is simply done by giving the RGB image to the MATLAB function 'image' wihtin the S-Function.</span></p><p class = "S3"><span class = "S2">Sending the video feed through WIFI at the maximum resolution of 1080i at 30 fps overburdens the wireless connection. The video resolution is therefor reduced by downsampling using the GetDownscaledYCbCr422 block and the sample time of the camera input block is set to run at 4 fps instead of the maximum 30fps the camera can handle. It is possible to output higher fps video to Simulink by increasing the amount of downsampling or vice versa. Sending too much data will cause the model to be unable to receive any shutdown packets from Simulink meaning the AR Drone 2.0 needs to be reset by unplugging the battery.</span></p><p class = "S3"><span class = "S2">A second model is available to view the video feed from the bottom facing camera on the AR Drone 2.0. This camera can output video with a resolution of 320x240 at 50 fps. To open this second model copy the following to your MATLAB Command Window:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">open(</span><span class = "S8">'AR_Drone_Models\Example_Models\Example2_Streaming_Bottom_Video_In_External_Mode.slx'</span><span class = "S9">);</span></p></div></div><p class = "S10"><span class = "S2">The bottom camera uses a different aspect ratio (4:3) than the front camera (16:9) which is entered in the ARDroneVideoViewer block parameters diaglog box.</span></p><p class = "S3"><span class = "S2"></span></p></div></div>
+<!-- 
+##### SOURCE BEGIN #####
+%% Example 2: Streaming video in external mode
+% This example will show you how to show the video feed from the AR Drone 2.0 
+% within Simulink using External mode. 
+% 
+% 
+%% Displaying video in External mode
+% There are many different ways to display video in Simulink using various Simulink 
+% Video Display blocks for different target hardware platforms. The AR Drone 2.0 
+% however does not support direct video output meaning that any code compiled 
+% for the AR Drone 2.0 can not assume the drone is capable of displaying video. 
+% Example 2 contains an implementation which is capable of streaming video from 
+% the drone to Simulink in external mode which you can open via:
+
+open('AR_Drone_Models\Example_Models\Example2_Streaming_Video_In_External_Mode.slx');
+%% 
+%  Within this example the ARDroneVideoViewer block is what enables the 
+% video stream to be displayed in Simulink. It is a level-2 MATLAB S-Function 
+% which has been configured to work as a Sim Viewing Device. This causes Embedded 
+% Coder to ignore all code within the ARDroneVideoViewer S-Function when compiling 
+% for the AR Drone 2.0 target. The signal which goes into the ARDroneVideoViewer 
+% is sent to Simulink using the external mode connectivity which transfers the 
+% RGB conversion to the Simulink PC to ease the computational burden on the drone. 
+% Displaying the video feed is simply done by giving the RGB image to the MATLAB 
+% function 'image' wihtin the S-Function.
+% 
+% Sending the video feed through WIFI at the maximum resolution of 1080i 
+% at 30 fps overburdens the wireless connection. The video resolution is therefor 
+% reduced by downsampling using the GetDownscaledYCbCr422 block and the sample 
+% time of the camera input block is set to run at 4 fps instead of the maximum 
+% 30fps the camera can handle. It is possible to output higher fps video to Simulink 
+% by increasing the amount of downsampling or vice versa. Sending too much data 
+% will cause the model to be unable to receive any shutdown packets from Simulink 
+% meaning the AR Drone 2.0 needs to be reset by unplugging the battery.
+% 
+% A second model is available to view the video feed from the bottom facing 
+% camera on the AR Drone 2.0. This camera can output video with a resolution of 
+% 320x240 at 50 fps. To open this second model copy the following to your MATLAB 
+% Command Window:
+
+open('AR_Drone_Models\Example_Models\Example2_Streaming_Bottom_Video_In_External_Mode.slx');
+%% 
+% The bottom camera uses a different aspect ratio (4:3) than the front camera 
+% (16:9) which is entered in the ARDroneVideoViewer block parameters diaglog box.
+% 
+%
+##### SOURCE END #####
+--></body></html>
