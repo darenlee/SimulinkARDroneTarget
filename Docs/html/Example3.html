@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="MATLAB R2016a"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><title>Example 3: Calibrating the AR Drone 2.0</title><style type="text/css">
+* {margin: 0; padding: 0;}
+body {text-align: start; line-height: 17.2339992523193px; min-height: 0px; white-space: normal; color: rgb(0, 0, 0); font-family: Consolas, Inconsolata, Menlo, monospace; font-style: normal; font-size: 14px; font-weight: normal; text-decoration: none; white-space: normal; }
+h1, h2 {font-weight: normal;}
+.content { padding: 30px; }
+
+.S0 { margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S1 { line-height: 26.4000015258789px; min-height: 24px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-size: 22px; white-space: pre-wrap; margin-left: 4px; margin-top: 3px; margin-bottom: 14.9999990463257px; margin-right: 10px;  }
+.S2 { min-height: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S3 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S4 { margin-left: 3px; margin-top: 10px; margin-bottom: 10px; margin-right: 3px;  }
+.S5 { line-height: 15.5926666259766px; min-height: 18px; white-space: nowrap; font-size: 12.6666669845581px; white-space: nowrap; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S6 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S7 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; color: rgb(160, 32, 240); font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S8 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 45px;  }
+.S9 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 10px; margin-bottom: 9px; margin-right: 10px;  }
+.S10 { min-height: 0px; font-weight: bold; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+
+.LineNodeBlock {margin: 10px 0 10px 0;}
+.LineNodeBlock+.paragraphNode {margin-top: 10px;}
+.lineNode {padding-left: 10px; background-color: #F7F7F7; border-left: 1px solid #E9E9E9; border-right: 1px solid #E9E9E9;}
+.inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
+.inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
+.lineNode .textBox {white-space: pre;}
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Example 3: Calibrating the AR Drone 2.0</span></h1><p class = "S3"><span class = "S2">This example will show how the AR Drone 2.0 can be calibrated to compensate for any offsets in the accelerometer, gyroscope and magnetometer. The calibration is also used to find the scaling factors to normalize the accelerometer and magnetometer data before they can be used to calculate the drones position.</span></p><p class = "S3"><span class = "S2">The calibration procedure is governed by a GUIDE application:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S5 lineNode"><span class = "S6">open(</span><span class = "S7">'Example3_Calibrating_The_AR_Drone.fig'</span><span class = "S8">)</span></p></div></div><p class = "S9"><span class = "S2">After a wireless connection is achieved with the AR Drone 2.0 the calibration model can be uploaded onto the drone using the "Build and upload" button. When this is complete the desired sensor component to calibrate can be selected using the drop down menu. The calibration instructions panel will inform how the drone should be placed for the particular calibration. </span></p><p class = "S3"><span class = "S10">Positioning of the drone:</span></p><p class = "S3"><span class = "S2">Calibration of the accelerometers relys on the user positioning the drone in 6 different positions, to measure the accelertion imposed by earths gravitational field in all three axises in both positive and negative direction. It is imortant that the drone is stationairy during the calibration and that it is positioned such that only one axis senses the gravitational pull per calibration. Any offsets during this calibration will result in an offset in what the drone considers level.</span></p><p class = "S3"><span class = "S2">The gyroscope can be calibrated by placing the drone on the ground and making sure it remains stationairy during the calibration</span></p><p class = "S3"><span class = "S2">Calibration of the magnetometer requires the user to rotate the drone during the calibration measurement such that all three components of the magnetometer experience the maximum and minimum possible magnetism.</span></p></div></div>
+<!-- 
+##### SOURCE BEGIN #####
+%% Example 3: Calibrating the AR Drone 2.0
+% This example will show how the AR Drone 2.0 can be calibrated to compensate 
+% for any offsets in the accelerometer, gyroscope and magnetometer. The calibration 
+% is also used to find the scaling factors to normalize the accelerometer and 
+% magnetometer data before they can be used to calculate the drones position.
+% 
+% The calibration procedure is governed by a GUIDE application:
+
+open('Example3_Calibrating_The_AR_Drone.fig')
+%% 
+% After a wireless connection is achieved with the AR Drone 2.0 the calibration 
+% model can be uploaded onto the drone using the "Build and upload" button. When 
+% this is complete the desired sensor component to calibrate can be selected using 
+% the drop down menu. The calibration instructions panel will inform how the drone 
+% should be placed for the particular calibration. 
+% 
+% *Positioning of the drone:*
+% 
+% Calibration of the accelerometers relys on the user positioning the drone 
+% in 6 different positions, to measure the accelertion imposed by earths gravitational 
+% field in all three axises in both positive and negative direction. It is imortant 
+% that the drone is stationairy during the calibration and that it is positioned 
+% such that only one axis senses the gravitational pull per calibration. Any offsets 
+% during this calibration will result in an offset in what the drone considers 
+% level.
+% 
+% The gyroscope can be calibrated by placing the drone on the ground and 
+% making sure it remains stationairy during the calibration
+% 
+% Calibration of the magnetometer requires the user to rotate the drone during 
+% the calibration measurement such that all three components of the magnetometer 
+% experience the maximum and minimum possible magnetism.
+##### SOURCE END #####
+--></body></html>
