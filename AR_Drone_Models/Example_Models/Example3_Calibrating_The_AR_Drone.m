@@ -24,6 +24,7 @@ function varargout = Example3_Calibrating_The_AR_Drone(varargin)
 
 % Last Modified by GUIDE v2.5 11-May-2016 14:04:05
 
+
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
@@ -97,8 +98,11 @@ end
 
 % --- Executes on button press in StartCalibrationButton.
 function StartCalibrationButton_Callback(hObject, eventdata, handles)
-system(['echo ' matlabroot '> AR_Drone_Models\Example_Models\Example3Files\matlabroot.txt']);
-!AR_Drone_Models\Example_Models\Example3Files\CalibrationConnection.bat &
+
+drone = tcpip('192.168.1.1',23);
+fopen(drone);
+query(drone,'./update/Example3_Calibrating_The_AR_Drone_Model.elf -w');
+
 set_param('Example3_Calibrating_The_AR_Drone_Model','SimulationCommand','connect');
 set_param('Example3_Calibrating_The_AR_Drone_Model','SimulationCommand','start');
 % hObject    handle to StartCalibrationButton (see GCBO)
