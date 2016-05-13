@@ -123,15 +123,6 @@ archiver.setDirective('OutputFlag', '');
 archiver.setFileExtension('Static Library', '.lib');
 archiver.setPath('$(CODE_SOURCERY)');
 
-% ------------------------------
-% Download Tool
-% ------------------------------
-% Adding a new download configuration to download and run using DSS
-downloadTool = tc.getPostbuildTool('Download');
-downloadTool.setCommand('ssh_download.bat'); % Macro name & Tool name
-downloadTool.setPath('$(TARGET_PKG_INSTALLDIR)');
-tc.setBuildConfigurationOption('all', 'Download', '$(TARGET_LOAD_CMD_ARGS) $(PRODUCT)'); 
-
 
 % --------------------------------------------
 % BUILD CONFIGURATIONS
