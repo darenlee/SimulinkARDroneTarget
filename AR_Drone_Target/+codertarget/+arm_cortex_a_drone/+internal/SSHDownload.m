@@ -7,7 +7,14 @@ droneFtp = ftp('192.168.1.1:5551','root','root');
 
 fileName = char(varargin(2));
 fileName = fileName(4:end); % remove ../
+
 disp(['Uploading ' fileName ' to the AR Drone']);
+%Delete any older versions of the program on the drone because mput does
+%not overwrite files
+try
+    delete(droneFtp,fileName);
+catch
+end
 mput(droneFtp,char(varargin(2)));
 
 disp('Opening TPCIP connection with the AR Drone');
