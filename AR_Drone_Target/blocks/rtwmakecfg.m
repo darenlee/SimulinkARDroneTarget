@@ -1,12 +1,11 @@
-% Copyright 2014 The MathWorks, Inc.
 function makeInfo = rtwmakecfg()
 %RTWMAKECFG adds include and source directories to the make files.
 %   makeInfo=RTWMAKECFG returns a structured array containing build info.
 %   Please refer to the rtwmakecfg API section in the Simulink Coder
 %   documentation for details on the format of this structure.
 %
-%   Simulink version    : 8.3 (R2014a) 27-Dec-2013
-%   MATLAB file generated on : 02-Apr-2014 20:16:04
+%   Simulink version    : 8.7 (R2016a) 10-Feb-2016
+%   MATLAB file generated on : 17-May-2016 12:41:30
 
 % Verify the Simulink version
 verify_simulink_version();
@@ -290,7 +289,7 @@ thePaths = RTW.uniquePath(thePaths);
 function info = get_serialized_info()
 
 % Allocate the output structure array
-info(1:2) = struct(...
+info(1:1) = struct(...
     'SFunctionName', '',...
     'IncPaths', {{}},...
     'SrcPaths', {{}},...
@@ -306,28 +305,4 @@ info(1).SFunctionName = 'ARDrone_LED';
 info(1).IncPaths = {'.'};
 info(1).SourceFiles = {'led.c', 'Actuators.c', 'GPIO.c'};
 info(1).Language = 'C';
-
-
-info(2).SFunctionName = 'IMU_Sfcn_mex';
-info(2).IncPaths = {'.'};
-info(2).SourceFiles = {'IMU_Navdata.c', 'IMU_Navdata_wrapper.c'};
-info(2).Language = 'C';
-
-info(3).SFunctionName = 'ARDrone_Motor';
-info(3).IncPaths = {'.'};
-info(3).SourceFiles = {'Actuators.c'};
-info(3).Language = 'C';
-
-info(4).SFunctionName = 'Init_Actuator';
-info(4).IncPaths = {'.'};
-info(4).SourceFiles = {'act_init.c'};
-info(4).Language = 'C';
-
-
-info(5).SFunctionName = 'Battery_Sfcn_mex';
-info(5).IncPaths = {'.'};
-info(5).SourceFiles = {'BatteryMeasure.c', 'BatteryMeasure_Wrapper.c'};
-info(5).Language = 'C';
-
-
 

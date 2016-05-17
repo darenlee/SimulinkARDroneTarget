@@ -23,10 +23,6 @@ tc.Name = coder.make.internal.formToolchainName(info.ToolChainName, ...
 tc.Platform = platform;
 tc.setBuilderApplication(platform);
 
-% MATLAB setup
-tc.MATLABSetup = 'codertarget.arm_cortex_a_drone.internal.my_function();';  %DAREN: roth package related?
-                                                                          %DAREN, will comment out to see the effect
-
 % Toolchain's attribute
 tc.addAttribute('TransformPathsWithSpaces');
 tc.addAttribute('SupportsUNCPaths',     false);

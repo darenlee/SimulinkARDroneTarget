@@ -1,12 +1,17 @@
 function SSHDownload(varargin)
-%SSHDOWNLOAD Summary of this function goes here
-%   Detailed explanation goes here
+%SSHDOWNLOAD is used to upload the model compiled for the ARM AR Drone target to the AR Drone 2.0 and execute it 
 
-disp('Setting up FTP Connection with the AR Drone');
-droneFtp = ftp('192.168.1.1:5551','root','root');
-
+%% Retrieve the IP
 fileName = char(varargin(2));
 fileName = fileName(4:end); % remove ../
+modelName = fileName(1: end - 4); %remove .elf
+
+hCs = getActiveConfigSet(modelName);
+data = hCs.get_param('CoderTargetData');
+IP = data.IP;
+
+disp(['Setting up FTP Connection with the AR Drone at IP adress: ' IP ':5551']);
+droneFtp = ftp([IP ':5551'],'root','root');
 
 disp(['Uploading ' fileName ' to the AR Drone']);
 %Delete any older versions of the program on the drone because mput does
@@ -18,7 +23,7 @@ end
 mput(droneFtp,char(varargin(2)));
 
 disp('Opening TPCIP connection with the AR Drone');
-droneTcpip = tcpip('192.168.1.1',23);
+droneTcpip = tcpip(IP,23);
 fopen(droneTcpip);
 
 disp(['Killing any instances of Program.elf or previously running ' fileName]);
