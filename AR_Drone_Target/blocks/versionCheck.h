@@ -10,5 +10,6 @@ versionCheck.h
 #endif //MATLAB_MEX_FILE
 
 void versionCheckInit(void);
+void versionCheckStep(unsigned char* supported);
 void versionCheckClose(void);
 #endif

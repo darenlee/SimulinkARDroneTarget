@@ -86,8 +86,9 @@ Version_Check_def.HeaderFiles = {'versionCheck.h'};
 Version_Check_def.IncPaths = {''};
 Version_Check_def.SFunctionName = 'Version_Check';
 Version_Check_def.Options.language = 'C';
-Version_Check_def.StartFcnSpec = 'versionCheckInit(void)';
-Version_Check_def.TerminateFcnSpec = 'versionCheckClose(void)';
+Version_Check_def.StartFcnSpec = 'void versionCheckInit(void)';
+Version_Check_def.OutputFcnSpec = 'void versionCheckStep(uint8 y1[1])';
+Version_Check_def.TerminateFcnSpec = 'void versionCheckClose(void)';
 
 % Generate s function
 legacy_code('sfcn_cmex_generate', Version_Check_def);
@@ -117,3 +118,4 @@ legacy_code('generate_for_sim', Battery_def);
 Battery_def.HeaderFiles                  = {'i2c-dev.h'};
 Battery_def.SourceFiles  = {'BatteryMeasure.c','BatteryMeasure_Wrapper.c'};
 legacy_code('sfcn_tlc_generate', Battery_def);
+

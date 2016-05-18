@@ -5,7 +5,7 @@ function [ IP varOut2 port ] = iptest( varargin )
 
 hCs = getActiveConfigSet(gcs);
 data = hCs.get_param('CoderTargetData');
-IP = data.IP
+IP = data.IP;
 varOut2 = 1;
 port = 17725;
 end
