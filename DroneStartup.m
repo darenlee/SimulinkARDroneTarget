@@ -28,7 +28,7 @@ end
 
 if exist('AR_Drone_Target/blocks/videolib/ARdrone_video_lib.slx','file') == 0
     disp('No video library has been found, starting compilation of the video library using the Legacy Code Tool')
-   run('AR_Drone_Target/blocks/videolib/ARdrone_legacy.m')
+   run('AR_Drone_Target/blocks/videolib/Generate_AR_Drone_Video.m')
 end
 
 %% update paths 

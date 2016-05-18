@@ -288,7 +288,7 @@ void videoClose2(void)
 }
 
 
-void videorabImage1(unsigned char* mybuf) {
+void videoGrabImage1(unsigned char* mybuf) {
 	
 	#ifndef MATLAB_MEX_FILE
 	
@@ -328,11 +328,6 @@ void videorabImage1(unsigned char* mybuf) {
 	assert(buf.index < vid1.n_buffers);
 
 	vid1.seq++;	
-	//vid1.img = img1;
-	//vid1.img->timestamp = util_timestamp();
-	//vid1.img->seq = vid1.seq;
- 	
-	//memcpy(vid1.img->buf, vid1.buffers[buf.index].buf, vid1.w*vid1.h*2);
 	memcpy(mybuf, vid1.buffers[buf.index].buf, vid1.w*vid1.h*2);
 	
 	if (ioctl(vid1.fd, VIDIOC_QBUF, &buf) < 0) {
@@ -342,7 +337,7 @@ void videorabImage1(unsigned char* mybuf) {
 #endif //MATLAB_MEX_FILE
 }
 	
-void videorabImage2(unsigned char* mybuf) {
+void videoGrabImage2(unsigned char* mybuf) {
 	
 	#ifndef MATLAB_MEX_FILE
 	
@@ -382,11 +377,6 @@ void videorabImage2(unsigned char* mybuf) {
 	assert(buf.index < vid2.n_buffers);
 
 	vid2.seq++;	
-	vid2.img = img2;
-	vid2.img->timestamp = util_timestamp();
-	vid2.img->seq = vid2.seq;
- 	
-	memcpy(vid2.img->buf, vid2.buffers[buf.index].buf, vid2.w*vid2.h*2);
 	memcpy(mybuf, vid2.buffers[buf.index].buf, vid2.w*vid2.h*2);
 	
 	if (ioctl(vid2.fd, VIDIOC_QBUF, &buf) < 0) {

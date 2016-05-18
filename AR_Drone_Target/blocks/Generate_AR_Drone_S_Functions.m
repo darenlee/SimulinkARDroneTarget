@@ -40,6 +40,7 @@ IMU_Block_def.SourceFiles  = {'IMU_Navdata.c','IMU_Navdata_wrapper.c'};
 IMU_Block_def.HeaderFiles  = {'IMU_Navdata.h'};
 legacy_code('sfcn_tlc_generate', IMU_Block_def);
 
+
 %% LED Block
 
 LED_Block_def = legacy_code('initialize');
@@ -92,3 +93,26 @@ Version_Check_def.TerminateFcnSpec = 'versionCheckClose(void)';
 legacy_code('sfcn_cmex_generate', Version_Check_def);
 legacy_code('compile', Version_Check_def);
 legacy_code('sfcn_tlc_generate', Version_Check_def);
+
+%% Battery block
+Battery_def = legacy_code('initialize');
+Battery_def.SFunctionName = 'Battery_Sfcn_mex';
+Battery_def.InitializeConditionsFcnSpec  = 'void BatteryMeasure_start()';
+Battery_def.TerminateFcnSpec = 'void BatteryMeasure_term()';
+Battery_def.OutputFcnSpec                = 'void BatteryMeasure_step(single y1[1])';  
+Battery_def.SourceFiles                  = {'BatteryMeasure_Wrapper.c'};
+Battery_def.IncPaths                     = {''};
+Battery_def.Options.useTlcWithAccel      = false;
+Battery_def.Options.language =  'C';
+Battery_def.SampleTime    = 'parameterized';
+
+% Generate S-function source file
+legacy_code('sfcn_cmex_generate', Battery_def);
+
+% Generate for simulation only - the S-function does nothing in normal mode
+legacy_code('generate_for_sim', Battery_def);
+
+% When generating TLC, we want to include additional source files which are
+% device driver / HW specific
+Battery_def.SourceFiles  = {'BatteryMeasure.c','BatteryMeasure_Wrapper.c'};
+legacy_code('sfcn_tlc_generate', Battery_def);
