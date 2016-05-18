@@ -114,5 +114,6 @@ legacy_code('generate_for_sim', Battery_def);
 
 % When generating TLC, we want to include additional source files which are
 % device driver / HW specific
+Battery_def.HeaderFiles                  = {'i2c-dev.h'};
 Battery_def.SourceFiles  = {'BatteryMeasure.c','BatteryMeasure_Wrapper.c'};
 legacy_code('sfcn_tlc_generate', Battery_def);

@@ -5,7 +5,7 @@ function makeInfo = rtwmakecfg()
 %   documentation for details on the format of this structure.
 %
 %   Simulink version    : 8.7 (R2016a) 10-Feb-2016
-%   MATLAB file generated on : 18-May-2016 13:54:33
+%   MATLAB file generated on : 18-May-2016 14:04:00
 
 % Verify the Simulink version
 verify_simulink_version();
