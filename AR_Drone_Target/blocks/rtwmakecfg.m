@@ -5,7 +5,7 @@ function makeInfo = rtwmakecfg()
 %   documentation for details on the format of this structure.
 %
 %   Simulink version    : 8.7 (R2016a) 10-Feb-2016
-%   MATLAB file generated on : 18-May-2016 14:31:53
+%   MATLAB file generated on : 23-May-2016 15:58:40
 
 % Verify the Simulink version
 verify_simulink_version();
@@ -300,8 +300,9 @@ info(1:1) = struct(...
     'Language', ''...
     );
 
-% Dependency info for S-function 'ARDrone_LED'
-info(1).SFunctionName = 'ARDrone_LED';
-info(1).SourceFiles = {'led.c', 'Actuators.c', 'GPIO.c'};
+% Dependency info for S-function 'IMU_Sfcn_mex'
+info(1).SFunctionName = 'IMU_Sfcn_mex';
+info(1).SrcPaths = {'.'};
+info(1).SourceFiles = {'IMU_Navdata.c', 'IMU_Navdata_wrapper.c'};
 info(1).Language = 'C';
 

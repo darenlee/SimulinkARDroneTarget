@@ -5,7 +5,8 @@
         <tocitem target="Examples.html">Examples 
             <tocitem target="Example1.html">Example 1: Getting started</tocitem>
             <tocitem target="Example2.html">Example 2: Streaming video in External mode</tocitem>
-            <tocitem target="Example3.html">Example 3</tocitem>
+            <tocitem target="Example3.html">Example 3: Streaming video in Normal mode</tocitem>
+            <tocitem target="Example4.html">Example 4: Reading and logging sensor data</tocitem>
         </tocitem>
         <tocitem target="Documentation.html">Documentation
             <tocitem target="Documentation.html">Documentation

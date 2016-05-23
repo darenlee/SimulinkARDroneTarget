@@ -38,7 +38,9 @@ legacy_code('generate_for_sim', IMU_Block_def);
 % device driver / HW specific
 IMU_Block_def.SourceFiles  = {'IMU_Navdata.c','IMU_Navdata_wrapper.c'};
 IMU_Block_def.HeaderFiles  = {'IMU_Navdata.h'};
+IMU_Block_def.SrcPaths = {'.'}
 legacy_code('sfcn_tlc_generate', IMU_Block_def);
+legacy_code('rtwmakecfg_generate', IMU_Block_def);
 
 
 %% LED Block

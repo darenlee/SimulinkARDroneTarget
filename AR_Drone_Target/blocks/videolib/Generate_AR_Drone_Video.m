@@ -72,9 +72,15 @@ legacy_code('slblock_generate',def_codegen, lib_name);
 legacy_code('sfcn_tlc_generate', def_codegen)
 legacy_code('rtwmakecfg_generate', def_codegen)
 
+
 %% Save exd exit
-save_system(lib_name);
+set_param([lib_name '/' dev_video1_block_name],'ShowSpec','off')
+set_param([lib_name '/' dev_video2_block_name],'ShowSpec','off')
+set_param([lib_name '/' dev_video1_block_name],'SampleTime','0.1')
+set_param([lib_name '/' dev_video2_block_name],'SampleTime','0.1')
 set_param(lib_name, 'EnableLBRepository','on');
 set_param(lib_name, 'Lock', 'on');
+
+save_system(lib_name);
 
 % EOF
