@@ -8,11 +8,15 @@
             <tocitem target="Example3.html">Example 3: Streaming video in Normal mode</tocitem>
             <tocitem target="Example4.html">Example 4: Reading and logging sensor data</tocitem>
         </tocitem>
-        <tocitem target="Documentation.html">Documentation
-            <tocitem target="Documentation.html">Documentation
-            </tocitem>
+        <tocitem target="Concepts.html">Concepts
+            <tocitem target="ARDrone2Hardware.html">AR Drone 2.0 hardware</tocitem>
+            <tocitem target="DriverSupport.html">Driver support</tocitem>
+            <tocitem target="CodeGeneration.html">Code generation</tocitem>
         </tocitem>
-        <tocitem target="FAQ.html">FAQ
+        <tocitem target="Documentation.html">Documentation
+            <tocitem target="ReleaseNotes.html">Release notes</tocitem>
+            <tocitem target="ExternalResources.html">External resources</tocitem>
+            <tocitem target="FAQ.html">Frequently asked questions</tocitem>
         </tocitem>
     </tocitem>
 </toc>
