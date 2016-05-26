@@ -24,7 +24,7 @@ h1, h2 {font-weight: normal;}
 .inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
 .inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
 .lineNode .textBox {white-space: pre;}
-</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Example 1: Getting Started</span></h1><p class = "S3"><span class = "S2">This example shows how to get a simple Simulink model running on the drone in external mode. The model will verify whether the firmware on your drone is supported.</span></p><p class = "S3"><span class = "S2"></span></p><h2 class = "S4"><span class = "S2">Setting up the WIFI connection</span></h2><p class = "S3"><span class = "S2">The AR Drone 2.0 creates it's own WIFI network on startup called 'ardrone2'. Connecting a PC to this unsecured network allows the uploading of code to the drone. By default the AR Drone 2.0 will give itself the IP Adress '192.168.1.1' and the PC will have '192.168.1.2'.</span></p><p class = "S3"><span class = "S2"></span></p><h2 class = "S4"><span class = "S2">The first Simulink model</span></h2><p class = "S3"><span class = "S2">The AR Drone 2.0 Hardware support package has been developed using multiple drones running on firmware version 2.4.8. In order to make sure that your drone is compatible with the AR Drone 2.0 Hardware support package the first model will consist of nothing more than a block which checks if the AR Drone is running this supported firmware version and then outputs that to a display. Open the model by executing the following command in your MATLAB workspace:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">open(</span><span class = "S8">'Example1_Getting_Started'</span><span class = "S9">)</span></p></div></div><p class = "S10"><span class = "S2">The model should now open and appear as below:</span></p><p class = "S11"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAr4AAACNCAYAAABR9nlfAAAO9ElEQVR42u3dQYsURx8HYG/mpJ8g
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Example 1: Getting Started</span></h1><p class = "S3"><span class = "S2">This example shows how to get a simple Simulink model running on the drone in external mode. The model will verify whether the firmware on your drone is supported.</span></p><h2 class = "S4"><span class = "S2">Setting up the WIFI connection</span></h2><p class = "S3"><span class = "S2">The AR Drone 2.0 creates it's own WIFI network on startup called 'ardrone2'. Connecting a PC to this unsecured network allows the uploading of code to the drone. By default the AR Drone 2.0 will give itself the IP Adress '192.168.1.1' and the PC will have '192.168.1.2'.</span></p><p class = "S3"><span class = "S2"></span></p><h2 class = "S4"><span class = "S2">The first Simulink model</span></h2><p class = "S3"><span class = "S2">The AR Drone 2.0 Hardware support package has been developed using multiple drones running on firmware version 2.4.8. In order to make sure that your drone is compatible with the AR Drone 2.0 Hardware support package the first model will consist of nothing more than a block which checks if the AR Drone is running this supported firmware version and then outputs that to a display. Open the model by executing the following command in your MATLAB workspace:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">open(</span><span class = "S8">'Example1_Getting_Started'</span><span class = "S9">)</span></p></div></div><p class = "S10"><span class = "S2">The model should now open and appear as below:</span></p><p class = "S11"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAr4AAACNCAYAAABR9nlfAAAO9ElEQVR42u3dQYsURx8HYG/mpJ8g
 3oTglwh4UL+Fl3gKgiHkIuQUEsgl6ClBJQmEJMfEnMQkXjwshAgh0fWge1AMiAsGFzwsGPqlBuql
 7FR1V8/27sz0PA/URXu2e2qm//WbmuqeQw0AAKyBQ7oAAADBFwAABF8AABB8AQBA8AUAAMEXAAAE
 XwAAEHwBAEDwBQBA8AUAAMEXAAAEXwAAEHwBAEDwBQAAwRcAAARfAAAQfAEAQPAFAEDwBQAAwRcA
@@ -92,7 +92,7 @@ qwmDXV9t9M0g1Fzg0PW40q/3jHmBQ66o1VyRXLPvIVdoz/vLbaV7/gKrF3xraujYdX+s2t93zMtS
 +0sTDV31M50tDvt69uxZMfjeuHHjtb7M9f2QbWv7qGZsTp9H7h7JfeNUe1u/3AYAsKaTS7UfUIZs
 u24EXwAAwVfwBQBA8BV8AQAQfAVfAAAQfAEAQPAFAADBFwAABF8AABB8AQAQfAEAQPAFAADBFwAA
 BF8AABB8AQBA8AUAAMEXAAAEXwAAEHwBABB8AQBA8AUAAMEXAAAEXwAAWBb/Axjz2oZGm4dJAAAA
-AElFTkSuQmCC" alt="Ex1_MDL.PNG"></p><p class = "S3"><span class = "S2">The Version Check block is created using the MATLAB Legacy Code Tool which can be used to integrate legacy C code into Simulink. If you wish to see what the underlying C code contains, execute the following MATLAB command in the workspace:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">edit(</span><span class = "S8">'versionCheck.c'</span><span class = "S9">)</span></p></div></div><p class = "S10"><span class = "S2">This C file contains three functions, versionCheckInit is called at when the model begins execution, in this case it reads the version.txt file which is by default located in the update folder on the AR Drone 2.0. The code then compares the found version with the known supported version, if they differ the static internal variable isSupported is set from 1 (supported) to 0 (not supported). The second function, versionCheckStep, is called during every execution step on the AR Drone. It sets the output of the Simulink block equal to the internal isSupported variable allowing us to see the result of the initialization function. The last function is the versionCheckClose function which is called when the model terminates. It is included for completeness of the implementation but as no memory is allocated no cleanup is necessary and the close function is kept empty.</span></p><p class = "S3"><span class = "S2">The Simulink model is allready configured to run on the AR Drone 2.0 using external mode. Openening the Configuration Parameters can be done by pressing the </span><img class="imageNode" width="23" height="21" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAZCAIAAACtotlwAAADL0lEQVR4AdWUuUtrURDG/Tser3RB
+AElFTkSuQmCC"></p><p class = "S3"><span class = "S2">The Version Check block is created using the MATLAB Legacy Code Tool which can be used to integrate legacy C code into Simulink. If you wish to see what the underlying C code contains, execute the following MATLAB command in the workspace:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">edit(</span><span class = "S8">'versionCheck.c'</span><span class = "S9">)</span></p></div></div><p class = "S10"><span class = "S2">This C file contains three functions, versionCheckInit is called at when the model begins execution, in this case it reads the version.txt file which is by default located in the update folder on the AR Drone 2.0. The code then compares the found version with the known supported version, if they differ the static internal variable isSupported is set from 1 (supported) to 0 (not supported). The second function, versionCheckStep, is called during every execution step on the AR Drone. It sets the output of the Simulink block equal to the internal isSupported variable allowing us to see the result of the initialization function. The last function is the versionCheckClose function which is called when the model terminates. It is included for completeness of the implementation but as no memory is allocated no cleanup is necessary and the close function is kept empty.</span></p><p class = "S3"><span class = "S2">The Simulink model is allready configured to run on the AR Drone 2.0 using external mode. Openening the Configuration Parameters can be done by pressing the </span><img class="imageNode" width="23" height="21" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAZCAIAAACtotlwAAADL0lEQVR4AdWUuUtrURDG/Tser3RB
 VARjIWJiETDBFRfUSMT9qXGLghFELRKJokWikLgb3BBJFAUVjBaihYhiE3DpUsQFLKL+Be+HB+Qm
 3rxbWbwpLjPnfN935syZuXFvP2BxP6D5pix6c3PzR2KEinnIi768vMzMzPDFZmdnR0ZG0MJwCMW6
 AMgeICMKZ3BwsK6urre3l29bW5vH43l/fw+Hw4uLi4RfW8AAf9eNFn1+fh4YGGhpabm+vp6YmNjd
@@ -169,8 +169,6 @@ lBxRakt7Xxr678Yf3eRG2yUs37IAAAAASUVORK5CYII="><span class = "S2"> button in Simu
 % This example shows how to get a simple Simulink model running on the drone 
 % in external mode. The model will verify whether the firmware on your drone is 
 % supported.
-% 
-% 
 %% Setting up the WIFI connection
 % The AR Drone 2.0 creates it's own WIFI network on startup called 'ardrone2'. 
 % Connecting a PC to this unsecured network allows the uploading of code to the 
@@ -190,7 +188,7 @@ open('Example1_Getting_Started')
 %% 
 % The model should now open and appear as below:
 % 
-%  
+% 
 % 
 % The Version Check block is created using the MATLAB Legacy Code Tool which 
 % can be used to integrate legacy C code into Simulink. If you wish to see what 
@@ -214,7 +212,7 @@ edit('versionCheck.c')
 % 
 % The Simulink model is allready configured to run on the AR Drone 2.0 using 
 % external mode. Openening the Configuration Parameters can be done by pressing 
-% the   button in Simulink or by pressing 'ctrl + E'. This will bring you to a 
+% the  button in Simulink or by pressing 'ctrl + E'. This will bring you to a 
 % Configuration Reference window where the specific Configuration can be selected. 
 % For this example we will run the model in external mode allowing us to send 
 % commands and retrieve data from the drone while the model runs on the drone 
@@ -224,24 +222,24 @@ edit('versionCheck.c')
 % we would be unable to see the "Is Version Supported" display output. 
 %% Running custom firmware verification code on the AR Drone 2.0
 % Make sure the model is set to external mode and then build the model using 
-% the   button or pressing 'ctrl + B'. The configuration set by default has the 
+% the  button or pressing 'ctrl + B'. The configuration set by default has the 
 % 'Build load and run' option selected meaning the software will be automatically 
 % transfered to the drone over FTP and made ready for a connection with Simulink. 
 % Once the process is complete a console window will popup with the text '**starting 
 % the model**' and some codes relevant to the motor initialization. At this point 
-% click 'Connect to target'   in Simulink  which will transfer any parameters 
-% that are tunable in real time (in this case the desired LED color). Once this 
-% is done the 'Run'   button will turn green, press it to start the model on the 
-% drone. The "Is Version Supported" display will now display a value of either 
-% "0" (your drone does not run a supported firmware version) or "1" (your drones 
-% software version is supported). If the display shows "0" this does not necessarily 
-% mean that your drone is incompatible with this Hardware support package but 
-% care should be taken when using the provided models as they are untested for 
-% your drones firmware version.
+% click 'Connect to target'  in Simulink  which will transfer any parameters that 
+% are tunable in real time (in this case the desired LED color). Once this is 
+% done the 'Run'  button will turn green, press it to start the model on the drone. 
+% The "Is Version Supported" display will now display a value of either "0" (your 
+% drone does not run a supported firmware version) or "1" (your drones software 
+% version is supported). If the display shows "0" this does not necessarily mean 
+% that your drone is incompatible with this Hardware support package but care 
+% should be taken when using the provided models as they are untested for your 
+% drones firmware version.
 % 
 % When you are done with this example you can stop it's execution using the 
-% 'Stop'   button in Simulink. Without having to reboot the drone you can run 
-% any desired model on the drone by following the steps above again.
+% 'Stop'  button in Simulink. Without having to reboot the drone you can run any 
+% desired model on the drone by following the steps above again.
 % 
 % 
 % 

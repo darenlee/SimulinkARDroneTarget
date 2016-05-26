@@ -24,7 +24,7 @@ void BatteryMeasure_term()
 { 
     #ifndef MATLAB_MEX_FILE
 	
-		//BatteryMeasure_stop(); //may not do anything for now
+		//No termination code to be wrapped
     
 	#endif
 }
@@ -40,9 +40,6 @@ float VoltageMeasure;
        
 		BatteryMeasure_update(&VoltageMeasure); //send voltage/current via y1 
 		*y1 = VoltageMeasure;
-// 		*y2 = CurrentMeasure;
-        
-        //printf("Voltage measurement is : %f \n",VoltageMeasure);
 		   
     #endif
 }

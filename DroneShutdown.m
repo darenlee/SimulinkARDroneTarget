@@ -10,7 +10,6 @@
 % See: help simulinkproject
 
 %% remove the paths that are outside of the Simulink Project Path
-rmpath([pwd '\registry']);
 rmpath([pwd '\Docs']); 
 
 bdclose all;

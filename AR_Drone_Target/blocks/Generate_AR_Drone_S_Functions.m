@@ -14,6 +14,7 @@ legacy_code('sfcn_cmex_generate', act_init_def);
 legacy_code('compile', act_init_def);
 act_init_def.SourceFiles = {'act_init.c','Actuators.c','GPIO.c'};
 % Add dependancy for target code generation
+act_init_def.SrcPaths = {'.'};
 legacy_code('sfcn_tlc_generate', act_init_def);
 
 %% IMU Block
@@ -38,10 +39,8 @@ legacy_code('generate_for_sim', IMU_Block_def);
 % device driver / HW specific
 IMU_Block_def.SourceFiles  = {'IMU_Navdata.c','IMU_Navdata_wrapper.c'};
 IMU_Block_def.HeaderFiles  = {'IMU_Navdata.h'};
-IMU_Block_def.SrcPaths = {'.'}
+IMU_Block_def.SrcPaths = {'.'};
 legacy_code('sfcn_tlc_generate', IMU_Block_def);
-legacy_code('rtwmakecfg_generate', IMU_Block_def);
-
 
 %% LED Block
 
@@ -59,8 +58,8 @@ legacy_code('compile', LED_Block_def);
 
 % Add dependancy for target code generation
 LED_Block_def.SourceFiles = {'led.c','Actuators.c','GPIO.c'};
+LED_Block_def.SrcPaths = {'.'};
 legacy_code('sfcn_tlc_generate', LED_Block_def);
-legacy_code('rtwmakecfg_generate', LED_Block_def);
 
 %% Motor Block
 
@@ -80,7 +79,6 @@ legacy_code('compile', Motor_def);
 Motor_def.SourceFiles = {'motor.c','Actuators.c','GPIO.c'};
 legacy_code('sfcn_tlc_generate', Motor_def);
 
-
 %% Version Check Block
 Version_Check_def = legacy_code('initialize');
 Version_Check_def.SourceFiles = {'versionCheck.c'};
@@ -95,6 +93,7 @@ Version_Check_def.TerminateFcnSpec = 'void versionCheckClose(void)';
 % Generate s function
 legacy_code('sfcn_cmex_generate', Version_Check_def);
 legacy_code('compile', Version_Check_def);
+Version_Check_def.SrcPaths = {'.'};
 legacy_code('sfcn_tlc_generate', Version_Check_def);
 
 %% Battery block
@@ -119,5 +118,10 @@ legacy_code('generate_for_sim', Battery_def);
 % device driver / HW specific
 Battery_def.HeaderFiles                  = {'i2c-dev.h'};
 Battery_def.SourceFiles  = {'BatteryMeasure.c','BatteryMeasure_Wrapper.c'};
+Battery_def.SrcPaths = {'.'};
 legacy_code('sfcn_tlc_generate', Battery_def);
+
+%% Generate the rtwmakecfg file for all s functions
+
+legacy_code('rtwmakecfg_generate', [act_init_def;IMU_Block_def;LED_Block_def;Motor_def;Version_Check_def;Battery_def]);
 

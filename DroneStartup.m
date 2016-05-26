@@ -24,16 +24,23 @@ if exist('AR_Drone_Target/registry/gcc_codesourcery_arm_linux_gnueabihf_gmake_wi
     RTW.TargetRegistry.getInstance('reset');         % reset the TargetRegistry such that rtwTargetInfo.m is called when a model is made for the first time
 end    
 
+
+%% Create the s functions for the AR_Drone_Library blocks
+
+if exist('AR_Drone_Target/blocks/rtwmakecfg.m','file') == 0 % the rtwmakecfg.m is created at the very end of Generate_AR_Drone_S_Functions
+    disp('No rtwmakecfg found for the blocks, running Generate_AR_Drone_S_Functions')
+   run('AR_Drone_Target/blocks/Generate_AR_Drone_S_Functions.m')
+end
+
 %% Compile the video library if needed
 
-if exist('AR_Drone_Target/blocks/videolib/ARdrone_video_lib.slx','file') == 0
+if exist('AR_Drone_Target/blocks/videolib/AR_Drone_Video.slx','file') == 0
     disp('No video library has been found, starting compilation of the video library using the Legacy Code Tool')
    run('AR_Drone_Target/blocks/videolib/Generate_AR_Drone_Video.m')
 end
 
 %% update paths 
 
-addpath([pwd '\registry']); % folder is generated post download
 addpath([pwd '\Docs']); % include the documentation
 
 
