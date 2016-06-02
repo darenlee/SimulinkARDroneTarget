@@ -12,6 +12,10 @@
 %% remove the paths that are outside of the Simulink Project Path
 rmpath([pwd '\Docs']); 
 
+%% reset build folder
+set_param(0, 'CacheFolder', '');
+set_param(0, 'CodeGenFolder', '');
+
 bdclose all;
 close all;
 clear all;

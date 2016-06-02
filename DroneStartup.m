@@ -24,6 +24,9 @@ if exist('AR_Drone_Target/registry/gcc_codesourcery_arm_linux_gnueabihf_gmake_wi
     RTW.TargetRegistry.getInstance('reset');         % reset the TargetRegistry such that rtwTargetInfo.m is called when a model is made for the first time
 end    
 
+%% Initialise the config
+
+run('AR_Drone_Models\Flight_Models\AR_DRONE_SCRIPT.m')
 
 %% Create the s functions for the AR_Drone_Library blocks
 
@@ -43,10 +46,14 @@ end
 
 addpath([pwd '\Docs']); % include the documentation
 
+%% set build folder
+if exist(fullfile(pwd,'Build')) == 0
+    mkdir('Build')
+end
+set_param(0, 'CacheFolder', fullfile(pwd,'Build'));
+set_param(0, 'CodeGenFolder', fullfile(pwd,'Build'));
+
 
 %% register the compiler
 sl_refresh_customizations;
 
-%% Initialise the config
-
-run('AR_Drone_Models\Flight_Models\AR_DRONE_SCRIPT.m')
