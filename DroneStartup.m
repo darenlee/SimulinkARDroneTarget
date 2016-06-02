@@ -28,12 +28,8 @@ end
 
 run('AR_Drone_Models\Flight_Models\AR_DRONE_SCRIPT.m')
 
-%% Create the s functions for the AR_Drone_Library blocks
-
-if exist('AR_Drone_Target/blocks/rtwmakecfg.m','file') == 0 % the rtwmakecfg.m is created at the very end of Generate_AR_Drone_S_Functions
-    disp('No rtwmakecfg found for the blocks, running Generate_AR_Drone_S_Functions')
-   run('AR_Drone_Target/blocks/Generate_AR_Drone_S_Functions.m')
-end
+%% register the compiler
+sl_refresh_customizations;
 
 %% Compile the video library if needed
 
@@ -42,18 +38,24 @@ if exist('AR_Drone_Target/blocks/videolib/AR_Drone_Video.slx','file') == 0
    run('AR_Drone_Target/blocks/videolib/Generate_AR_Drone_Video.m')
 end
 
+%% Create the s functions for the AR_Drone_Library blocks
+
+if exist('AR_Drone_Target/blocks/rtwmakecfg.m','file') == 0 % the rtwmakecfg.m is created at the very end of Generate_AR_Drone_S_Functions
+    disp('No rtwmakecfg found for the blocks, running Generate_AR_Drone_S_Functions')
+   run('AR_Drone_Target/blocks/Generate_AR_Drone_S_Functions.m')
+end
+
 %% update paths 
 
 addpath([pwd '\Docs']); % include the documentation
 
 %% set build folder
-if exist(fullfile(pwd,'Build')) == 0
+if exist(fullfile(pwd,'Build'),'dir') == 0
     mkdir('Build')
 end
 set_param(0, 'CacheFolder', fullfile(pwd,'Build'));
 set_param(0, 'CodeGenFolder', fullfile(pwd,'Build'));
 
 
-%% register the compiler
-sl_refresh_customizations;
+
 
