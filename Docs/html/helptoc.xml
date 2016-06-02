@@ -9,11 +9,16 @@
             <tocitem target="Example4.html">Example 4: Reading and logging sensor data</tocitem>
         </tocitem>
         <tocitem target="Concepts.html">Concepts
-            <tocitem target="ARDrone2Hardware.html">AR Drone 2.0 hardware
+            <tocitem target="ARDrone2Hardware.html">AR Drone 2.0 specifications
                 <tocitem target="Sensors.html">Sensors</tocitem>
                 <tocitem target="Actuators.html">Actuators</tocitem>
             </tocitem>
-            <tocitem target="DriverSupport.html">Driver support</tocitem>
+            <tocitem target="DriverSupport.html">Driver support
+                <tocitem target="LegacyCode.html">Integrating legacy code</tocitem>
+                <tocitem target="VideoDrivers.html">Video drivers</tocitem>
+                <tocitem target="SensorDrivers.html">Sensor drivers</tocitem>
+                <tocitem target="ActuatorDrivers.html">Actuator drivers</tocitem>
+            </tocitem>
             <tocitem target="CodeGeneration.html">Code generation</tocitem>
         </tocitem>
         <tocitem target="Documentation.html">Documentation
