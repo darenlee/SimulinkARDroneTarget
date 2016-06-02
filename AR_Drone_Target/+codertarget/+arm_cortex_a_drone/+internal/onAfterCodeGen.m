@@ -27,7 +27,7 @@ end
 fileToFind = 'linuxinitialize.c';
 found = loc_findInBuildInfoSrc(buildInfo, fileToFind);
 if ~isempty(found)
-    copyfile(fullfile(find_folder, 'src'), '.', 'f');
+    copyfile(fullfile(find_folder, 'src', fileToFind), '.', 'f');
     
 end
 
