@@ -75,10 +75,10 @@ for verticalIndex = 1 : 1 : height;
         pixel = [single(YCbCr422In(index)) single(YCbCr422In(index+1)) single(YCbCr422In(index+2)) single(YCbCr422In(index+3))];
         R(verticalIndex, 2 * horizontalIndex - 1) = c1 * pixel(2) + Rc1 * pixel(3) + Rc2;
         G(verticalIndex, 2 * horizontalIndex - 1) = c1 * pixel(2) + Gc1 * pixel(1) + Gc2 * pixel(3) + Gc3;
-        B(verticalIndex, 2 * horizontalIndex - 1) = c1 * pixel(2) + Bc1 * pixel(1) + Rc2;
+        B(verticalIndex, 2 * horizontalIndex - 1) = c1 * pixel(2) + Bc1 * pixel(1) + Bc2;
         R(verticalIndex, 2 * horizontalIndex) = c1 * pixel(4) + Rc1 * pixel(3) + Rc2;
         G(verticalIndex, 2 * horizontalIndex) = c1 * pixel(4) + Gc1 * pixel(1) + Gc2 * pixel(3) + Gc3;
-        B(verticalIndex, 2 * horizontalIndex) = c1 * pixel(4) + Bc1 * pixel(1) + Rc2;
+        B(verticalIndex, 2 * horizontalIndex) = c1 * pixel(4) + Bc1 * pixel(1) + Bc2;
     end
 end
 
