@@ -33,7 +33,9 @@ query(droneTcpip,['killall -9 ' fileName]);
 
 disp('Starting the program on the AR Drone');
 query(droneTcpip,['chmod 777 /update/' fileName]);
-query(droneTcpip,['./update/' fileName ' -w']);
+
+outputFileName = [fileName(1:end-4) '.txt']; %create a file to save the terminal output to
+query(droneTcpip,['./update/' fileName ' -w > /update/' outputFileName]);
 end
 
 
