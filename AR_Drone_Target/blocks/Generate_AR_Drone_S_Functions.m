@@ -18,6 +18,10 @@ act_init_def.SrcPaths = {'.'};
 legacy_code('sfcn_tlc_generate', act_init_def);
 
 %% IMU Block
+
+% load the IMU Packet bus
+load('IMU_Packets_Bus.mat')
+
 IMU_Block_def = legacy_code('initialize');
 IMU_Block_def.SFunctionName = 'IMU_Sfcn_mex';
 IMU_Block_def.InitializeConditionsFcnSpec  = 'void MDL_IMU_start()';
@@ -124,4 +128,8 @@ legacy_code('sfcn_tlc_generate', Battery_def);
 %% Generate the rtwmakecfg file for all s functions
 
 legacy_code('rtwmakecfg_generate', [act_init_def;IMU_Block_def;LED_Block_def;Motor_def;Version_Check_def;Battery_def]);
+
+%% clear the loaded bus object
+
+clear('IMU_Packets');
 

@@ -38,7 +38,6 @@ end
 
 if exist('AR_Drone_Target/blocks/rtwmakecfg.m','file') == 0 % the rtwmakecfg.m is created at the very end of Generate_AR_Drone_S_Functions
     disp('No rtwmakecfg found for the blocks, running Generate_AR_Drone_S_Functions')
-    load('IMU_Packets_Bus.mat')
    run('AR_Drone_Target/blocks/Generate_AR_Drone_S_Functions.m')
 end
 
