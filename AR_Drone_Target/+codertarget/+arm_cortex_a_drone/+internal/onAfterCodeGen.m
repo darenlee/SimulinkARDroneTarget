@@ -3,7 +3,6 @@ function onAfterCodeGen(hCS, buildInfo)
 
 %   Copyright 2013-2104 The MathWorks, Inc.
 
-
 if ~isequal(get_param(hCS, 'PositivePriorityOrder'), 'on')
 	error('You have probably recently updated your AR Drone 2.0 Coder Target with the new UDP blocks. A new change has been made in which your model must have High Priority Value Indicates High Priority Task enabled in the solver configuration. Turn this setting on and rebuild again');
     error(message('arm_cortex_a:utils:WrongPriorityOrder'));
@@ -22,15 +21,6 @@ if ~isempty(found)
     buildInfo.addDefines('_USE_TARGET_UDP_');
     buildInfo.addLinkFlags('-ldl');
 end
-
-%% Replace codertarget core linuxinitialize.c file with the target-specific ones
-fileToFind = 'linuxinitialize.c';
-found = loc_findInBuildInfoSrc(buildInfo, fileToFind);
-if ~isempty(found)
-    copyfile(fullfile(find_folder, 'src', fileToFind), '.', 'f');
-    
-end
-
 
 %% Check for Target-Hardware Build action and start QEMU
 if isequal(data.TargetHardware, 'ARM Cortex-A9 (QEMU)')

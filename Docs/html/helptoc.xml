@@ -13,13 +13,14 @@
                 <tocitem target="Sensors.html">Sensors</tocitem>
                 <tocitem target="Actuators.html">Actuators</tocitem>
             </tocitem>
+            <tocitem target="CodeGeneration.html">Code generation</tocitem>
             <tocitem target="DriverSupport.html">Driver support
                 <tocitem target="LegacyCode.html">Integrating legacy code</tocitem>
                 <tocitem target="VideoDrivers.html">Video drivers</tocitem>
                 <tocitem target="SensorDrivers.html">Sensor drivers</tocitem>
                 <tocitem target="ActuatorDrivers.html">Actuator drivers</tocitem>
             </tocitem>
-            <tocitem target="CodeGeneration.html">Code generation</tocitem>
+            <tocitem target="SimulationModes.html">Simulation modes</tocitem>
         </tocitem>
         <tocitem target="Documentation.html">Documentation
             <tocitem target="ReleaseNotes.html">Release notes</tocitem>

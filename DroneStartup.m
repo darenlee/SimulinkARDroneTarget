@@ -24,10 +24,6 @@ if exist('AR_Drone_Target/registry/gcc_codesourcery_arm_linux_gnueabihf_gmake_wi
     RTW.TargetRegistry.getInstance('reset');         % reset the TargetRegistry such that rtwTargetInfo.m is called when a model is made for the first time
 end    
 
-%% Initialise the config
-
-run('AR_Drone_Models\Flight_Models\AR_DRONE_SCRIPT.m')
-
 %% register the compiler
 sl_refresh_customizations;
 

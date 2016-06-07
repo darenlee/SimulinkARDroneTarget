@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="MATLAB R2016a"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><title>Simulation modes:</title><style type="text/css">
+* {margin: 0; padding: 0;}
+body {text-align: start; line-height: 17.2339992523193px; min-height: 0px; white-space: normal; color: rgb(0, 0, 0); font-family: Consolas, Inconsolata, Menlo, monospace; font-style: normal; font-size: 14px; font-weight: normal; text-decoration: none; white-space: normal; }
+h1, h2 {font-weight: normal;}
+.content { padding: 30px; }
+
+.S0 { margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S1 { line-height: 26.3999996185303px; min-height: 24px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-size: 22px; white-space: pre-wrap; margin-left: 4px; margin-top: 3px; margin-bottom: 15px; margin-right: 10px;  }
+.S2 { min-height: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S3 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S4 { font-family: Helvetica, Arial, sans-serif; margin-left: 0px; margin-top: 10px; margin-bottom: 20px; margin-right: 0px;  }
+.S5 { text-align: left; line-height: 21px; white-space: pre-wrap; white-space: pre-wrap; margin-left: 56px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+
+.LineNodeBlock {margin: 10px 0 10px 0;}
+.LineNodeBlock+.paragraphNode {margin-top: 10px;}
+.lineNode {padding-left: 10px; background-color: #F7F7F7; border-left: 1px solid #E9E9E9; border-right: 1px solid #E9E9E9;}
+.inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
+.inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
+.lineNode .textBox {white-space: pre;}
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Simulation modes:</span></h1><p class = "S3"><span class = "S2">Simulink supports a number of different simulation modes of which two are interesting for the AR Drone 2.0 toolbox:</span></p><ul class = "S4"><li class = "S5"><span class = "S0">External mode: Run the code on external target with the ability to read data in real time and tune parameters on the target</span></li><li class = "S5"><span class = "S0">Normal mode: Deploy standalone code</span></li></ul><p class = "S3"><span class = "S2">Using a combination of External and Normal mode you can itterate and optimize a design quickly and safely using the following workflow:</span></p><ol class = "S4"><li class = "S5"><span class = "S0">Design and test an implementation on a simulated plant model running in normal mode on a Simulink PC</span></li><li class = "S5"><span class = "S0">Test the implementation on the target hardware using External mode to monitor and tune the system</span></li><li class = "S5"><span class = "S0">Deploy Standalone code running on the external target.</span></li></ol></div></div>
+<!-- 
+##### SOURCE BEGIN #####
+%% Simulation modes:
+% Simulink supports a number of different simulation modes of which two are 
+% interesting for the AR Drone 2.0 toolbox:
+% 
+% * External mode: Run the code on external target with the ability to read 
+% data in real time and tune parameters on the target
+% * Normal mode: Deploy standalone code
+% 
+% Using a combination of External and Normal mode you can itterate and optimize 
+% a design quickly and safely using the following workflow:
+% 
+% # Design and test an implementation on a simulated plant model running in 
+% normal mode on a Simulink PC
+% # Test the implementation on the target hardware using External mode to monitor 
+% and tune the system
+% # Deploy Standalone code running on the external target.
+##### SOURCE END #####
+--></body></html>
