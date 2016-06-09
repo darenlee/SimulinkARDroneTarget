@@ -13,7 +13,10 @@
                 <tocitem target="Sensors.html">Sensors</tocitem>
                 <tocitem target="Actuators.html">Actuators</tocitem>
             </tocitem>
-            <tocitem target="CodeGeneration.html">Code generation</tocitem>
+            <tocitem target="CodeGeneration.html">Code generation
+                <tocitem target="BuildProcess.html">Build process</tocitem>
+                <tocitem target="GeneratedCode.html">Generated code</tocitem>
+            </tocitem>
             <tocitem target="DriverSupport.html">Integrating drivers
                 <tocitem target="LegacyCode.html">Integrating legacy code</tocitem>
                 <tocitem target="VideoDrivers.html">Video drivers</tocitem>
