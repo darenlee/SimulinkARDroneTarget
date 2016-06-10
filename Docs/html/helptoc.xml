@@ -29,9 +29,10 @@
             <tocitem target="SimulationModes.html">Simulation modes</tocitem>
         </tocitem>
         <tocitem target="Documentation.html">Documentation
-            <tocitem target="ReleaseNotes.html">Release notes</tocitem>
-            <tocitem target="ExternalResources.html">External resources</tocitem>
             <tocitem target="FAQ.html">Frequently asked questions</tocitem>
+            <tocitem target="Troubleshooting.html">Troubleshooting</tocitem>
+            <tocitem target="ExternalResources.html">External resources</tocitem>
+            <tocitem target="ReleaseNotes.html">Release notes</tocitem>
         </tocitem>
     </tocitem>
 </toc>

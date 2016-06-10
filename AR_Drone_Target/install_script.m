@@ -23,7 +23,7 @@ end
 disp(char(10));
 disp('===============================================================================')
 disp('                 Generating XML File for Third Party Tools in                  ')
-disp('                  \AR_Drone\registry\thirdpartytools                           ')
+disp('                  \AR_Drone_Target\registry\thirdpartytools                           ')
 disp('===============================================================================')
 disp(char(10));
 
@@ -40,14 +40,5 @@ disp('                              Updating Path Settings')
 disp('===============================================================================')
 disp(char(10));
 
-% addpath([pwd]);
-% addpath([pwd '\blocks']);
-% addpath([pwd '\registry']);
 savepath
-% save_path
-% 
-% addpath([pwd]);
-% addpath([pwd '\blocks']);
-% addpath([pwd '\registry']);
-% savepath
 
