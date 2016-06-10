@@ -9,11 +9,14 @@
 %
 % See: help simulinkproject
 
-%% Check if the compiler has been registered
+%% Guess whether the user would want to see the documentation at startup
+showDoc = 0;
 
+%% Check if the compiler has been registered
 if exist('AR_Drone_Target/registry/thirdpartytools/thirdpartytools_win32.xml','file') == 0 || ...
         exist('AR_Drone_Target/registry/thirdpartytools/thirdpartytools_win64.xml','file') == 0
     disp('No third party compiler has been registered for the AR Drone, running install script')
+    showDoc = 1; % guess that since the compiler was not registered yet you will want to see the documentation
    run('AR_Drone_Target/install_script.m') 
 end
 
@@ -28,21 +31,18 @@ end
 sl_refresh_customizations;
 
 %% Compile the video library if needed
-
 if exist('AR_Drone_Target/blocks/videolib/AR_Drone_Video.slx','file') == 0
     disp('No video library has been found, starting compilation of the video library using the Legacy Code Tool')
    run('AR_Drone_Target/blocks/videolib/Generate_AR_Drone_Video.m')
 end
 
 %% Create the s functions for the AR_Drone_Library blocks
-
 if exist('AR_Drone_Target/blocks/rtwmakecfg.m','file') == 0 % the rtwmakecfg.m is created at the very end of Generate_AR_Drone_S_Functions
     disp('No rtwmakecfg found for the blocks, running Generate_AR_Drone_S_Functions')
    run('AR_Drone_Target/blocks/Generate_AR_Drone_S_Functions.m')
 end
 
 %% update paths 
-
 addpath([pwd '\Docs']); % include the documentation
 
 %% set build folder
@@ -52,6 +52,12 @@ end
 set_param(0, 'CacheFolder', fullfile(pwd,'Build'));
 set_param(0, 'CodeGenFolder', fullfile(pwd,'Build'));
 
+%% show the documentation
+if showDoc == 1
+    open('Docs\html\ARDrone2Toolbox.html');
+end
+
+%% clean up
 clear all;
 
 
