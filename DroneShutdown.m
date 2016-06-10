@@ -11,6 +11,8 @@
 
 %% remove the paths that are outside of the Simulink Project Path
 rmpath([pwd '\Docs']); 
+rmpath([pwd '\\AR_Drone_Models\Calibration_Models']);
+rmpath([pwd '\\AR_Drone_Models\Calibration_Models\GUI_Source']);
 
 %% reset build folder
 set_param(0, 'CacheFolder', '');
