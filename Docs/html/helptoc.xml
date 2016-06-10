@@ -3,10 +3,11 @@
 
     <tocitem target="ARDrone2Toolbox.html">Ar Drone 2.0 toolbox
         <tocitem target="Examples.html">Examples 
-            <tocitem target="Example1.html">Example 1: Getting started</tocitem>
-            <tocitem target="Example2.html">Example 2: Streaming video in External mode</tocitem>
-            <tocitem target="Example3.html">Example 3: Streaming video in Normal mode</tocitem>
-            <tocitem target="Example4.html">Example 4: Reading and logging sensor data</tocitem>
+            <tocitem target="Example1.html">Getting started</tocitem>
+            <tocitem target="Example0.html">Configuring a model for the AR Drone</tocitem>
+            <tocitem target="Example2.html">Streaming video in External mode</tocitem>
+            <tocitem target="Example3.html">Streaming video in Normal mode</tocitem>
+            <tocitem target="Example4.html">Reading and logging sensor data</tocitem>
         </tocitem>
         <tocitem target="Concepts.html">Concepts
             <tocitem target="ARDrone2Hardware.html">AR Drone 2.0 specifications

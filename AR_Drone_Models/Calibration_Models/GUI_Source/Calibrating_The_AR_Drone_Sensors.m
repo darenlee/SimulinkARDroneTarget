@@ -1,36 +1,36 @@
-function varargout = Example5_Calibrating_The_AR_Drone(varargin)
-% example5_calibrating_the_ar_drone MATLAB code for Example5_Calibrating_The_AR_Drone.fig
-%      example5_calibrating_the_ar_drone, by itself, creates a new example5_calibrating_the_ar_drone or raises the existing
+function varargout = Calibrating_The_AR_Drone_Sensors(varargin)
+% calibrating_the_ar_drone_sensors MATLAB code for Calibrating_The_AR_Drone_Sensors.fig
+%      calibrating_the_ar_drone_sensors, by itself, creates a new calibrating_the_ar_drone_sensors or raises the existing
 %      singleton*.
 %
-%      H = example5_calibrating_the_ar_drone returns the handle to a new example5_calibrating_the_ar_drone or the handle to
+%      H = calibrating_the_ar_drone_sensors returns the handle to a new calibrating_the_ar_drone_sensors or the handle to
 %      the existing singleton*.
 %
-%      example5_calibrating_the_ar_drone('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in example5_calibrating_the_ar_drone.M with the given input arguments.
+%      calibrating_the_ar_drone_sensors('CALLBACK',hObject,eventData,handles,...) calls the local
+%      function named CALLBACK in calibrating_the_ar_drone_sensors.M with the given input arguments.
 %
-%      example5_calibrating_the_ar_drone('Property','Value',...) creates a new example5_calibrating_the_ar_drone or raises the
+%      calibrating_the_ar_drone_sensors('Property','Value',...) creates a new calibrating_the_ar_drone_sensors or raises the
 %      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before Example5_Calibrating_The_AR_Drone_OpeningFcn gets called.  An
+%      applied to the GUI before Calibrating_The_AR_Drone_Sensors_OpeningFcn gets called.  An
 %      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to Example5_Calibrating_The_AR_Drone_OpeningFcn via varargin.
+%      stop.  All inputs are passed to Calibrating_The_AR_Drone_Sensors_OpeningFcn via varargin.
 %
 %      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
 %      instance to run (singleton)".
 %
 % See also: GUIDE, GUIDATA, GUIHANDLES
 
-% Edit the above text to modify the response to help Example5_Calibrating_The_AR_Drone
+% Edit the above text to modify the response to help Calibrating_The_AR_Drone_Sensors
 
-% Last Modified by GUIDE v2.5 07-Jun-2016 11:05:14
+% Last Modified by GUIDE v2.5 10-Jun-2016 12:31:09
 
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @Example5_Calibrating_The_AR_Drone_OpeningFcn, ...
-                   'gui_OutputFcn',  @Example5_Calibrating_The_AR_Drone_OutputFcn, ...
+                   'gui_OpeningFcn', @Calibrating_The_AR_Drone_Sensors_OpeningFcn, ...
+                   'gui_OutputFcn',  @Calibrating_The_AR_Drone_Sensors_OutputFcn, ...
                    'gui_LayoutFcn',  [] , ...
                    'gui_Callback',   []);
 if nargin && ischar(varargin{1})
@@ -46,14 +46,14 @@ end
 
 
 
-% --- Executes just before Example5_Calibrating_The_AR_Drone is made visible.
-function Example5_Calibrating_The_AR_Drone_OpeningFcn(hObject, eventdata, handles, varargin)
+% --- Executes just before Calibrating_The_AR_Drone_Sensors is made visible.
+function Calibrating_The_AR_Drone_Sensors_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-% varargin   command line arguments to Example5_Calibrating_The_AR_Drone (see VARARGIN)
-% Choose default command line output for Example5_Calibrating_The_AR_Drone
+% varargin   command line arguments to Calibrating_The_AR_Drone_Sensors (see VARARGIN)
+% Choose default command line output for Calibrating_The_AR_Drone_Sensors
 handles.output = hObject;
 
 % Update handles structure
@@ -78,12 +78,12 @@ calibrationMode = 1;
 handles.calibrationMode = calibrationMode;
 guidata(hObject, handles);
 
-% UIWAIT makes Example5_Calibrating_The_AR_Drone wait for user response (see UIRESUME)
+% UIWAIT makes Calibrating_The_AR_Drone_Sensors wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
 
 % --- Outputs from this function are returned to the command line.
-function varargout = Example5_Calibrating_The_AR_Drone_OutputFcn(hObject, eventdata, handles) 
+function varargout = Calibrating_The_AR_Drone_Sensors_OutputFcn(hObject, eventdata, handles) 
 % varargout  cell array for returning output args (see VARARGOUT);
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -133,18 +133,18 @@ end
 % start the executable on the drone
 drone = tcpip('192.168.1.1',23);
 fopen(drone);
-query(drone,'./update/Example5_Calibrating_The_AR_Drone_Model.elf -w');
+query(drone,'./update/Calibrating_The_AR_Drone_Sensors_Model.elf -w');
 
 % run the simulink model
 stopTime = 5;
-set_param('Example5_Calibrating_The_AR_Drone_Model/Has Stop Time Been Reached','stopTime',num2str(stopTime));
-set_param('Example5_Calibrating_The_AR_Drone_Model','SimulationCommand','connect');
-set_param('Example5_Calibrating_The_AR_Drone_Model','SimulationCommand','start');
+set_param('Calibrating_The_AR_Drone_Sensors_Model/Has Stop Time Been Reached','stopTime',num2str(stopTime));
+set_param('Calibrating_The_AR_Drone_Sensors_Model','SimulationCommand','connect');
+set_param('Calibrating_The_AR_Drone_Sensors_Model','SimulationCommand','start');
 
 waitBarHandle = waitbar(0,['Running a calibration on the AR Drone of ' num2str(stopTime) ' seconds.']);
 dt = 0.1;
 t = 0;
-while ~strcmp(get_param('Example5_Calibrating_The_AR_Drone_Model','SimulationStatus'),'stopped')
+while ~strcmp(get_param('Calibrating_The_AR_Drone_Sensors_Model','SimulationStatus'),'stopped')
     pause(dt);
     t = t + dt;
     waitbar(t/stopTime,waitBarHandle);
@@ -315,12 +315,12 @@ function BuildButton_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 set(handles.UserInstructions,'String','Building and uploading the model to the AR Drone 2.0, please wait untill the process is complete.');
 pause(0.1); % without this pause the build process starts before the GUI has time to update the text
-if bdIsLoaded('Example5_Calibrating_The_AR_Drone_Model')==0
-    open('Example5_Calibrating_The_AR_Drone_Model');
+if bdIsLoaded('Calibrating_The_AR_Drone_Sensors_Model')==0
+    open('Calibrating_The_AR_Drone_Sensors_Model');
 end
-rtwbuild('Example5_Calibrating_The_AR_Drone_Model');    % default behaviour is to run the program
-set_param('Example5_Calibrating_The_AR_Drone_Model','SimulationCommand','connect'); % so connect to the drone
-set_param('Example5_Calibrating_The_AR_Drone_Model','SimulationCommand','stop'); % and stop the program
+rtwbuild('Calibrating_The_AR_Drone_Sensors_Model');    % default behaviour is to run the program
+set_param('Calibrating_The_AR_Drone_Sensors_Model','SimulationCommand','connect'); % so connect to the drone
+set_param('Calibrating_The_AR_Drone_Sensors_Model','SimulationCommand','stop'); % and stop the program
 set(handles.UserInstructions,'String','Completed the build and upload process, use the selection box above to select the desired calibration mode and follow the instructions provided.');
 
 
