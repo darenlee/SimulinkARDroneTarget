@@ -27,7 +27,7 @@ h1, h2 {font-weight: normal;}
 .inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
 .inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
 .lineNode .textBox {white-space: pre;}
-</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Data dictionaries</span></h1><p class = "S3"><span class = "S2">A data dictionary is a persistent repository of data that are relevant to your model. You can also use the base workspace to store design data that are used by your model during simulation. However, a data dictionary provides more capabilities.</span></p><p class = "S3"><span class = "S2">The dictionary stores design data, which define parameters and signals, and include data that define the behavior of the model. The dictionary does not store simulation data, which are inputs or outputs of model simulation.</span></p><h2 class = "S4"><span class = "S2">The AR Drone Data Dictionary</span></h2><p class = "S3"><span class = "S2">The AR Drone toolbox uses a Data dictionary, you can view it by opening the Model Explorer from a Simulink model or the Editor</span><span class = "S2">, select the</span><span class = "S2"> </span><span class = "S2">Model</span><span class = "S2"> </span><span class = "S2">Explorer</span><span class = "S2"> </span><span class = "S2">icon</span><span class = "S2"> </span><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAaCAIAAAAi3QukAAAB40lEQVR42mP4QCXAMBIM8kiuJxuh
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Data dictionaries</span></h1><p class = "S3"><span class = "S2">A data dictionary is a persistent repository of data that are relevant to your model. You can also use the base workspace to store design data that are used by your model during simulation. However, a data dictionary provides more capabilities.</span></p><p class = "S3"><span class = "S2">The dictionary stores design data, which define parameters and signals, and include data that define the behavior of the model. The dictionary does not store simulation data, which are inputs or outputs of model simulation.</span></p><h2 class = "S4"><span class = "S2">The AR Drone Data Dictionary</span></h2><p class = "S3"><span class = "S2">The AR Drone toolbox uses a Data dictionary to save some key data. By using a data dictionary the essential settings and parameters required for getting a model running on the AR Drone 2.0 are available in a single location. You can view the AR Drone Toolbox data dictionary by opening the Model Explorer from a Simulink model or the Editor</span><span class = "S2">, select the</span><span class = "S2"> </span><span class = "S2">Model</span><span class = "S2"> </span><span class = "S2">Explorer</span><span class = "S2"> </span><span class = "S2">icon</span><span class = "S2"> </span><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAaCAIAAAAi3QukAAAB40lEQVR42mP4QCXAMBIM8kiuJxuh
 GOQaU3bz49/rH/5cevPz9PPvRx9/2Xfv445b7zZdfb36woulZ57OO/54xuEHE/fd7d51q3Xr9bqN
 VyrWXCxccQ6oEcUgp9BcMkzJXnwGqBHFIAf/FLIRikGJiYn/kcC/f//+/Pnz8+fPr9++ffr06d37
 969fv3nx4sWTp08fPnx09979W7duX7t+4/KVq0CNKAbFxMSQYcr5CxeBGlEMCg8Ph5jCgASApiBz
@@ -135,10 +135,13 @@ jNU5lZ/rGAp6TDC/H1JSamM+eqg0AAAAAElFTkSuQmCC"><span class = "S0"> </span><span c
 % and include data that define the behavior of the model. The dictionary does 
 % not store simulation data, which are inputs or outputs of model simulation.
 %% The AR Drone Data Dictionary
-% The AR Drone toolbox uses a Data dictionary, you can view it by opening the 
-% Model Explorer from a Simulink model or the Editor, select the Model Explorer 
-% icon   from the toolbar or by pressing control + H. Alternatively you can manually 
-% load it from the .sldd file via:
+% The AR Drone toolbox uses a Data dictionary to save some key data. By using 
+% a data dictionary the essential settings and parameters required for getting 
+% a model running on the AR Drone 2.0 are available in a single location. You 
+% can view the AR Drone Toolbox data dictionary by opening the Model Explorer 
+% from a Simulink model or the Editor, select the Model Explorer icon   from the 
+% toolbar or by pressing control + H. Alternatively you can manually load it from 
+% the .sldd file via:
 
 open('ArDroneDataDictionary.sldd')
 %% 

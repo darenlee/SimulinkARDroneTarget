@@ -42,12 +42,6 @@ if exist('AR_Drone_Target/blocks/rtwmakecfg.m','file') == 0 % the rtwmakecfg.m i
    run('AR_Drone_Target/blocks/Generate_AR_Drone_S_Functions.m')
 end
 
-%% update paths 
-addpath([pwd '\Docs']); % include the documentation
-
-addpath([pwd '\\AR_Drone_Models\Calibration_Models']);
-addpath([pwd '\\AR_Drone_Models\Calibration_Models\GUI_Source']);
-
 %% set build folder
 if exist(fullfile(pwd,'Build'),'dir') == 0
     mkdir('Build')
