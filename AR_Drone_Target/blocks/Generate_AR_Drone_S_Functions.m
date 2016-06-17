@@ -17,6 +17,26 @@ act_init_def.SourceFiles = {'act_init.c','Actuators.c','GPIO.c'};
 act_init_def.SrcPaths = {'.'};
 legacy_code('sfcn_tlc_generate', act_init_def);
 
+%% printf
+
+print_init_def = legacy_code('initialize');
+print_init_def.SourceFiles = {'ARprintf.c'};
+print_init_def.HeaderFiles = {'ARprintf.h'};
+print_init_def.IncPaths = {''};
+print_init_def.SFunctionName = 'print';
+print_init_def.Options.language = 'C';
+print_init_def.StartFcnSpec = 'ARpintf_Init(void)';
+print_init_def.OutputFcnSpec = 'ARpintf_Update(double u1)'
+print_init_def.TerminateFcnSpec = 'ARpintf_Close(void)';
+
+% Generate s function
+legacy_code('sfcn_cmex_generate', print_init_def);
+legacy_code('compile', print_init_def);
+% legacy_code('slblock_generate',print_init_def);
+% Add dependancy for target code generation
+print_init_def.SrcPaths = {'.'};
+legacy_code('sfcn_tlc_generate', print_init_def);
+
 %% IMU Block
 
 % load the IMU Packet bus
@@ -127,7 +147,7 @@ legacy_code('sfcn_tlc_generate', Battery_def);
 
 %% Generate the rtwmakecfg file for all s functions
 
-legacy_code('rtwmakecfg_generate', [act_init_def;IMU_Block_def;LED_Block_def;Motor_def;Version_Check_def;Battery_def]);
+legacy_code('rtwmakecfg_generate', [print_init_def; act_init_def;IMU_Block_def;LED_Block_def;Motor_def;Version_Check_def;Battery_def]);
 
 %% clear the loaded bus object
 
