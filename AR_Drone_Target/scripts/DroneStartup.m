@@ -43,11 +43,11 @@ if exist('../blocks/rtwmakecfg.m','file') == 0 % the rtwmakecfg.m is created at 
 end
 
 %% set build folder
-if exist(fullfile(pwd,'Build'),'dir') == 0
-    mkdir('Build')
+if exist(['../../Build'],'dir') == 0
+    mkdir('../../Build')
 end
-set_param(0, 'CacheFolder', fullfile(pwd,'Build'));
-set_param(0, 'CodeGenFolder', fullfile(pwd,'Build'));
+set_param(0, 'CacheFolder', ['../../Build']);
+set_param(0, 'CodeGenFolder', ['../../Build']);
 
 %% show the documentation
 if showDoc == 1

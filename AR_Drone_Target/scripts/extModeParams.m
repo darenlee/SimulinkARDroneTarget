@@ -4,11 +4,19 @@ function [ IP varOut2 port ] = iptest( varargin )
 
 %% make sure that the correct (parent) model is used for getting the configset
 
-parent = get_param(gcs,'parent');
-if isequal(parent,'');
-    hCs = getActiveConfigSet(gcs);
-else
-    hCs = getActiveConfigSet(parent);
+
+hCs = [];
+try hCs = getActiveConfigSet(gcs);
+    
+catch
+        parent = get_param(gcs,'parent');
+    while ~isequal(parent,'')
+        current = parent;
+        parent = get_param(current,'parent');
+        if isequal(parent,'')
+            hCs = getActiveConfigSet(current);
+        end
+    end
 end
   
 data = hCs.get_param('CoderTargetData');

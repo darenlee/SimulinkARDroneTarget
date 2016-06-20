@@ -137,6 +137,9 @@ query(drone,'./update/Calibrating_The_AR_Drone_Sensors_Model.elf -w');
 
 % run the simulink model
 stopTime = 5;
+if calibrationMode == 9
+    stopTime = 60;
+end
 set_param('Calibrating_The_AR_Drone_Sensors_Model/Has Stop Time Been Reached','stopTime',num2str(stopTime));
 set_param('Calibrating_The_AR_Drone_Sensors_Model','SimulationCommand','connect');
 set_param('Calibrating_The_AR_Drone_Sensors_Model','SimulationCommand','start');
@@ -176,7 +179,7 @@ switch calibrationMode
     case 8 % gyro
         calibrationParameters(7:9) = mean(double(GyroCalib.signals.values));
     case 9 % magneto
-        calibrationParameters(10:12) = mean(double(MagnetoCalib.signals.values)); % TODO
+        calibrationParameters(10:12) = 0.5 * (max(double(MagnetoCalib.signals.values)) + min(double(MagnetoCalib.signals.values))); % rough version
     otherwise
         set(handles.UserInstructions,'String','No valid calibration has been completed, please select a calibration mode from the drop down menu and press "Start calibration". When the calibration is complete press "Process data"');
 end

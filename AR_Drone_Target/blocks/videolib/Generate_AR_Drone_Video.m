@@ -73,7 +73,8 @@ legacy_code('sfcn_tlc_generate', def_codegen)
 legacy_code('rtwmakecfg_generate', def_codegen)
 
 
-%% Save exd exit
+%% Save and exit
+
 set_param([lib_name '/' frontCamBlockName],'ShowSpec','off')
 set_param([lib_name '/' botCamBlockName],'ShowSpec','off')
 set_param([lib_name '/' frontCamBlockName],'SampleTime','0.1')

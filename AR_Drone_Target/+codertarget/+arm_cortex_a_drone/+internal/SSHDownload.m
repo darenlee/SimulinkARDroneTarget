@@ -20,11 +20,14 @@ try
     delete(droneFtp,fileName);
 catch
 end
-mput(droneFtp,char(varargin(2)));
+
+% copy the executable to the drone
+mput(droneFtp,which(fileName));
 
 disp('Opening TPCIP connection with the AR Drone');
 droneTcpip = tcpip(IP,23);
 fopen(droneTcpip);
+
 
 disp(['Killing any instances of Program.elf or previously running ' fileName]);
 query(droneTcpip,'killall -9 program.elf.respawner.sh');
