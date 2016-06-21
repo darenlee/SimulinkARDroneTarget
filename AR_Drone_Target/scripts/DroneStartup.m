@@ -23,7 +23,10 @@ end
 %% Check if TargetRegistry has been set
 if exist('../registry/gcc_codesourcery_arm_linux_gnueabihf_gmake_win64_v4_8.mat','file') == 0
     disp('No toolchain info mat file was found for use with rtwTargetInfo.m, generating the gcc_codesourcery_arm_linux_gnueabihf_gmake_win64 mat file')
+    % cd to the folder where the mat file should be put
+    cd ../registry
     run('../registry/generateTargetInfoMatFile.m');  % create the mat file containing the toolchain info
+    cd ../scripts
     RTW.TargetRegistry.getInstance('reset');         % reset the TargetRegistry such that rtwTargetInfo.m is called when a model is made for the first time
 end    
 
@@ -33,17 +36,22 @@ sl_refresh_customizations;
 %% Compile the video library if needed
 if exist('../blocks/videolib/AR_Drone_Video.slx','file') == 0
     disp('No video library has been found, starting compilation of the video library using the Legacy Code Tool')
-   run('../blocks/videolib/Generate_AR_Drone_Video.m')
+    cd ../blocks/videolib
+    run('Generate_AR_Drone_Video.m')
+    cd ../../scripts
 end
 
 %% Create the s functions for the AR_Drone_Library blocks
 if exist('../blocks/rtwmakecfg.m','file') == 0 % the rtwmakecfg.m is created at the very end of Generate_AR_Drone_S_Functions
     disp('No rtwmakecfg found for the blocks, running Generate_AR_Drone_S_Functions')
-   run('../blocks/Generate_AR_Drone_S_Functions.m')
+    cd ../blocks
+   run('Generate_AR_Drone_S_Functions.m')
+   cd ../scripts
 end
 
 %% set build folder
 if exist(['../../Build'],'dir') == 0
+    disp('creating build folder')
     mkdir('../../Build')
 end
 set_param(0, 'CacheFolder', ['../../Build']);
