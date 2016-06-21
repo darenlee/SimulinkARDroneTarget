@@ -15,7 +15,7 @@ showDoc = 0;
 %% Find the base folder since different MATLAB versions execute and find files differently
 baseFolder = which('AR_Drone.prj');
 if isequal(baseFolder,'')
-   h = errormsg('Cannot locate AR_Drone.prj which is used as a reference to find the base project folder') ;
+   error('Cannot locate AR_Drone.prj which is used as a reference to find the base project folder') ;
 end
 baseFolder = baseFolder(1:end-13); % remove /README.md
 
