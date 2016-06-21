@@ -187,55 +187,59 @@ handles.calibrationData = calibrationData;
 handles.calibrationParameters = calibrationParameters;
 guidata(hObject, handles);
 %% process the calibration data
-switch calibrationMode
-    case {2,3}
-        % check if both X positive and negative calibrations have been executed
-        if calibrationData(1) ~= handles.initializationValue && calibrationData(2) ~= handles.initializationValue
-            calibrationData(1)
-            calibrationData(2)
-            handles.calibrationParameters(1) = 0.5 + (calibrationData(1) + calibrationData(2))/2;
-            set(handles.xAccOffText,'String',num2str(handles.calibrationParameters(1)));
-            handles.calibrationParameters(4) = 0.5 + (calibrationData(1) - calibrationData(2))/2;
-            set(handles.xAccGainText,'String',num2str(handles.calibrationParameters(4)));
-        else
-            set(handles.xAccOffText,'String','TBD');
-            set(handles.xAccGainText,'String','TBD');
-        end
-        
-    case {4,5}
-        % check if both Y positive and negative calibrations have been executed
-        if calibrationData(3) ~= handles.initializationValue && calibrationData(4) ~= handles.initializationValue
-            handles.calibrationParameters(2) = 0.5 + (calibrationData(3) + calibrationData(4))/2;
-            set(handles.yAccOffText,'String',num2str(handles.calibrationParameters(2)));
-            handles.calibrationParameters(5) = 0.5 + (calibrationData(3) - calibrationData(4))/2;
-            set(handles.yAccGainText,'String',num2str(handles.calibrationParameters(5)));
+% verify whether the calibration actually returned any data
+if size(AccelCalib,1) == 0 || size(GyroCalib,1) == 0 || size(MagnetoCalib,1) == 0
+   msgbox('The model on the drone is no longer operating properly, please rebuild the model using the Build and Upload button') ;
+else
+    switch calibrationMode
+        case {2,3}
+            % check if both X positive and negative calibrations have been executed
+            if calibrationData(1) ~= handles.initializationValue && calibrationData(2) ~= handles.initializationValue
+                calibrationData(1)
+                calibrationData(2)
+                handles.calibrationParameters(1) = 0.5 + (calibrationData(1) + calibrationData(2))/2;
+                set(handles.xAccOffText,'String',num2str(handles.calibrationParameters(1)));
+                handles.calibrationParameters(4) = 0.5 + (calibrationData(1) - calibrationData(2))/2;
+                set(handles.xAccGainText,'String',num2str(handles.calibrationParameters(4)));
             else
-            set(handles.yAccOffText,'String','TBD');
-            set(handles.yAccGainText,'String','TBD');
-        end
-    case {6,7}
-        % check if both Z positive and negative calibrations have been executed
-        if calibrationData(5) ~= handles.initializationValue && calibrationData(6) ~= handles.initializationValue
-            handles.calibrationParameters(3) = 0.5 + (calibrationData(5) + calibrationData(6))/2;
-            set(handles.zAccOffText,'String',num2str(handles.calibrationParameters(3)));
-            handles.calibrationParameters(6) = 0.5 + (calibrationData(5) - calibrationData(6))/2;
-            set(handles.zAccGainText,'String',num2str(handles.calibrationParameters(6)));
-            else
-            set(handles.zAccOffText,'String','TBD');
-            set(handles.zAccGainText,'String','TBD');
-        end
-    case 8
-        set(handles.xGyroOffText,'String',num2str(handles.calibrationParameters(7)));
-        set(handles.yGyroOffText,'String',num2str(handles.calibrationParameters(8)));
-        set(handles.zGyroOffText,'String',num2str(handles.calibrationParameters(9)));
-    case 9
-        set(handles.xMagOffText,'String',num2str(handles.calibrationParameters(10)));
-        set(handles.yMagOffText,'String',num2str(handles.calibrationParameters(11)));
-        set(handles.zMagOffText,'String',num2str(handles.calibrationParameters(12)));
-    otherwise
-end
-guidata(hObject, handles);
+                set(handles.xAccOffText,'String','TBD');
+                set(handles.xAccGainText,'String','TBD');
+            end
 
+        case {4,5}
+            % check if both Y positive and negative calibrations have been executed
+            if calibrationData(3) ~= handles.initializationValue && calibrationData(4) ~= handles.initializationValue
+                handles.calibrationParameters(2) = 0.5 + (calibrationData(3) + calibrationData(4))/2;
+                set(handles.yAccOffText,'String',num2str(handles.calibrationParameters(2)));
+                handles.calibrationParameters(5) = 0.5 + (calibrationData(3) - calibrationData(4))/2;
+                set(handles.yAccGainText,'String',num2str(handles.calibrationParameters(5)));
+                else
+                set(handles.yAccOffText,'String','TBD');
+                set(handles.yAccGainText,'String','TBD');
+            end
+        case {6,7}
+            % check if both Z positive and negative calibrations have been executed
+            if calibrationData(5) ~= handles.initializationValue && calibrationData(6) ~= handles.initializationValue
+                handles.calibrationParameters(3) = 0.5 + (calibrationData(5) + calibrationData(6))/2;
+                set(handles.zAccOffText,'String',num2str(handles.calibrationParameters(3)));
+                handles.calibrationParameters(6) = 0.5 + (calibrationData(5) - calibrationData(6))/2;
+                set(handles.zAccGainText,'String',num2str(handles.calibrationParameters(6)));
+                else
+                set(handles.zAccOffText,'String','TBD');
+                set(handles.zAccGainText,'String','TBD');
+            end
+        case 8
+            set(handles.xGyroOffText,'String',num2str(handles.calibrationParameters(7)));
+            set(handles.yGyroOffText,'String',num2str(handles.calibrationParameters(8)));
+            set(handles.zGyroOffText,'String',num2str(handles.calibrationParameters(9)));
+        case 9
+            set(handles.xMagOffText,'String',num2str(handles.calibrationParameters(10)));
+            set(handles.yMagOffText,'String',num2str(handles.calibrationParameters(11)));
+            set(handles.zMagOffText,'String',num2str(handles.calibrationParameters(12)));
+        otherwise
+    end
+    guidata(hObject, handles);
+end
 
 
 % --- Executes on button press in loadParamButton.
@@ -338,9 +342,9 @@ switch get(hObject,'Value')
     case 3
         set(handles.UserInstructions,'String','Accelerometer X-:  Place the drone such that the camera is pointing straight down and does not move (an easy way to do this is to let the front of the AR Drone rest on a flat surface while pressing the feet of the AR Drone against a flat vertical wall). If the model has not yet been build and uploaded do this first, else press "Start calibration". For the full X axis accelerometer calibration another calibration measurement needs to be done for the X+ direction');
     case 4
-        set(handles.UserInstructions,'String','Accelerometer Y+:  Place the drone on its side with the top facing you and the camera facing left (an easy way to do this is to let the side of the AR Drone rest on a flat surface while pressing the feet of the AR Drone against a flat vertical wall). If the model has not yet been build and uploaded do this first, else press "Start calibration". For the full Y axis accelerometer calibration another calibration measurement needs to be done for the Y- direction');
+        set(handles.UserInstructions,'String','Accelerometer Y+:  Place the drone on its side with the top facing you and the camera facing right (an easy way to do this is to let the side of the AR Drone rest on a flat surface while pressing the feet of the AR Drone against a flat vertical wall). If the model has not yet been build and uploaded do this first, else press "Start calibration". For the full Y axis accelerometer calibration another calibration measurement needs to be done for the Y- direction');
     case 5
-        set(handles.UserInstructions,'String','Accelerometer Y-:  Place the drone on its side with the top facing you and the camera facing right (an easy way to do this is to let the side of the AR Drone rest on a flat surface while pressing the feet of the AR Drone against a flat vertical wall). If the model has not yet been build and uploaded do this first, else press "Start calibration". For the full Y axis accelerometer calibration another calibration measurement needs to be done for the Y+ direction');
+        set(handles.UserInstructions,'String','Accelerometer Y-:  Place the drone on its side with the top facing you and the camera facing left (an easy way to do this is to let the side of the AR Drone rest on a flat surface while pressing the feet of the AR Drone against a flat vertical wall). If the model has not yet been build and uploaded do this first, else press "Start calibration". For the full Y axis accelerometer calibration another calibration measurement needs to be done for the Y+ direction');
     case 6
         set(handles.UserInstructions,'String','Accelerometer Z+:  Place the AR Drone 2.0 on a flat horizontal surface such that it is standing on its feet and does not move. If the model has not yet been build and uploaded do this first, else press "Start calibration". For the full Z axis accelerometer calibration another calibration measurement needs to be done for the Z- direction');
     case 7

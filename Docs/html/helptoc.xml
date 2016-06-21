@@ -8,6 +8,9 @@
             <tocitem target="Example2.html">Streaming video in External mode</tocitem>
             <tocitem target="Example3.html">Streaming video in Normal mode</tocitem>
             <tocitem target="Example4.html">Reading and logging sensor data</tocitem>
+            <tocitem target="Example5.html">Calibrating the sensors
+                <tocitem target="Calibration positioning.html">Calibration positioning</tocitem>
+        </tocitem>
         </tocitem>
         <tocitem target="Concepts.html">Concepts
             <tocitem target="ARDrone2Hardware.html">AR Drone 2.0 specifications
