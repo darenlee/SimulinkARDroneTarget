@@ -29,7 +29,7 @@ disp(char(10));
 
 % change folder since the P code file places the xml files in the current
 % directory
-cd AR_Drone_Target
+cd ..
 PassFail = RegisterThirdPartyCompilerXML(folder_name);
 cd ..
 
