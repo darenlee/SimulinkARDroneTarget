@@ -19,11 +19,6 @@ if isequal(currentFolder(end-6:end),'scripts')
 end
 baseFolder = pwd;
 
-%% Running a script in a sub folder changes the cd in some MATLAB versions but not all, so we allways go back to baseFolder
-while size(pwd,1) > size(baseFolder,1)
-    cd ..
-end
-
 %% Check if the compiler has been registered
 if exist([baseFolder '/AR_Drone_Target/registry/thirdpartytools/thirdpartytools_win32.xml'],'file') == 0 || ...
         exist([baseFolder '/AR_Drone_Target/registry/thirdpartytools/thirdpartytools_win64.xml'],'file') == 0
