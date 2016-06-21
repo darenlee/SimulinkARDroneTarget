@@ -10,7 +10,8 @@
             <tocitem target="Example4.html">Reading and logging sensor data</tocitem>
             <tocitem target="Example5.html">Calibrating the sensors
                 <tocitem target="Calibration positioning.html">Calibration positioning</tocitem>
-        </tocitem>
+            </tocitem>
+            <tocitem target="Example6.html">Color detection</tocitem>
         </tocitem>
         <tocitem target="Concepts.html">Concepts
             <tocitem target="ARDrone2Hardware.html">AR Drone 2.0 specifications
