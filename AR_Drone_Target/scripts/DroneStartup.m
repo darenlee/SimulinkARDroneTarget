@@ -44,8 +44,9 @@ end
 sl_refresh_customizations;
 
 %% Compile the video library if needed
-if exist(['AR_Drone_Target/blocks/videolib/AR_Drone_Video.slx'],'file') == 0
-    disp('No video library has been found, starting compilation of the video library using the Legacy Code Tool')
+if exist(['AR_Drone_Target/blocks/videolib/AR_Drone_Front_Camera.tlc'],'file') == 0 ||...
+        exist(['AR_Drone_Target/blocks/videolib/AR_Drone_Bottom_Camera.tlc'],'file') == 0
+    disp('No video source files were found, starting compilation of the video library using the Legacy Code Tool')
     cd AR_Drone_Target/blocks/videolib
     run('Generate_AR_Drone_Video.m')
     cd ../../..
