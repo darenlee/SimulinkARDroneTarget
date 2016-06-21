@@ -17,13 +17,13 @@ if exist('../registry/thirdpartytools/thirdpartytools_win32.xml','file') == 0 ||
         exist('../registry/thirdpartytools/thirdpartytools_win64.xml','file') == 0
     disp('No third party compiler has been registered for the AR Drone, running install script')
     showDoc = 1; % guess that since the compiler was not registered yet you will want to see the documentation
-   run('../install_script.m') 
+   run('install_script.m') 
 end
 
 %% Check if TargetRegistry has been set
 if exist('../registry/gcc_codesourcery_arm_linux_gnueabihf_gmake_win64_v4_8.mat','file') == 0
     disp('No toolchain info mat file was found for use with rtwTargetInfo.m, generating the gcc_codesourcery_arm_linux_gnueabihf_gmake_win64 mat file')
-    run('..\registry\generateTargetInfoMatFile.m');  % create the mat file containing the toolchain info
+    run('registry\generateTargetInfoMatFile.m');  % create the mat file containing the toolchain info
     RTW.TargetRegistry.getInstance('reset');         % reset the TargetRegistry such that rtwTargetInfo.m is called when a model is made for the first time
 end    
 
