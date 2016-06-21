@@ -24,7 +24,6 @@ end
 if exist(['AR_Drone_Target/registry/thirdpartytools/thirdpartytools_win32.xml'],'file') == 0 || ...
         exist(['AR_Drone_Target/registry/thirdpartytools/thirdpartytools_win64.xml'],'file') == 0
     disp('No third party compiler has been registered for the AR Drone, running install script')
-    showDoc = 1; % guess that since the compiler was not registered yet you will want to see the documentation
     cd AR_Drone_Target/scripts/
     run('install_script.m') 
     % install script resets cd to baseFolder
@@ -49,6 +48,7 @@ if exist(['AR_Drone_Target/blocks/videolib/AR_Drone_Front_Camera.tlc'],'file') =
     disp('No video source files were found, starting compilation of the video library using the Legacy Code Tool')
     cd AR_Drone_Target/blocks/videolib
     run('Generate_AR_Drone_Video.m')
+    bdclose; % close the video lib it opens
     cd ../../..
 end
 
@@ -74,6 +74,7 @@ set_param(0, 'CodeGenFolder', ['Build']);
 if showDoc == 1
     pause(0.1); % Give MATLAB some time to recognize updated path
     open('Docs/html/ARDrone2Toolbox.html');
+    open('AR_Drone_2_Library')
 end
 
 %% clean up

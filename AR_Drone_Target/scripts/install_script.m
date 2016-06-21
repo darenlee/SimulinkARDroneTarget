@@ -5,10 +5,23 @@ disp('          Please browse to location of Code Sourcery Directory     ')
 disp('===================================================================')
 disp(char(10));
 FolderIsLegit = 0;
-while(FolderIsLegit==0)
-folder_name = uigetdir('c:\', 'Select Code Sourcery Directory Location, Look for CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_GNU_Linux\bin');
-ListOfFiles =ls(folder_name);
 
+% check the default folder before asking the user
+if exist('C:\Program Files (x86)\CodeSourcery\Sourcery G++ Lite\bin','dir') ~= 0
+    folder_name = 'C:\Program Files (x86)\CodeSourcery\Sourcery G++ Lite\bin';
+    ListOfFiles =ls(folder_name);
+    if size(ListOfFiles,2)>=22
+    FirstFile = ListOfFiles(3,1:22);
+    end
+    if  strcmp('arm-none-linux-gnueabi',FirstFile)==1
+        FolderIsLegit = 1;
+    end
+end
+
+% If the default folder was not legit, prompt the user
+while(FolderIsLegit==0)
+folder_name = uigetdir('c:\', 'Please manutally select the Code Sourcery Directory Location, the following default location was not found: C:\Program Files (x86)\CodeSourcery\Sourcery G++ Lite\bin');
+ListOfFiles =ls(folder_name);
 
 if size(ListOfFiles,2)>=22
 FirstFile = ListOfFiles(3,1:22);
