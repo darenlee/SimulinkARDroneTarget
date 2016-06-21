@@ -13,11 +13,11 @@
 showDoc = 0;
 
 %% Find the base folder since different MATLAB versions execute and find files differently
-baseFolder = which('AR_Drone.prj');
-if isequal(baseFolder,'')
-   error('Cannot locate AR_Drone.prj which is used as a reference to find the base project folder') ;
+currentFolder = pwd;
+if isequal(currentFolder(end-6:end),'scripts')
+   cd ../.. 
 end
-baseFolder = baseFolder(1:end-13); % remove /README.md
+baseFolder = pwd;
 
 %% Running a script in a sub folder changes the cd in some MATLAB versions but not all, so we allways go back to baseFolder
 while size(pwd,1) > size(baseFolder,1)
