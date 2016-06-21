@@ -60,7 +60,8 @@ if exist(['AR_Drone_Target/blocks/rtwmakecfg.m'],'file') == 0 % the rtwmakecfg.m
 end
 
 %% set build folder
-if exist(['Build'],'dir') == 0
+
+if exist([pwd '/Build'],'dir') == 0
     disp('Creating build folder')
     mkdir(['Build'])
 end
