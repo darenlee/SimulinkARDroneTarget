@@ -27,8 +27,11 @@ disp('                  \AR_Drone_Target\registry\thirdpartytools               
 disp('===============================================================================')
 disp(char(10));
 
+% change folder since the P code file places the xml files in the current
+% directory
+cd AR_Drone_Target
 PassFail = RegisterThirdPartyCompilerXML(folder_name);
-
+cd ..
 
 if PassFail==1
     disp('Compiler Succesfully Registered');
