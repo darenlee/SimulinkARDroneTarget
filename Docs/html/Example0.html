@@ -22,7 +22,7 @@ h1, h2 {font-weight: normal;}
 .inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
 .inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
 .lineNode .textBox {white-space: pre;}
-</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Example: Configuring a model for the AR Drone 2.0</span></h1><p class = "S3"><span class = "S2">This toolbox comes with pre configured models that will run on the AR Drone 2.0 out of the box. If you wish to implement your own models you can do so by following the quick and easy steps in this example.</span></p><h2 class = "S4"><span class = "S2">Configuring the model</span></h2><p class = "S3"><span class = "S2">Use the following steps to enable automatic code generation for your Simulink model:</span></p><ul class = "S5"><li class = "S6"><span class = "S7">Open your model</span><span class = "S0">: Open a new or existing Simulink model, making sure that the components which you include support code generation (which is true for most Simulink blocks).</span></li><li class = "S6"><span class = "S7">Link the model to the data dictionary: </span><span class = "S0">Within your Simulink model navigate to </span><span class = "S8">File &gt;&gt; Model Properties &gt;&gt; Link to data dictionary... . </span><span class = "S0">To learn more about data dictionaries, see the </span><span class = "S7">Data dictionaries </span><span class = "S0">page in the concepts section of this documentation.</span></li><li class = "S6"><span class = "S7">Select the ArDroneDataDictionary: </span><span class = "S0">Click on </span><span class = "S8">Data Dictionary &gt;&gt; Browse... </span><span class = "S0">and then select </span><span class = "S8">\AR_Drone_Target\ArDroneDataDictionary.sldd</span></li><li class = "S6"><span class = "S7">Accept the dialogs: </span><span class = "S0">Press </span><span class = "S8">OK</span><span class = "S0"> followed by </span><span class = "S8">Yes </span><span class = "S0">to continue and finally press </span><span class = "S8">OK</span><span class = "S0"> again after the linking completes.</span></li><li class = "S6"><span class = "S7">Choose your simulation mode:</span><span class = "S0"> You can run code in external or normal mode, see the </span><span class = "S7">Simulation modes</span><span class = "S0"> concept page for more information on which to use, enter this mode in the Simulink model area shown:</span></li></ul><p class = "S9"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaYAAAAjCAYAAADfe67cAAAK0klEQVR42u2de1BU1x3H/b8z/bed
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Example: Configuring a model for the AR Drone 2.0</span></h1><p class = "S3"><span class = "S2">This toolbox comes with pre configured models that will run on the AR Drone 2.0 out of the box. If you wish to implement your own models you can do so by following the steps in this example.</span></p><h2 class = "S4"><span class = "S2">Configuring the model</span></h2><p class = "S3"><span class = "S2">Use the following steps to enable automatic code generation for your Simulink model:</span></p><ul class = "S5"><li class = "S6"><span class = "S7">Open your model</span><span class = "S0">: Open a new or existing Simulink model. Make sure that the components which you include support code generation (which is true for most Simulink blocks).</span></li><li class = "S6"><span class = "S7">Link the model to the data dictionary: </span><span class = "S0">Within your Simulink model navigate to </span><span class = "S8">File &gt;&gt; Model Properties &gt;&gt; Link to data dictionary... . </span><span class = "S0">To learn more about data dictionaries, see the </span><span class = "S7">Data dictionaries </span><span class = "S0">page in the concepts section of this documentation.</span></li><li class = "S6"><span class = "S7">Select the ArDroneDataDictionary: </span><span class = "S0">Click on </span><span class = "S8">Data Dictionary &gt;&gt; Browse... </span><span class = "S0">and then select </span><span class = "S8">\AR_Drone_Target\ArDroneDataDictionary.sldd</span></li><li class = "S6"><span class = "S7">Accept the dialogs: </span><span class = "S0">Press </span><span class = "S8">OK</span><span class = "S0"> followed by </span><span class = "S8">Yes </span><span class = "S0">to continue and finally press </span><span class = "S8">OK</span><span class = "S0"> again after the linking completes.</span></li><li class = "S6"><span class = "S7">Choose your simulation mode:</span><span class = "S0"> You can run code in external or normal mode, see the </span><span class = "S7">Simulation modes</span><span class = "S0"> concept page for more information on which to use. Enter the desired mode in the Simulink model area shown:</span></li></ul><p class = "S9"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaYAAAAjCAYAAADfe67cAAAK0klEQVR42u2de1BU1x3H/b8z/bed
 NtNMGp3QqZ3arJLGJBONr44pGrXSsEXtaMRgaqJBsYXUNYAaddogGHygYVUkvgg1JTwkFkFdBFlY
 5Lm8n6K7ILLIS5Bv93fYu7DAsrAsu5D8duYzzD333h9nWfb3ub9zzt2dAWAGwzDMD5Xk5GSYHtz3
 KQL/YzIMw2JiMbGYGIZhOLmzmFhMDMMwLCYWE8MwDCd37rvDxBQUHITJgN8IDMNwcue+2yWmPYo9
@@ -71,7 +71,7 @@ y3OmOIaOncwcZ6vvP1+1F/tiNUgsaZ8QFINiuVxM7u7uQkAEVUUEyYgm/fSmeSRJSFJJW238h6Cy
 try8HKVarbiakKSk0eSCYrKYWEwM8334okDlxXDIty7AK2//1AJqo33OyHG2+v623zG4+4QiPEGD
 PH33uLld3SrOpRgUy+Vimj17NiYDZ4uJ4a9WZ/ir1SdDTFOBsfR96bYj+PFbH08IiuHM5/W9+uA/
 hmGYyUju3Pcp8iGuDMMwLCbuO4uJYRiGkzuLif8xGYZhMbGYWEwMwzCc3FlMLCaGYRgWE4uJYRiG
-kzv3ncXEMAzDYprO/B8OUHZX9exWBgAAAABJRU5ErkJggg==" alt="SimulationMode.png"></p><ul class = "S5"><li class = "S6"><span class = "S7">Open the model explorer:</span><span class = "S0"> The data dictionary contains two configuration sets, to set one we need to open the model explorer using the </span><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAIAAADUsmlHAAABvElEQVR42qXRWyhsYRQH8PW+tmdF
+kzv3ncXEMAzDYprO/B8OUHZX9exWBgAAAABJRU5ErkJggg=="></p><ul class = "S5"><li class = "S6"><span class = "S7">Open the model explorer:</span><span class = "S0"> The data dictionary contains two configuration sets. To set one we need to open the model explorer using the </span><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAIAAADUsmlHAAABvElEQVR42qXRWyhsYRQH8PW+tmdF
 kolGMnR2mKQZbJfhtI/LSCNNaSIlSRJJMSWSSOTlPJ2Xk3JyyTX3kdwz7pdh5DKHydTIZXJpagyr
 vHyPbKv18n/49V9fH6QVGiUvpOirjx9eLfee3Rv3+vXL0uWj6exhwno7fODs3XZ0m+1/Vi5/L1x0
 mk5bp6xNY5b6of2avp2Knk2CIOSWSZClf80EISGzSPKCwWB4Y8br9Xo8Hrfb/fT87HK5bu/unM4b
@@ -79,7 +79,7 @@ h8NxZbfbbP9Pz86t1pNDy9He/gFB0Ov1EuTW9g5B0Ol0HxKYIclGkmwkad7YJAharfarnSRX19YJ
 giiKEuTS8gpB0Gg0JH20XVxmO/erhfvZyGmMmFyLQhXGl2NcCSoNyOdjRA6GiRiSgkFqDIiZX1gk
 CIIgUKdPVgfbiUnVbCdG5rKd6Meb5uYJgkqlomu5jDZObObSG7jUOkyqwcRKVJdhbDFGF+CPPAzP
 xtB0DBYwMA79o9BXMT0zSxCUSuXn30nXUifJ8ckpgsDzvAQ5OjZOEBQKxYdkf5IkG0mykeTg8AhB
-kMvlX+0k2T8wSBBkMpkE+a+3nyAEfGPeATWGdNwb+3eTAAAAAElFTkSuQmCC" alt="me_toolbar_button.png"><span class = "S0"> button in the model or by pressing control + H.</span></li><li class = "S6"><span class = "S7">Add the configuration set by reference: </span><span class = "S0">Within the model explorer, select the model you wish to use automatically generate code for, then press the </span><span class = "S8">Add reference </span><span class = "S0">button </span><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAACW0lEQVR42pWR7U+SURiHz39Tf4CF
+kMvlX+0k2T8wSBBkMpkE+a+3nyAEfGPeATWGdNwb+3eTAAAAAElFTkSuQmCC"><span class = "S0"> button in the model or by pressing control + H.</span></li><li class = "S6"><span class = "S7">Add the configuration set by reference: </span><span class = "S0">Within the model explorer, select the model you wish to generate code for, then press the </span><span class = "S8">Add reference </span><span class = "S0">button </span><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAACW0lEQVR42pWR7U+SURiHz39Tf4CF
 2Vq1NvnS3FxabS2dpNN8yTdMN3UJzKkppKigQpnwICjJAqFNMI3mRHzB2XK21uaH1stmE3h4Uzj3
 ebof1A+tT55d59O57vvc53eI3Og/FwS38M9iggCCQEVYRmBpgR1nORJY6r8CPIYYowcs852lv7Hj
 zyy1CckVSCxC3A2xN2JBs2H5tLHYLyFA+FGv/Ub95PUnk7IejqXWIfkREj6IzwNvR5k06BZOrhMg
@@ -90,7 +90,7 @@ pOByWfesf/1ul/XpoAZ4jkZfoUzKul6yo20kr6JX51z1be3Kh+05JYqch111mulZ/5rS5JXIlBB9
 TSPjKJOSDj1LBRCzy3JbPqGdWzH7Ntxr287VrbH5FYXJe7N2xOTQ0IiBhkdRJg/atJBcFkks5ZZ2
 SmsUV8o1lsWgyRu4JBuQVndISttoxEjDOno4iDK5L1dD/N0ZHoi7Chq6LxarLhSpCuoV2Umydngo
 80eNMilu6BEzPmUOv1MMhLdA1ISvpJEJnIQeinbqZz/K5E6tEvjpM9AzY3xZ1UAjehrGiF+kDwaS
-P/pj+30ok8LHz87FXwCfGmfKWRQqAAAAAElFTkSuQmCC" alt="AddReference.png"><span class = "S0"> which will open up the following menu:</span></li></ul><p class = "S9"><span class = "S2"> </span><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAb8AAADrCAMAAADOpWgVAAADAFBMVEUAAAAFBwgAADMAADYAADoz
+P/pj+30ok8LHz87FXwCfGmfKWRQqAAAAAElFTkSuQmCC"><span class = "S0"> which will open up the following menu:</span></li></ul><p class = "S9"><span class = "S2"> </span><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAb8AAADrCAMAAADOpWgVAAADAFBMVEUAAAAFBwgAADMAADYAADoz
 AAA2AAA6AAAzADM2ADY6ADo2NjY5OTk6Ojo7OzsAAFMAAFoAAGAAAGYAOmYAM38zAFo2AGA6AGYz
 M38AWloORXcOSXoQSXwRS34aSnYAYGAAZmZaAABaADNgAABmAABgADZmADpkJwRgNgB1KQl/MwBm
 OjpaM39gAGBmAGZmZjpDQ0NLS0tTU1NbW1tcXFx/Wn9/f1pjY2NmZmZra2tzc3N6enp7e3sANocA
@@ -212,7 +212,7 @@ E1T7PyLz3pLI5E7YRp5fdDJywx3LSYDfjG/45pMF6nBPp2wLd14y0J1z2Ypv3Z+sEruPLbN4vZtg
 2xFVNSUZXV/C+59Cc+479XvUsX8Z6Z7Cn5zsjXAUb3zuSdy9W1K/akPdnSqqNxxH/TsWzTyN0K+j
 e/mzSzK6P7HD+FOoGN2PlAe6Rc/eeyqyN4DCRx54Aj95Ltm5d3+2Te0+1247WpFO/k4/dTmqWV6T
 ge+IKVvnhzn7rq8ZDxCdi5V1ZsXoCwz9Mt8m2f8gf3iCE+CX4A/X0AVj7nnrKIw/GH8JRm3JJ3A8
-4bci+QTC/AnPn0CAHxDgB/gBAX5AI08T1kMfJDL9P7bVo/BcvQ2uAAAAAElFTkSuQmCC" alt="CreateConfigsetRef.png"></p><ul class = "S5"><li class = "S6"><span class = "S7">Select the desired configuration set: </span><span class = "S0">Choose AR_Drone_ConfigSet if you want to use external mode, for normal mode select AR_Drone_ConfigSet_NOEXT</span></li><li class = "S6"><span class = "S7">Activate the reference configuration set: </span><span class = "S0">With two configuration sets set (the default one and the newly selected referenced configuration set), the correct configuration set needs to be set active. Right click the new </span><span class = "S8">Reference</span><span class = "S0"> and select </span><span class = "S8">activate </span><span class = "S0">such that it appears as in the below figure.</span></li></ul><p class = "S9"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAArCAYAAACq2WBoAAAID0lEQVR42u2c/U8URxjH7y/xF38x
+4bci+QTC/AnPn0CAHxDgB/gBAX5AI08T1kMfJDL9P7bVo/BcvQ2uAAAAAElFTkSuQmCC"></p><ul class = "S5"><li class = "S6"><span class = "S7">Select the desired configuration set: </span><span class = "S0">Choose </span><span class = "S8">AR_Drone_ConfigSet</span><span class = "S0"> if you want to use external mode, for normal mode select </span><span class = "S8">AR_Drone_ConfigSet_NOEXT</span></li><li class = "S6"><span class = "S7">Activate the reference configuration set: </span><span class = "S0">With two configuration sets set (the default one and the newly selected referenced configuration set), the correct configuration set needs to be activated. Right click the new </span><span class = "S8">Reference</span><span class = "S0"> and select </span><span class = "S8">activate </span><span class = "S0">such that it appears as in the below figure.</span></li></ul><p class = "S9"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAArCAYAAACq2WBoAAAID0lEQVR42u2c/U8URxjH7y/xF38x
 Jo2mMa25mGprrbbYClyBWmwBaY5oMVKlQBSjYhpERA7wjTelcoKUllbEs1QRsa0W1ICxjTSakBZB
 UCx4Kla989uZ545ld+/2dk/tnXrzJE/Yl5md2ZnPPs8zu89hghAhQYhJDIEQAYyQ0AMzMjJCf61W
 KwoKCkj5tvycEAEMSVVVFVJSUrB161asXbsWTqeTlG/zY/wcLyNEAIPy8nLs3LkTw8PDuHDhggTL
@@ -249,18 +249,18 @@ AtKq38ah3mWwdX0IS+kcpO9dgiTbOwyWKgbLbuaqbFTXkEuSoFH9PESznkY5v/GRgXLSvpZLMhBE
 kSKqa2Q14HkaNcyt1lNl5IdqRssFcHe+Qa/WMlnP7ajOm3wDbr+5wlorRM0+hXmVFJfhfa8i6Xf0
 FpdWQs6DDJQDFOC6xirIDbn+8cByf7CQ6kaS+L6HCdPLu3C+h7Gk5zEw6mTKIamlZbMHFBavjO1h
 sJQxWIrx8OZ2jA8U4k5fAdWNLBFvehGzYuNTqZCXX0QClRABjBABjBABjJAXUf4DikNceTzr5rgA
-AAAASUVORK5CYII=" alt="ActivateReference.PNG"></p><p class = "S3"><span class = "S2">Your model is now all set for automatic code generation for the AR Drone 2.0, remember to save your model to make these changes persistent.</span></p><p class = "S3"><span class = "S2"></span></p><p class = "S3"><span class = "S2"></span></p></div></div>
+AAAASUVORK5CYII="></p><p class = "S3"><span class = "S2">Your model is now all set for automatic code generation for the AR Drone 2.0, remember to save your model to make these changes persistent.</span></p><p class = "S3"><span class = "S2"></span></p><p class = "S3"><span class = "S2"></span></p></div></div>
 <!-- 
 ##### SOURCE BEGIN #####
 %% Example: Configuring a model for the AR Drone 2.0
 % This toolbox comes with pre configured models that will run on the AR Drone 
 % 2.0 out of the box. If you wish to implement your own models you can do so by 
-% following the quick and easy steps in this example.
+% following the steps in this example.
 %% Configuring the model
 % Use the following steps to enable automatic code generation for your Simulink 
 % model:
 % 
-% * *Open your model*: Open a new or existing Simulink model, making sure that 
+% * *Open your model*: Open a new or existing Simulink model. Make sure that 
 % the components which you include support code generation (which is true for 
 % most Simulink blocks).
 % * *Link the model to the data dictionary: *Within your Simulink model navigate 
@@ -272,25 +272,25 @@ AAAASUVORK5CYII=" alt="ActivateReference.PNG"></p><p class = "S3"><span class = 
 % * *Accept the dialogs: *Press _OK_ followed by _Yes _to continue and finally 
 % press _OK_ again after the linking completes.
 % * *Choose your simulation mode:* You can run code in external or normal mode, 
-% see the *Simulation modes* concept page for more information on which to use, 
-% enter this mode in the Simulink model area shown:
+% see the *Simulation modes* concept page for more information on which to use. 
+% Enter the desired mode in the Simulink model area shown:
 % 
 %  
 % 
 % * *Open the model explorer:* The data dictionary contains two configuration 
-% sets, to set one we need to open the model explorer using the   button in the 
+% sets. To set one we need to open the model explorer using the   button in the 
 % model or by pressing control + H.
 % * *Add the configuration set by reference: *Within the model explorer, select 
-% the model you wish to use automatically generate code for, then press the _Add 
-% reference _button   which will open up the following menu:
+% the model you wish to generate code for, then press the _Add reference _button   
+% which will open up the following menu:
 % 
 %   
 % 
-% * *Select the desired configuration set: *Choose AR_Drone_ConfigSet if you 
-% want to use external mode, for normal mode select AR_Drone_ConfigSet_NOEXT
+% * *Select the desired configuration set: *Choose _AR_Drone_ConfigSet_ if you 
+% want to use external mode, for normal mode select _AR_Drone_ConfigSet_NOEXT_
 % * *Activate the reference configuration set: *With two configuration sets 
 % set (the default one and the newly selected referenced configuration set), the 
-% correct configuration set needs to be set active. Right click the new _Reference_ 
+% correct configuration set needs to be activated. Right click the new _Reference_ 
 % and select _activate _such that it appears as in the below figure.
 % 
 %  

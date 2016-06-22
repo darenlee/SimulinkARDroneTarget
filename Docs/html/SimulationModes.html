@@ -14,6 +14,7 @@ h1, h2 {font-weight: normal;}
 .S6 { font-weight: bold; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
 .S7 { text-align: center; line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
 .S8 { line-height: 20.576000213623px; min-height: 20px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; white-space: pre-wrap; margin-left: 4px; margin-top: 15px; margin-bottom: 9px; margin-right: 10px;  }
+.S9 { min-height: 0px; font-weight: bold; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
 
 .LineNodeBlock {margin: 10px 0 10px 0;}
 .LineNodeBlock+.paragraphNode {margin-top: 10px;}
@@ -389,7 +390,7 @@ kYZpsS3CyNlyQ1lkndSHnh5nK/BAclzKiC8L2+f4eT0ttMoR9vxu+ESrlxA88uRz5ZuOlUo/w/eY
 i4gUscylepEmzKJbsNDyVuYiIspcKgCiDHRvEC0ob5S5iIgyl3KABD76z9NQP2UuIqLMRZS5iIgy
 F2UuIqLMRZS5iIgyF1HmIiLKXESZi4goc1HmIiLKXESZi4gocxFlLiKizEWUuYiIMpdqI3PuNiMi
 IiG8+OKLylyKT+bcO5eby3NLN2635+Li4rKoLtxCs2PHjqFly5baQYpL5vxod99997DHHnu4uLi4
-LPJLq1atwgUXXKAdpLhk7ikQEREpbv4PwVB72uGGwfEAAAAASUVORK5CYII="></p><p class = "S3"><span class = "S2">Using a combination of External and Normal mode you can iterate and optimize a design quickly and safely using the following workflow:</span></p><ol class = "S4"><li class = "S5"><span class = "S6">Design</span><span class = "S0"> and test an implementation on a simulated plant model running in normal mode on a Simulink PC.</span></li><li class = "S5"><span class = "S6">Test</span><span class = "S0"> the implementation on the target hardware using External mode to monitor and tune the system.</span></li><li class = "S5"><span class = "S6">Deploy</span><span class = "S0"> standalone normal mode code running on the external target.</span></li></ol><p class = "S3"><span class = "S2">This page will document the differences between normal and external mode for code generation for the AR Drone 2.0 target.</span></p><h2 class = "S8"><span class = "S2">External versus normal mode</span></h2><p class = "S3"><span class = "S2">External and normal mode can both be used for generating code for the AR Drone 2.0 by selecting the desired configuration set. The standard AR_Drone_Config is used for External mode and AR_Drone_Config_NOEXT is used for normal mode. The for this target important differences can be seen in the table below:</span></p><p class = "S7"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAADLCAYAAACvWRHGAAAvC0lEQVR42u2dPetly5Xe+5MIof4e
+LPJLq1atwgUXXKAdpLhk7ikQEREpbv4PwVB72uGGwfEAAAAASUVORK5CYII="></p><p class = "S3"><span class = "S2">Using a combination of External and Normal mode you can iterate and optimize a design quickly and safely using the following workflow:</span></p><ol class = "S4"><li class = "S5"><span class = "S6">Design</span><span class = "S0"> and test an implementation on a simulated plant model running in normal mode on a Simulink PC.</span></li><li class = "S5"><span class = "S6">Test</span><span class = "S0"> the implementation on the target hardware using External mode to monitor and tune the system.</span></li><li class = "S5"><span class = "S6">Deploy</span><span class = "S0"> standalone normal mode code running on the external target.</span></li></ol><p class = "S3"><span class = "S2">This page will document the differences between normal and external mode for code generation for the AR Drone 2.0 target.</span></p><h2 class = "S8"><span class = "S2">External versus normal mode</span></h2><p class = "S3"><span class = "S2">External and normal mode can both be used for generating code for the AR Drone 2.0 by selecting the desired configuration set. The standard </span><span class = "S9">AR_Drone_Config</span><span class = "S2"> is used for External mode and </span><span class = "S9">AR_Drone_Config_NOEXT</span><span class = "S2"> is used for normal mode. The for this target important differences can be seen in the table below:</span></p><p class = "S7"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAq4AAADLCAYAAACvWRHGAAAvC0lEQVR42u2dPetly5Xe+5MIof4e
 AoGgP8RNlCjoT6BMgVHSoULhSeSkQenNjALhBge+OLzR0JpJzDCCgbENFxsMbVfjJZ55tFZV7dez
 z9m/BQ/9Py+7dlWtevnttdc+/eYLhmEYhmEYhj2BvaELMAzDMAzDMMAVwzAMwzAMwwBXDMMwDMMw
 DHDFMAzDMAzDMMAVwzAMwzAMwwBXDMMwDMMwDHDFMAzDMAzDsAuC6zf//nuEEEIIIYROE+CKEEII
@@ -633,8 +634,8 @@ DMMwDANcMQzDMAzDMMAVwzAMwzAMwwBXDMMwDMMwDANcMQzDMAzDMMAVwzAMwzAMwx5o/xddh8Rp
 % for code generation for the AR Drone 2.0 target.
 %% External versus normal mode
 % External and normal mode can both be used for generating code for the AR Drone 
-% 2.0 by selecting the desired configuration set. The standard AR_Drone_Config 
-% is used for External mode and AR_Drone_Config_NOEXT is used for normal mode. 
+% 2.0 by selecting the desired configuration set. The standard *AR_Drone_Config* 
+% is used for External mode and *AR_Drone_Config_NOEXT* is used for normal mode. 
 % The for this target important differences can be seen in the table below:
 % 
 %  

@@ -18,22 +18,21 @@ h1, h2 {font-weight: normal;}
 .inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
 .inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
 .lineNode .textBox {white-space: pre;}
-</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Driver support</span></h1><p class = "S3"><span class = "S2">Reading the sensor data or video streams as well as sending control inputs to the motors of the AR Drone 2.0 requires interfacing between Simulink blocks and the drone operating system. There are a number of steps required to go from the sensor and actuator interfaces as present on the AR Drone 2.0 Linux environment to C code drivers created by the Paparazzi community and finally wrapping these C code drivers into Simulink blocks ready for code generation. </span></p><h2 class = "S4"><span class = "S2">Contents:</span></h2><p class = "S3"><span class = "S5">Integrating legacy code</span></p><p class = "S3"><span class = "S2">This section explains the process of wrapping C code drivers such that not only can they be used in Simulink but they can also be compiled into target specific code for running on any hardware.</span></p><p class = "S3"><span class = "S5">Video drivers:</span></p><p class = "S3"><span class = "S2">The AR Drone 2.0 has two video cameras which can be interfaced with using the Video4Linux2 API. </span></p><p class = "S3"><span class = "S5">Sensor drivers:</span></p><p class = "S3"><span class = "S2">The AR Drone 2.0 IMU can be read using the I2C protocol.</span></p><p class = "S3"><span class = "S5">Actuator drivers:</span></p><p class = "S3"><span class = "S2">The motor boards on the AR Drone 2.0 can be send commands to control the motor speeds and the LED colors. This requires a specific initialization procedure and knowledge of the structure of the input commands.</span></p></div></div>
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Driver support</span></h1><p class = "S3"><span class = "S2">Reading the sensor data or video streams and sending control inputs to the motors of the AR Drone 2.0 requires interfacing between Simulink blocks and the drone operating system. There are a number of steps required to go from the sensor and actuator interfaces on the AR Drone 2.0 to Simulink blocks ready for code generation. </span></p><h2 class = "S4"><span class = "S2">Contents:</span></h2><p class = "S3"><span class = "S5">Integrating legacy code</span></p><p class = "S3"><span class = "S2">This section explains the process of wrapping C code drivers such that they be used in Simulink and compiled into target specific code for running on any hardware.</span></p><p class = "S3"><span class = "S5">Video drivers:</span></p><p class = "S3"><span class = "S2">The AR Drone 2.0 has two video cameras which can be interfaced with using the Video4Linux2 API. </span></p><p class = "S3"><span class = "S5">Sensor drivers:</span></p><p class = "S3"><span class = "S2">The AR Drone 2.0 IMU can be read using the I2C protocol. </span></p><p class = "S3"><span class = "S5">Actuator drivers:</span></p><p class = "S3"><span class = "S2">The motor boards on the AR Drone 2.0 can be send commands to control the motor speeds and the LED colors. This requires a specific initialization procedure and knowledge of the structure of the input commands.</span></p></div></div>
 <!-- 
 ##### SOURCE BEGIN #####
 %% Driver support
-% Reading the sensor data or video streams as well as sending control inputs 
-% to the motors of the AR Drone 2.0 requires interfacing between Simulink blocks 
-% and the drone operating system. There are a number of steps required to go from 
-% the sensor and actuator interfaces as present on the AR Drone 2.0 Linux environment 
-% to C code drivers created by the Paparazzi community and finally wrapping these 
-% C code drivers into Simulink blocks ready for code generation. 
+% Reading the sensor data or video streams and sending control inputs to the 
+% motors of the AR Drone 2.0 requires interfacing between Simulink blocks and 
+% the drone operating system. There are a number of steps required to go from 
+% the sensor and actuator interfaces on the AR Drone 2.0 to Simulink blocks ready 
+% for code generation. 
 %% Contents:
 % *Integrating legacy code*
 % 
 % This section explains the process of wrapping C code drivers such that 
-% not only can they be used in Simulink but they can also be compiled into target 
-% specific code for running on any hardware.
+% they be used in Simulink and compiled into target specific code for running 
+% on any hardware.
 % 
 % *Video drivers:*
 % 
@@ -42,7 +41,7 @@ h1, h2 {font-weight: normal;}
 % 
 % *Sensor drivers:*
 % 
-% The AR Drone 2.0 IMU can be read using the I2C protocol.
+% The AR Drone 2.0 IMU can be read using the I2C protocol. 
 % 
 % *Actuator drivers:*
 % 

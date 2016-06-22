@@ -23,7 +23,7 @@ h1, h2 {font-weight: normal;}
 .inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
 .inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
 .lineNode .textBox {white-space: pre;}
-</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Actuator Drivers:</span></h1><p class = "S3"><span class = "S2">The AR Drone 2.0 has 4 motor modules with LEDs. All motors and LEDs can be controlled indivually but are part of the same communication method and as such their code is combined into a single source file. The first driver was created by </span><a href = 'http://blog.perquin.com/blog/2011/06/'><span class = "S0">Hugo Perquin</span></a><span class = "S2"> for the AR Drone 1.0. Only a slight change was needed by the Paparazzi community to make this driver work with the AR Drone 2.0, namely changing the device which controls the motors from </span><span class = "S5">/dev/ttPA1 </span><span class = "S2">to </span><span class = "S5">/dev/ttyO0.</span></p><h2 class = "S6"><span class = "S2">Initialization</span></h2><p class = "S3"><span class = "S2">The LEDs and motors share their controller boards are initialized together. This initiazation function is wrapped into a seperate Simulink block that needs to be placed in any model that uses the motors or LEDs. By placing it seperate we ensure that the initalization is called only once instead of being called by both the Simulink motor and LED blocks. The block is available in the</span><a href = 'matlab:AR_Drone_Actuators'><span class = "S0"> AR Drone 2.0 Actuators library</span></a><span class = "S2"> as shown below:</span></p><p class = "S7"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAABtCAIAAAA+ilrKAAAC+0lEQVR42u3WMUojURjA8QGzWAg5
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Actuator Drivers:</span></h1><p class = "S3"><span class = "S2">The AR Drone 2.0 has 4 motor modules with LEDs. All motors and LEDs can be controlled indivually but are part of the same communication method. Because of thi their code is combined into a single source file. The first driver was created by </span><a href = 'http://blog.perquin.com/blog/2011/06/'><span class = "S0">Hugo Perquin</span></a><span class = "S2"> for the AR Drone 1.0. Only a slight change was needed by the Paparazzi community to make this driver work with the AR Drone 2.0. The device which controls the motors was changed from </span><span class = "S5">/dev/ttPA1 </span><span class = "S2">to </span><span class = "S5">/dev/ttyO0.</span></p><h2 class = "S6"><span class = "S2">Initialization</span></h2><p class = "S3"><span class = "S2">The LEDs and motors share their controller boards and are initialized together. This initiazation function is wrapped into a seperate Simulink block that needs to be placed in any model that uses the motors or LEDs. By placing it seperate we ensure that the initalization is called only once instead of being called by both the Simulink motor and LED blocks. The block is available in the</span><a href = 'matlab:AR_Drone_Actuators'><span class = "S0"> AR Drone 2.0 Actuators library</span></a><span class = "S2"> as shown below:</span></p><p class = "S7"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAABtCAIAAAA+ilrKAAAC+0lEQVR42u3WMUojURjA8QGzWAg5
 QQRFJKZIYSHaCBZiZaPgAay08AbeQDsLQbYQEdHewlt4AMU7WKXNvvXtfgyZJIqykHF/vypOXiZP
 8/fLK4qimJqaasKkSonOz8/3+/1iZmamDxPs9vZ2ZWVFrNTAzc3N8vKyWKmB6+vrbrcrVmrg6uqq
 0+mIlRq4vLxcXFxM81WsiBXEilhBrCBWxApiBbEiVhAriBWxglhBrIgVxApiRawgVhArYgWxglgR
@@ -37,7 +37,7 @@ fHyM++TX9t6kXIbGka8PLIg7pIu58vjfKMd6cXFR3U+sjLdO1e7t7cX1XLnJWu9YB4bW0Fhj5k1P
 T1djHSg1Fo8ZrrOzs7Eg3rG6cmisDw8P1f3klfE/kNzf36+vr5fvmb9Axh88xFrvWNMXffqAR03W
 lE651FHZjTliphGYh+vAbC4vi6cWFhYODg6q+xk1Was7qe5WrLWPNQ2/dru9tLQUMymNse3t7RxW
 xLq2thYzMoqJg+PQM2IUNrCZmJdxykx7yE+l03O+njaQjgHV/cTKgTNr9RjtzApirb88BUOcMvkX
-fgE5Yyu9/GE7jAAAAABJRU5ErkJggg==" alt="InitActuators.png"></p><p class = "S3"><span class = "S2">It has no inputs or outputs as it only handles the initialization via the following steps:</span></p><ol class = "S8"><li class = "S9"><span class = "S0">Select the used GPIO pins for the motors (171-174)</span></li><li class = "S9"><span class = "S0">Open the device file descriptor </span><span class = "S10">/dev/ttyO0</span></li><li class = "S9"><span class = "S0">Send an initialization command to the motors.</span></li></ol><h2 class = "S6"><span class = "S2">Controlling the motors</span></h2><p class = "S3"><span class = "S2">The motors are controlled by calling the setPWM function of the actuators source file. It writes the 8 bit unsigned interger array given as input argument to the device and returns an error flag. In Simulink this model can be found in the</span><a href = 'matlab:AR_Drone_Actuators'><span class = "S0"> AR Drone 2.0 Actuators library</span></a><span class = "S2"> as shown below:</span></p><p class = "S7"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWAAAACvCAMAAAD0dvSrAAADAFBMVEUAAAAAAAABAQECAgIFBQUG
+fgE5Yyu9/GE7jAAAAABJRU5ErkJggg=="></p><p class = "S3"><span class = "S2">It has no inputs or outputs as it only handles the initialization via the following steps:</span></p><ol class = "S8"><li class = "S9"><span class = "S0">Select the used GPIO pins for the motors (171-174)</span></li><li class = "S9"><span class = "S0">Open the device file descriptor </span><span class = "S10">/dev/ttyO0</span></li><li class = "S9"><span class = "S0">Send an initialization command to the motors.</span></li></ol><h2 class = "S6"><span class = "S2">Controlling the motors</span></h2><p class = "S3"><span class = "S2">The motors are controlled by calling the setPWM function of the actuators source file. It writes the 8 bit unsigned interger array given as input argument to the device and returns an error flag. In Simulink this model can be found in the</span><a href = 'matlab:AR_Drone_Actuators'><span class = "S0"> AR Drone 2.0 Actuators library</span></a><span class = "S2"> as shown below:</span></p><p class = "S7"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWAAAACvCAMAAAD0dvSrAAADAFBMVEUAAAAAAAABAQECAgIFBQUG
 BgYHBwcICAgNDQ0ODg4SEhITExMVFRUXFxcaGhobGxscHBwdHR0gICAhISEiIiIjIyMkJCQnJycp
 KSkuLi4vLy8wMDA3Nzc4ODg8PDw9PT0+Pj5AQEBERERGRkZJSUlMTExNTU1RUVFSUlJVVVVXV1da
 WlpbW1tcXFxdXV1eXl5gYGBhYWFiYmJmZmZnZ2doaGhsbGxtbW1ubm5vb29wcHBxcXFycnJzc3N0
@@ -85,7 +85,7 @@ ncjmML5yOmd0YIeAEXJSsYlAyEn142AIgAEYAmAABmAIgAEYgCEAXiNoRZwHecO96sJ2AKmwrtV8
 lwfc88mzdPrZHKhUsP/urBW/tXzWlwBcScDfgwEEQRC0lGzvb1HJMb5Xj1yrvoWNs9NEoXnr6fbz
 KVzJVVjZ97dyocBFImJ4T6yJ2BOrvwdv7KPk0Z/qw2PHOqd3n2sbonU8YU5PrL+nIBDo//JehHh/
 K8njf4v3uGRCp0vetRAaYS0AFjP1+7Lxv+O5QOApcwxjgOXLL14Ib7fif9dZgcAj4TUS/+c/PVEZ
-MTRLo2MAAAAASUVORK5CYII=" alt="MotorBlock.png"></p><p class = "S3"><span class = "S2">The Simulink block takes PWM values (0% - 100% of the available rpm range) for each motor and converts these into an 8 bit unsigned integer array before passing it as an argument to the setPWM C function.</span></p><h2 class = "S6"><span class = "S2">Controlling the LEDs</span></h2><p class = "S3"><span class = "S2">The LEDs are controlled by writing one of four different modes to each one of the four LEDs to the actuators device </span><span class = "S5">/dev/ttyO0.</span><span class = "S2">  In Simulink this model can be found in the</span><a href = 'matlab:AR_Drone_Actuators'><span class = "S0"> AR Drone 2.0 Actuators library</span></a><span class = "S2"> as shown below:</span></p><p class = "S7"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMQAAAB5CAIAAADpkBmXAAAEsklEQVR42u2dP0/jMBiHIxiKgHZg
+MTRLo2MAAAAASUVORK5CYII="></p><p class = "S3"><span class = "S2">The Simulink block takes PWM values (0% - 100% of the available rpm range) for each motor and converts these into an 8 bit unsigned integer array. This is passed to the setPWM C function. The GPIO_Fault_Pin flag is 0 by default (no fault) and will become 1 if a propeller hit something. The propellers wil stop when they hit something.</span></p><h2 class = "S6"><span class = "S2">Controlling the LEDs</span></h2><p class = "S3"><span class = "S2">The LEDs are controlled by writing one of four different modes to each one of the four LEDs. This is written to the actuators device </span><span class = "S5">/dev/ttyO0.</span><span class = "S2">  In Simulink this model can be found in the</span><a href = 'matlab:AR_Drone_Actuators'><span class = "S0"> AR Drone 2.0 Actuators library</span></a><span class = "S2"> as shown below:</span></p><p class = "S7"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMQAAAB5CAIAAADpkBmXAAAEsklEQVR42u2dP0/jMBiHIxiKgHZg
 A3oSUKSqDAWxsIDUATGxMLPA1oFvgFhY+LczMFyFOJXufJt+A77ArbmXs+SLnDSk6ZuDxs8zIOTg
 EiWPbMfxzw3CGEEQ/ADIzNLS0tzc3Ic5cZkqlUoIMA6zs7PJMolrXB0Yi1qthkyATPDNqFarr6+v
 yAQKLC4uPj09IRMgEyATlFmmZrO5ubmJTKAgk5gUBMHGxgYygUI3JyZFfUImmGjMZH0aDAZRmfb2
@@ -107,19 +107,19 @@ TKPWgAOMLVP2dEqOXbaJpnj3NGdyc/Pz84rxcAMhTB+nBtbX19Xj4fL3/X4fmbyTKcteA2PFw1ut
 ATIBMgEyASATIBMgE3glU6/XS5ApCILBYNDv919eXp6fn38CpHJ7eyvOfJgTl2l1dXV3d7fdbm9t
 bTWbzQbAZ5h57+DTFuwXQCr/+jT6e9ACmQCZAJkAmcqPSqgLmSBZphyhLmSCPDI5oS7aKmTK2s2l
 h7q63S4XEJkmbZlsU2TM8zw3gUz5x0zxUFdiFWTyjklCXfYLPz0fM/0BB7g799snWNEAAAAASUVO
-RK5CYII=" alt="LEDBlock.png"></p><p class = "S3"><span class = "S2">Inside the LEDs block the input data is converted to 8 bit unsigned integers. The available input commands for each LED are:</span></p><ul class = "S8"><li class = "S9"><span class = "S0">Turn LED off:                0</span></li><li class = "S9"><span class = "S0">Turn LED red:               1</span></li><li class = "S9"><span class = "S0">Turn LED green:           2</span></li><li class = "S9"><span class = "S0">Turn LED orange:         3</span></li></ul><p class = "S3"><span class = "S2"></span></p></div></div>
+RK5CYII="></p><p class = "S3"><span class = "S2">Inside the LEDs block the input data is converted to 8 bit unsigned integers. The available input commands for each LED are:</span></p><ul class = "S8"><li class = "S9"><span class = "S0">Turn LED off:                0</span></li><li class = "S9"><span class = "S0">Turn LED red:               1</span></li><li class = "S9"><span class = "S0">Turn LED green:           2</span></li><li class = "S9"><span class = "S0">Turn LED orange:         3</span></li></ul><p class = "S3"><span class = "S2"></span></p></div></div>
 <!-- 
 ##### SOURCE BEGIN #####
 %% Actuator Drivers:
 % The AR Drone 2.0 has 4 motor modules with LEDs. All motors and LEDs can be 
-% controlled indivually but are part of the same communication method and as such 
-% their code is combined into a single source file. The first driver was created 
-% by <http://blog.perquin.com/blog/2011/06/ Hugo Perquin> for the AR Drone 1.0. 
-% Only a slight change was needed by the Paparazzi community to make this driver 
-% work with the AR Drone 2.0, namely changing the device which controls the motors 
-% from _/dev/ttPA1 _to _/dev/ttyO0._
+% controlled indivually but are part of the same communication method. Because 
+% of thi their code is combined into a single source file. The first driver was 
+% created by <http://blog.perquin.com/blog/2011/06/ Hugo Perquin> for the AR Drone 
+% 1.0. Only a slight change was needed by the Paparazzi community to make this 
+% driver work with the AR Drone 2.0. The device which controls the motors was 
+% changed from _/dev/ttPA1 _to _/dev/ttyO0._
 %% Initialization
-% The LEDs and motors share their controller boards are initialized together. 
+% The LEDs and motors share their controller boards and are initialized together. 
 % This initiazation function is wrapped into a seperate Simulink block that needs 
 % to be placed in any model that uses the motors or LEDs. By placing it seperate 
 % we ensure that the initalization is called only once instead of being called 
@@ -143,13 +143,15 @@ RK5CYII=" alt="LEDBlock.png"></p><p class = "S3"><span class = "S2">Inside the L
 %  
 % 
 % The Simulink block takes PWM values (0% - 100% of the available rpm range) 
-% for each motor and converts these into an 8 bit unsigned integer array before 
-% passing it as an argument to the setPWM C function.
+% for each motor and converts these into an 8 bit unsigned integer array. This 
+% is passed to the setPWM C function. The GPIO_Fault_Pin flag is 0 by default 
+% (no fault) and will become 1 if a propeller hit something. The propellers wil 
+% stop when they hit something.
 %% Controlling the LEDs
 % The LEDs are controlled by writing one of four different modes to each one 
-% of the four LEDs to the actuators device _/dev/ttyO0._  In Simulink this model 
-% can be found in the<matlab:AR_Drone_Actuators  AR Drone 2.0 Actuators library> 
-% as shown below:
+% of the four LEDs. This is written to the actuators device _/dev/ttyO0._  In 
+% Simulink this model can be found in the<matlab:AR_Drone_Actuators  AR Drone 
+% 2.0 Actuators library> as shown below:
 % 
 %  
 % 

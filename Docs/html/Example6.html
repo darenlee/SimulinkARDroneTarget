@@ -198,7 +198,7 @@ L4Zq2Sh9M3P8q6bvNBP+def4D1b4Jz9r3rzf5PeY/XfeXP2qddQJ37wDhbhff/CDHwzYHP+y31s2
 /Ouezzx93yr6GYo+uO5AABD+wKiRPid19o9U1RntLjsDS535nnkHI3F9V1555V5zahctWlQZXent
 yf6Fy7K5qenbrTqdX9XtFq17MMM/2b9F84+rzupTZx11Q3ewz+qTdyaWvLP6lP282fnaefetOmf1
 Mc0HEP4AI4APXo5ddQ+mAIQ/wChUNO3DNAzhDyD8AVpMMq/fNAzhL/wB4Q8AAAh/AABA+AMAAMIf
-AAAQ/gAAIPwBAADhDwAACH8AAED4AwAAwh8AABD+AABAv/x/fccqYZGUoAkAAAAASUVORK5CYII=" alt="ObjectTrackingModel.PNG"></p><p class = "S3"><span class = "S2">In this model we see three blocks:</span></p><ul class = "S10"><li class = "S11"><span class = "S12">Ar_Drone_Front_Camera: </span><span class = "S0">This block retrieves images from the front camera. These images are in the YCbCr image format and have a 1280x720 resolution.</span></li><li class = "S11"><span class = "S12">Show target from YCbCr colorspace: </span><span class = "S0">This block down samples the incoming video feed and then determines which pixels lie within the user defined sub space of the YCbCr color space. Click on this block to select what range of the YCbCr color space should be used. The outputs of this block indicate which pixels fell within the user select color sub space and what their mean position is in the frame. Note that some noise can be present, showing floating pixels. If there is relatively little noise compared to the amount of pixels deteced from the actual target, the target position will be computed reltively accurately depsite the noise. When the target is missing, false positives could occur due to noise. To guard against this you can increase the minimum amount of pixels that should lie within the color sub space before a target is detected.</span></li><li class = "S11"><span class = "S12">RGB video viewer: </span><span class = "S0">The RGB viewer block takes three input matrixes of 8 bit unsigned integers and outputs them as an RGB image in MATLAB. In this case black parts of the image did not satisfy the defined YCbCr sub space while white pixels did, the red pixel indicates the centre of all pixels that fell inside the user defined YCbCr color sub space.</span></li></ul><p class = "S3"><span class = "S2">Build this model for the AR Drone 2.0, connect and run to start tuning of the parameters for your object tracking desire. You can then use these parameters in the </span><span class = "S13">Object tracking</span><span class = "S2"> block located in:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">AR_Drone_Video_Processing</span></p></div></div><p class = "S8"><span class = "S2">The </span><span class = "S13">Object tracker </span><span class = "S2">block shown below uses the same parameters as the calibration model but in stead of outputting matrixes it only outputs the location of the mean position, identical to the red dot in the calibration model. It also outputs a flag which becomes 1 if more pixels were detected as target than user specified, else it will return 0. The tarrgetOffsetX/Y outputs of the </span><span class = "S13">Object tracking </span><span class = "S2">block are scaled between (-1, 1) for both axes.</span></p><p class = "S9"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACtCAYAAAD1YTB3AAANrElEQVR42u2df4wV1RXHwX/8p2jA
+AAAQ/gAAIPwBAADhDwAACH8AAED4AwAAwh8AABD+AABAv/x/fccqYZGUoAkAAAAASUVORK5CYII="></p><p class = "S3"><span class = "S2">In this model we see three blocks:</span></p><ul class = "S10"><li class = "S11"><span class = "S12">Ar_Drone_Front_Camera: </span><span class = "S0">This block retrieves images from the front camera. These images are in the YCbCr image format and have a 1280x720 resolution. The YCbCr color space is explained below.</span></li><li class = "S11"><span class = "S12">Show target from YCbCr colorspace: </span><span class = "S0">This block down samples the incoming video feed and then determines which pixels lie within the user defined sub space of the YCbCr color space. Click on this block to select what range of the YCbCr color space should be used. The outputs of this block indicate which pixels fell within the user select color sub space and what their mean position is in the frame. Note that some noise can be present, showing floating pixels. If there is relatively little noise compared to the amount of pixels deteced from the actual target, the target position will be computed relatively accurately despite the noise. When the target is missing, false positives could occur due to noise. To guard against this you can increase the minimum amount of pixels that should lie within the color sub space before a target is detected.</span></li><li class = "S11"><span class = "S12">RGB video viewer: </span><span class = "S0">The RGB viewer block takes three input matrixes of 8 bit unsigned integers and outputs them as an RGB image in MATLAB. In this case black parts of the image did not satisfy the defined YCbCr sub space while white pixels did, the red pixel indicates the centre of all pixels that fell inside the user defined YCbCr color sub space.</span></li></ul><p class = "S3"><span class = "S13">Build</span><span class = "S2"> this model for the AR Drone 2.0 then </span><span class = "S13">connect</span><span class = "S2"> and </span><span class = "S13">run</span><span class = "S2"> to start tuning of the parameters for your object tracking desire. You can then use these parameters in the </span><span class = "S13">Object tracking</span><span class = "S2"> block located in:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">AR_Drone_Video_Processing</span></p></div></div><p class = "S8"><span class = "S2">The </span><span class = "S13">Object tracker </span><span class = "S2">block shown below uses the same parameters as the calibration model. In stead of outputting matrixes it only outputs the location of the mean position, identical to the red dot in the calibration model. It also outputs a flag which is '1' the amount of detected target pixels passes the user defined threshold, else it will return 0. The tarrgetOffsetX/Y outputs of the </span><span class = "S13">Object tracking </span><span class = "S2">block are scaled between (-1, 1) for both axes.</span></p><p class = "S9"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAACtCAYAAAD1YTB3AAANrElEQVR42u2df4wV1RXHwX/8p2jA
 iLGytNalhEUlAbX+yKbyQ7QpFXcLGmQpugImAhZKqqR/CJVtQ4pVElJZQ6zQFgj+qEukQUhKjVGz
 FKlLww83i7iyQpeFFpcFCcu+PeWMnud9l5l5P1jYhfl8k5v3Y+4782bmfubcM3Pnnl6CEIpUL3YB
 QgCCEIAgBCAIAQhCAIIQgCAEIAWof//+0q9fv6D07duXQkmXQ4cOycmTJ6WzszO5gPTq1Sso11xz
@@ -260,7 +260,7 @@ bpcsKi+HZXPS1ATm9dz/4adAiMvPgQCkYEDsvaUBsO/cnBvmIcLs5QOIrcv1Fjb7etR/DUte49oK
 S4GQT2o2ACEGiY1BcvEgYXCpbU0Ac+DAgbwBcRuz5dIIs62TPFt3T23Z5zBA4vJzIAAp+CpWLjGI
 m3fDPIsfO+QSg4SlNtM7zVG2fRBGjBgRCUhcfg4EIF2mi/XKER4EQC4IHL6XuVgUdtUNAQhCAIIQ
 gCAEIAgBCEIAghCAIAQgCAEIQghAEAIQhAAEIQBBCEAQAhCEAAQhAEEIQBACEIQQgCAEIAgBCEIX
-Sv8HkOj+V7xQcvwAAAAASUVORK5CYII=" alt="ObjectTracker.PNG"></p><h2 class = "S4"><span class = "S2">The YCbCr color space:</span></h2><p class = "S3"><span class = "S2">The default output format of the AR Drone cameras is very usefull for color based object detection as the luminesce (Y in YCbCr) is decoupled from the color data (Cb and Cr in YCbCr) meaning the color information is relatively lighting independent (note that the cameras do auto adjust their whitebalance for different ambient light conditions meaning that color detection is still somewhat dependent on lighting conditions). The below image shows the YCbCr color space for a luminesce of 50%.</span></p><p class = "S9"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAYAAAB5fY51AACAAElEQVR42uTdCZzkZX3g/1lcXV0N
+Sv8HkOj+V7xQcvwAAAAASUVORK5CYII="></p><h2 class = "S4"><span class = "S2">The YCbCr color space:</span></h2><p class = "S3"><span class = "S2">The default output format of the AR Drone cameras is very usefull for color based object detection as the luminesce (Y in YCbCr) is decoupled from the color data (Cb and Cr in YCbCr) meaning the color information is relatively lighting independent (note that the cameras do auto adjust their whitebalance for different ambient light conditions meaning that color detection is still somewhat dependent on lighting conditions). The below image shows the YCbCr color space for a luminesce of 50%.</span></p><p class = "S9"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAYAAAB5fY51AACAAElEQVR42uTdCZzkZX3g/1lcXV0N
 MGff911dV1d3VVd1VVdX33dPzwnDDDPMwDDDcK/GA8kaRRCEoBgMCAtKICoIEiAY1FVjNBqNV3T1
 r6vRP0ZX/xr9d5V1bJ3f/TT9Hefr7+WRmBkYFl+vD901fdXveX7P2+dXU9WzTpbXya+01bTkaNG0
 YJp3NGeadTRjmnY0ZZo0TTgaN405GjUlTCOO4qbh1c6gF9GLRWIvoZfSy0SiL6dX0Jl0lsjQetpA
@@ -2669,7 +2669,7 @@ wFoD1lpgrQBrZcDKASsXWEvAWgqsBWAtAGshsOaANRdYM8CaGbAywMoE1hSwpgIrBawUsFKBlQBW
 IrBiwIrfg/Vb8SD5s3iY/1M8Xv37rker/4qXb2JKikf5s+Jx/j89Lx4unxUPxn/fgjUCrBFgjQTW
 ELCGAmsAWAMDVgRYkcDqA1bfgBUCViiweoDVE1hdwOoasDqA1RFYbcBqG7ACwAoEVguwWgLLBywf
 sHyB1QSspsBqAFbDgOUBliew6oBVF1guYLmA5QqsGmDVBFYVsKoGrApgVQRWGbDKBiwHsJziA1qf
-wnV1D+C6o9nPW2+8vCs49vMEAAAAAElFTkSuQmCC" alt="YCbCrColorSpace.png"></p><p class = "S3"><span class = "S2">In the image the values of the red shift (Cr) and blue shift(Cb) are shown in the range (-1, 1). The camera of the AR Drone 2.0 uses unsigned 8 bit integers to represent the color data meaning that (-1, 1) is mapped to integers of (0, 255). By selecting the minium and maximum desired red and blue shift values in the </span><span class = "S13">Show target from YCbCr colorspace </span><span class = "S2">MATLAB function block mask we can determine which colors are detected. </span></p><h1 class = "S14"><span class = "S2">Examples:</span></h1><h2 class = "S4"><span class = "S2">Finding a red button</span></h2><p class = "S3"><span class = "S2">The drone was given the goal to detect the position of the red 'easy' button show below:</span></p><p class = "S9"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgUAAAGFCAYAAABtxIBIAACAAElEQVR42uzd95OVR3o3fEQOk2BI
+wnV1D+C6o9nPW2+8vCs49vMEAAAAAElFTkSuQmCC"></p><p class = "S3"><span class = "S2">In the image the values of the red shift (Cr) and blue shift(Cb) are shown in the range (-1, 1). The camera of the AR Drone 2.0 uses unsigned 8 bit integers to represent the color data meaning that (-1, 1) is mapped to integers of (0, 255). By selecting the minium and maximum desired red and blue shift values in the </span><span class = "S13">Show target from YCbCr colorspace </span><span class = "S2">MATLAB function block mask we can determine which colors are detected. </span></p><h1 class = "S14"><span class = "S2">Examples:</span></h1><h2 class = "S4"><span class = "S2">Finding a red button</span></h2><p class = "S3"><span class = "S2">The drone was given the goal to detect the position of the red 'easy' button show below:</span></p><p class = "S9"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgUAAAGFCAYAAABtxIBIAACAAElEQVR42uzd95OVR3o3fEQOk2BI
 A4gMCoAEklYJIRSRQAkQSEQhchBR5JyHHCbnk3POOc0MSVqtdtdbaz9rv35d/tHlssv/Qb/39T3T
 PfcN612/VV77efx0V31Koznn3HPmzGj6q9Pd19WHySGHHHLIIYccciijj3wJ5JBDDjnkkEMOGQrk
 kEMOOeSQQw4ZCuSQQw455JBDDhkK5JBDDjnkkEMOGQrkkEMOOeSQQw4ZCuSQQw455JBDDhkK5JBD
@@ -4442,7 +4442,7 @@ oa0zNK9LzUt/mKlx6TG7d+8Wjx49QuFWOIgFqiHqG3w90a+rg/bE04p3WuRGi96kNPeNHg19TbV9
 KqcPwq1PEQoiGNo2Q81dUlLCH+ltMO0rXWpm+l5ubi6vBgcrH8SWqyHqG3w90a/B09jYKDIyMhZZ
 X1+PHl2jmoZ7nyIURDiUXp89e6au+vYn0PfAykB90a/oUfRpuNQUoQAAAAAACAUAAAAAQCgAAAAA
 AEIBAAAAABAKAAAAAIBQAAAAAACEAgAAAAAgFAAAAAAAoQAAAAAACAUAAAAAQCgAAAAAwCr5Fwak
-6w8eKD17AAAAAElFTkSuQmCC" alt="EasyView.PNG"></p><p class = "S3"><span class = "S2">For this the following settings were used:</span></p><ul class = "S10"><li class = "S11"><span class = "S0">Video input width, height, downsample factor = 1280, 720, 5</span></li><li class = "S11"><span class = "S0">Blue shift min,max = 0, 150</span></li><li class = "S11"><span class = "S0">Red shift min,max = 160, 225</span></li><li class = "S11"><span class = "S0">Minimum object detection pixel count = 10;</span></li></ul><p class = "S3"><span class = "S2">This resulted in the following view:</span></p><p class = "S9"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfoAAAGKCAYAAADkN4OIAAAW6UlEQVR42u3dwUtc5/rA8f4Pbrsu
+6w8eKD17AAAAAElFTkSuQmCC"></p><p class = "S3"><span class = "S2">For this the following settings were used:</span></p><ul class = "S10"><li class = "S11"><span class = "S0">Video input width, height, down sample factor = 1280, 720, 5</span></li><li class = "S11"><span class = "S0">Blue shift min,max = 0, 150</span></li><li class = "S11"><span class = "S0">Red shift min,max = 160, 225</span></li><li class = "S11"><span class = "S0">Minimum object detection pixel count = 10;</span></li></ul><p class = "S3"><span class = "S2">This resulted in the following view:</span></p><p class = "S9"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfoAAAGKCAYAAADkN4OIAAAW6UlEQVR42u3dwUtc5/rA8f4Pbrsu
 JSiKgYpYkC5SQoRASklBugmouAi1REQkWVSy0pKsigtpCRgENxJEJCVgaCBkEUSKwUVIRCSL3iCK
 /8Fzed4fI462/m4vptcz83ngQ+kcb3vnvcf5zjvnTO5HYYwxxpiGnY8sgTHGGCP0xhhjjBF6Y4wx
 xgi9McYYY4TeGGOMMUJvjDHGGKE3xhhjhN4YY4wxQm+MMcYYoTfGGGOM0BtjjDFG6I0xxhgj9MYY
@@ -4545,7 +4545,7 @@ YV3+LPSN/Loq9BWbvKkor7vmTiVvLKrJHUtef8oTMk/iPBnzLtG8Tru1tdU063P0o/tmXI88Fz77
 +8knn5xw+/btw3fq+X3P/v7+6OzsLHeXNtMcDX2zrsdvv/1WrjF+/fXX5Tnnd4abeT3yfoV8rrXn
 /MMPPzTdevzZDva0597o63J8PRr9dVXoG3TyZqPaHaamOdfjX//6V9mRWI//28Hmc7Yef++5ex1p
 jPUQemOMMaaBR+iNMcYYoTfGGGOM0BtjjDFG6I0xxhgj9MYYY4wRemOMMcYIvTHGGCP0xhhjjBF6
-Y4wxxgi9McYYY4TeGGOMMUJvjDHGGKE3xhhjzOH8G8+ewnTAzr92AAAAAElFTkSuQmCC" alt="EasyDetected.png"></p><h2 class = "S4"><span class = "S2">Finding a green ball</span></h2><p class = "S3"><span class = "S2">The drone was given the goal to detect the position of the green ball shown below:</span></p><p class = "S9"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfUAAAGECAYAAAAvNrl1AACAAElEQVR42uzd93PV134vfFHVG1WA
+Y4wxxgi9McYYY4TeGGOMMUJvjDHGGKE3xhhjzOH8G8+ewnTAzr92AAAAAElFTkSuQmCC"></p><h2 class = "S4"><span class = "S2">Finding a green ball</span></h2><p class = "S3"><span class = "S2">The drone was given the goal to detect the position of the green ball shown below:</span></p><p class = "S9"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfUAAAGECAYAAAAvNrl1AACAAElEQVR42uzd93PV134vfFHVG1WA
 kETvxRSD6c0GDNjYBptiwNh0TEf03iSQQBT1snvvfW8VcMnJOTcneXLvk9w8M5lMJpMfM5lk8h+s
 Z33eW2vp+xU+JyfJuXNPfNZ35jUW0t4qW9v7vbTWZ61PBlOXutSlLnWpS10/iytDPQTqUpe61KUu
 dalQV5e61KUudalLXSrU1aUudalLXepSlwp1dalLXepSl7rUpUJdXepSl7rUpS4V6upSl7rUpS51
@@ -6254,7 +6254,7 @@ fJ8a3/ZRuk91qN/Eg/ZI0rYLqsTkZSTaakFbL+i5Jt189IuVbjz6mOHhYfH222/rC/ceQ2i7a6iv
 0s1I7zt06BCqkfV47yH0btdQX9/3fz31/fr+x5EjR0RPT891Dh8+rO/R39M1/SjfpzrU/xcMmj3+
 13/9l6o6rhzbvU+P9zb09dX3q75H9X36UbimOtT10EMPPfTQ4yYZOtT10EMPPfTQQ4e6HnrooYce
 euihQ10PPfTQQw899NChroceeuihhx566FDXQw899NBDDx3qeuihhx566KGHDnU99NBDDz300EOH
-uh566KGHHnro8X7G/wO78SU1ApygZgAAAABJRU5ErkJggg==" alt="BallView.PNG"></p><p class = "S3"><span class = "S2">For this the following settings were used:</span></p><ul class = "S10"><li class = "S11"><span class = "S0">Video input width, height, downsample factor = 1280, 720, 5</span></li><li class = "S11"><span class = "S0">Blue shift min,max = 0, 122</span></li><li class = "S11"><span class = "S0">Red shift min,max = 0, 122</span></li><li class = "S11"><span class = "S0">Minimum object detection pixel count = 10;</span></li></ul><p class = "S3"><span class = "S2">This resulted in the following view:</span></p><p class = "S9"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgQAAAGJCAYAAAD1xCsNAAAXvUlEQVR42u3dT0td59rA4X4Hpx2X
+uh566KGHHnro8X7G/wO78SU1ApygZgAAAABJRU5ErkJggg=="></p><p class = "S3"><span class = "S2">For this the following settings were used:</span></p><ul class = "S10"><li class = "S11"><span class = "S0">Video input width, height, downsample factor = 1280, 720, 5</span></li><li class = "S11"><span class = "S0">Blue shift min,max = 0, 122</span></li><li class = "S11"><span class = "S0">Red shift min,max = 0, 122</span></li><li class = "S11"><span class = "S0">Minimum object detection pixel count = 10;</span></li></ul><p class = "S3"><span class = "S2">This resulted in the following view:</span></p><p class = "S9"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgQAAAGJCAYAAAD1xCsNAAAXvUlEQVR42u3dT0td59rA4X4Hpx2X
 EhTFQEUsSAcpIUIgpaQgnQRUHIRaIiKSDCoZaUlGxYG0BAyCEwkikhIwNBAyCCLF4CAkIpJBTxDF
 b3C/7/28bHFrKj096XviWtcNF6V72ab7cbvXz/Vn96MwxhhjTO3nI0tgjDHGGEFgjDHGGEFgjDHG
 GEFgjDHGGEFgjDHGGEFgjDHGGEFgjDHGGEFgjDHGGEFgjDHGGEFgjDHGGEFgjDHGGEFgjDHGGEFg
@@ -6361,7 +6361,7 @@ lze1Oq5HngPO5/j7778f3mWQd11kKNRpPY7vAE977nVYl+PrUff3VUFwRifPEX/yyScn3Lx587D8
 837Z/v7+6OzsLFfT1mmOBkFd1+O3334r50C//vrr8pzznus6r0deT5HPtfGcf/jhh9qtx7t+Iz7t
 uVd9XY6vR93fVwVBxScvmmpcUWvquR7/+te/ym841uP/fiPO52w9/r3n7n2kHushCIwxxhgjCIwx
 xhgjCIwxxhgjCIwxxhgjCIwxxhgjCIwxxhgjCIwxxhgjCIwxxhgjCIwxxhgjCIwxxhgjCIwxxhgj
-CIwxxhgjCIwxxhjTNP8DwDWtQBKLiZcAAAAASUVORK5CYII=" alt="BallDetected.png"></p></div></div>
+CIwxxhgjCIwxxhjTNP8DwDWtQBKLiZcAAAAASUVORK5CYII="></p></div></div>
 <!-- 
 ##### SOURCE BEGIN #####
 %% Example: Color tracking
@@ -6380,7 +6380,8 @@ Calibrating_The_AR_Drone_Camera_Model
 % In this model we see three blocks:
 % 
 % * *Ar_Drone_Front_Camera: *This block retrieves images from the front camera. 
-% These images are in the YCbCr image format and have a 1280x720 resolution.
+% These images are in the YCbCr image format and have a 1280x720 resolution. The 
+% YCbCr color space is explained below.
 % * *Show target from YCbCr colorspace: *This block down samples the incoming 
 % video feed and then determines which pixels lie within the user defined sub 
 % space of the YCbCr color space. Click on this block to select what range of 
@@ -6388,8 +6389,8 @@ Calibrating_The_AR_Drone_Camera_Model
 % pixels fell within the user select color sub space and what their mean position 
 % is in the frame. Note that some noise can be present, showing floating pixels. 
 % If there is relatively little noise compared to the amount of pixels deteced 
-% from the actual target, the target position will be computed reltively accurately 
-% depsite the noise. When the target is missing, false positives could occur due 
+% from the actual target, the target position will be computed relatively accurately 
+% despite the noise. When the target is missing, false positives could occur due 
 % to noise. To guard against this you can increase the minimum amount of pixels 
 % that should lie within the color sub space before a target is detected.
 % * *RGB video viewer: *The RGB viewer block takes three input matrixes of 8 
@@ -6398,18 +6399,18 @@ Calibrating_The_AR_Drone_Camera_Model
 % pixels did, the red pixel indicates the centre of all pixels that fell inside 
 % the user defined YCbCr color sub space.
 % 
-% Build this model for the AR Drone 2.0, connect and run to start tuning 
-% of the parameters for your object tracking desire. You can then use these parameters 
-% in the *Object tracking* block located in:
+% *Build* this model for the AR Drone 2.0 then *connect* and *run* to start 
+% tuning of the parameters for your object tracking desire. You can then use these 
+% parameters in the *Object tracking* block located in:
 
 AR_Drone_Video_Processing
 %% 
 % The *Object tracker *block shown below uses the same parameters as the 
-% calibration model but in stead of outputting matrixes it only outputs the location 
+% calibration model. In stead of outputting matrixes it only outputs the location 
 % of the mean position, identical to the red dot in the calibration model. It 
-% also outputs a flag which becomes 1 if more pixels were detected as target than 
-% user specified, else it will return 0. The tarrgetOffsetX/Y outputs of the *Object 
-% tracking *block are scaled between (-1, 1) for both axes.
+% also outputs a flag which is '1' the amount of detected target pixels passes 
+% the user defined threshold, else it will return 0. The tarrgetOffsetX/Y outputs 
+% of the *Object tracking *block are scaled between (-1, 1) for both axes.
 % 
 %  
 %% The YCbCr color space:
@@ -6438,7 +6439,7 @@ AR_Drone_Video_Processing
 % 
 % For this the following settings were used:
 % 
-% * Video input width, height, downsample factor = 1280, 720, 5
+% * Video input width, height, down sample factor = 1280, 720, 5
 % * Blue shift min,max = 0, 150
 % * Red shift min,max = 160, 225
 % * Minimum object detection pixel count = 10;

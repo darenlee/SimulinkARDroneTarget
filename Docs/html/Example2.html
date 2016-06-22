@@ -17,7 +17,9 @@ h1, h2 {font-weight: normal;}
 .S9 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 45px;  }
 .S10 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 10px; margin-bottom: 9px; margin-right: 10px;  }
 .S11 { text-align: center; line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
-.S12 { text-align: center; line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 10px; margin-bottom: 9px; margin-right: 10px;  }
+.S12 { font-family: Helvetica, Arial, sans-serif; margin-left: 0px; margin-top: 10px; margin-bottom: 20px; margin-right: 0px;  }
+.S13 { text-align: left; line-height: 21px; white-space: pre-wrap; white-space: pre-wrap; margin-left: 56px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S14 { text-align: center; line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 10px; margin-bottom: 9px; margin-right: 10px;  }
 
 .LineNodeBlock {margin: 10px 0 10px 0;}
 .LineNodeBlock+.paragraphNode {margin-top: 10px;}
@@ -193,7 +195,7 @@ vqcZC5CcVOcm10DDhg3deFT7SyvjqrF9BAbBpwIUSl58ebbrJU+yI4QQQhwBKPTpEB9CpMQXyl7A
 PUQt4p3e6RQfyqzvtB8v3MPKgo+cJqsQ0CTml4v3B4tL2hNPPBF9pgnO96khnXxP1NSvN+yQ7zvx
 h8IfRnlC6PwfF6Gs0uqjYECkqVKlStHvfLQ2rKwcagVAsiOEEEKIXI1kRwghhBCSHSGEEEIIyY4Q
 QgghhGRHCCGEEEKyI4QQQggh2RFCCCGEkOwIIYQQQrKjXSCEEEIIyY4QQgghhGRHCCGEEEKyI4QQ
-Qggh2RFCCCGEkOwIIYQQQhwA/wMgOGewXm4cxAAAAABJRU5ErkJggg=="></p><p class = "S3"><span class = "S2"></span></p><p class = "S3"><span class = "S2"></span></p><p class = "S3"><span class = "S2">The AR_Drone_Front_Camera block on the left is created using the Legacy Code Tool using the C code in video.c which contains initialization, step and termination functions for both the front and bottom camera. You can see how the video signal is retrieved exactly by executing:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">edit(</span><span class = "S8">'video.c'</span><span class = "S9">);</span></p></div></div><p class = "S10"><span class = "S2">The videoInit1 and videoInit2 functions query the AR Drone's front and bottom camera for video capture respectively. The correct camera parameters are set and memory is allocated to use as an image buffer. The videoGrabImage1 and videoGrabImage2 functions are used to retrieve a new frame from the AR Drone's video channel and memory copy it to an array. This array is accessed as the block output via a pointer. The videoClose1 and videoClose2 functions free up the memory which was allocted during initialization. As this example uses the AR_Drone_Front_Camera block, only the videoInit1, videoGrabImage1 and videoClose1 functions are actually used. </span></p><p class = "S3"><span class = "S2">As the drone runs in external mode the amount of bandwith necessary for the video stream should be limited to ensure sufficient bandwidth remains for external mode connectivity. The second block in the model, "downscaleYCbCr422" is responsible for limiting the bandwith by taking the original input images (Which use the YCbCr color space and 4:2:2 pixel subsampling) and down sampling by a user specified amount (in both horizontal and vertical direction). Taking the original 1280*720 image and down sampling 8 times results in a video stream of 160x90 pixels, a reduction in bandwidth of 98.44%. Another way in wich the bandwidth is limited is by reducting the sampling time of "AR_Drone_Front_Camera" to the default value of 10 Fps. Sending too much data will cause the model to be unable to receive any shutdown packets from Simulink meaning the AR Drone 2.0 needs to be reset by unplugging the battery.</span></p><p class = "S3"><span class = "S2">The ARDroneVideoViewer block is what enables the video stream to be displayed in Simulink. It is a level-2 MATLAB S-Function which has been configured to work as a Sim Viewing Device. This causes Embedded Coder to ignore all code within the ARDroneVideoViewer S-Function when compiling for the AR Drone 2.0 target. The signal which goes into the ARDroneVideoViewer is sent to Simulink using external mode. The transformation from YCbCr422 to RGB is then done on the Simulink PC to ease the computational burden on the drone. Displaying the video feed is simply done by giving the RGB image to the MATLAB function 'image' within the S-Function.</span></p><h2 class = "S4"><span class = "S2">Viewing the bottom camera:</span></h2><p class = "S3"><span class = "S2">A second model is available to view the video feed from the bottom facing camera on the AR Drone 2.0. This camera can output video with a resolution of 320x240 at 50 fps, allthough a lower Fps is used and down sampling is once again implemented to reduce the needed tcpip bandwidth. To open this second model evaluate the following MATLAB command:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">open(</span><span class = "S8">'AR_Drone_Models\Example_Models\Example_Streaming_Bottom_Video_In_External_Mode.slx'</span><span class = "S9">);</span></p></div></div><p class = "S12"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAkEAAACPCAYAAAD9eQ9AAAAo4ElEQVR42u2dCbiN1f7HqUjiVmgw
+Qggh2RFCCCGEkOwIIYQQQhwA/wMgOGewXm4cxAAAAABJRU5ErkJggg=="></p><p class = "S3"><span class = "S2"></span></p><p class = "S3"><span class = "S2"></span></p><p class = "S3"><span class = "S2">The AR_Drone_Front_Camera block on the left is created using the Legacy Code Tool using the C code in video.c. It contains initialization, step and termination functions for both the front and bottom camera. You can see how the video signal is retrieved exactly by evaluating:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">edit(</span><span class = "S8">'video.c'</span><span class = "S9">);</span></p></div></div><p class = "S10"><span class = "S2">The videoInit1 and videoInit2 functions query the AR Drone's front and bottom camera for video capture respectively. </span></p><ul class = "S12"><li class = "S13"><span class = "S0">The correct camera parameters are set and memory is allocated to use as an image buffer. </span></li><li class = "S13"><span class = "S0">The videoGrabImage1 and videoGrabImage2 functions are used to retrieve a new frame from the AR Drone's video channel and memory copy it to an array. This array is accessed as the block output via a pointer. </span></li><li class = "S13"><span class = "S0">The videoClose1 and videoClose2 functions free up the memory which was allocted during initialization. </span></li></ul><p class = "S3"><span class = "S2">As this example uses the AR_Drone_Front_Camera block, only the videoInit1, videoGrabImage1 and videoClose1 functions are actually used. </span></p><p class = "S3"><span class = "S2">As the drone runs in external mode the amount of bandwith necessary for the video stream should be limited to ensure sufficient bandwidth remains for external mode connectivity. The second block in the model, "downscaleYCbCr422" is responsible for limiting the bandwith by taking the original input images (Which use the YCbCr color space and 4:2:2 pixel subsampling) and down sampling by a user specified amount (in both horizontal and vertical direction). Taking the original 1280*720 image and down sampling 8 times results in a video stream of 160x90 pixels, a reduction in bandwidth of 98.44%. Another way in wich the bandwidth is limited is by reducting the sampling time of "AR_Drone_Front_Camera" to 10 Fps. Sending too much data will cause the model to be unable to receive any shutdown packets from Simulink meaning the AR Drone 2.0 needs to be reset by unplugging the battery.</span></p><p class = "S3"><span class = "S2">The ARDroneVideoViewer block is what enables the video stream to be displayed in Simulink. It is a level-2 MATLAB S-Function which has been configured to work as a Sim Viewing Device. This causes Embedded Coder to ignore all code within the ARDroneVideoViewer S-Function when compiling for the AR Drone 2.0 target and run it on your Simulink PC instead. The signal which goes into the ARDroneVideoViewer is sent to Simulink using external mode. The transformation from YCbCr422 to RGB is then done on the Simulink PC to ease the computational burden on the drone. Displaying the video feed is simply done by giving the RGB image to the MATLAB function 'image' within the S-Function.</span></p><h2 class = "S4"><span class = "S2">Viewing the bottom camera:</span></h2><p class = "S3"><span class = "S2">A second model is available to view the video feed from the bottom facing camera on the AR Drone 2.0. This camera can output video with a resolution of 320x240 at 50 fps. A lower Fps is used and down sampling is once again implemented to reduce the needed TCP/IP bandwidth. To open this second model evaluate the following MATLAB command:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">open(</span><span class = "S8">'AR_Drone_Models\Example_Models\Example_Streaming_Bottom_Video_In_External_Mode.slx'</span><span class = "S9">);</span></p></div></div><p class = "S14"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAkEAAACPCAYAAAD9eQ9AAAAo4ElEQVR42u2dCbiN1f7HqUjiVmgw
 ZchYSSq30ISkWYMyRpSp3CYlISVCJEnlSoaiDCmFDE2XBlQaVVLcJiVRmhQNfn+f9dzf/q+zzz5H
 6mzO4ft5nvc5e+/z7nfaa/is31rvu/KZEEIIIcQuSD5dAiGEEEJIgoQQQgghJEFCCCGEEJIgIYQQ
 QghJkBBCCCGEJEgIIYQQQhIkhBBCCCEJEkIIIYSQBAkhhBBCSIKEEEIIISRBQgghhBCSICGEEEII
@@ -404,21 +406,25 @@ open('AR_Drone_Models\Example_Models\Example_Streaming_Video_In_External_Mode.sl
 % 
 % 
 % The AR_Drone_Front_Camera block on the left is created using the Legacy 
-% Code Tool using the C code in video.c which contains initialization, step and 
+% Code Tool using the C code in video.c. It contains initialization, step and 
 % termination functions for both the front and bottom camera. You can see how 
-% the video signal is retrieved exactly by executing:
+% the video signal is retrieved exactly by evaluating:
 
 edit('video.c');
 %% 
 % The videoInit1 and videoInit2 functions query the AR Drone's front and 
-% bottom camera for video capture respectively. The correct camera parameters 
-% are set and memory is allocated to use as an image buffer. The videoGrabImage1 
-% and videoGrabImage2 functions are used to retrieve a new frame from the AR Drone's 
-% video channel and memory copy it to an array. This array is accessed as the 
-% block output via a pointer. The videoClose1 and videoClose2 functions free up 
-% the memory which was allocted during initialization. As this example uses the 
-% AR_Drone_Front_Camera block, only the videoInit1, videoGrabImage1 and videoClose1 
-% functions are actually used. 
+% bottom camera for video capture respectively. 
+% 
+% * The correct camera parameters are set and memory is allocated to use as 
+% an image buffer. 
+% * The videoGrabImage1 and videoGrabImage2 functions are used to retrieve a 
+% new frame from the AR Drone's video channel and memory copy it to an array. 
+% This array is accessed as the block output via a pointer. 
+% * The videoClose1 and videoClose2 functions free up the memory which was allocted 
+% during initialization. 
+% 
+% As this example uses the AR_Drone_Front_Camera block, only the videoInit1, 
+% videoGrabImage1 and videoClose1 functions are actually used. 
 % 
 % As the drone runs in external mode the amount of bandwith necessary for 
 % the video stream should be limited to ensure sufficient bandwidth remains for 
@@ -429,25 +435,25 @@ edit('video.c');
 % the original 1280*720 image and down sampling 8 times results in a video stream 
 % of 160x90 pixels, a reduction in bandwidth of 98.44%. Another way in wich the 
 % bandwidth is limited is by reducting the sampling time of "AR_Drone_Front_Camera" 
-% to the default value of 10 Fps. Sending too much data will cause the model to 
-% be unable to receive any shutdown packets from Simulink meaning the AR Drone 
-% 2.0 needs to be reset by unplugging the battery.
+% to 10 Fps. Sending too much data will cause the model to be unable to receive 
+% any shutdown packets from Simulink meaning the AR Drone 2.0 needs to be reset 
+% by unplugging the battery.
 % 
 % The ARDroneVideoViewer block is what enables the video stream to be displayed 
 % in Simulink. It is a level-2 MATLAB S-Function which has been configured to 
 % work as a Sim Viewing Device. This causes Embedded Coder to ignore all code 
 % within the ARDroneVideoViewer S-Function when compiling for the AR Drone 2.0 
-% target. The signal which goes into the ARDroneVideoViewer is sent to Simulink 
-% using external mode. The transformation from YCbCr422 to RGB is then done on 
-% the Simulink PC to ease the computational burden on the drone. Displaying the 
-% video feed is simply done by giving the RGB image to the MATLAB function 'image' 
-% within the S-Function.
+% target and run it on your Simulink PC instead. The signal which goes into the 
+% ARDroneVideoViewer is sent to Simulink using external mode. The transformation 
+% from YCbCr422 to RGB is then done on the Simulink PC to ease the computational 
+% burden on the drone. Displaying the video feed is simply done by giving the 
+% RGB image to the MATLAB function 'image' within the S-Function.
 %% Viewing the bottom camera:
 % A second model is available to view the video feed from the bottom facing 
 % camera on the AR Drone 2.0. This camera can output video with a resolution of 
-% 320x240 at 50 fps, allthough a lower Fps is used and down sampling is once again 
-% implemented to reduce the needed tcpip bandwidth. To open this second model 
-% evaluate the following MATLAB command:
+% 320x240 at 50 fps. A lower Fps is used and down sampling is once again implemented 
+% to reduce the needed TCP/IP bandwidth. To open this second model evaluate the 
+% following MATLAB command:
 
 open('AR_Drone_Models\Example_Models\Example_Streaming_Bottom_Video_In_External_Mode.slx');
 %% 

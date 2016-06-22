@@ -17,6 +17,8 @@ h1, h2 {font-weight: normal;}
 .S9 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 45px;  }
 .S10 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 10px; margin-bottom: 9px; margin-right: 10px;  }
 .S11 { text-align: center; line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S12 { min-height: 0px; font-weight: bold; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S13 { min-height: 0px; font-style: italic; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
 
 .LineNodeBlock {margin: 10px 0 10px 0;}
 .LineNodeBlock+.paragraphNode {margin-top: 10px;}
@@ -24,7 +26,7 @@ h1, h2 {font-weight: normal;}
 .inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
 .inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
 .lineNode .textBox {white-space: pre;}
-</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Example: Reading and logging sensor data</span></h1><p class = "S3"><span class = "S2">In this example the data from the various sensors on the AR Drone 2.0 will be read into a program created from a Simulink model, allowing visualisation in real time and logging to the Simulink PC.</span></p><p class = "S3"><span class = "S2"></span></p><h2 class = "S4"><span class = "S2">AR Drone sensor drivers in Simulink</span></h2><p class = "S3"><span class = "S2">In order to retrieve the sensor data from the AR Drone 2.0 a driver interface is needed which can read the IMU data as it is published inside the drone filesystem at /dev/tty01. The Paparazzi open source community created a c code implementation which is able to read the data and write it into a navdata structure. A simple wrapper of the initialization, update and termination functions is therefor all that was required to be able to read the IMU data. Similairly the Paparazzi community created a c code implementation for the battery measurement which reads /dev/ic2-1, and is also wrapped to provide a Simulink block. If you wish to see how easy it is to wrap legacy c code for use in Simulink function blocks you can view the original Paparrazi and wrapper file via:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">edit(</span><span class = "S8">'BatteryMeasure.c'</span><span class = "S9">);</span></p></div><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">edit(</span><span class = "S8">'BatteryMeasure_Wrapper.c'</span><span class = "S9">);</span></p></div></div><h2 class = "S4"><span class = "S2">Using the driver blocks</span></h2><p class = "S3"><span class = "S2">Both these blocks are available in the AR Drone 2 Library under the "Sensors" sub library. These library blocks are then used for the model which can visualise and save the data. To open this model evaluate the following MATLAB command:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">open(</span><span class = "S8">'Example_Reading_And_Logging_Sensor_Data.slx'</span><span class = "S9">);</span></p></div></div><p class = "S10"><span class = "S2">This will open the following model:</span></p><p class = "S11"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAogAAAFwCAYAAAA7YIpTAACAAElEQVR42uydB3yN5xfHbWITmwwr
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Example: Reading and logging sensor data</span></h1><p class = "S3"><span class = "S2">In this example the data from the various sensors on the AR Drone 2.0 will be read, visualized and logged in real time on the Simulink PC.</span></p><p class = "S3"><span class = "S2"></span></p><h2 class = "S4"><span class = "S2">AR Drone sensor drivers in Simulink</span></h2><p class = "S3"><span class = "S2">In order to retrieve the sensor data from the AR Drone 2.0 a driver interface is needed which can read the IMU data as it is published inside the drone filesystem at /dev/tty01. The Paparazzi open source community created a c code implementation which is able to read the data and write it into a navdata structure. A simple wrapper of the initialization, update and termination functions is therefor all that was required to be able to read the IMU data. Similairly the Paparazzi community created a C code implementation for the battery measurement which reads /dev/ic2-1 and is also wrapped to provide a Simulink block. If you wish to see how to wrap legacy c code for use in Simulink function blocks you can view the original Paparrazi and wrapper files via:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">edit(</span><span class = "S8">'BatteryMeasure.c'</span><span class = "S9">);</span></p></div><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">edit(</span><span class = "S8">'BatteryMeasure_Wrapper.c'</span><span class = "S9">);</span></p></div></div><h2 class = "S4"><span class = "S2">Using the driver blocks</span></h2><p class = "S3"><span class = "S2">The IMU and Battery blocks are available in the AR Drone 2 Library under the "Sensors" sub library. These library blocks are then used for the model which can visualise and save the data. To open this model evaluate the following MATLAB command:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">open(</span><span class = "S8">'Example_Reading_And_Logging_Sensor_Data.slx'</span><span class = "S9">);</span></p></div></div><p class = "S10"><span class = "S2">This will open the following model:</span></p><p class = "S11"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAogAAAFwCAYAAAA7YIpTAACAAElEQVR42uydB3yN5xfHbWITmwwr
 tiBDRMxIIkgkiBl7U5uaLS1Vq9SsrVWlVaqU2qP23jOtvfcqiur5v7+TvLc3afSvmqV+v8/nfHLf
 977v8zz3ys39Ouc85yQSiqIoiqIoirJSIr4FFEVRFEVRFAGRoiiKoiiKIiBSFEVRFEVRBESKoiiK
 oiiKgEhRFEVRFEURECmKoiiKoigCIkVRFEVRFEVApCiKohKA+vbtK66uruLt7S2VKlWSihUrSoUK
@@ -799,7 +801,7 @@ OhJ5gkHPWWoIoFywYEH4NbmQic0kIUnxLFJD6Dx4ACKEdKYipWTy5MnWAZ1tcXxC3b6Mln/AO5l4
 IOThjYc2SZJiRz69KLklQEwnwutFaRc6rtQU3lAGXJCDR1I9ntCTFeKWpHgU3mhSE/Awnw0gEn7i
 gYqBatEoqIvHgYFfp7oPAJOUXWKQFKPmJUmKDfHgRjm1xPLdBYjSGYnRiZF1D1NLdJiUv8GC9d4k
 SZIkSYqNvlyAKEmSJEmSJAkQJUmSJEmSJAGiJEmSJEmSJECUJEmSJEmSBIiSJEmSJEmSAFGSJEmS
-JEkSIEqSJEmSJEkCREmSJEmSJCml9P8BXbe7Bvykn0kAAAAASUVORK5CYII="></p><p class = "S3"><span class = "S2">The 'IMU Data Bus' coming out of the 'Intertial Measurement' block contains the majority of the sensor information. As not all signals inside the bus are used in the Paparazii implementation nor interesting to look at it is connected to the 'Signal Selector' subsystem where a 'Bus Selector' is used to get the desired signals from the 'IMU Bus', and muxes are then used to combine the x,y and z components of the accelerometer, gyroscope and magnetometer into a single signal per sensor. The ultrasound signal and 'Battery Voltage Measurement' are single dimension signals by definition. </span></p><p class = "S3"><span class = "S2">In order to see the signals while the model runs on the AR Drone 2.0 the model is run in external mode. This means that signals which are connected to a scope will be send to the Simulink PC and displayed. Logging the data is done by setting each scopes 'Configuration Properties &gt;&gt; Logging' menu such that 'Log data to workspace' is selected. The 'Limit data points to last' index is what determines how many data points are down inside the scope before clearing the scope. For example with a setting of 20000 and the 'Interial Measurement' block set to sample at 200Hz (which is the rate at which is publishes) the scope is reset every 10 seconds. When you run the model on the drone (via the same route as the previous examples in External mode) you can click on the scopes to open them and see the data as measured on the drone.</span></p><p class = "S3"><span class = "S2">After the program is terminated the .mat files containing the sensor data will appear in the MATLAB workspace. The amount of data saved to a mat file by the scope when using External mode is goverend by a different parameter. To set this parameter open the 'External Mode Control Panel' found under the 'Code' menu entry in the Simulink Toolbar. Under 'Configuration &gt;&gt; Signal &amp; Triggering ...' you can set the 'Trigger options &gt;&gt; duration' amount desired. As the scopes are set to save every signal as a structure with time, twice the duration should be set as twice the data is used. The image below shows this menu with the 'Duration' setting set to 40000 for all signals, meaning 100 seconds of data will be saved when sampling the IMU block at 200Hz.</span></p><p class = "S11"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAp8AAAHWCAYAAAAxV+IxAACAAElEQVR42uydBVxVSRvGj7Wutbrm
+JEkSIEqSJEmSJEkCREmSJEmSJCml9P8BXbe7Bvykn0kAAAAASUVORK5CYII="></p><p class = "S3"><span class = "S2">The '</span><span class = "S12">IMU</span><span class = "S2"> </span><span class = "S12">Data</span><span class = "S2"> </span><span class = "S12">Bus</span><span class = "S2">' coming out of the 'Intertial Measurement' block contains the majority of the sensor information. As not all signals inside the bus are used in the Paparazii implementation it is connected to the '</span><span class = "S12">Signal</span><span class = "S2"> </span><span class = "S12">Selector</span><span class = "S2">' subsystem where a '</span><span class = "S12">Bus</span><span class = "S2"> </span><span class = "S12">Selector</span><span class = "S2">' is used to get the desired signals from the '</span><span class = "S12">IMU</span><span class = "S2"> </span><span class = "S12">Bus</span><span class = "S2">'. Muxes are then used to combine the x,y and z components of the accelerometer, gyroscope and magnetometer into a single signal per sensor. The ultrasound signal and '</span><span class = "S12">Battery</span><span class = "S2"> </span><span class = "S12">Voltage</span><span class = "S2"> </span><span class = "S12">Measurement</span><span class = "S2">' are single dimension signals by definition. </span></p><p class = "S3"><span class = "S2">In order to see the signals while the model runs on the AR Drone 2.0 the model is run in external mode. Signals which are connected to a scope will be send to the Simulink PC and displayed. Logging the data is done by setting each scopes '</span><span class = "S12">Configuration</span><span class = "S2"> </span><span class = "S12">Properties</span><span class = "S2"> &gt;&gt; </span><span class = "S12">Logging</span><span class = "S2">' menu such that 'Log data to workspace' is selected. The '</span><span class = "S12">Limit</span><span class = "S2"> </span><span class = "S12">data</span><span class = "S2"> </span><span class = "S12">points</span><span class = "S2"> </span><span class = "S12">to</span><span class = "S2"> </span><span class = "S12">last</span><span class = "S2">' index is what determines how many data points are down inside the scope before clearing the scope. For example with a setting of 20000 and the '</span><span class = "S12">Interial</span><span class = "S2"> </span><span class = "S12">Measurement</span><span class = "S2">' block set to sample at 200Hz (which is the rate at which is publishes) the scope is reset every 10 seconds. When you run the model on the drone, you can click on the scopes to open them and see the data as measured on the drone.</span></p><p class = "S3"><span class = "S2">After the program is terminated, .mat files containing the sensor data will appear in the MATLAB workspace. The amount of data saved to a mat file by the scope when using External mode is goverend by a different parameter. To set this parameter open the '</span><span class = "S12">External</span><span class = "S2"> </span><span class = "S12">Mode</span><span class = "S2"> </span><span class = "S12">Control</span><span class = "S2"> </span><span class = "S12">Panel</span><span class = "S2">' found under the '</span><span class = "S12">Code</span><span class = "S2">' menu entry in the Simulink Toolbar. Under '</span><span class = "S12">Configuration</span><span class = "S2"> &gt;&gt; </span><span class = "S12">Signal</span><span class = "S2"> </span><span class = "S12">&amp;</span><span class = "S2"> </span><span class = "S12">Triggering</span><span class = "S2"> ...' you can set the '</span><span class = "S12">Trigger</span><span class = "S2"> </span><span class = "S12">options</span><span class = "S2"> &gt;&gt; </span><span class = "S12">duration</span><span class = "S2">' amount desired. As the scopes are set to save every signal as a '</span><span class = "S12">structure</span><span class = "S2"> </span><span class = "S12">with</span><span class = "S2"> </span><span class = "S12">time</span><span class = "S2">', twice the duration should be set as twice the data is used. The image below shows this menu with the '</span><span class = "S12">Duration</span><span class = "S2">' setting set to 40000 for all signals, meaning 100 seconds of data will be saved when sampling the IMU block at 200Hz.</span></p><p class = "S11"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAp8AAAHWCAYAAAAxV+IxAACAAElEQVR42uydBVxVSRvGj7Wutbrm
 Wuuurdgd2IktJiZYmNiJYoKBCWInii0KtqJid4LSHdJw+5LPN3PuvYiIuwbWfu/r75F7T8yZMzNn
 5j/vzJkrgIyMjIyMjIyMjOwbmUBJQEZGRkZGRkZGRvBJRkZGRkZGRkZG8PmllpaWRiKRSCQSiUT6
 wfXDw2fGyKamppJIJBKJRCKR/sP6XFAVvgZwZgWgKSkp6X9JJBKJRCKRSD+2MvJbVtCZ1bavCp8f
@@ -2277,7 +2279,7 @@ SD1NdDdppFM6jqc04ilyPvHss3xKh1ySjtskjX6KG9GbhDrKKEEQBEEQBDGwkDqbVDhFpGO/9xTx
 IAiCGJj05HE9uZ/U/84lnZcsn6KA9iSdjq8d24cSBEEQBEEQAxupv50v4Hi+aGe/yeeFiChBEARB
 EAThfEjdry+p3+TzYiSVIAiCIAiCGJj8XOmyyyclSpQoUaJEiRKlqzeRfFKiRIkSJUqUKFEi+aRE
 iRIlSpQoUaJE8kmJEiVKlChRokSJEsknJUqUKFGiRIkSJZJPSpQoUaJEiRIlSpRIPilRokSJEiVK
-lChd/vR/VaQR90oEOKgAAAAASUVORK5CYII="></p><p class = "S3"><span class = "S2">Note that the way data is stored is in intervals of the set duration, meaning that if a measurement interval has been completed all previous data will be discarded (for example using the above setting, if the model execution is stopped at 103 seconds only data from 100 till 103 seconds will be saved, with the data of the first interval from 0 to 100 seconds discarded).</span></p><h2 class = "S4"><span class = "S2">Validating IMU data integrity</span></h2><p class = "S3"><span class = "S2">Looking at the 'Inertial Measurement' Simulink block a second output is visible, the 'IMU Checksum Flag'. This output is '1' when the IMU data has passed a data integrity check, and set to '0' when the check fails. Knowing when the IMU data is valid is important for processing the data as large errors are introduced into the measurement when the 'IMU Checksum Flag' is '0'. This is illustrated in the figures below. </span></p><p class = "S11"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjAAAAGMCAIAAABLcw+rAAArF0lEQVR42u2dzVMcSXqH+7g+rCM2
+lChd/vR/VaQR90oEOKgAAAAASUVORK5CYII="></p><p class = "S3"><span class = "S2">Note that the way data is stored is in intervals of the set duration, meaning that if a measurement interval has been completed all previous data will be discarde. For example using the above setting, if the model execution is stopped at 103 seconds, only data from 100 till 103 seconds will be saved, with the data of the first interval from 0 to 100 seconds discarded.</span></p><h2 class = "S4"><span class = "S2">Validating IMU data integrity</span></h2><p class = "S3"><span class = "S2">Looking at the '</span><span class = "S12">Inertial</span><span class = "S2"> </span><span class = "S12">Measurement</span><span class = "S2">' Simulink block a second output is visible, the '</span><span class = "S12">IMU</span><span class = "S2"> </span><span class = "S12">Checksum</span><span class = "S2"> </span><span class = "S12">Flag</span><span class = "S2">'. This output is '1' when the IMU data has passed a data integrity check, and set to '0' when the check fails. Knowing when the IMU data is valid is important for processing the data as large errors are introduced into the measurement when the 'IMU Checksum Flag' is '0'. This is illustrated in the figures below. </span></p><p class = "S11"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjAAAAGMCAIAAABLcw+rAAArF0lEQVR42u2dzVMcSXqH+7g+rCM2
 vFePHTGn8WkPG2GHfee43ptvjr1u+MLJjuCiw+zBc5mL9+4I+w/QagUhJBqajzagQTDTMItgkEBC
 rYEd0SA0jBqNBPKrTpFKsqqys+j6yIbnF8REDbS6n67KyqcyKyuz8pYQQggJIBV2ASGEEIRECCGE
 ICRCCCEIqWu2t7cPDg44PIQQgpDKzIsXLyYmJnZ3dzk8hBCCkErL6enp4uLi48ePERIhhCCkfH0z
@@ -2471,7 +2473,7 @@ ut19sQI6IYSQIoQkjrGWaxTZjI+Px7aQ3nZuMq2trU1NTU1PT4s/xEO6GdRqtbSQ5E3mjOgVdq11
 u/tiBXRCCCFFCOltZ3HZ9fV1tf3q1atarSaNlVghiT9Uy0Zy48YN+e/s7KzWiTjJPaghum53X6yA
 TgghpCAhiYTu3r07NjYmTZlbt26Z47YtIf3www/ValVeLBZRDltcXJycnBQtiU5+/PFH+Y28j9Xk
 0oldtzv8FdAJIYQUJCQV/xWOrXVzoyvUpl1Vl9WyCSEEIRFCCCEIiRBCCEFIhBBCEBIhhBCCkAgh
-hCAkQgghJJr/BzTw6Tek0sXpAAAAAElFTkSuQmCC"></p><p class = "S3"><span class = "S2">The signals in the above figure are the outputs from the three gyroscopes inside the AR Drone 2.0 IMU. The drone is moved around continuously to get significant data from the gyroscopes. A number of discontinuous peaks are visible in the data between 0 and 3 seconds, a number of which are significantly bigger than any actual data. By comparing the timestamp of these spikes to the timestamps of the 'IMU Checksum Flag' failures as seen in the figure below, the peaks are seen to be the result of corrupted navdata packages.</span></p><p class = "S11"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjIAAAGNCAIAAACE2gwzAAAd30lEQVR42u3da1IbWZqH8d7CbGA2
+hCAkQgghJJr/BzTw6Tek0sXpAAAAAElFTkSuQmCC"></p><p class = "S3"><span class = "S2">The signals in the above figure are the outputs from the three gyroscopes inside the AR Drone 2.0 IMU. The drone is moved around continuously to get significant data from the gyroscopes. A number of discontinuous peaks are visible in the data between 0 and 3 seconds. Some of these peaks are significantly bigger than any actual data. By comparing the timestamp of these spikes to the timestamps of the 'IMU Checksum Flag' failures as seen in the figure below, the peaks are seen to be the result of corrupted navdata packages.</span></p><p class = "S11"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjIAAAGNCAIAAACE2gwzAAAd30lEQVR42u3da1IbWZqH8d7CbGA2
 MPtgPXzma+1kNuB224QNyBISwtjFVRIWqhY3U9CiuVpu2lAGyfMGGZWhEVgUtrCz3L9/EMQhlcKP
 3zznPDpJSvmXTyIiIpnJX5RARERoSUREhJZERISWREREaElERH44LXW73ZmZmU6nc6+HREREhq+l
 8/Pzcrn86NGjm+4Z8JCIiMiDaKlare7v74+Pj990z4CHREREHkRLSQa4Z8BDP/300yMREfmPT+gg
@@ -2606,7 +2608,7 @@ cS4uLi4vL2dmZg4ODtLV0ocPH3Z7Evv3/hPpDcL/FLdaFxGRb6el3ptcpVp69OhR8knpfVoKuzx7
 t0KhEAuXW7UUFklWOZHHjx/H95cvX6ZSCTMNvuTh5g3C/xS3WhcRkW+qpVDR69evp6amYlnz7Nmz
 3iu8+7T073//O5fLxc7hksRki4uL09PTIaeQysePH2NL/J6+5VeaW28Qnv1brYuIyDfVUpI/fivl
 vnv03rwb7n3v4OvO3CIi4lMeRESElkRERGhJRERoSUREhJZERISWREREvib/BzEaieD4gog3AAAA
-AElFTkSuQmCC"></p><p class = "S3"><span class = "S2">To this end any implementation reliant on the IMU data should be able to deal with these corrupted packages. The easiest recommended method is to hold the values of the last known good 'IMU Data Bus' sample if the current 'IMU Checksum Flag' is '0'.</span></p><h2 class = "S4"><span class = "S2">Understanding the ultrasound data</span></h2><p class = "S3"><span class = "S2">The ultrasound sensor positioned on the bottom of the AR Drone 2.0 faces downwards and can be used to measure the distance between the drone and a surface below it. For the best measurements the surface below the drone must be a flat horizontal surface to not scatter or misdirect the ultrasonic waves. The ultrasonic sensor polls at 25Hz and seperates the data by adding a constant value to a new measurement for the first 0.05 seconds of the sample. The figure below shows how the ultrasound measurement changes when the drone is moved such that it is positioned above a higher surface (meaning the distance from the drone to the first surface below it drops). </span></p><p class = "S11"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtUAAAGACAIAAADtegnlAAAgVUlEQVR42u3dz06baZ7F8dao1Cpp
+AElFTkSuQmCC"></p><p class = "S3"><span class = "S2">Any implementation reliant on the IMU data should be able to deal with these corrupted packages. The MATLAB function block '</span><span class = "S12">Verify</span><span class = "S13"> </span><span class = "S12">IMU</span><span class = "S13"> </span><span class = "S12">Data</span><span class = "S13">'</span><span class = "S2"> which only outputs verified IMU data is provided in the library at:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">open(</span><span class = "S8">'AR_Drone_Sensors'</span><span class = "S9">)</span></p></div></div><h2 class = "S4"><span class = "S2">Understanding the ultrasound data</span></h2><p class = "S3"><span class = "S2">The ultrasound sensor positioned on the bottom of the AR Drone 2.0 faces downwards and can be used to measure the distance between the drone and a surface below it. For accurate measurements the surface below the drone must be a flat horizontal surface to not scatter or misdirect the ultrasonic waves. The ultrasonic sensor polls at 25Hz and seperates the data by adding a constant value to a new measurement for the first 0.05 seconds of the sample. The figure below shows how the ultrasound measurement changes when the drone is moved over surfaces of different heights.</span></p><p class = "S11"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtUAAAGACAIAAADtegnlAAAgVUlEQVR42u3dz06baZ7F8dao1Cpp
 VBrNLqtRb7IeKbtZJSvuAqkugUWv2GRRSy6hFn0JdDpE4Y+xg/FgEgJVQJo/RYITxzTuxIZAkZgQ
 7JpHflUeC4yhjQ3B/hy9ar3YT5z28e+c5+vXDvWH34iIiIiuVn9gAREREeEPIiIiwh9EREREXcwf
 2Wx2d3fXq0JERIQ/rkj7+/vxeDyfz3tViIiI8MdVqFKpzM/Pv3nzBn8QERHhj7bhxfT0dLlcjn7c
@@ -2752,13 +2754,12 @@ j6WlpehxNjY2wuN4GYiIiHqRP4ICSayvr0fnnz9/TiQS2Wy2IX8EgHj79m10y4MHD8L/zszM1Hgi
 IEjz75/u7e1F3yyJ/tKdnR0vAxERUY/yR2COp0+fTkxMpNPpx48f1/8D2hP88fHjx1gsFhYHjIiQ
 ZX5+/smTJ4FCAk8cHR2FW8LjnLigUq+VlZWwfmpqqnYhhIiIiHqRPyJVKpXoWxrnKiyLvh0SqVzV
 iYdq8sdPryciIqIe5Q8iIiIi/EFERET4g4iIiAh/EBEREf4gIiIiwh9ERET0Nen/APqgxHScGcln
-AAAAAElFTkSuQmCC"></p><p class = "S3"><span class = "S2">The value added as a measurement seperator is </span><span style="vertical-align:-3"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAC30lEQVRYR+2YW4hNURyHZ3KLmBoePM4QSckohEZNoTwpkQeM8UAuDwiFSLmWS+65RpKRS54kojx4oCgpJZTCG2nMg9AUw/ertaftWGevdU572Xtq7/o6p3XWXuvb6/L/r31qa3rZVdvLfGsK4dAzVoxwMcIlI5DnJVGP6zbYC52Rd2hhtT8C1sNjuGpZMmMouw5Nlt/Omnt/hBaOiy6lsyHQClfyKjwVsTmgERoEN2B/gvBxflsLb1ybNvSSUP/RlB8shF3TUeXvPiOspfMcpsEUeALnzIx0xfvNw5IYhtAOuAUPYADMhz1wGg7Bz0g6D8K2ietLoeKvNu4CeJl3YfkthnaYDo98hPtTaQLMhmaYDEPhA2iNXYM78NcaswyXaw3bRrhi4SXcsRsa4DYchRcwGBbBZlAyOAWb4Fu5Xil3CW+nTj/YCb9MO31M/zP4XAjvovbLrWE1sgvOwwb4GhPSPctBu1iXvl9IEFanmlo93D7o2UDmHvW1DNbAXVM2j09tOiWUk/DbR3g1lebCU4uMzgc6FygE/ZPvKdPB5QBodLWsNBu6FLo+w1Z4ZspUR2l7FihDfgFFC0WIh9Ad77/aKKFQpHOB1vc90AbpsDxY6kVpCNtGOHXRqMFqhcfTwE0YDVrjR4IZljRcjbDu0flWGUjxUevvfZ6FxyKnDTcSVoDi8X+7Kh3hOsxOQBtsMaNcGqaCylcirPy+ERRLFZYOgyvLpS7vKxyXPYaFXg6TslvqolGDPsKqo/R4Bi6DKxUHk1XDPsIt1LsE9826VSbK7HIJKyJchI+wEj5lZmo6ThIeTh1lsUazJF5ZZAdSNg5eQ/yAFOy5yglHm0ybaxUo7vacmGI2M/mu13edJZyv6Gk8RTnhSTSu1PsWFL6+WzrTiW0dKFrojKyDffDLJqyXQB0N9ceGz5X5aW0Ulkq3E31sqZO5sKdnNtVcYS0bq4ReC+HQU1KMcDHCJSPwB3Drky02oKCgAAAAAElFTkSuQmCC" width="22" height="22" /></span><span class = "S2"> (or 32768). Dealing with these peaks requires detection of them (for example call anything larger than 30000 a peak) and then either holding the previous measurement, introducing a slight delay, or substracting </span><span style="vertical-align:-3"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAC30lEQVRYR+2YW4hNURyHZ3KLmBoePM4QSckohEZNoTwpkQeM8UAuDwiFSLmWS+65RpKRS54kojx4oCgpJZTCG2nMg9AUw/ertaftWGevdU572Xtq7/o6p3XWXuvb6/L/r31qa3rZVdvLfGsK4dAzVoxwMcIlI5DnJVGP6zbYC52Rd2hhtT8C1sNjuGpZMmMouw5Nlt/Omnt/hBaOiy6lsyHQClfyKjwVsTmgERoEN2B/gvBxflsLb1ybNvSSUP/RlB8shF3TUeXvPiOspfMcpsEUeALnzIx0xfvNw5IYhtAOuAUPYADMhz1wGg7Bz0g6D8K2ietLoeKvNu4CeJl3YfkthnaYDo98hPtTaQLMhmaYDEPhA2iNXYM78NcaswyXaw3bRrhi4SXcsRsa4DYchRcwGBbBZlAyOAWb4Fu5Xil3CW+nTj/YCb9MO31M/zP4XAjvovbLrWE1sgvOwwb4GhPSPctBu1iXvl9IEFanmlo93D7o2UDmHvW1DNbAXVM2j09tOiWUk/DbR3g1lebCU4uMzgc6FygE/ZPvKdPB5QBodLWsNBu6FLo+w1Z4ZspUR2l7FihDfgFFC0WIh9Ad77/aKKFQpHOB1vc90AbpsDxY6kVpCNtGOHXRqMFqhcfTwE0YDVrjR4IZljRcjbDu0flWGUjxUevvfZ6FxyKnDTcSVoDi8X+7Kh3hOsxOQBtsMaNcGqaCylcirPy+ERRLFZYOgyvLpS7vKxyXPYaFXg6TslvqolGDPsKqo/R4Bi6DKxUHk1XDPsIt1LsE9826VSbK7HIJKyJchI+wEj5lZmo6ThIeTh1lsUazJF5ZZAdSNg5eQ/yAFOy5yglHm0ybaxUo7vacmGI2M/mu13edJZyv6Gk8RTnhSTSu1PsWFL6+WzrTiW0dKFrojKyDffDLJqyXQB0N9ceGz5X5aW0Ulkq3E31sqZO5sKdnNtVcYS0bq4ReC+HQU1KMcDHCJSPwB3Drky02oKCgAAAAAElFTkSuQmCC" width="22" height="22" /></span><span class = "S2"> from that peak to reconstruct the actual data.</span></p></div></div>
+AAAAAElFTkSuQmCC"></p><p class = "S3"><span class = "S2">The value added as a measurement seperator is </span><span style="vertical-align:-3"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAC30lEQVRYR+2YW4hNURyHZ3KLmBoePM4QSckohEZNoTwpkQeM8UAuDwiFSLmWS+65RpKRS54kojx4oCgpJZTCG2nMg9AUw/ertaftWGevdU572Xtq7/o6p3XWXuvb6/L/r31qa3rZVdvLfGsK4dAzVoxwMcIlI5DnJVGP6zbYC52Rd2hhtT8C1sNjuGpZMmMouw5Nlt/Omnt/hBaOiy6lsyHQClfyKjwVsTmgERoEN2B/gvBxflsLb1ybNvSSUP/RlB8shF3TUeXvPiOspfMcpsEUeALnzIx0xfvNw5IYhtAOuAUPYADMhz1wGg7Bz0g6D8K2ietLoeKvNu4CeJl3YfkthnaYDo98hPtTaQLMhmaYDEPhA2iNXYM78NcaswyXaw3bRrhi4SXcsRsa4DYchRcwGBbBZlAyOAWb4Fu5Xil3CW+nTj/YCb9MO31M/zP4XAjvovbLrWE1sgvOwwb4GhPSPctBu1iXvl9IEFanmlo93D7o2UDmHvW1DNbAXVM2j09tOiWUk/DbR3g1lebCU4uMzgc6FygE/ZPvKdPB5QBodLWsNBu6FLo+w1Z4ZspUR2l7FihDfgFFC0WIh9Ad77/aKKFQpHOB1vc90AbpsDxY6kVpCNtGOHXRqMFqhcfTwE0YDVrjR4IZljRcjbDu0flWGUjxUevvfZ6FxyKnDTcSVoDi8X+7Kh3hOsxOQBtsMaNcGqaCylcirPy+ERRLFZYOgyvLpS7vKxyXPYaFXg6TslvqolGDPsKqo/R4Bi6DKxUHk1XDPsIt1LsE9826VSbK7HIJKyJchI+wEj5lZmo6ThIeTh1lsUazJF5ZZAdSNg5eQ/yAFOy5yglHm0ybaxUo7vacmGI2M/mu13edJZyv6Gk8RTnhSTSu1PsWFL6+WzrTiW0dKFrojKyDffDLJqyXQB0N9ceGz5X5aW0Ulkq3E31sqZO5sKdnNtVcYS0bq4ReC+HQU1KMcDHCJSPwB3Drky02oKCgAAAAAElFTkSuQmCC" width="22" height="22" /></span><span class = "S2"> (or 32768). Dealing with these peaks requires detection of them, for example call anything larger than 30000 a peak. Either hold the previous measurement, introducing a slight delay, or substract </span><span style="vertical-align:-3"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAC30lEQVRYR+2YW4hNURyHZ3KLmBoePM4QSckohEZNoTwpkQeM8UAuDwiFSLmWS+65RpKRS54kojx4oCgpJZTCG2nMg9AUw/ertaftWGevdU572Xtq7/o6p3XWXuvb6/L/r31qa3rZVdvLfGsK4dAzVoxwMcIlI5DnJVGP6zbYC52Rd2hhtT8C1sNjuGpZMmMouw5Nlt/Omnt/hBaOiy6lsyHQClfyKjwVsTmgERoEN2B/gvBxflsLb1ybNvSSUP/RlB8shF3TUeXvPiOspfMcpsEUeALnzIx0xfvNw5IYhtAOuAUPYADMhz1wGg7Bz0g6D8K2ietLoeKvNu4CeJl3YfkthnaYDo98hPtTaQLMhmaYDEPhA2iNXYM78NcaswyXaw3bRrhi4SXcsRsa4DYchRcwGBbBZlAyOAWb4Fu5Xil3CW+nTj/YCb9MO31M/zP4XAjvovbLrWE1sgvOwwb4GhPSPctBu1iXvl9IEFanmlo93D7o2UDmHvW1DNbAXVM2j09tOiWUk/DbR3g1lebCU4uMzgc6FygE/ZPvKdPB5QBodLWsNBu6FLo+w1Z4ZspUR2l7FihDfgFFC0WIh9Ad77/aKKFQpHOB1vc90AbpsDxY6kVpCNtGOHXRqMFqhcfTwE0YDVrjR4IZljRcjbDu0flWGUjxUevvfZ6FxyKnDTcSVoDi8X+7Kh3hOsxOQBtsMaNcGqaCylcirPy+ERRLFZYOgyvLpS7vKxyXPYaFXg6TslvqolGDPsKqo/R4Bi6DKxUHk1XDPsIt1LsE9826VSbK7HIJKyJchI+wEj5lZmo6ThIeTh1lsUazJF5ZZAdSNg5eQ/yAFOy5yglHm0ybaxUo7vacmGI2M/mu13edJZyv6Gk8RTnhSTSu1PsWFL6+WzrTiW0dKFrojKyDffDLJqyXQB0N9ceGz5X5aW0Ulkq3E31sqZO5sKdnNtVcYS0bq4ReC+HQU1KMcDHCJSPwB3Drky02oKCgAAAAAElFTkSuQmCC" width="22" height="22" /></span><span class = "S2"> from that peak to reconstruct the actual data.</span></p></div></div>
 <!-- 
 ##### SOURCE BEGIN #####
 %% Example: Reading and logging sensor data
 % In this example the data from the various sensors on the AR Drone 2.0 will 
-% be read into a program created from a Simulink model, allowing visualisation 
-% in real time and logging to the Simulink PC.
+% be read, visualized and logged in real time on the Simulink PC.
 % 
 % 
 %% AR Drone sensor drivers in Simulink
@@ -2768,17 +2769,18 @@ AAAAAElFTkSuQmCC"></p><p class = "S3"><span class = "S2">The value added as a me
 % which is able to read the data and write it into a navdata structure. A simple 
 % wrapper of the initialization, update and termination functions is therefor 
 % all that was required to be able to read the IMU data. Similairly the Paparazzi 
-% community created a c code implementation for the battery measurement which 
-% reads /dev/ic2-1, and is also wrapped to provide a Simulink block. If you wish 
-% to see how easy it is to wrap legacy c code for use in Simulink function blocks 
-% you can view the original Paparrazi and wrapper file via:
+% community created a C code implementation for the battery measurement which 
+% reads /dev/ic2-1 and is also wrapped to provide a Simulink block. If you wish 
+% to see how to wrap legacy c code for use in Simulink function blocks you can 
+% view the original Paparrazi and wrapper files via:
 
 edit('BatteryMeasure.c');
 edit('BatteryMeasure_Wrapper.c');
 %% Using the driver blocks
-% Both these blocks are available in the AR Drone 2 Library under the "Sensors" 
-% sub library. These library blocks are then used for the model which can visualise 
-% and save the data. To open this model evaluate the following MATLAB command:
+% The IMU and Battery blocks are available in the AR Drone 2 Library under the 
+% "Sensors" sub library. These library blocks are then used for the model which 
+% can visualise and save the data. To open this model evaluate the following MATLAB 
+% command:
 
 open('Example_Reading_And_Logging_Sensor_Data.slx');
 %% 
@@ -2786,86 +2788,83 @@ open('Example_Reading_And_Logging_Sensor_Data.slx');
 % 
 %  
 % 
-% The 'IMU Data Bus' coming out of the 'Intertial Measurement' block contains 
-% the majority of the sensor information. As not all signals inside the bus are 
-% used in the Paparazii implementation nor interesting to look at it is connected 
-% to the 'Signal Selector' subsystem where a 'Bus Selector' is used to get the 
-% desired signals from the 'IMU Bus', and muxes are then used to combine the x,y 
-% and z components of the accelerometer, gyroscope and magnetometer into a single 
-% signal per sensor. The ultrasound signal and 'Battery Voltage Measurement' are 
+% The '*IMU* *Data* *Bus*' coming out of the 'Intertial Measurement' block 
+% contains the majority of the sensor information. As not all signals inside the 
+% bus are used in the Paparazii implementation it is connected to the '*Signal* 
+% *Selector*' subsystem where a '*Bus* *Selector*' is used to get the desired 
+% signals from the '*IMU* *Bus*'. Muxes are then used to combine the x,y and z 
+% components of the accelerometer, gyroscope and magnetometer into a single signal 
+% per sensor. The ultrasound signal and '*Battery* *Voltage* *Measurement*' are 
 % single dimension signals by definition. 
 % 
 % In order to see the signals while the model runs on the AR Drone 2.0 the 
-% model is run in external mode. This means that signals which are connected to 
-% a scope will be send to the Simulink PC and displayed. Logging the data is done 
-% by setting each scopes 'Configuration Properties >> Logging' menu such that 
-% 'Log data to workspace' is selected. The 'Limit data points to last' index is 
+% model is run in external mode. Signals which are connected to a scope will be 
+% send to the Simulink PC and displayed. Logging the data is done by setting each 
+% scopes '*Configuration* *Properties* >> *Logging*' menu such that 'Log data 
+% to workspace' is selected. The '*Limit* *data* *points* *to* *last*' index is 
 % what determines how many data points are down inside the scope before clearing 
-% the scope. For example with a setting of 20000 and the 'Interial Measurement' 
+% the scope. For example with a setting of 20000 and the '*Interial* *Measurement*' 
 % block set to sample at 200Hz (which is the rate at which is publishes) the scope 
-% is reset every 10 seconds. When you run the model on the drone (via the same 
-% route as the previous examples in External mode) you can click on the scopes 
-% to open them and see the data as measured on the drone.
+% is reset every 10 seconds. When you run the model on the drone, you can click 
+% on the scopes to open them and see the data as measured on the drone.
 % 
-% After the program is terminated the .mat files containing the sensor data 
+% After the program is terminated, .mat files containing the sensor data 
 % will appear in the MATLAB workspace. The amount of data saved to a mat file 
 % by the scope when using External mode is goverend by a different parameter. 
-% To set this parameter open the 'External Mode Control Panel' found under the 
-% 'Code' menu entry in the Simulink Toolbar. Under 'Configuration >> Signal & 
-% Triggering ...' you can set the 'Trigger options >> duration' amount desired. 
-% As the scopes are set to save every signal as a structure with time, twice the 
-% duration should be set as twice the data is used. The image below shows this 
-% menu with the 'Duration' setting set to 40000 for all signals, meaning 100 seconds 
-% of data will be saved when sampling the IMU block at 200Hz.
+% To set this parameter open the '*External* *Mode* *Control* *Panel*' found under 
+% the '*Code*' menu entry in the Simulink Toolbar. Under '*Configuration* >> *Signal* 
+% *&* *Triggering* ...' you can set the '*Trigger* *options* >> *duration*' amount 
+% desired. As the scopes are set to save every signal as a '*structure* *with* 
+% *time*', twice the duration should be set as twice the data is used. The image 
+% below shows this menu with the '*Duration*' setting set to 40000 for all signals, 
+% meaning 100 seconds of data will be saved when sampling the IMU block at 200Hz.
 % 
 %  
 % 
 % Note that the way data is stored is in intervals of the set duration, meaning 
 % that if a measurement interval has been completed all previous data will be 
-% discarded (for example using the above setting, if the model execution is stopped 
-% at 103 seconds only data from 100 till 103 seconds will be saved, with the data 
-% of the first interval from 0 to 100 seconds discarded).
+% discarde. For example using the above setting, if the model execution is stopped 
+% at 103 seconds, only data from 100 till 103 seconds will be saved, with the 
+% data of the first interval from 0 to 100 seconds discarded.
 %% Validating IMU data integrity
-% Looking at the 'Inertial Measurement' Simulink block a second output is visible, 
-% the 'IMU Checksum Flag'. This output is '1' when the IMU data has passed a data 
-% integrity check, and set to '0' when the check fails. Knowing when the IMU data 
-% is valid is important for processing the data as large errors are introduced 
-% into the measurement when the 'IMU Checksum Flag' is '0'. This is illustrated 
-% in the figures below. 
+% Looking at the '*Inertial* *Measurement*' Simulink block a second output is 
+% visible, the '*IMU* *Checksum* *Flag*'. This output is '1' when the IMU data 
+% has passed a data integrity check, and set to '0' when the check fails. Knowing 
+% when the IMU data is valid is important for processing the data as large errors 
+% are introduced into the measurement when the 'IMU Checksum Flag' is '0'. This 
+% is illustrated in the figures below. 
 % 
 %  
 % 
 % The signals in the above figure are the outputs from the three gyroscopes 
 % inside the AR Drone 2.0 IMU. The drone is moved around continuously to get significant 
 % data from the gyroscopes. A number of discontinuous peaks are visible in the 
-% data between 0 and 3 seconds, a number of which are significantly bigger than 
+% data between 0 and 3 seconds. Some of these peaks are significantly bigger than 
 % any actual data. By comparing the timestamp of these spikes to the timestamps 
 % of the 'IMU Checksum Flag' failures as seen in the figure below, the peaks are 
 % seen to be the result of corrupted navdata packages.
 % 
 %  
 % 
-% To this end any implementation reliant on the IMU data should be able to 
-% deal with these corrupted packages. The easiest recommended method is to hold 
-% the values of the last known good 'IMU Data Bus' sample if the current 'IMU 
-% Checksum Flag' is '0'.
+% Any implementation reliant on the IMU data should be able to deal with 
+% these corrupted packages. The MATLAB function block '*Verify_* _*IMU_* _*Data_*'_ 
+% which only outputs verified IMU data is provided in the library at:
+
+open('AR_Drone_Sensors')
 %% Understanding the ultrasound data
 % The ultrasound sensor positioned on the bottom of the AR Drone 2.0 faces downwards 
 % and can be used to measure the distance between the drone and a surface below 
-% it. For the best measurements the surface below the drone must be a flat horizontal 
+% it. For accurate measurements the surface below the drone must be a flat horizontal 
 % surface to not scatter or misdirect the ultrasonic waves. The ultrasonic sensor 
 % polls at 25Hz and seperates the data by adding a constant value to a new measurement 
 % for the first 0.05 seconds of the sample. The figure below shows how the ultrasound 
-% measurement changes when the drone is moved such that it is positioned above 
-% a higher surface (meaning the distance from the drone to the first surface below 
-% it drops). 
+% measurement changes when the drone is moved over surfaces of different heights.
 % 
 %  
 % 
 % The value added as a measurement seperator is $2^{15}$ (or 32768). Dealing 
-% with these peaks requires detection of them (for example call anything larger 
-% than 30000 a peak) and then either holding the previous measurement, introducing 
-% a slight delay, or substracting $2^{15}$ from that peak to reconstruct the actual 
-% data.
+% with these peaks requires detection of them, for example call anything larger 
+% than 30000 a peak. Either hold the previous measurement, introducing a slight 
+% delay, or substract $2^{15}$ from that peak to reconstruct the actual data.
 ##### SOURCE END #####
 --></body></html>
