@@ -20,7 +20,7 @@ end
 
 % If the default folder was not legit, prompt the user
 while(FolderIsLegit==0)
-folder_name = uigetdir('c:\', 'Please manutally select the Code Sourcery Directory Location, the following default location was not found: C:\Program Files (x86)\CodeSourcery\Sourcery G++ Lite\bin');
+folder_name = uigetdir('c:\', 'Please select the Code Sourcery bin directory, the following default location was not found: C:\Program Files (x86)\CodeSourcery\Sourcery G++ Lite\bin');
 ListOfFiles =ls(folder_name);
 
 if size(ListOfFiles,2)>=22
