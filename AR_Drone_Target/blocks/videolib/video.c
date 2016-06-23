@@ -145,9 +145,19 @@ void videoInit1(void)
 		}
     }
 
+	
     type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
-    if (ioctl(vid1.fd, VIDIOC_STREAMON, &type)< 0) {
-		printf("ioctl() VIDIOC_STREAMON failed.\n");  
+	int sleepTime = 0;
+
+    while (ioctl(vid1.fd, VIDIOC_STREAMON, &type)< 0) {
+		printf("ioctl() VIDIOC_STREAMON failed, sleeping for 1s before trying again.\n");  
+		sleepTime++;
+		sleep(1);
+		if (sleepTime > 10)
+		{
+			printf("Error: Unable to turn on camera 1\n");
+			return; 
+		}
     }
 
 
@@ -249,10 +259,19 @@ void videoInit2(void)
 		}
     }
 
-    type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
-    if (ioctl(vid2.fd, VIDIOC_STREAMON, &type)< 0) {
-		printf("ioctl() VIDIOC_STREAMON failed.\n");  
-    }
+	type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+	int sleepTime = 0;
+
+	while (ioctl(vid2.fd, VIDIOC_STREAMON, &type)< 0) {
+		printf("ioctl() VIDIOC_STREAMON failed, sleeping for 1s before trying again.\n");
+		sleepTime++;
+		sleep(1);
+		if (sleepTime > 10)
+		{
+			printf("Error: Unable to turn on camera 2\n");
+			return;
+		}
+	}
 
 
 #endif //MATLAB_MEX_FILE
