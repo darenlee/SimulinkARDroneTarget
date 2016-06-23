@@ -18,4 +18,4 @@ The provided Simulink blocks allow you to read all the sensors and both cameras 
 2. The Simulink project provides you with shortcuts on the MATLAB toolstrip. Things such as the documentation or calibration models can be easily accessed from there
 3. The folder structure for the files is such that
   1. Pre made Simulink models are inside the AR_Drone_Models folder
-  2. Library blocks, C source code and custom scripts are in the AR_Drone_Target folder
+  2. Library blocks, C source code and custom scripts are in the AR_Drone_Target folder 
