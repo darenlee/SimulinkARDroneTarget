@@ -2,18 +2,7 @@
 <toc version="2.0">
 
     <tocitem target="ARDrone2Toolbox.html">Ar Drone 2.0 toolbox
-        <tocitem target="Examples.html">Examples 
-            <tocitem target="Example1.html">Getting started</tocitem>
-            <tocitem target="Example0.html">Configuring a model for the AR Drone</tocitem>
-            <tocitem target="Example2.html">Streaming video in External mode</tocitem>
-            <tocitem target="Example3.html">Streaming video in Normal mode</tocitem>
-            <tocitem target="Example4.html">Reading and logging sensor data</tocitem>
-            <tocitem target="Example5.html">Calibrating the sensors
-                <tocitem target="Calibration positioning.html">Calibration positioning</tocitem>
-            </tocitem>
-            <tocitem target="Example6.html">Color detection</tocitem>
-        </tocitem>
-        <tocitem target="Concepts.html">Concepts
+    <tocitem target="Concepts.html">Concepts
             <tocitem target="ARDrone2Hardware.html">AR Drone 2.0 specifications
                 <tocitem target="Sensors.html">Sensors</tocitem>
                 <tocitem target="Actuators.html">Actuators</tocitem>
@@ -31,6 +20,19 @@
             <tocitem target="ConfigurationParameters.html">Configuration parameters</tocitem>
             <tocitem target="DataDictionary.html">Data dictionaries</tocitem>
             <tocitem target="SimulationModes.html">Simulation modes</tocitem>
+        </tocitem>
+        <tocitem target="TrackingDemo.html">Demo</tocitem>
+        <tocitem target="Examples.html">Examples 
+            <tocitem target="Example1.html">Getting started</tocitem>
+            <tocitem target="Example0.html">Configuring a model for the AR Drone</tocitem>
+            <tocitem target="Example2.html">Streaming video in External mode</tocitem>
+            <tocitem target="Example3.html">Streaming video in Normal mode</tocitem>
+            <tocitem target="Example4.html">Reading and logging sensor data</tocitem>
+            <tocitem target="Example5.html">Calibrating the sensors
+                <tocitem target="Calibration positioning.html">Calibration positioning</tocitem>
+            </tocitem>
+            <tocitem target="Example6.html">Color detection</tocitem>
+            <tocitem target="Example7.html">Free flight</tocitem>
         </tocitem>
         <tocitem target="Documentation.html">Documentation
             <tocitem target="FAQ.html">Frequently asked questions</tocitem>
