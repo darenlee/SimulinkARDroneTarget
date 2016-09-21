@@ -35,7 +35,7 @@ void versionCheckInit(void)
 		{
 			if (ch != versionString[count])
 			{
-				printf("Warning: This toolbox has only been tested to work on the AR Drone 2.0 Running firmware 2.4.8. The target Drone appears to have a different firmware version.");
+				printf("Warning: The AR Drone Target has only been tested to work on the AR Drone 2.0 Running firmware 2.4.8. The target Drone appears to have a different firmware version.");
                 isSupported = 0;
 				break;
 			}

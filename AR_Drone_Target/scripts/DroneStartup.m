@@ -73,7 +73,7 @@ set_param(0, 'CodeGenFolder', ['Build']);
 
 if showDoc == 1
     pause(0.1); % Give MATLAB some time to recognize updated path
-    open('Docs/html/ARDrone2Toolbox.html');
+    open('Docs/html/ARDrone2Target.html');
     open('AR_Drone_2_Library')
 end
 

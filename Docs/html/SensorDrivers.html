@@ -30,7 +30,7 @@ h1, h2 {font-weight: normal;}
 .inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
 .inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
 .lineNode .textBox {white-space: pre;}
-</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Sensor drivers</span></h1><p class = "S3"><span class = "S2">All sensors on the AR Drone 2.0 can be read using legacy C code implementations created by the Paparazzi community. All but one sensor can be read from the AR Drone 2.0's IMU board, the only extra sensor is the battery sensor.</span></p><h2 class = "S4"><span class = "S2">The legacy IMU driver </span></h2><p class = "S3"><span class = "S2">The IMU driver is based on the navdata C source files created by the Paparazzi community, which are still under development as of march 2016. The version used in this toolbox can therefore differ from the latest version from Paparazzi. The concepts listed below will remain the same with the process through which the IMU data goes from the IMU on the drone to Simulink. The Paparazzi implementation uses the files</span><span class = "S5"> "navdata.c"</span><span class = "S2"> and </span><span class = "S5">"navdata.h".</span><span class = "S2"> The AR Toolbox versions of these files have been adjusted to work without external Paparazzi files and are placed in the AR Toolbox as </span><span class = "S5">"IMU_Navdata.c"</span><span class = "S2"> and </span><span class = "S5">"IMU_Navdata.h"</span><span class = "S2">. The image below shows how the drone, Paparazzi code, AR Drone Toolbox code and Simulink interact.</span></p><p class = "S6"><img class="imageNode" width="486" height="444" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAsYAAAKICAYAAABzOjypAACAAElEQVR42uydBXjcVtqFy8zdv8y0
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Sensor drivers</span></h1><p class = "S3"><span class = "S2">All sensors on the AR Drone 2.0 can be read using legacy C code implementations created by the Paparazzi community. All but one sensor can be read from the AR Drone 2.0's IMU board, the only extra sensor is the battery sensor.</span></p><h2 class = "S4"><span class = "S2">The legacy IMU driver </span></h2><p class = "S3"><span class = "S2">The IMU driver is based on the navdata C source files created by the Paparazzi community, which are still under development as of march 2016. The version used in the AR Drone 2.0 Target can therefore differ from the latest version from Paparazzi. The concepts listed below will remain the same with the process through which the IMU data goes from the IMU on the drone to Simulink. The Paparazzi implementation uses the files</span><span class = "S5"> "navdata.c"</span><span class = "S2"> and </span><span class = "S5">"navdata.h".</span><span class = "S2"> The AR Drone 2.0 Target versions of these files have been adjusted to work without external Paparazzi files and are placed in the AR Drone 2.0 Target as </span><span class = "S5">"IMU_Navdata.c"</span><span class = "S2"> and </span><span class = "S5">"IMU_Navdata.h"</span><span class = "S2">. The image below shows how the drone, Paparazzi code, AR Drone 2.0 Target code and Simulink interact.</span></p><p class = "S6"><img class="imageNode" width="486" height="444" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAsYAAAKICAYAAABzOjypAACAAElEQVR42uydBXjcVtqFy8zdv8y0
 bbeb8pa2zJw2acqYpGFGh7GhNg0zMzNjAw0zmilmthM7sWc05/++K2k8dpy028bB8z7PeXRH0mg0
 I1/dV1d3xmeBEEIIIYQQgrP4ERBCCCGEEEIxJoQQQgghhGJMCCGEEEIIxZgQQgghhBCKMSGEEEII
 IRRjQgghhBBCKMaEEEIIIYRQjAkhhBBCCKEYE0IIIYQQQjEmhBBCCCGEYkwIIYQQQgjFmBBCCCGE
@@ -1717,13 +1717,14 @@ Szy0178bep7m4P2i3Vh5HfOq8dheB+sfURx4302l0HUAAAAASUVORK5CYII="></p><h2 class = "S
 %% The legacy IMU driver 
 % The IMU driver is based on the navdata C source files created by the Paparazzi 
 % community, which are still under development as of march 2016. The version used 
-% in this toolbox can therefore differ from the latest version from Paparazzi. 
-% The concepts listed below will remain the same with the process through which 
-% the IMU data goes from the IMU on the drone to Simulink. The Paparazzi implementation 
-% uses the files* "navdata.c"* and *"navdata.h".* The AR Toolbox versions of these 
-% files have been adjusted to work without external Paparazzi files and are placed 
-% in the AR Toolbox as *"IMU_Navdata.c"* and *"IMU_Navdata.h"*. The image below 
-% shows how the drone, Paparazzi code, AR Drone Toolbox code and Simulink interact.
+% in the AR Drone 2.0 Target can therefore differ from the latest version from 
+% Paparazzi. The concepts listed below will remain the same with the process through 
+% which the IMU data goes from the IMU on the drone to Simulink. The Paparazzi 
+% implementation uses the files* "navdata.c"* and *"navdata.h".* The AR Drone 
+% 2.0 Target versions of these files have been adjusted to work without external 
+% Paparazzi files and are placed in the AR Drone 2.0 Target as *"IMU_Navdata.c"* 
+% and *"IMU_Navdata.h"*. The image below shows how the drone, Paparazzi code, 
+% AR Drone 2.0 Target code and Simulink interact.
 % 
 %  
 % 

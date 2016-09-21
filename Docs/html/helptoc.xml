@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding="utf-8"?>
 <toc version="2.0">
 
-    <tocitem target="ARDrone2Toolbox.html">Ar Drone 2.0 toolbox
+    <tocitem target="ARDrone2Target.html">AR Drone 2.0 Target
     <tocitem target="Concepts.html">Concepts
             <tocitem target="ARDrone2Hardware.html">AR Drone 2.0 specifications
                 <tocitem target="Sensors.html">Sensors</tocitem>
