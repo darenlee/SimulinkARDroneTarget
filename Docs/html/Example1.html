@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="MATLAB R2016a"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><title>Example: Getting Started</title><style type="text/css">
+* {margin: 0; padding: 0;}
+body {text-align: start; line-height: 17.2339992523193px; min-height: 0px; white-space: normal; color: rgb(0, 0, 0); font-family: Consolas, Inconsolata, Menlo, monospace; font-style: normal; font-size: 14px; font-weight: normal; text-decoration: none; white-space: normal; }
+h1, h2 {font-weight: normal;}
+.content { padding: 30px; }
+
+.S0 { margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S1 { line-height: 26.3999996185303px; min-height: 24px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-size: 22px; white-space: pre-wrap; margin-left: 4px; margin-top: 3px; margin-bottom: 15px; margin-right: 10px;  }
+.S2 { min-height: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S3 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S4 { line-height: 20.576000213623px; min-height: 20px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; white-space: pre-wrap; margin-left: 4px; margin-top: 15px; margin-bottom: 9px; margin-right: 10px;  }
+.S5 { margin-left: 3px; margin-top: 10px; margin-bottom: 10px; margin-right: 3px;  }
+.S6 { line-height: 15.5926666259766px; min-height: 18px; white-space: nowrap; font-size: 12.6666669845581px; white-space: nowrap; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S7 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 45px;  }
+.S8 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 10px; margin-bottom: 9px; margin-right: 10px;  }
+.S9 { min-height: 0px; font-style: italic; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S10 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S11 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; color: rgb(160, 32, 240); font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S12 { text-align: center; line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S13 { font-family: Helvetica, Arial, sans-serif; margin-left: 0px; margin-top: 10px; margin-bottom: 20px; margin-right: 0px;  }
+.S14 { text-align: left; line-height: 21px; white-space: pre-wrap; white-space: pre-wrap; margin-left: 56px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S15 { font-weight: bold; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S16 { font-style: italic; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S17 { min-height: 0px; font-weight: bold; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+
+.LineNodeBlock {margin: 10px 0 10px 0;}
+.LineNodeBlock+.paragraphNode {margin-top: 10px;}
+.lineNode {padding-left: 10px; background-color: #F7F7F7; border-left: 1px solid #E9E9E9; border-right: 1px solid #E9E9E9;}
+.inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
+.inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
+.lineNode .textBox {white-space: pre;}
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Example: Getting Started</span></h1><p class = "S3"><span class = "S2">This example shows how to get a simple Simulink model running on the drone in external mode. The model will verify whether the firmware on your drone is supported.</span></p><h2 class = "S4"><span class = "S2">Setting up the WIFI connection</span></h2><p class = "S3"><span class = "S2">The AR Drone 2.0 creates it's own WIFI network on startup called 'ardrone2'. Connecting a PC to this unsecured network allows the uploading of code to the drone. By default the AR Drone 2.0 will give itself the IP Adress '192.168.1.1' and the PC will have '192.168.1.2'. </span></p><p class = "S3"><span class = "S2">    1.    Connect your PC to the AR Drone 2.0 WIFI</span></p><p class = "S3"><span class = "S2">    2.    Check whether this connection is successfull by evaluating the following script:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">CheckARDroneConnection</span></p></div></div><p class = "S8"><span class = "S2">You can also run this script from the Simulink Project shortcuts panel under: </span><span class = "S9">Utility &gt;&gt; Verify Drone Connection. </span><span class = "S2">A popup box will appear telling you if the connection is successfull.</span></p><p class = "S3"><span class = "S2"></span></p><h2 class = "S4"><span class = "S2">The Simulink model</span></h2><p class = "S3"><span class = "S2">The AR Drone 2.0 Hardware support package has been developed using multiple drones running on firmware version 2.4.8. In order to make sure that your drone is compatible with the AR Drone 2.0 Hardware support package this example will consist of nothing more than a block which checks if the AR Drone is running this supported firmware version. The result is shown on a display in the model. </span></p><p class = "S3"><span class = "S2">    3.    Open the model by executing the following command in your MATLAB workspace:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S10">open(</span><span class = "S11">'Example_Getting_Started'</span><span class = "S7">)</span></p></div></div><p class = "S8"><span class = "S2">The model should now open and appear as below:</span></p><p class = "S12"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,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
+AElFTkSuQmCC"></p><p class = "S3"><span class = "S2">The Version Check block is created using the MATLAB Legacy Code Tool which can be used to integrate legacy C code into Simulink. If you wish to see what the underlying C code contains, execute the below MATLAB command in the workspace, else proceed to step 4:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S10">edit(</span><span class = "S11">'versionCheck.c'</span><span class = "S7">)</span></p></div></div><p class = "S8"><span class = "S2">This C file contains three functions.</span></p><ul class = "S13"><li class = "S14"><span class = "S15">versionCheckInit</span><span class = "S0"> Is called at when the model begins execution, in this case it reads the version.txt file which is by default located in the update folder on the AR Drone 2.0. The code then compares the found version with the known supported version, if they differ the static internal variable </span><span class = "S16">isSupported</span><span class = "S0"> is set from 1 (supported) to 0 (not supported). </span></li><li class = "S14"><span class = "S15">versionCheckStep</span><span class = "S0"> Is called during every execution step on the AR Drone. It sets the output of the Simulink block equal to the internal </span><span class = "S16">isSupported</span><span class = "S0"> variable allowing us to see the result of the initialization function. </span></li><li class = "S14"><span class = "S15">versionCheckClose</span><span class = "S0"> Is called when the model terminates. It is included for completeness of the implementation but as no memory is allocated no cleanup is necessary and the close function is kept empty.</span></li></ul><p class = "S3"><span class = "S2">    4.     Open the Configuration Parameters by pressing the </span><img class="imageNode" width="23" height="21" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAZCAIAAACtotlwAAADL0lEQVR4AdWUuUtrURDG/Tser3RB
+VARjIWJiETDBFRfUSMT9qXGLghFELRKJokWikLgb3BBJFAUVjBaihYhiE3DpUsQFLKL+Be+HB+Qm
+3rxbWbwpLjPnfN935syZuXFvP2BxP6D5pix6c3PzR2KEinnIi768vMzMzPDFZmdnR0ZG0MJwCMW6
+AMgeICMKZ3BwsK6urre3l29bW5vH43l/fw+Hw4uLi4RfW8AAf9eNFn1+fh4YGGhpabm+vp6YmNjd
+3YUmFF9fX5+enh4eHtbX161W68HBQWNjI2AoUbrRok6ns6qq6urq6uPT7u7uOjo6kpKSfn1aYmJi
+U1PT6elpIBCgGtvb24ChKIhybGtr6+joKJqXl5fIJSQkVFRUkLvJZGpoaEhOTmbF5/OxS5qAlTMF
+UVJS4vV67+/v09LSNBqN2WyurKwsLi4uLS1tbm6empoCkJKSQmUcDge+gujFxcX4+DgS4Pr7+1Uq
+FW+FLleHjOEUFhYuLy9nZ2dT0P39/bKyMigQpRWIqKlOp+M609PTvExubm5tbS0HILSzsyM4OIQW
+i8Vms+Xk5BweHuLX1NRAjCmq1WopJYqhUAhOV1cXtyZBKYGQrlpYWACwt7dHcTc3NyFKMRGZkp3o
+nmAwmJeXRwWqq6uZJinBYDDQp2trawCE4urqKkQpJkKUw7kyNaIfkUOUmqrVar/fLzg4hLwVmdIS
+5Nje3s5tIMYUPT8/ZxC5y+3tLZ1fX1/vcrm6u7vLy8uHhobsdrtwzs7OKD1HMmA8IxSIMUXZeHx8
+zMzM5K1oQ7JgELkdISNEkzOv8CcnJ6nJ3Nwc3QYYilQRP+L6QlSv19OPzMzx8XFnZyeZut3ujY0N
+mpdS9vX1cRgrS0tLdC5gZVEulZqaurW1xRSS7NHR0djYGJMqfn4M1fDw8Pz8PIpkig8YikKmNFNR
+UVFGRsbKygoPDY2+oR+/uocnQrqgoIAqp6enA4aiIMo2oPz8/Pj4eB6aL8PKyIvuMRqNpPa1Bey7
+IgrRNRVnAu3p6eGLUVOGku7hxbKysgjFugBE5ShCeVEp9OTk5LfECKW7sr6yqCzt34v/j+hfp2Uc
+mXeX8ZcAAAAASUVORK5CYII="><span class = "S2"> button in Simulink or by pressing 'ctrl + E'. </span></p><p class = "S3"><span class = "S2">This will bring you to a Configuration Reference window where the specific Configuration can be selected, see the </span><span class = "S17">Configuration parameters </span><span class = "S2">section in </span><span class = "S17">Concepts </span><span class = "S2">for more information. For this example we will run the model in external mode which is why the 'AR_Drone_ConfigSet' is selected, see the </span><span class = "S17">Simulation modes</span><span class = "S2"> chapter in </span><span class = "S17">Concepts</span><span class = "S2"> for more information. The use of external mode is required for this example to see the "</span><span class = "S17">Is</span><span class = "S2"> </span><span class = "S17">Version</span><span class = "S2"> </span><span class = "S17">Supported</span><span class = "S2">" display output. </span></p><p class = "S3"><span class = "S2">    5.    Make sure the model is set to </span><span class = "S17">external</span><span class = "S2"> </span><span class = "S17">mode</span><span class = "S2"> in the Simulink toolbar: </span><img class="imageNode" width="122" height="20" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALAAAAAdCAIAAACFV3E5AAAB20lEQVR4Ae2a4ZGDIBCF6cluaMZW
+bCBFWEo6SAnZZQMuCCNjMBp5/LhbVhbY974zMzcxLwwooBQwKkYIBV4AAhBECgCISA5MAAQYiBTY
+AOKBcVMFIgrUZBuIJ8btFCDIFQNRCCBu53ZFQwCiQqSelgCIntyu6BVAVIjU05L/BGIeh2Gce/Lp
+Z722AILsMXoUvGroYsOtfqb0nxzUCIgCA5EIDV1suFV0xZtP9F9tiJOeDwJissZ8ICHzOORfMjgf
+z3g6jCPVGDstMS+3E194WS67ujVz0gqmFQqIBeHnuqIREOEECgQE9pDcVNYtIeEiRjurPS2fFBf6
+x7RQdgsXl9Jlq/AAQa0CwatsQSMgEtvcUc5ZZWhwUR6Ee5H74REVZmNdIgDlTsx2iORaAdJ+nZTM
+gUA8+XOjAERiZxYCuqDkmQZfEDI+UWoM+X0KHAeEvNzVS599lY8FJsV/Zrhri83SwTpWGd6DUFCZ
+fW2jqqRAIyCW97+8FJTlSSjvDDbWj8RgbbaPeQ83Bmv5PxA+X+oK+d0KtABi9+EovJ4CAOJ6npx6
+IwBxqvzXOxxAXM+TU2/0FRBUjHE/BaKvSanJxjem1EqEXSgAILqwub5JAFGvVRcrAUQXNtc3+QZk
+XNN2BIaf/wAAAABJRU5ErkJggg=="></p><p class = "S3"><span class = "S2">    6.    </span><span class = "S17">Build</span><span class = "S2"> the model using the </span><img class="imageNode" width="21" height="22" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAaCAIAAADJ6rCnAAABT0lEQVR4AWP4QG3AQG0DP2Axkds+
+H80aYkTgWrCYCJcjj4HFRGJchKkGbj2NTVy56wTQcggCsoHWEiMCdx2Ege7G4LLpQBOBJFwdMSJw
+xUAGuomPn73UCK0HknBFxIjAFWMxEVmOPDbCjS9ev2tafyFu1jGSEFALUCOy3QgTgXLFK89vufb2
+4uvfRKK1F18BtQA1YjcxYvKB1RdeEGkWXBlQC1AjdhP9OrddePUbiCCph3g2UCN2E13r1xx/8hOI
+ICYSzwZqxG6iTemi3Xe+k4GAGrGbaJI9c8Plr2QgoEbsJmonTVxy+jMQQXxNPBuoEbuJypEd849/
+AiKIiUSyp+9/DdSI3UTpwIbWtRe23/hKEgJqAWrEbqJ38XSztAmTt124+PonMejog49AxUAtQI3Y
+TQSWCG65E/mcikhCQC3IxQrQaEQuRLaHEvbINBEAZLm3famr06AAAAAASUVORK5CYII="><span class = "S2"> button or pressing 'ctrl + B'. The configuration set by default has the 'Build load and run' option selected meaning the software will be automatically transfered to the drone over FTP and made ready for a connection with Simulink.</span></p><p class = "S3"><span class = "S2">    7.    Click '</span><span class = "S17">Connect</span><span class = "S2"> </span><span class = "S17">to</span><span class = "S2"> </span><span class = "S17">target</span><span class = "S2">' </span><img class="imageNode" width="25" height="23" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAZCAIAAACtotlwAAAC7klEQVR4AbWS+09SYRjH+Tdq9Ytr
+Wla22MqWcy4VvM0LXnKgaLlCKp2nYtUsbzkhKqZmpDTNcFKaU1BQvFAqocMLXvKC4i1RM/JGXmpZ
+YU+jgZeXBW6ePTt7zuf7Pp895+zg9Htw4fbAqbdB2tpZnZYTRk/BGwt6IMidrJWWiDMv3j6RU4S1
+9VUp1aXSjkcZ+SQgwHd6rZLKlRIKdqy5XWQwGL79XNCt9Yzqxd1fnhXURwOHdJvXKimWFsDOjdvY
+2Phl+EGhhn5aVWqWylW67KZpxg2OC6S7kfpfcGjplK7/Xltdn8XhcCEUQv98kXKWJdPGccR+kNos
+7R3oIJIPtfaIFr9rdGtdIIXLP/y0fCaxejyGLfGDdGRcvdlr1eu7kexETVmTy+/G9BKjFO7EUIcS
+dcSdYk9INxuht0pKoROv3vPtn+f3zvE6PnMUM0myyWvlGipXFRaU4ATpbqQ1DcKT7gcyS6MVM8mN
+UzdrP9LKhiNzVedpOa7AIf2PVKZQxSY99bqUaizogcAMh5vheHZ/eDyeVerDrPBlvHD3unwUCPBt
+Rnjc8vq8VxKPqMS4B/z8+q5i+SDcr7AKgQCHo1XSCn/KucPO+4wFPZCdxi3SuuZ2NzLjiVChmFo1
+1nvtSt3IYjK/HjikpvkhzaCpRzbmTakYk5aaZzJCI9euVA8vPG+ZCLrOgRQ5j4RmqXMAPU+iBJdP
+WITpv6no02W91USw30CKnEfCf9Lh0Qm8d0yhrNu4qcn7sk2bUvkhML0EUuQ8Epo3dfKgckV/Pyh8
+yubJZUIwGfZ93DAUy291wfIgRc4joVkaGM0gY6zGia8NY0ti9Zygc/oUkYS9bvd+WOMYiEGKnEdC
+s7SqttH+DOkuTyhQTfMU40zpQLygzfN+2ZEoFnBIkfNIaJZCzM4usMP7uUfeojIFIekC1wSuvTcd
+CHDksCW4RQqHhBIZIZh28DjBWNADsTRsiW+Xms6ph0ZMva2NRamtos3n90T6BxHdqAtEYX7/AAAA
+AElFTkSuQmCC"><span class = "S2"> in Simulink  which will transfer any parameters that are tunable in real time (in this case the model has no tunable parameters). </span></p><p class = "S3"><span class = "S2">    8.    Once this is done the 'Run' </span><img class="imageNode" width="22" height="20" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAXCAIAAABxgXNEAAAEoUlEQVR4AZWT+zfbdxjH+3fscHSO
+VtfpulpT055Th6PWU1kkQYnUpbaqjqKqblurjlJFe1pddWw6Yq06WqQucYkKQRC3iDRCbpKIEHKV
+SJDYEwmxzH7Y5zzn+/1+Pp/n/TrP7XtIddDiiKcJ1NI84s20OvyewRYO4eogheXskMOFcJH3tP1e
+HjGJzqeq9cots1G/KVcauEu6MY68i8Qqu9cYCw7g5iB0ZA3NUNJrY0Z4fdu7y2Te1G+uqAy8Jd24
+SEvhqoisVUIjIx/cwNkBZ4+LxqakvY5Z1S7vcixvk3ljNy5g9cypmoA1vvycIihIqQkDyX6cjSWQ
+clOqrziAgLVp0us2ZArDrExHn9d0zykbpleqxpaf0RbzOnhZIAHhHs7GetiQSeP0WCLZt8zbJsOW
+SmMUr6yzpGs0gbqDo6yfWqkcXXoyKL3fI079czgehP9gsQRT6YS4fRDLp3nbjDiD+NjXYim8fkKs
+7eOpWtiKNwx5+YisuF/6S7c4iSSMSajEgNyKs8T1orWI+qkTotjDQfuMW5rPdhY+KpgjJQs1XbOQ
+4Go1FGtosaBvIZMs+qmZH13acxXkdlby7zGLKq5hSwl6o0kDeUHvtBtSKwueR93dHpamsBW1DHkF
+fenxACQoSe2Yv9YwF1k1cQ3kdlZE8SWlgac2zms3JGAao0hl5CvWZ1xdXQ8f/tzFxcXZ2dnJyeki
+6tw76s87QWWRRYltgphaNr58IgzkNpZ0WRpWeBEqItczocZg8nXmsn5yUUc/ceIrDw+P48e/PHbs
+C3d39yNHjrq5ud1+gG5lJ9qCYuKe00NBvstaWgjJDxBreyVr/Qtrgzs2AJWGCfD2Puvl9S0Cceb0
+aYSn5zenTnmePPl1xiNMl+hGCz/aGlQxDQtye46YXH+u6gNf3SpQkwTqdr66jadqnlM2+vsH+Pn5
++/r6+fj4nj/vExWHappIJosSoH31nCuvpsKfjYQ8oKJBbmfFloSNSghQ2hlFHRhb8fbT6mvWanVQ
+EAaFQiORKEwwuqw+oVeSDmVqF8a+n42sZuJejIYWDmByyXiQ21mFb3JrqDkM+W/Qph0rn5S/hN7j
+8ZE4HD738Q0yN4siuQ1DQBJehd4RpiNejl+G7HIoqKTaEJDbWQzORHj+dyOyIhhCuqwYPoZlhX2C
+vNT0xPqBDAjnozi5c/46NO7dLIBwACoZCs7tDbrTGYjM8QG5nQVfyaXxFd1JMM1g1AWw7F5JBsQC
+w90lioe8iLyouhl8FRNXNna5hIYFUHoXMp6AAaEVBE/b/zgr5CAzLzSzU0HcLb4JBQYENB7KDBSo
+9F+siD8mw2ACigax9y2gwBQiFiQgdGTBvoNGCkg7954Z1yqIhp+DyI2CGr+dwdewIioZ4RDOk+Hg
+gn7M3R5UWkdgchPW95Y3SPZA9risR+2DbQGpvvkfcBAFdAq6DmP962goUCwt6w3KJCNTSJdiK1Hg
+Bs77QY4s2HMEnOuPfrhwxzu7PvRpf3QRDVvQj4aksrq/zyKF//gqyOeWFziAmwPoAJbVY5w9drci
+G52JPBuP2DPYwiFc/ZtiPbHV/r+u/9f530hr7eBflvUrAAAAAElFTkSuQmCC"><span class = "S2"> button will turn green, press it to start the model on the drone. </span></p><p class = "S3"><span class = "S2">The "Is Version Supported" display will now display a value of either "0" (your drone does not run a supported firmware version) or "1" (your drone runs the supported 2.4.8 firmware). </span></p><p class = "S3"><span class = "S2">If the display shows "0" this does not necessarily mean that your drone is incompatible with this Hardware support package, but care should be taken when using the provided models. They are untested for other firmware versions.</span></p><p class = "S3"><span class = "S2">    9.    When you are done with this example you can </span><span class = "S17">stop</span><span class = "S2"> it's execution using the '</span><span class = "S17">Stop</span><span class = "S2">' </span><img class="imageNode" width="20" height="18" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAXCAIAAABxgXNEAAADBUlEQVR4AZ2USU9aURiG/R3t3q7t
+2q7t1qS7mnQFCxMWLtEFiSZsiJIQ40qxEYkD2mggilOECDgwKDIo4khxViiigmP7xGO4F3pNk365
+IWd43+f7zuGcU/XrjTg4OJibmxseHv4uC7oMMqVoqvp79OjoyG63j4yMbG9v39zc/JYFXQaZQoCs
+wlvJ2tjYsFqtGGSEyubT01MikUCGWI4rY8Xj8b6+Pqafn58rAbI+rPv7+4uLC8RYSjiJdXh42NPT
+g+Lh4QG1zFvWJA2Cu7u729vb09NTLBgFTmLZbLb19fVCoYDu8fFRsTQGmaKoYrHI3l1dXa2trWEs
+Y+3u7pIhn8+jQIcaD9XJiXIQRV1fX+dyuWw2293djR3ca13j4+OBQIA5cOjAUd27N0KAKAr/5eXl
+ysoKdonV1dXFskmCQlTHYt+/EVQkQJlMhv3luGGXWHq9/vz8nCTgRHUYqqs/KH5y0NnZ2cnJCfZX
+Fn9HW1sbvyUcExhqaj4qfuQTFQkQC8IusXQ63fHxscBRNlIMtbWfFD/KJ6sAcfp3dnawS2tsaWlJ
+pVLgKBgRUoh1dZ8VPwRkRZxOp7kh0WgUu8RiweFweG9vjzyCiLq+/oviRz5k5N7a2opEIj6fT9ov
+kNyGsbExMiSTyf39fbYAYkPDN8UPCuviMnJQl5aWBgcHxc17PV+bm5vNzc3Ly8urq6uxWIyrixoo
+tp8vQYP/njNJMu4gi/D7/R6PhydIq9Vil9ZIq729nau/sLBAqmAwSE7qh4tTBFWDCIVCHE6v1zs/
+Pz81NWU2mzFiJ6T7yGY1NTXxMM3OzrpcLqBsBFyKJWgsLi5SiNvtphan04mSpxELxkoWfbI1NjZy
+V9FNTEyQdnp6emZmBjq/dCcnJx0OBzvLc9jf348YiwCV1SWGyIyis7NzaGgI6Ojo6I+XoIGfQgYG
+BiwWi9FoRIa4BFJgMcQGt7a2qtXqjo6O0lvf29vL1hAGg0GlUiEQb8M/WGKanTaZTBqN5qss6DLI
+lBxRakt7Xxr678Yf3eRG2yUs37IAAAAASUVORK5CYII="><span class = "S2"> button in Simulink. Without having to reboot the drone you can run any desired model on the drone by following steps 6 to 8.</span></p><p class = "S3"><span class = "S2"></span></p><p class = "S3"><span class = "S2"></span></p></div></div>
+<!-- 
+##### SOURCE BEGIN #####
+%% Example: Getting Started
+% This example shows how to get a simple Simulink model running on the drone 
+% in external mode. The model will verify whether the firmware on your drone is 
+% supported.
+%% Setting up the WIFI connection
+% The AR Drone 2.0 creates it's own WIFI network on startup called 'ardrone2'. 
+% Connecting a PC to this unsecured network allows the uploading of code to the 
+% drone. By default the AR Drone 2.0 will give itself the IP Adress '192.168.1.1' 
+% and the PC will have '192.168.1.2'. 
+% 
+%     1.    Connect your PC to the AR Drone 2.0 WIFI
+% 
+%     2.    Check whether this connection is successfull by evaluating the 
+% following script:
+
+CheckARDroneConnection
+%% 
+% You can also run this script from the Simulink Project shortcuts panel 
+% under: _Utility >> Verify Drone Connection. _A popup box will appear telling 
+% you if the connection is successfull.
+% 
+% 
+%% The Simulink model
+% The AR Drone 2.0 Hardware support package has been developed using multiple 
+% drones running on firmware version 2.4.8. In order to make sure that your drone 
+% is compatible with the AR Drone 2.0 Hardware support package this example will 
+% consist of nothing more than a block which checks if the AR Drone is running 
+% this supported firmware version. The result is shown on a display in the model. 
+% 
+%     3.    Open the model by executing the following command in your MATLAB 
+% workspace:
+
+open('Example_Getting_Started')
+%% 
+% The model should now open and appear as below:
+% 
+%  
+% 
+% The Version Check block is created using the MATLAB Legacy Code Tool which 
+% can be used to integrate legacy C code into Simulink. If you wish to see what 
+% the underlying C code contains, execute the below MATLAB command in the workspace, 
+% else proceed to step 4:
+
+edit('versionCheck.c')
+%% 
+% This C file contains three functions.
+% 
+% * *versionCheckInit* Is called at when the model begins execution, in this 
+% case it reads the version.txt file which is by default located in the update 
+% folder on the AR Drone 2.0. The code then compares the found version with the 
+% known supported version, if they differ the static internal variable _isSupported_ 
+% is set from 1 (supported) to 0 (not supported). 
+% * *versionCheckStep* Is called during every execution step on the AR Drone. 
+% It sets the output of the Simulink block equal to the internal _isSupported_ 
+% variable allowing us to see the result of the initialization function. 
+% * *versionCheckClose* Is called when the model terminates. It is included 
+% for completeness of the implementation but as no memory is allocated no cleanup 
+% is necessary and the close function is kept empty.
+% 
+%     4.     Open the Configuration Parameters by pressing the   button in 
+% Simulink or by pressing 'ctrl + E'. 
+% 
+% This will bring you to a Configuration Reference window where the specific 
+% Configuration can be selected, see the *Configuration parameters *section in 
+% *Concepts *for more information. For this example we will run the model in external 
+% mode which is why the 'AR_Drone_ConfigSet' is selected, see the *Simulation 
+% modes* chapter in *Concepts* for more information. The use of external mode 
+% is required for this example to see the "*Is* *Version* *Supported*" display 
+% output. 
+% 
+%     5.    Make sure the model is set to *external* *mode* in the Simulink 
+% toolbar:  
+% 
+%     6.    *Build* the model using the   button or pressing 'ctrl + B'. 
+% The configuration set by default has the 'Build load and run' option selected 
+% meaning the software will be automatically transfered to the drone over FTP 
+% and made ready for a connection with Simulink.
+% 
+%     7.    Click '*Connect* *to* *target*'   in Simulink  which will transfer 
+% any parameters that are tunable in real time (in this case the model has no 
+% tunable parameters). 
+% 
+%     8.    Once this is done the 'Run'   button will turn green, press it 
+% to start the model on the drone. 
+% 
+% The "Is Version Supported" display will now display a value of either "0" 
+% (your drone does not run a supported firmware version) or "1" (your drone runs 
+% the supported 2.4.8 firmware). 
+% 
+% If the display shows "0" this does not necessarily mean that your drone 
+% is incompatible with this Hardware support package, but care should be taken 
+% when using the provided models. They are untested for other firmware versions.
+% 
+%     9.    When you are done with this example you can *stop* it's execution 
+% using the '*Stop*'   button in Simulink. Without having to reboot the drone 
+% you can run any desired model on the drone by following steps 6 to 8.
+% 
+% 
+% 
+%
+##### SOURCE END #####
+--></body></html>

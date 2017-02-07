@@ -1,0 +1,492 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="MATLAB R2016a"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><title>Example: Streaming video in external mode</title><style type="text/css">
+* {margin: 0; padding: 0;}
+body {text-align: start; line-height: 17.2339992523193px; min-height: 0px; white-space: normal; color: rgb(0, 0, 0); font-family: Consolas, Inconsolata, Menlo, monospace; font-style: normal; font-size: 14px; font-weight: normal; text-decoration: none; white-space: normal; }
+h1, h2 {font-weight: normal;}
+.content { padding: 30px; }
+
+.S0 { margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S1 { line-height: 26.3999996185303px; min-height: 24px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-size: 22px; white-space: pre-wrap; margin-left: 4px; margin-top: 3px; margin-bottom: 15px; margin-right: 10px;  }
+.S2 { min-height: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S3 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S4 { line-height: 20.576000213623px; min-height: 20px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; white-space: pre-wrap; margin-left: 4px; margin-top: 15px; margin-bottom: 9px; margin-right: 10px;  }
+.S5 { min-height: 0px; font-weight: bold; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S6 { margin-left: 3px; margin-top: 10px; margin-bottom: 10px; margin-right: 3px;  }
+.S7 { line-height: 15.5926666259766px; min-height: 18px; white-space: nowrap; font-size: 12.6666669845581px; white-space: nowrap; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S8 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S9 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; color: rgb(160, 32, 240); font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S10 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 45px;  }
+.S11 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 10px; margin-bottom: 9px; margin-right: 10px;  }
+.S12 { text-align: center; line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S13 { font-family: Helvetica, Arial, sans-serif; margin-left: 0px; margin-top: 10px; margin-bottom: 20px; margin-right: 0px;  }
+.S14 { text-align: left; line-height: 21px; white-space: pre-wrap; white-space: pre-wrap; margin-left: 56px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+
+.LineNodeBlock {margin: 10px 0 10px 0;}
+.LineNodeBlock+.paragraphNode {margin-top: 10px;}
+.lineNode {padding-left: 10px; background-color: #F7F7F7; border-left: 1px solid #E9E9E9; border-right: 1px solid #E9E9E9;}
+.inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
+.inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
+.lineNode .textBox {white-space: pre;}
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Example: Streaming video in external mode</span></h1><p class = "S3"><span class = "S2">This example will show you how to show the video feed from the AR Drone 2.0 within Simulink using External mode. </span></p><p class = "S3"><span class = "S2"></span></p><h2 class = "S4"><span class = "S2">Displaying video in External mode</span></h2><p class = "S3"><span class = "S2">There are many different ways to display video in Simulink using various Simulink Video Display blocks for different target hardware platforms. The AR Drone 2.0 however does not support direct video output so a new video viewer is provided with the AR Drone 2.0 Target. This example is capable of streaming video from the drone to Simulink in external mode.</span></p><p class = "S3"><span class = "S2">    1.    </span><span class = "S5">Open</span><span class = "S2"> the model by evaluating:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S7 lineNode"><span class = "S8">open(</span><span class = "S9">'AR_Drone_Models\Example_Models\Example_Streaming_Video_In_External_Mode.slx'</span><span class = "S10">);</span></p></div></div><p class = "S11"><span class = "S2"> This command will open the following Simulink model:</span></p><p class = "S12"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjsAAACYCAYAAAACwSgyAAAlV0lEQVR42u2dC9xNVd7Hn1AuqVFI
+5VYuCZNBKrqJXEKTMCFd3GLKKNWEiihJcheSjCSlC8JMuUQqo6ELpdR0MS6lGelCI4T4v33X+1n7
+XWc/5zy8Lk/nefp9P5/9Oefss8/e6+zLWt/1X2vvlWFCCCGEELmYDO0CIYQQQkh2hBBCCCEkO0II
+IYQQkh0hhBBCCMmOEEIIIYRkRwghhBBCsiOEEEIIyY4QQgghhGRHCCGEEEKyI4QQQggh2RFCCCGE
+kOwIIYQQQkh2hBBCCCEkO0IIIURKrrjiCmvUqJHVr1/fLrnkEqtXr56mHD5xLBctWmS7d++2vXv3
+SnaESHd++9vfWkZGhiZNaTWNGTMm99T4f/4/27Zts3Xr1mnKBdPmzZutR48e1rNnT9u0aZPt2rVL
+siNEulOzZk0rWLCgjR071h588EFNmn6xaciQIdavXz8nB4MHD7bt27fnimusePHiymhyGZMnT7bO
+nTvb6tWro/NUsiNEGvO73/3OatSooR0h0ioS0rt3b1drzg2ceOKJOqi5jL/85S/WqlUrW7p0qf33
+v/+V7AiRE2SHpiwh0kl2unXrZmvWrJHsiLSVnT/84Q/2xhtvSHaEkOwIcXCy86c//cn+9a9/SXaE
+ZEcIIdkRkh3JjpDsCCEkO0KyI9kRkh0hJDtCSHYkO0KyI4RkRwjJjmRHSHaEkOwIIdmR7Eh2hBCS
+HSEkO0KyI4SQ7AjJjmRHSHaEEJIdIdmR7AjJjhBCsiMkO5IdIdkRQrIjhGRHsiMkO0JIdoSQ7Eh2
+hGRHCMmOEJIdyY5kRwgh2RFCsiMkO0IIyY6Q7Eh2hGRHCCHZEZIdyY6Q7AghJDtCsiPZEZIdISQ7
+Qkh2JDtCsiOEZEcIyY5kR7Ij2RFCsiOEZEeyI9kRQkh2hJDsCMmOEEKyIyQ7kh0h2RFCSHaEZEey
+IyQ7QgjJjpDsSHaEZEcIyY4Qkh3JjpDsCCHZEUKyI9mR7Eh2hJDsCCHZkexIdoQQkh0hJDtCsiOE
+kOwIyY5kR0h2hBCSHSHZkewIyY4QQrIjJDuSHSHZEUKyI4RkR7IjJDtCSHaEkOxIdiQ7kh0hJDtC
+SHYkO5IdIYRkRwjJjpDsCCEkO0KyI9kROUp2Nm/ebBs2bLD169fb2rVrbd26dZo0pfXEefrvf//b
+nb/79u2T7Agh2ZHsiKxl5ze/+Y01a9bMGjZsaA0aNNCkKe0nzlcy3t27d9sPP/wg2RFCsiPZEVnL
+TpEiRbSHRI6jRIkS9tlnn7nIpGRHCMmOZEdkKTvHH3+89pDIcZx00kn2yiuvuGYtyY4Qkh3JjshS
+do477jjtIZEjZWfOnDn26aefSnaEkOxIdoRkR+Q+aMb661//6pqyJDtCSHYkO0KyIyQ7kh0hJDuS
+HcmOEJIdyU5u5x9f7NROkOxIdiQ7Qkh2JDu5k98/vsburn+RbXzlRe0MyY5kR7IjhGRHspO7uG/u
+WqvbZYRtvaWqTa56gnaIZEeyI9kRQrIj2ck9fPrvrZbR+UWb1uEysyWjbPY5x9rahS9px0h2dFAl
+O9nP1KlT7eqrr06Yd8stt1iBAgWscOHCVrBgQatcuXKW6+Bpun75QoUK2cknn2xbtmzJlvSHaWUi
+YzhYVqxYsd9lWrdubUcffbTlzZvXVq9eLdnJgXz55ZeSnWyg5K0zrMRNz9iXHcrZ3sWjbc0dl9iT
+l9XQjsnlsrNr1y77/vvvj4jsfPvtt/bxxx8nzPvnP/9pCxcutEWLFtnLL7+ckI+H382dO9c9/f1w
+s3jxYvvpp58S5vEcsq+++spee+21TMsnm3c41y/ZScFpp51mxYoVSxjr6MILL7Tnn3/ePvroI/c8
+lbvuusuaNGmSch1ff/21FS9e3D7//HP3m+eee85doHv37j3i6Q/TumrVKnvnnXcOel358uXL8ntk
+6vbbb7c1a9bY22+/7f4j40VJdnIWN998s5UuXdqWLFmSpez84x//sLPPPjv6jnPrvPPOiz736NHD
+2rdvb3Xr1o3OA94nI9myyahR4/9koH79+taiRQsbNGhQynnt2rVLu2ceTZvxVyvRoJMVHPyGDe5w
+na27rrztfWW0fTWkjU0olWF7du85ItulIGvevPl+l2vcuLHLK9L92OZU2UFISPNDDz102GWnTZs2
+rgIecvHFF7sRCcqXL28VKlRw23722WczfcfEd4f7gahVqlRxhX38mFEe1qlTJ6m8Hsn1S3aS8OGH
+H7oLfuTIkdazZ89o/vnnn2/fffddgkWefvrpKdfD0AFnnnlmwrybbrrJnnnmGWvbtq0Tkj//+c9u
+/oABA1xUhBNwz549Nnv2bOvevbs7gcPM4N5777Wjjjoq03rjxNMK06dPtxtvvDE6qQYOHBht0x8I
+ftexY0e3zIsvvuhqBLxP9T9feumlTCcWNQUfwWrUqJGLMNWsWTP6/sorr7TRo0e79b7++us2bNgw
+937ixInue9JCFIx5jz/+uJt3+eWXu/3Vp08fFzniO/YN/0myc3jo3bu3269MZ511VoL0xCM7HPMJ
+EyZEskttCjivp0yZEi1XtmzZ6HXp0qXuovekWpYaKufdW2+9FZ2n/pxFyPgMjKMHRDHj82rXru1E
+n2uAgYWnTZuWbVHVzOyz116eZ/l+18IKt/ijlfvTVFtwRRkbdF5x2zajv20Zda0NqZhh7z4+2j7b
+8Llt377dXQPkL998802m9LN/yEMYLDkSqZ+/D889jh0F29atW91nn19Qu+e3YSXu73//uy1btszK
+lCkT5QHpfGxzquwQ6ffXF3liXHoORXb4LUIbRjTiZQDngj8OfPef//wn+u6FF16Itv/++++7a+e9
+996LKjfz58+3bdu2RQLMOUE+H8LxnzdvXvSZ34flBpV//rc/D3ya+M3OnTsTZCe+rjAdvqw6kPUT
+TWM9K1eudJ+5lvygzUS3uNb8NZBs+WT7I1fJziWXXBI1xYQH4IorrnBNNSeccIKVK1fOSYffSalk
+54wzzkiYR4F45513Wp48eezJJ590YkM4ke3QjPDUU0+5Qvxvf/ubm8fJwLbIzIjUVK1a1f0GyeCE
+TUWYVrbFep9++mkXadq0aZMLAYbb9P+T10ceecQNfeDnsR4EMBnI4OTJk5N+RyQLOeO31apVs6FD
+h7r5DAlCLY2aN9tAdt59991oe6QXCeJ/kkmTyfMdTYtw7rnnuouYE+lQmucOt+xwIVKryKn07ds3
+yoz9xHH75JNP3D6PN2NxXiDpTPurnTGf85xC0GdiqZbl+E+aNMkV9hz7rl27OvnyFQwPog5hoe/n
+IcbM51ymFss5yFOufwkqV6pkGTU62XFn1baMc9pa+0vrWuPSBW3KZWWt6umn2q4BTa1ongyb3eZ8
+O+vcOu66GTFihKtsPProo1H6qQAAkRYiJVQAoFatWvbqq6+6mu6OHTvc9UykdePGjdF+O+ecc1zm
+ToSEa81XoHjq9/XXX++OSXg80vnYhttFhvifOQHys/j1lT9//kh6Dvb8JP+kEsjxpXzw1KtXz+WR
+iCgRO6I/RDy97MS7G/j9yzHiXENWyb9Jp4/++P1OpIhyivzBR/GoNJNfe2mOnwdU9B977LGE+b4i
+TZcQunqkWpeviPl0ICUHsn72L9cF6+O64tynfPfLsO/AS9IxxxwTLe/LG8p59gcV9FwnO+wEmrBK
+lizp3iMGXoLYYdghNZ7BgwdnuZ5ksjN27FgXMQoHPL3qqqtcZuXhIFObeeCBB9xnMuzhw4fbbbfd
+Zscee6xLFydIVgU9aaVmh5W++eabLhMcP3689e/f331PH5twm6VKlYoOdvxEzeqYkCnfc889CfN+
+/PFHlzlzQnIBc9HRFOZlJwy3hhmYn+8vJv4nJ9rDDz+csL9oPuSkpwBOF9lh/919992ucEJUKURy
+0oTctmrVKlNm7CfO9zDC6GuDyQqgZPhMkSZcL02plkUcPZdeeql7RfhDLrjggkySHc4jM6eg5Hgw
+wamnnppt58P6Td/ZY3PfsZodB1qhM8+1Ws99Znkb97Qm1Spbw1IF7PWrq9jmG6vZxacUsHlNTrGb
+qhxvN56cYdfe0NX69esXNY+PGTMmSr+/RsmbiHjSLAI0uQMVAK5zCr0FCxY4sfHHh6Yg5IgCjKZm
+fsPy5DW+4ECacsKxDdPTtGlTV8BRiUzn6wtxpbKa6voi8l3pZyk+GMhb+f9EM1gXURL4/e9/7yq7
+lEHMpwIcRn3isuNlIzx24Xvyb6TDi0FcWlgfUROOCULr8+r7778/07qodFOeedngd8nW1axZMxe9
+j6eD5tH9rZ+0Inesh2gUAh/+TyoA11xzjYs0Uvm+4447Epb33TcOpYxJa9lBRMgkqM0iCk888USU
+mXCChP0A2AmEzrKSHV9rCX/Dn0ZawsK7W7duCcvQpINVe0FCdmjy4oAQ7aEWFG/DjjdjxfsskHGS
+kabapjfhsHYXnxeH/gD8NmwiIGPiJKYPgLfjzp0724MPPphwsoXbCEWL9VFbI4Tvw/UUtkAHPwTo
+YNt5j6TsUAsmWodE0vEvJ00IMR3y45kwzUFffPFF0sgO18dll12WMI/MNYTmLgpgfu/D1r7ZM9my
+4GtznAPVq1d3mWIY2SMdZO4h8XledhB8LwvIc3bx8MyllnFJb6sxZKYVrnGRlRz9hlWs09IG1j7R
+Lih1nC1uXcm+6VrVqhf7X9lZcGkROyNvho0ZMdya/SwlLVu2dOuhNpks/dTUyUOoeHlZYN+yr2km
+poIAFStWjGSHwo4Cl9qtbzKmgPWyE/bVSedjG177NN0QyaJCirCn6/VF8xLR+Pj1RZR73LhxUQH9
+/4V+kqyH40w5xfqI6sWbqjje4Q01fBdvcvd5aVjhDcUGASE6dMoppyStoNLUTTp49REWygWaxyiv
+wvOJSnCnTp0SWkZC2fHrooKF2CP4YTp8dCar9VNeki9zjiP1/jylIoH0U7aw/g4dOjjBoYsH11h8
++azKvxwtO+zoeI953+mJHRO22/n+LKmg5sT3hMA4WOw0dmiyQhqL5GRnPhECdpLvzzNkyBBnqT4T
+4YDQfu3tNhmEM+NtjKzHrzO+TUKHqayeWkc88wpBCFmWE4xX36GRTNr/f145ubOqOfj3iBgXLf+T
+i8kLVZhuvmOZdGrGIoRP4ZNTIRTuM2GOYdipPdndWMuXL0+IBgB9QijEyMRoriUj8ceW64WKBIVS
+smX9+RzvaOmbPoGMg9oYfUxmzpyZch5ppSAg8kgFJtV6jyRf/Oc7q3HTI5aR90Q7o0YDq1uykHWv
+UcKebFLO6pxSyCbUO9XKFc5rM2rlsWcalXH7aGy7+takeQuXBwDRY59+X0EiEkyfAh9powPwrFmz
+3Ct9KXr16uWuIaIzPuRP5s1vqClzXH1fB5qfGjZsmKkZK12PLU1B8WYsZDwn4PMxJso5KrEhB9Nn
+h8qI31fxfJRr+IMPPkgQHH9e0cyLRHCcEVvS48+z8DwoWrSoOwep/HPskMrwGPplOTc51nSRoDkz
+zDsoP8gfw75VSBQCQLmCdNGc6ddFZThcF8eXqGyYDt/ROtX6WYZoGhVvgg70EUP4Acnx22L9/rpC
+mtlH8eVzbWQn2W3W1BAJGZN50kQTkuzOlRBqzOw4TirCyx5qVyHcQkfbqhcUIkbeysP3XOzsON/B
+LxVEdeJpDdeTbJvxdPn31NjIbLICM2aZ+HKkk45lpMXXJPa3Pf+e/0nNMf4dncpIN9vk5A8zwF9S
+dnLD3ViEvGnmiJNMdjg2yf4v5xidF8POkmRYFITx8z7ZsmEGHZ9H8yjXHIUrNeVU80gXhQvRQaZU
+680Opk2eYu2LZtjclhXttTZn2tpOVWxWk9I28cJidn/5DHvrpRn/m1csfd3uqJjXtv64J+pYTMYb
+Tz81W/5n2D+MptOwfwvNWOwT9i/7wXfYpKMly/poDiBBSE/4+3Q9tuGtxjmtgzLHkTQTYU/GwchO
+vGkZrr32WlfuELmnzArx/b4QUCqnSASy6W8ECaNwQEd2Iiws42Uo7CvqlyV/p2sBlXAvVB4iW/F0
++t/RAkAkiQgsYgI0wyVbVzwdB7J+Kvish//JteTLPbpJ+ObaG264ISEgEF/+UO7synUPFezSpYtL
+N1ESP9E8Q+/7I4lv0gm3S3MPGcDhhpM5u7aVE8kNsuMv7mToOTuHxvp3l9m9lTLssw6V7b225W1t
+u9Ns1M+f35r3QsJy4V1SYv9R+JwkO0inv/vncMmOSG9ynewQReHPEL3xE7WRI/08HdbPXUvhdknH
+kShws3Nbkp30Q7Jz6Cx+erxNqJFh664pZxOqZNjcx0dpp/yKZGd/SHYkO0JIdiQ7uYJe5xW1KT+L
+zqR7u2tnSHYkO5IdISQ7kp3cx9/nTLWJfbpoR0h2JDuSHcmOkOxIdoSQ7AjJjhCSHcmOkOxIdoRk
+RwjJjmRHSHYkO0KyI4RkR7IjJDuSHSHZESJreECXZEcIyY5kR0h2RK6F8WIkO78sjCXH04HTAUYq
+zwoGaeQp4B4ebc+ozR6edEy0kCfe3nrrrW4ej9D3gx7GSbZ8Ksh8/QjjPEmZp8Ui6+G6U82X7Eh2
+xGGSHcbKYEwKxu7gsdQ8QlqTpnSeGNWdjJdHtIeP8JfsZC8MZOoHIEyHgjgrGJIjPi6cH8qF4RX4
+jAxxTnGOMYgnA8xed911mdaVbPkGDRok3S7j/7CsFwTeI1qMZcTx5fus5kt2JDviMMnO2rVr3cX7
+3HPP2SOPPOIGk9SkKZ0nztMZM2a48YcYQ02yk30wLlrp0qVdxYgxgRiU1s+vVq2ai3YwgCAgpcAY
+RRdddJF7P23aNJszZ47LkHr27OkKHMZh8jC6MtESP5L0wIED3TJ+QF0iKgyWyMC04e8YLsbDgI8M
+r+K36WGUZs4d0seAlh4GJgzHsANGMWf8KcbxYeBOIi5+wOJkyzNaOsszthBj/QCDhCJCTZs2dekG
+nooeptMPCJxqvmRHsiMOk+yQSTGTixfxIdyqSVM6T5ynDErKKPfxwVclO0eWvHnz2rhx41zhTOHn
+R0OmgKdZi0FnEQ8Go23evLkbGHHq1KlRVKVKlSpuYEA+DxgwwP3ef3fPPfdY48aN3bFt3bq1a86h
+QGJwSkYR51gzcCoD/BJRCiM1XnamT59upUqVsi+//NINtuhHUvYwsCHfH0hUCJniO5qzpkyZEi2X
+avmJEye6bgF+YFeEDEgDQ9wkk4dk4/mlmi/ZkeyIQ5AdIYRk50BAUhiM1tOrV69o9OYCBQpE899/
+/30XzWB0ZEY1bteunYvMMNq2j3owyG1cNhjFm/dnnXWWayIjqoJohAwfPtzOO+88K1euXFLZ6dSp
+k4sMMSozy8XFhIgOsrY/2WFk8ZkzZ1rXrl2jefQTS7U8gkZ0p3///u4z/YFuu+0227Ztm9WsWdNF
+Ij0bN25064iPSJ5qvmRHsiMkO0JIdrK5wPPQlPXkk09mmj9q1Chr3769e1+7dm0nPhSQ55xzTtQp
+OGx28u9p7iJaR+SGQpV1EhUCmpCI6uXJkydqTkomO507d3ZNQJ988omLsAwaNCgh/b1793YZYkiL
+Fi3srrvuij5//fXXbt0LFy506Y//91atWiVdnsgO0S2gzw9iSKSH75gY3BeRKVKkSKb9SkQs2XzJ
+jmRH5ELZoUa3ffv26DPvy5cvb5UqVXITYeF58+ZluY5+/fpFv6FvQTxjO1LE00qofOjQoQe1rt27
+d2fqExCH5oEyZcpY2bJlXQYuJDvZQffu3V0hzrVKk9akSZPcfJqg+EyaKRQ3bdrk5nOHEQWkLyxp
+3oqLin+P2LDus88+21279F0pWLCgVa1a1UWCNmzY4JatVauWK6iSrQNZKlSokFsH1+Pll1+ekH7S
+Qn+cOGyH/MWnf8GCBbZ48WK33erVq1v+/PkT7t6KL48YjR8/PupbFILk0azm00newDp5HTZsWNL5
+B5t3SHYkO5KdNJedZcuWuYuJToseanrUjMggkRzufmCZrPppcFfZmDFjXObDHz7mmGPsvvvuO+Lp
+D9M6d+5cd1s0HWgPBjo60vkzFfwv9gPNBEuWLHGZaZMmTXSmS3ayBc47bmqg6YbJgxzMmjXL3Ubt
+oa8KkQ//u3DZZO9XrlzpOjCvWrUquq5oTqKJB+iQ/sILL7jIzVtvveUqBvF1UPGYPXt20ooRlQQv
+HnFIO9et/0+km/f81/nz5+93edJIf7I43GG1Y8cO1wzIHVf0BfJ5BP8D4vMPNu+Q7Eh2JDtpLjuV
+K1eOam6ezZs3u0w/hFre6tWrU66H0DoZWgih7xUrVjjp4a6Kffv2RTUuoiMjR450nwln9+3b17XN
+c9uph5oktTgyolQkSyt07NjR2rRpEwlXfJtkcg8++KBVqFDBPQsE6IzJfkB6kkHt12f+Hjp7+sKF
+2jR9Gvx/oN8DtWa2TZMCcOdMnTp1ot8TgqdG6W+h5b+SZvo/QJcuXdw64zVl8euTHfHrRLIjJDuH
+CHce+I6LRDR8PwDa5rnA6GzIhHQQ3s4KZCcuQ9yGyjqRBCIh/kSn3Z3nZBCq9p0j+/Tpk3DnBSFx
+PiNQ3FZLx8VkhGlFVrjrxGcQyAzt9YhWuE0khFtxfadEbqml1kqnTiJU/mAly3RSgbDwX8K7VRAX
+3i9fvtzdRsv+IJKGOHIrNzVK/huZGJ03W7Zs6dLBf6dWyh0uSBvpRZK8qAnJjpDsSHaEZOcAQQa4
+kM4991wrVqxYdNcDIWtOSAppJGR/Dw5LJTtIDpENf6cE0AbvIWTetm1bJxtxoeCVW0eJgpCWcB0h
+Pq3IFGFopriYxLdJJOeZZ56JOjUiGg888ICTCu5EySrTibN+/fpoHTxNlkiUX45mAd9hlD4W9K/w
+77m7hQ6dSCT/sW7duu53pCv8rxwb/53vZyAkO0KyI9kRkp3/x0VEkw2Pnvf9UWhX37p1q4uSeLjT
+gjsh9ic7YT8CpIPOlM8//7zrvJxMGHjQGA8xI/ISFxOWI7pBMxi32RIRSQbNWGFaPeFdJ+E2kZIb
+b7zRPSnVp4sOmYgf/Y2ykh0kKeyHxH5i3fRfIGJEWsLt0X+hQ4cO7j39mfz2eD9ixAj3uPubb77Z
+CRj9opjPSeNlh4fDecG54447nJAJyY6Q7Eh2hGTnAKG5hKaREJ7mzMPD6NAXCoi/4MInp8bxUQ3u
+aqBJieWJunAHBgW1hzuYEBr6sbAMD1dMdncHEZGKFSu6ZqV8+fKlHIuJu6fiaY0LTnybHAyezeHT
+xR0YPIGVprL9/U/6IdGHhrtOWNY/x4P3PDmWKJXfNqLHCeC3EW6PZjU6lPKcFJ72SvMbzViInV+O
+h7vxMDZuw2Wd4V0pQrIjJDuSHSHZ2Q/0VeGOizjcgQG+j42HiE84oF8cnleBQHGnhH+6K9D5OS4q
+3GHBMjt37nSfud3UE76nzwvLJUunBzGLpzW+nmTbDNMVvuf/+9t3U8F66E8T9iMiqkMTFE+d5YCT
+LubxoLestsfDz1gfUaBk+4v5SNOWLVvcXTBCsiMkO5IdIdk5ghCJoI8J0Rs/0YREv54jDbfGs61w
+26effrq7tfRwQ5Qn2bbS8VHyQrIjJDuSHSHZOYzQ5ERfF6IffqLpKzsiDnSWZlvhtrmjighKTt6W
+kOwIIdkRkh0hhGRHSHYkO0KyI4SQ7AjJjmRHSHaEEJIdIdmR7AjJjhCSHcmOkOxIdoRkRwjJjhCS
+HcmOkOwIIdkRQrIj2ZHsCCEkO0JIdoRkRwgh2RGSHcmOkOwIISQ7QrIj2RGSHSGEZEdIdiQ7QrIj
+hGRHO0JIdiQ7QrIjhGRHCMmOZEdIdoSQ7Agh2ZHsSHaEEJIdISQ7QrIjhJDsCMmOZEdIdoQQkh0h
+2ZHsCMmOEEKyIyQ7kh0h2RFCsiOEZEeyIyQ7Qkh2hJDsSHaEZEcIyY4Qkh3JjmRHCCHZEUKyIyQ7
+QgjJjpDsSHaEZEcIIdkRkh3JjpDsCCEkO0KyI9kRkh0hftWyU6NGDe0IkVay061bN1uzZo1kR0h2
+hBCHTs2aNe2YY46xIUOGWL9+/TRp+sWme++913r27Olk5+abb7b169fnimusePHiymhyGVOmTLFW
+rVrZ0qVLJTtC5ARq1arlChdNmtJp6tu3r3377be5JlL19ddf28cff2yffPKJphw+bdy40W699VZr
+166dvfnmm7Zt2zbJjhA5gR9++ME2bNhg77zzji1btsyWL1+uSdMvMnH+ffDBB/b555/b1q1bc8X1
+RQSgfv36rmJRpUoVq1q1qqYcPtH8P378eNfUunPnTsmOEDmBn376yX788Ufbvn27q6UgP5o0/RIT
+59+OHTts165d7rzMLXz//fe2bt06e/fdd23VqlWacvD03nvvOSGnA/3mzZttz549kh0hhBC/bvbt
+2+fEbffu3a5SoSnnT8g4ksNx5fhKdoQQv6oIWRxf6xNC5G4kO0KIw1I7pqPnL56hZZEG2vHvv//+
+6HPXrl2tbdu27v3q1avt6KOPTuiAC9OmTbMrr7wy6fpuuOGGaHnumNu0aVPKbdN/4JRTTnHvZ8+e
+Hf3Oz4MSJUpE89muEIdyPQrJjhAim0Uju0BYDiSNhLrD9PL+ww8/TPhMZ9x58+bZH//4x0zrueWW
+W1xnVs/06dMtT548SbfJra/I0Pnnn59pP9199912zz332AMPPGB33nlnWu1Lkfoc+vTTT6PPW7Zs
+yXS3WrNmzTL9rm7dugnLlC9f/oilccWKFZnOoY8++sjy5ctnkyZNco8OOFyVlUKFCtncuXMT5p18
+8snu+kmn81hXlBDioDnppJNchla7dm0rXLiwm4cg+Ay9XLlytmDBAmvZsqX77thjj7XHHnssoUDn
+lWed8NqhQwc3j9tG/TomTJiQsC0vNL169YqW6dixY4LshGlo0qRJQoSldevWbt6iRYvcPNITz/y/
+++479/rSSy/ZxRdfHK3rqaeeSikjFHr+P4b/hTTRufzMM8/M9JtOnTrZyJEj01IcRWZGjRrl7t4K
+H/RJJ1iihiHHH398pidMI7vffPNN9JmnUIfCfCSkzJ+T0Lx5c3v22WcPe2Vlzpw5dsEFF6T9+asr
+SghxUBDd8AX6woULE+SFO3fg6quvdk1HpUqVcp9PPfVUu+mmm+ztt992zUDxTDlch3+OC006Dz30
+kF1//fXuMw8M466gQYMGuc+DBw+Ofpc/f/5Mme1VV13lMmRP6dKl7cILL4w+9+jRw6ZOnZr0PyJN
+XuLi6cuq0PB9gfj/ixcvdu+5JTZk/vz5rlYcp0CBAtFvRPpFdfwrd6UBz+iJSwvf87yXuOzQXJps
+fV6QuTa4xd/LNddLvELgxT4U+qZNm2ZK63333Zc0WsgDSm+//Xb33jed1qlTxwkanHHGGdF6165d
+6+ZVrFgxmkflJStRGjZsWLRdP59z3f8eWXz11VetRYsW7juur3gFKFze/ze/j3w+INkRQmQLZFZk
+zB5C5FCsWLFoHs8Hos9Lo0aNbMmSJTZmzBirVq2a9e7d21555ZUEQQnf8zAwn9khK4gRYfGQ0047
+zX2P/PhMElHwmWY49enTJ/odTwP2ERrg/TXXXJOwbp7P8eijj9rLL7/spM5TuXLlhP8agjRBwYIF
+3SuFHdumYOE/5M2b16UV+vfvn2mYAp4HwvJ+v4j0gtvSq1ev7t4PHz7cRWYA8Y6fb2PHjs30+2Sy
+40U6FGTe+wfhtWnTxkaMGGFHHXVU0gpBKqGPS8iMGTPcuoBrECGhX1r79u3dPM5zzk9EiL5snrJl
+y9rTTz/toptZRW1Yj7+mWI+H5tv4b0gHsoNoxStAXbp0ybQ8kVgvgNwxp8iOECJbGTp0qF166aXu
+/eTJkxMyYZ5G6zN4MlcKeSSI/iv0ZyhatGi0njBz9M1Q3bt3T8hc77rrLhcl8XJC5u3Fhmdq+G37
+34eZJcuyjIchD3xNMtyGz6zJUPlMtOr111+P1vXVV19F7xGhUNIGDhwYfedFiKawAQMGRP1xqJmu
+XLnSvW/cuHFS0eF5LyI9QSjiUuMjO74Zi4gm8/fu3ZtUdug3k0xG/LmE8ISVBR7eSGXBR3hCmc5K
+6MMKAectkRvfrMb1SNMpUdmwssI1yfkaXy8iwwNNQ+GPd8bnycWIEX1/wubaMNIaTqNHj7Z69eq5
+CtDDDz8cVYCQoFTLH+qwHpIdIcRBw5NnyYx8HxufQftMqkGDBm4efVb89/R7CDPEeEdhoOOuXwdj
+MgG1aj6XLFnSfb7ooovc5yJFimSq7dLZ2P8+Pmo8EZhx48YlzONpwBQi/jfUZmHWrFlOTPz8sLBC
+Yvz8MmXK/N/zPJLUfCkEfYfUeEZO5IhO0MkKUpE+xI8JT1yeOXOmO7crVKgQzU/VMZd+LTy40EO0
+0zfJhMLPb5EHoLl14sSJdsIJJ2SqEITbIB2h0HtoDqWvTihLyA4RHPrC+euTygod7IlIUbHwID90
+vqcZC5CcVOcm10DDhg3deFT7SyvjqrF9BAbBpwIUSl58ebbrJU+yI4QQQhwBKPTpEB9CpMQXyl7A
+PUQt4p3e6RQfyqzvtB8v3MPKgo+cJqsQ0CTml4v3B4tL2hNPPBF9pgnO96khnXxP1NSvN+yQ7zvx
+h8IfRnlC6PwfF6Gs0uqjYECkqVKlStHvfLQ2rKwcagVAsiOEEEKIXI1kRwghhBCSHSGEEEIIyY4Q
+QgghhGRHCCGEEEKyI4QQQggh2RFCCCGEkOwIIYQQQrKjXSCEEEIIyY4QQgghhGRHCCGEEEKyI4QQ
+Qggh2RFCCCGEkOwIIYQQQhwA/wMgOGewXm4cxAAAAABJRU5ErkJggg=="></p><p class = "S3"><span class = "S2"></span></p><p class = "S3"><span class = "S2">    2.    </span><span class = "S5">Build</span><span class = "S2"> the model</span></p><p class = "S3"><span class = "S2">    3.    </span><span class = "S5">Connect to target </span><span class = "S2">to connect to the AR Drone 2.0</span></p><p class = "S3"><span class = "S2">    4.    </span><span class = "S5">Run </span><span class = "S2">the model on the AR Drone 2.0. A figure will open showing you the front camera video feed</span></p><p class = "S3"><span class = "S2">    5.    When ready, </span><span class = "S5">Stop</span><span class = "S2"> the model</span></p><h2 class = "S4"><span class = "S2">Video capture background:</span></h2><p class = "S3"><span class = "S2">The AR_Drone_Front_Camera block on the left is created using the Legacy Code Tool using the C code in video.c. It contains initialization, step and termination functions for both the front and bottom camera. You can see how the video signal is retrieved exactly by evaluating:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S7 lineNode"><span class = "S8">edit(</span><span class = "S9">'video.c'</span><span class = "S10">);</span></p></div></div><p class = "S11"><span class = "S2">The videoInit1 and videoInit2 functions query the AR Drone's front and bottom camera for video capture respectively. </span></p><ul class = "S13"><li class = "S14"><span class = "S0">The correct camera parameters are set and memory is allocated to use as an image buffer. </span></li><li class = "S14"><span class = "S0">The videoGrabImage1 and videoGrabImage2 functions are used to retrieve a new frame from the AR Drone's video channel and memory copy it to an array. This array is accessed as the block output via a pointer. </span></li><li class = "S14"><span class = "S0">The videoClose1 and videoClose2 functions free up the memory which was allocted during initialization. </span></li></ul><p class = "S3"><span class = "S2">As this example uses the AR_Drone_Front_Camera block, only the videoInit1, videoGrabImage1 and videoClose1 functions are actually used. </span></p><p class = "S3"><span class = "S2">As the drone runs in external mode the amount of bandwith necessary for the video stream should be limited to ensure sufficient bandwidth remains for external mode connectivity. The second block in the model, "downscaleYCbCr422" is responsible for limiting the bandwith by taking the original input images (Which use the YCbCr color space and 4:2:2 pixel subsampling) and down sampling by a user specified amount (in both horizontal and vertical direction). Taking the original 1280*720 image and down sampling 8 times results in a video stream of 160x90 pixels, a reduction in bandwidth of 98.44%. Another way in wich the bandwidth is limited is by reducting the sampling time of "AR_Drone_Front_Camera" to 10 Fps. Sending too much data will cause the model to be unable to receive any shutdown packets from Simulink meaning the AR Drone 2.0 needs to be reset by unplugging the battery.</span></p><p class = "S3"><span class = "S2">The ARDroneVideoViewer block is what enables the video stream to be displayed in Simulink. It is a level-2 MATLAB S-Function which has been configured to work as a Sim Viewing Device. This causes Embedded Coder to ignore all code within the ARDroneVideoViewer S-Function when compiling for the AR Drone 2.0 target and run it on your Simulink PC instead. The signal which goes into the ARDroneVideoViewer is sent to Simulink using external mode. The transformation from YCbCr422 to RGB is then done on the Simulink PC to ease the computational burden on the drone. Displaying the video feed is simply done by giving the RGB image to the MATLAB function 'image' within the S-Function.</span></p><h2 class = "S4"><span class = "S2">Viewing the bottom camera:</span></h2><p class = "S3"><span class = "S2">A second model is available to view the video feed from the bottom facing camera on the AR Drone 2.0. This camera can output video with a resolution of 320x240 at 50 fps. A lower Fps is used and down sampling is once again implemented to reduce the needed TCP/IP bandwidth. </span></p><p class = "S3"><span class = "S2">    1.    </span><span class = "S5">Open</span><span class = "S2"> the model by evaluating the following MATLAB command:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S7 lineNode"><span class = "S8">open(</span><span class = "S9">'AR_Drone_Models\Example_Models\Example_Streaming_Bottom_Video_In_External_Mode.slx'</span><span class = "S10">);</span></p></div></div><p class = "S11"><span class = "S2">This wil open the following model:</span></p><p class = "S12"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAkEAAACPCAYAAAD9eQ9AAAAo4ElEQVR42u2dCbiN1f7HqUjiVmgw
+ZchYSSq30ISkWYMyRpSp3CYlISVCJEnlSoaiDCmFDE2XBlQaVVLcJiVRmhQNfn+f9dzf/q+zzz5H
+6mzO4ft5nvc5e+/z7nfaa/is31rvu/KZEEIIIcQuSD5dAiGEEEJIgoQQQgghJEFCCCGEEJIgIYQQ
+QghJkBBCCCGEJEgIIYQQQhIkhBBCCCEJEkIIIYSQBAkhhBBCSIKEEEIIISRBQgghhBCSICGEEEII
+SZAQQgghhCRICCGEEEISJIQQQmx/Nm3aZCtXrrTly5fbsmXL7P3339eSB5ZVq1aF32/z5s2SICF2
+FOPHj7cWLVpYq1attGhJy9K6dWtr166drVmzRhkuDYwdO9bKlSsXrnOzZs205IGlTZs2tvvuu9vG
+jRttw4YNkiAhdhRUUvny5bOSJUtaqVKlwl8tWnJqKVOmjBUoUCCksYULF4ZCX+Qso0aNsnHjxulC
+5DEob1esWGHffPONJEiIHcXFF19sFSpU0IUQaWPx4sVBgmbOnGnr16/XBclhRo4caffdd58uRB5j
+//33twULFiS6xSRBQuwgCTr44IN1IUTamD9/fpCgMWPGZCrwxd8HAZIE5T1KlChhTz/9tH322WeS
+ICEkQWJn5T//+U+QICIWyQW+kATtqhAJQoI+//xzSZAQkiCxs0vQv//9b0mQJEhIgoSQBAlJkJAE
+SYIkQUJIgoQkSEiCJEGSICEkQUISJCRBkiAhhCRISIKEJEgSJISQBAlJkJAESYKEEJIgIQkSkiBJ
+kBBCEiQkQZIgIQkSQkiChCRIEiQkQUIISZCQBEmChCRICCEJEpIgSZCQBAkhJEFCEiQJEpIgISRB
+kiAhCZIECUmQEJIgISRBkiAhCRJCEiSEJEgSJCRBQkiChJAESYKEJEgISZAQkiBJkJAECSEJEkIS
+JAkSkiAhJEFCSIIkQUISJIQkSAhJkCRISIKEkAQJSZAkSBIkJEFCSIKEJEhIgiRBkiAhJEFCEiQk
+QZIgSZAQkiAhCRKSIEmQEEISJCRBQhIkCRJCSIKEJEhIgiRBQghJkJAECUmQJEgIIQkSkiBJkJAE
+CSEkQUISJAkSkiAhhCRISIIkQUISJISQBAlJkCRISIKEEJIgIQmSBAlJkBCSIF0IIQmSBIncIkFf
+f/21de3a1Tp37mwdO3a0Dh06aNGS9oX0Rtr77bffJEFCSIIkQWLHSNCLL75oDRs2tKVLl9qiRYu0
+aEn78t5771nt2rXtueees++++04SJIQkSBIkdowEzZ8/36655hpdJbFdadOmjU2YMCFTopQECSEJ
+kgSJ7SZBzz//vP3rX//SVRLbXQjuuOMOe//99yVBQkiCJEFCEiQkQZIgISRBkiAhCRKSIEmQEJIg
+SZCQBAlJkCRICEmQJEhIgoQkSBK0i9Ft0ts24oY+Zhs36GJIgiRBQhIkJEGSoF2DfvM+t3adetlb
+jfa2V4bcogsiCZIECUmQkARJgnZ+lnzynRXpNN2e7XaB/TLhaptUr4z9tmmTLowkSBIk8p4EvfPO
+Oxne89C8Z599NhzDM888Y6tXr87yuxs3bgzr+bpffPFF2o932bJliePjeUpbY8WKFRn+5iTIAj/i
+22+/LQnK5bzyyitblaC1a9faW2+9lfgfD5H85ZdfEu8ff/xxmz59eoa8s3nz5kzbfPPNN23y5Mn2
+7rvvZnk8n376qf3888/h9YwZM0L+idP41KlTE3mPh6bmFj7/fJVVvGqCHddpmH3RrZ79PnewzW24
+vy2b+Wha9vfBBx9s9QnmXC9+3x9//DG837BhQ6bf+8knn7THHnss/F78/7///W/Kbfl6v//+e7b5
+3pk9e3ZY4t+V3y4ubyRBf58//vjDFi9enKMSRLpavnx5przLA2O9TvMHx/7www+JeocyPycfKLtq
+1apMIvDqq6+Gvy+88ELmRsiSJX962y+99FKG92vWrLGvvvoq7POTTz6RBFFQkzljDj/8cDvwwAOt
+XLlyVrFixfD/77//PsvCgP8fcsghVqFChfCaDJ9O6tSpYyVKlAj722effeyAAw6wb775JuW6/OCt
+WrUKif2iiy7K0ePo06eP7b777uEaFShQwPr16ycJysXssccedsQRR4SnsWclQevXrw9pC7kn7Rxz
+zDHhc6YSOeecc2zevHn26KOP2sknnxzWOfroozPtZ8iQIdajRw97/fXXrUWLFjZy5MhM6/z6668h
+r3z00Ud2+umnh++Q36+++urQCDnssMNCxVqjRo2wDk/yTiVb25vXPt9o+zdob/lOaG9jOzS1b66v
+u6WUvc+WXXakzWh+Ulr2yfVBTrPjhBNOsNtvv90uuOCC8P6mm24K19SF6Pzzz7cnnngiXNMGDRrY
+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"></p><p class = "S3"><span class = "S2">    2.    </span><span class = "S5">Build</span><span class = "S2"> the model</span></p><p class = "S3"><span class = "S2">    3.    </span><span class = "S5">Connect to target </span><span class = "S2">to connect to the AR Drone 2.0</span></p><p class = "S3"><span class = "S2">    4.    </span><span class = "S5">Run </span><span class = "S2">the model on the AR Drone 2.0. A figure will open showing you the bottom camera video feed</span></p><p class = "S3"><span class = "S2">    5.    When ready, </span><span class = "S5">Stop</span><span class = "S2"> the model</span></p><p class = "S3"><span class = "S2">The bottom camera uses a different aspect ratio (4:3) than the front camera (16:9) which is entered in the ARDroneVideoViewer block parameters diaglog box. Running the model will open a figure showing the bottom camera video feed. In the commercial application of the AR Drone 2.0 software the bottom camera is used to have a form of global positioning. If the floor beneath the drone has clearly distinguishable features/patterns the drone will be able to compensate for drift which it would otherwise not be able to detect using other sensors.</span></p><p class = "S3"><span class = "S2"></span></p></div></div>
+<!-- 
+##### SOURCE BEGIN #####
+%% Example: Streaming video in external mode
+% This example will show you how to show the video feed from the AR Drone 2.0 
+% within Simulink using External mode. 
+% 
+% 
+%% Displaying video in External mode
+% There are many different ways to display video in Simulink using various Simulink 
+% Video Display blocks for different target hardware platforms. The AR Drone 2.0 
+% however does not support direct video output so a new video viewer is provided 
+% with the AR Drone 2.0 Target. This example is capable of streaming video from 
+% the drone to Simulink in external mode.
+% 
+%     1.    *Open* the model by evaluating:
+
+open('AR_Drone_Models\Example_Models\Example_Streaming_Video_In_External_Mode.slx');
+%% 
+%  This command will open the following Simulink model:
+% 
+%  
+% 
+% 
+% 
+%     2.    *Build* the model
+% 
+%     3.    *Connect to target *to connect to the AR Drone 2.0
+% 
+%     4.    *Run *the model on the AR Drone 2.0. A figure will open showing 
+% you the front camera video feed
+% 
+%     5.    When ready, *Stop* the model
+%% Video capture background:
+% The AR_Drone_Front_Camera block on the left is created using the Legacy Code 
+% Tool using the C code in video.c. It contains initialization, step and termination 
+% functions for both the front and bottom camera. You can see how the video signal 
+% is retrieved exactly by evaluating:
+
+edit('video.c');
+%% 
+% The videoInit1 and videoInit2 functions query the AR Drone's front and 
+% bottom camera for video capture respectively. 
+% 
+% * The correct camera parameters are set and memory is allocated to use as 
+% an image buffer. 
+% * The videoGrabImage1 and videoGrabImage2 functions are used to retrieve a 
+% new frame from the AR Drone's video channel and memory copy it to an array. 
+% This array is accessed as the block output via a pointer. 
+% * The videoClose1 and videoClose2 functions free up the memory which was allocted 
+% during initialization. 
+% 
+% As this example uses the AR_Drone_Front_Camera block, only the videoInit1, 
+% videoGrabImage1 and videoClose1 functions are actually used. 
+% 
+% As the drone runs in external mode the amount of bandwith necessary for 
+% the video stream should be limited to ensure sufficient bandwidth remains for 
+% external mode connectivity. The second block in the model, "downscaleYCbCr422" 
+% is responsible for limiting the bandwith by taking the original input images 
+% (Which use the YCbCr color space and 4:2:2 pixel subsampling) and down sampling 
+% by a user specified amount (in both horizontal and vertical direction). Taking 
+% the original 1280*720 image and down sampling 8 times results in a video stream 
+% of 160x90 pixels, a reduction in bandwidth of 98.44%. Another way in wich the 
+% bandwidth is limited is by reducting the sampling time of "AR_Drone_Front_Camera" 
+% to 10 Fps. Sending too much data will cause the model to be unable to receive 
+% any shutdown packets from Simulink meaning the AR Drone 2.0 needs to be reset 
+% by unplugging the battery.
+% 
+% The ARDroneVideoViewer block is what enables the video stream to be displayed 
+% in Simulink. It is a level-2 MATLAB S-Function which has been configured to 
+% work as a Sim Viewing Device. This causes Embedded Coder to ignore all code 
+% within the ARDroneVideoViewer S-Function when compiling for the AR Drone 2.0 
+% target and run it on your Simulink PC instead. The signal which goes into the 
+% ARDroneVideoViewer is sent to Simulink using external mode. The transformation 
+% from YCbCr422 to RGB is then done on the Simulink PC to ease the computational 
+% burden on the drone. Displaying the video feed is simply done by giving the 
+% RGB image to the MATLAB function 'image' within the S-Function.
+%% Viewing the bottom camera:
+% A second model is available to view the video feed from the bottom facing 
+% camera on the AR Drone 2.0. This camera can output video with a resolution of 
+% 320x240 at 50 fps. A lower Fps is used and down sampling is once again implemented 
+% to reduce the needed TCP/IP bandwidth. 
+% 
+%     1.    *Open* the model by evaluating the following MATLAB command:
+
+open('AR_Drone_Models\Example_Models\Example_Streaming_Bottom_Video_In_External_Mode.slx');
+%% 
+% This wil open the following model:
+% 
+%  
+% 
+%     2.    *Build* the model
+% 
+%     3.    *Connect to target *to connect to the AR Drone 2.0
+% 
+%     4.    *Run *the model on the AR Drone 2.0. A figure will open showing 
+% you the bottom camera video feed
+% 
+%     5.    When ready, *Stop* the model
+% 
+% The bottom camera uses a different aspect ratio (4:3) than the front camera 
+% (16:9) which is entered in the ARDroneVideoViewer block parameters diaglog box. 
+% Running the model will open a figure showing the bottom camera video feed. In 
+% the commercial application of the AR Drone 2.0 software the bottom camera is 
+% used to have a form of global positioning. If the floor beneath the drone has 
+% clearly distinguishable features/patterns the drone will be able to compensate 
+% for drift which it would otherwise not be able to detect using other sensors.
+% 
+%
+##### SOURCE END #####
+--></body></html>

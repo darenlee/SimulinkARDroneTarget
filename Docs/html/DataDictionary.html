@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="MATLAB R2016a"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><title>Data dictionaries</title><style type="text/css">
+* {margin: 0; padding: 0;}
+body {text-align: start; line-height: 17.2339992523193px; min-height: 0px; white-space: normal; color: rgb(0, 0, 0); font-family: Consolas, Inconsolata, Menlo, monospace; font-style: normal; font-size: 14px; font-weight: normal; text-decoration: none; white-space: normal; }
+h1, h2 {font-weight: normal;}
+.content { padding: 30px; }
+
+.S0 { margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S1 { line-height: 26.3999996185303px; min-height: 24px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-size: 22px; white-space: pre-wrap; margin-left: 4px; margin-top: 3px; margin-bottom: 15px; margin-right: 10px;  }
+.S2 { min-height: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S3 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S4 { line-height: 20.576000213623px; min-height: 20px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; white-space: pre-wrap; margin-left: 4px; margin-top: 15px; margin-bottom: 9px; margin-right: 10px;  }
+.S5 { margin-left: 3px; margin-top: 10px; margin-bottom: 10px; margin-right: 3px;  }
+.S6 { line-height: 15.5926666259766px; min-height: 18px; white-space: nowrap; font-size: 12.6666669845581px; white-space: nowrap; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S7 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S8 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; color: rgb(160, 32, 240); font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S9 { line-height: 15.5926675796509px; min-height: 0px; white-space: pre; font-size: 12.6666679382324px; white-space: pre; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 45px;  }
+.S10 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 10px; margin-bottom: 9px; margin-right: 10px;  }
+.S11 { text-align: center; line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S12 { font-family: Helvetica, Arial, sans-serif; margin-left: 0px; margin-top: 10px; margin-bottom: 20px; margin-right: 0px;  }
+.S13 { text-align: left; line-height: 21px; white-space: pre-wrap; white-space: pre-wrap; margin-left: 56px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S14 { font-weight: bold; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+
+.LineNodeBlock {margin: 10px 0 10px 0;}
+.LineNodeBlock+.paragraphNode {margin-top: 10px;}
+.lineNode {padding-left: 10px; background-color: #F7F7F7; border-left: 1px solid #E9E9E9; border-right: 1px solid #E9E9E9;}
+.inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
+.inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
+.lineNode .textBox {white-space: pre;}
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Data dictionaries</span></h1><p class = "S3"><span class = "S2">A data dictionary is a persistent repository of data that are relevant to your models. The dictionary stores design data, which define parameters and signals and data that define the behavior of the model. The dictionary does not store simulation data, which are inputs or outputs of model simulation.</span></p><h2 class = "S4"><span class = "S2">The AR Drone Data Dictionary</span></h2><p class = "S3"><span class = "S2">The AR Drone 2.0 Target uses a Data dictionary to save some key data. By using a data dictionary the essential settings and parameters required for getting a model running on the AR Drone 2.0 are available in a single location. Any changes made to the parameters from one model wil also apply to other models using the data dictionary. You can view the AR Drone 2.0 Target data dictionary by opening the Model Explorer from a Simulink model or the Editor.</span><span class = "S2"> Select the</span><span class = "S2"> </span><span class = "S2">Model</span><span class = "S2"> </span><span class = "S2">Explorer</span><span class = "S2"> </span><span class = "S2">icon</span><span class = "S2"> </span><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAaCAIAAAAi3QukAAAB40lEQVR42mP4QCXAMBIM8kiuJxuh
+GOQaU3bz49/rH/5cevPz9PPvRx9/2Xfv445b7zZdfb36woulZ57OO/54xuEHE/fd7d51q3Xr9bqN
+VyrWXCxccQ6oEcUgp9BcMkzJXnwGqBHFIAf/FLIRikGJiYn/kcC/f//+/Pnz8+fPr9++ffr06d37
+969fv3nx4sWTp08fPnx09979W7duX7t+4/KVq0CNKAbFxMSQYcr5CxeBGlEMCg8Ph5jCgASApiBz
+gaYgc4GmnDl7DqgRxaCgoCBS3QI05cTJ00CNKAb5+PiQYcrRY8eBGlEMcnd3B5rCGzSZx7+Px7eT
+x6uFx72e26WK26mU2z6f2zqT2zyR2yiKWy+YW8uHW9WVW9GOW9bs4OEjQI2o6cjJCegW3oAJyG7h
+di5Ddgu3fiiyW7iljPbtPwjUiGKQra0t0Ec8fj08Pu08nk08brXczhXcjsXcdrnclmncpvHchhHc
+OoHcGp7cKk7c8tbc0ibc4rq79+wFakQxyNzcnPhwAfoI6BagKdt37gJqRDHIyMiIDFO2bN0O1Ihi
+kK6uLsQU5JQCNAWZCzQFmQs0ZcOmzUCNKAapq6uT6hagKWvXbQBqRDFISUmJDFNWrl4L1IhikCwF
+YKQU/hQCAIc1W4l3eeIXAAAAAElFTkSuQmCC"><span class = "S2"> </span><span class = "S2">from the toolbar or by press control + H. Alternatively you can manually load it from the .sldd file via:</span></p><div class = 'LineNodeBlock contiguous'><div class = 'inlineWrapper'><p class = "S6 lineNode"><span class = "S7">open(</span><span class = "S8">'ArDroneDataDictionary.sldd'</span><span class = "S9">)</span></p></div></div><p class = "S10"><span class = "S2">This will allow you to see the ArDroneDataDictionary contents listed in the Model Hierarchy as shown below:</span></p><p class = "S11"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,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"></p><p class = "S3"><span class = "S2"></span></p><p class = "S3"><span class = "S2"> The data dictionary contains a number of vital components:</span></p><ul class = "S12"><li class = "S13"><span class = "S14">Configuration sets:</span><span class = "S0"> The configuration sets '</span><span class = "S14">AR_Drone_Config</span><span class = "S0">' and '</span><span class = "S14">AR_Drone_Config_NOEXT</span><span class = "S0">' are both saved in the data dictionary</span></li><li class = "S13"><span class = "S14">Bus signals: </span><span class = "S0">some of the more complex models supplied with the AR Drone 2.0 Target use Bus signals to reduce the visual clutter. Some of these are defined in the data dictionary such that they can be reused between models, such as the '</span><span class = "S14">IMU_Packets</span><span class = "S0">' bus which is used in any model which reads the AR Drone 2.0 IMU data.</span></li><li class = "S13"><span class = "S14">Calibration data: </span><span class = "S0">To achieve higher performance the sensors of the AR Drone 2.0 need to be calibrated. The data dictionary contains the calibration parameters such that all models have access to them. The provided calibration interface loads and saves the calibration data from and to the data dictionary.</span></li></ul><h2 class = "S4"><span class = "S2">Using the data dictionary with a new model</span></h2><p class = "S3"><span class = "S2">If you make a new model and want to run it on the AR Drone 2.0 it will need to be linked to the AR Drone Data Dictionary. To do this follow these steps:</span></p><ol class = "S12"><li class = "S13"><span class = "S0">Open the</span><span class = "S0"> </span><span class = "S0">model you wish to link to the data dictionary.</span></li><li class = "S13"><span class = "S0">In the Simulink Editor, click</span><span class = "S0"> </span><span class = "S14">File</span><span class = "S0"> </span><span class = "S0">&gt;</span><span class = "S0"> </span><span class = "S14">Model Properties</span><span class = "S0"> </span><span class = "S0">&gt;</span><span class = "S0"> </span><span class = "S14">Link to Data Dictionary</span><span class = "S0">.</span></li><li class = "S13"><span class = "S0">In the</span><span class = "S0"> </span><span class = "S14">Model Properties</span><span class = "S0"> </span><span class = "S0">dialog box, set</span><span class = "S0"> </span><span class = "S14">Defined in</span><span class = "S0"> </span><span class = "S0">to</span><span class = "S0"> </span><span class = "S14">Data Dictionary</span><span class = "S0"> </span><span class = "S0">and click</span><span class = "S0"> </span><span class = "S14">Browse</span><span class = "S0"> </span><span class = "S0">to locate the </span><span class = "S14">ArDroneDataDictionary</span><span class = "S0"> which is located in /</span><span class = "S14">AR_Drone_Target</span><span class = "S0">/</span></li><li class = "S13"><span class = "S0">Click</span><span class = "S0"> </span><span class = "S14">Yes</span><span class = "S0"> </span><span class = "S0">in response to the message that explains how Simulink migrates design data stored in the base workspace. If your model depends on data in the base workspace it will be migrated to the data dictionary.</span></li><li class = "S13"><span class = "S0">Click</span><span class = "S0"> </span><span class = "S14">OK</span><span class = "S0"> </span><span class = "S0">in the</span><span class = "S0"> </span><span class = "S14">Model Properties</span><span class = "S0"> </span><span class = "S0">dialog box. A notification appears in the Simulink Editor, reporting that your model is now linked to the data dictionary.</span></li></ol><p class = "S3"><span class = "S2">If no data was imported during step 4, you are now done, else you need to continue with the following steps to permanently save the added data to the data dictionary:</span></p><ol class = "S12"><li class = "S13"><span class = "S0">In the Simulink Editor, click the data dictionary badge</span><span class = "S0"> </span><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAACIklEQVR42rWViW7aQBCG/f5PUDWq
+mqSJC0pbQwBZorU4hC2gRmAOO7brct8SPAH89b8tkdpAY9PG0sh7zH4zO7O7IyH89vs9ptMpms0m
+qtXq2cL15Ox2O2IhEWzbNrrdLsbjMebzORaLRWzhOq4nx3EcYUCiJQ6cAzwlnU5H7EDiVmjxf8JH
+oxFarRYkxupYKGidCo1GA/V6XcRU13WUy2UUi8VnDdRqtZ/wPydM08RqtcJ6vRbC9mFuNpthOBwi
+m83+FU7uEzg95n+5XAoo/5RD0iaTCfr9PlzPg6qq8eCWZT0JE/viNPwCe76PXngicrlcPDgTzLDQ
+Q2acfyZ8EIYiCALhcS88ugxLJpOJB2cCXdf7LYGFQgGapiGfz4tQ0GPDMJBOp+PBeTIeXBee58MP
+t99ut8U4E8vLYYfCNsOUSqXiwdmnV25oYDAYiLBsNhshB51Dn8ZO3eijcIJt20HK6IpTst1uT8I5
+Rx3qRoJXKhX0ejbuCmZkOHUjwZnAUqmEW1WPDKduJDivNi/SpaI9wstfO/j02YDjB7C9AB/zOipm
+5xFO3UhwHjnLauN1IgfvWx8Pfl+0j4kbzrv+d9GOBKcwLK/eKXgjK7hKKLhJKpCTH/A+kcTNrYy3
+1zIu5Tuomo7k/RdcyPen4ecWiGdfxZd4z8kj98UqEZ9mibWON40DrCD/6jE5rMmszRKrNA1wB6w8
+jNU5lZ/rGAp6TDC/H1JSamM+eqg0AAAAAElFTkSuQmCC"><span class = "S0"> </span><span class = "S0">in the bottom left corner to open the dictionary.</span></li><li class = "S13"><span class = "S0">Right-click the dictionary node and select</span><span class = "S0"> </span><span class = "S14">Save Changes</span><span class = "S0">.</span></li></ol></div></div>
+<!-- 
+##### SOURCE BEGIN #####
+%% Data dictionaries
+% A data dictionary is a persistent repository of data that are relevant to 
+% your models. The dictionary stores design data, which define parameters and 
+% signals and data that define the behavior of the model. The dictionary does 
+% not store simulation data, which are inputs or outputs of model simulation.
+%% The AR Drone Data Dictionary
+% The AR Drone 2.0 Target uses a Data dictionary to save some key data. By using 
+% a data dictionary the essential settings and parameters required for getting 
+% a model running on the AR Drone 2.0 are available in a single location. Any 
+% changes made to the parameters from one model wil also apply to other models 
+% using the data dictionary. You can view the AR Drone 2.0 Target data dictionary 
+% by opening the Model Explorer from a Simulink model or the Editor. Select the 
+% Model Explorer icon   from the toolbar or by press control + H. Alternatively 
+% you can manually load it from the .sldd file via:
+
+open('ArDroneDataDictionary.sldd')
+%% 
+% This will allow you to see the ArDroneDataDictionary contents listed in 
+% the Model Hierarchy as shown below:
+% 
+%  
+% 
+% 
+% 
+%  The data dictionary contains a number of vital components:
+% 
+% * *Configuration sets:* The configuration sets '*AR_Drone_Config*' and '*AR_Drone_Config_NOEXT*' 
+% are both saved in the data dictionary
+% * *Bus signals: *some of the more complex models supplied with the AR Drone 
+% 2.0 Target use Bus signals to reduce the visual clutter. Some of these are defined 
+% in the data dictionary such that they can be reused between models, such as 
+% the '*IMU_Packets*' bus which is used in any model which reads the AR Drone 
+% 2.0 IMU data.
+% * *Calibration data: *To achieve higher performance the sensors of the AR 
+% Drone 2.0 need to be calibrated. The data dictionary contains the calibration 
+% parameters such that all models have access to them. The provided calibration 
+% interface loads and saves the calibration data from and to the data dictionary.
+%% Using the data dictionary with a new model
+% If you make a new model and want to run it on the AR Drone 2.0 it will need 
+% to be linked to the AR Drone Data Dictionary. To do this follow these steps:
+% 
+% # Open the model you wish to link to the data dictionary.
+% # In the Simulink Editor, click *File* > *Model Properties* > *Link to Data 
+% Dictionary*.
+% # In the *Model Properties* dialog box, set *Defined in* to *Data Dictionary* 
+% and click *Browse* to locate the *ArDroneDataDictionary* which is located in 
+% /*AR_Drone_Target*/
+% # Click *Yes* in response to the message that explains how Simulink migrates 
+% design data stored in the base workspace. If your model depends on data in the 
+% base workspace it will be migrated to the data dictionary.
+% # Click *OK* in the *Model Properties* dialog box. A notification appears 
+% in the Simulink Editor, reporting that your model is now linked to the data 
+% dictionary.
+% 
+% If no data was imported during step 4, you are now done, else you need 
+% to continue with the following steps to permanently save the added data to the 
+% data dictionary:
+% 
+% # In the Simulink Editor, click the data dictionary badge   in the bottom 
+% left corner to open the dictionary.
+% # Right-click the dictionary node and select *Save Changes*.
+##### SOURCE END #####
+--></body></html>

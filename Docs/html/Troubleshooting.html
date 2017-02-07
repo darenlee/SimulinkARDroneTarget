@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="MATLAB R2016a"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><title>Troubleshooting</title><style type="text/css">
+* {margin: 0; padding: 0;}
+body {text-align: start; line-height: 17.2339992523193px; min-height: 0px; white-space: normal; color: rgb(0, 0, 0); font-family: Consolas, Inconsolata, Menlo, monospace; font-style: normal; font-size: 14px; font-weight: normal; text-decoration: none; white-space: normal; }
+h1, h2 {font-weight: normal;}
+.content { padding: 30px; }
+
+.S0 { margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S1 { line-height: 26.3999996185303px; min-height: 24px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-size: 22px; white-space: pre-wrap; margin-left: 4px; margin-top: 3px; margin-bottom: 15px; margin-right: 10px;  }
+.S2 { min-height: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S3 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S4 { line-height: 20.576000213623px; min-height: 20px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; white-space: pre-wrap; margin-left: 4px; margin-top: 15px; margin-bottom: 9px; margin-right: 10px;  }
+.S5 { font-family: Helvetica, Arial, sans-serif; margin-left: 0px; margin-top: 10px; margin-bottom: 20px; margin-right: 0px;  }
+.S6 { text-align: left; line-height: 21px; white-space: pre-wrap; white-space: pre-wrap; margin-left: 56px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S7 { color: rgb(0, 95, 206); margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+
+.LineNodeBlock {margin: 10px 0 10px 0;}
+.LineNodeBlock+.paragraphNode {margin-top: 10px;}
+.lineNode {padding-left: 10px; background-color: #F7F7F7; border-left: 1px solid #E9E9E9; border-right: 1px solid #E9E9E9;}
+.inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
+.inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
+.lineNode .textBox {white-space: pre;}
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Troubleshooting</span></h1><p class = "S3"><span class = "S2">This section provides awnsers or tips for troubleshooting any issues you encounter.</span></p><h2 class = "S4"><span class = "S2">I uploaded a flight model to the AR Drone 2.0 but It doesn't fly, why is this?</span></h2><p class = "S3"><span class = "S2">The flight models contain safety checks which prohibit the drone from flying if:</span></p><ul class = "S5"><li class = "S6"><span class = "S0">The battery voltage is too low</span></li><li class = "S6"><span class = "S0">The drone is positioned at an unsafe angle (if the drone is calibrated wrong it might falsely think it is in an unsafe orientation)</span></li></ul><h2 class = "S4"><span class = "S2">Why am I getting a "ExtTargetPktPending() call failed" error?</span></h2><p class = "S3"><span class = "S2">There are multiple reasons this can occur:</span></p><ul class = "S5"><li class = "S6"><span class = "S0">Too much information is being send back to Simulink causing the drone lose connection. Reduce the amount of scopes or other real time sources or use a rate transition block to reduce their sampling rate.</span></li><li class = "S6"><span class = "S0">The wireless communication between the AR Drone and PC ran into an issue, re-building and reconnecting will allow you to run the model again.</span></li></ul><h2 class = "S4"><span class = "S2">Why am I getting the "Output argument "out" (and maybe others) not assigned during call to "coder.make.Builder/getCustomToolchainOptionMacros"." error?</span></h2><ul class = "S5"><li class = "S6"><span class = "S0">This error can result from having multiple copies of the AR Drone 2.0 Target set up on the same MATLAB installation. Each one will register the Code Sourcery compiler, updating the path. If you delete the AR Drone 2.0 Target which was configured last, or if you deleted the registration files, you will need to run </span><a href = 'matlab:install_script'><span class = "S0">install_script.m</span></a><span class = "S0"> to update the third party registration.</span></li></ul><h2 class = "S4"><span class = "S2">Why does initialization of the project path fail during the Simulink project startup?</span></h2><ul class = "S5"><li class = "S6"><span class = "S0">The path is set up when the Simulink project is started and removed when the project is closed. If you close MATLAB without closing the Simulink project first the shutdown procedure is not ran meaning the path is not updated. While this will show as a failure to initialize the project path the path will be correct after opening the project.</span></li></ul><h2 class = "S4"><span class = "S2">Why does connecting to the AR Drone result in the following error: The model that you are trying to run in External mode does not match the application running on your target. Rebuild the model, run it on your target, and start External mode simulation again.</span></h2><ul class = "S5"><li class = "S6"><span class = "S0">The problem is likely with the AR Drone, you will need to reboot the AR Drone (for which you can find a shortcut in the simulink project), reconnect to it and rebuilding the model should work</span></li></ul><h2 class = "S4"><span class = "S2">Why does connecting to the AR Drone result in the following error: The first input to get_param must be of type 'double', 'char' or 'cell'.</span></h2><ul class = "S5"><li class = "S6"><span class = "S0">There is an issue with getting the data from the configuration set. Make sure the configuration set is set properly. If it still persists try restarting the Simulink project.</span></li></ul><p class = "S3"><span class = "S2"></span></p></div></div>
+<!-- 
+##### SOURCE BEGIN #####
+%% Troubleshooting
+% This section provides awnsers or tips for troubleshooting any issues you encounter.
+%% *I uploaded a flight model to the AR Drone 2.0 but It doesn't fly, why is this?*
+% The flight models contain safety checks which prohibit the drone from flying 
+% if:
+% 
+% * The battery voltage is too low
+% * The drone is positioned at an unsafe angle (if the drone is calibrated wrong 
+% it might falsely think it is in an unsafe orientation)
+%% Why am I getting a "ExtTargetPktPending() call failed" error?
+% There are multiple reasons this can occur:
+% 
+% * Too much information is being send back to Simulink causing the drone lose 
+% connection. Reduce the amount of scopes or other real time sources or use a 
+% rate transition block to reduce their sampling rate.
+% * The wireless communication between the AR Drone and PC ran into an issue, 
+% re-building and reconnecting will allow you to run the model again.
+%% Why am I getting the "Output argument "out" (and maybe others) not assigned during call to "coder.make.Builder/getCustomToolchainOptionMacros"." error?
+% * This error can result from having multiple copies of the AR Drone 2.0 Target 
+% set up on the same MATLAB installation. Each one will register the Code Sourcery 
+% compiler, updating the path. If you delete the AR Drone 2.0 Target which was 
+% configured last, or if you deleted the registration files, you will need to 
+% run <matlab:install_script install_script.m> to update the third party registration.
+%% Why does initialization of the project path fail during the Simulink project startup?
+% * The path is set up when the Simulink project is started and removed when 
+% the project is closed. If you close MATLAB without closing the Simulink project 
+% first the shutdown procedure is not ran meaning the path is not updated. While 
+% this will show as a failure to initialize the project path the path will be 
+% correct after opening the project.
+%% Why does connecting to the AR Drone result in the following error: The model that you are trying to run in External mode does not match the application running on your target. Rebuild the model, run it on your target, and start External mode simulation again.
+% * The problem is likely with the AR Drone, you will need to reboot the AR 
+% Drone (for which you can find a shortcut in the simulink project), reconnect 
+% to it and rebuilding the model should work
+%% Why does connecting to the AR Drone result in the following error: The first input to get_param must be of type 'double', 'char' or 'cell'.
+% * There is an issue with getting the data from the configuration set. Make 
+% sure the configuration set is set properly. If it still persists try restarting 
+% the Simulink project.
+% 
+%
+##### SOURCE END #####
+--></body></html>

@@ -53,11 +53,6 @@
 int BatteryI2C_fd;
 
 void BatteryMeasure_init(void) {
-  // First we try to kill the program.elf and its respawner if it is running (done here because initializes first)
-   
-  // int ret = system("killall -9 program.elf.respawner.sh; killall -9 program.elf");
-  //(void) ret;
-
   // Initialize 12c device for power
   BatteryI2C_fd = open( "/dev/i2c-1", O_RDWR );
   
@@ -66,7 +61,6 @@ void BatteryMeasure_init(void) {
   }
 
   electrical_setup();
-  //electrical_priv.nonlin_factor = CURRENT_ESTIMATION_NONLINEARITY;
 }
 
 void electrical_setup(void) {
@@ -111,17 +105,7 @@ void BatteryMeasure_update(float *MeasuredVoltage) {
   //from raw measurement we got quite a linear response
   //9.0V=662, 9.5V=698, 10.0V=737,10.5V=774, 11.0V=811, 11.5V=848, 12.0V=886, 12.5V=923
   //leading to our 0.13595166 magic number for decivolts conversion
-  
-  //electrical.vsupply = raw_voltage*0.13595166;
-  
+    
   *MeasuredVoltage = raw_voltage*0.13595166;
- 
 
 }
-
-
-//function prototypes:
-// BatteryMeasure_update(&VoltageMeasure,&CurrentMeasure);
-// BatteryMeasure_stop(); 
-// BatteryMeasure_init() ;
- 

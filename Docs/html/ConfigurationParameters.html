@@ -1,0 +1,413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="MATLAB R2016a"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><title>Configuration parameters</title><style type="text/css">
+* {margin: 0; padding: 0;}
+body {text-align: start; line-height: 17.2339992523193px; min-height: 0px; white-space: normal; color: rgb(0, 0, 0); font-family: Consolas, Inconsolata, Menlo, monospace; font-style: normal; font-size: 14px; font-weight: normal; text-decoration: none; white-space: normal; }
+h1, h2 {font-weight: normal;}
+.content { padding: 30px; }
+
+.S0 { margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S1 { line-height: 26.3999996185303px; min-height: 24px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-size: 22px; white-space: pre-wrap; margin-left: 4px; margin-top: 3px; margin-bottom: 15px; margin-right: 10px;  }
+.S2 { min-height: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S3 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S4 { text-align: center; line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S5 { min-height: 0px; font-weight: bold; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S6 { font-family: Helvetica, Arial, sans-serif; margin-left: 0px; margin-top: 10px; margin-bottom: 20px; margin-right: 0px;  }
+.S7 { text-align: left; line-height: 21px; white-space: pre-wrap; white-space: pre-wrap; margin-left: 56px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S8 { font-weight: bold; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S9 { line-height: 20.576000213623px; min-height: 20px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; white-space: pre-wrap; margin-left: 4px; margin-top: 15px; margin-bottom: 9px; margin-right: 10px;  }
+
+.LineNodeBlock {margin: 10px 0 10px 0;}
+.LineNodeBlock+.paragraphNode {margin-top: 10px;}
+.lineNode {padding-left: 10px; background-color: #F7F7F7; border-left: 1px solid #E9E9E9; border-right: 1px solid #E9E9E9;}
+.inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
+.inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
+.lineNode .textBox {white-space: pre;}
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Configuration parameters</span></h1><p class = "S3"><span class = "S2">The configuration parameters determine how the Simulink Coder software generates code and builds an executable from your model. What options are available depends on the selected target, in this case the AR Drone 2.0</span></p><p class = "S3"><span class = "S2">To open the Configuration Parameters dialog box, press control + E or click the model configuration parameters icon:</span></p><p class = "S4"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAkCAIAAACfaVRCAAAEeklEQVR42u2Y2Sv2aRjH/R3THFpG
+SOFAshwoMkT2JbKPXShEKEsRB5ZQ9j0jFEKWE1EimkfIrkfWdxozGF7bezIfbu/v/fE+S/JrmoP5
+Hjzd931d9/X9/u7fdV3P/TwGl5eXKysrIyMjvyqN+fl5HVYY4YXdQKVSTU9PX1xcfFEa0Oiwwggv
+7AbDw8MIeXx8/KwoJAXaHGCEF3YD/Jj8rTSIqTey8HlRcKk0JAV6fV4U/Kk0JAV6fZ4UPDw8/KE0
+iKk3svB5UfC70pAU6PV5UnB/f/9JJxYWFn6RgeknfZAU6PXRquDg4KC2tvbgGXV1dQUFBb89gwFT
+sS4cNEYnpt5nEz6aFRA3JycnPDw8LS2Nz/j4+La2tqurK9pIc3MzU8mEm0YR71Nwd3cnN6jV6qys
+rNjY2OXl5fLy8qGhIRYFPelzenq6vb3d3d1dVFQ0NjYWFRWFM1s+pICH2JGhrKwsMDBwaWlJ9I3N
+zc2kpCQTE5MfnmFsbBwdHT0zM7O2tsZLGRwcxJktO69BTCIfHh7uaAdWzQpWV1djYmJKSkqgX1xc
+hNvIyMjPz49TSUxMjIyMNDU1ZWVgYABrdnY2zmz5kAJGezKsr697eXn19/dvbW1ZWFg4OjryygMC
+Ajw9Pb29veGrrq7GwczMjBdUWVnJmC17ryGiHx8f72kHVg0KJiYmCgsL4Ts7O8vMzLS2tk5PT0cE
+5//zMxh4eHi0trba2dmRBKOjoz4+PmxhozIKXF1d4+LiampqSD0nJ6ewsDDUwNre3i4cGDAl+4qL
+i+3t7cfHxxmHhISwUZuCnzThlYKjoyP1Vzg7O/P6occMQUpKCofv7u6uloEpBdnU1IQDX68kRG9v
+LxvlPiI6Bymmb+jFIlYNCnhuUXikkouLCy8iKCiI7JNH9/f3pxN0dXXhIOg7OzvZqEOBXIS08k0B
+o8Ov4LE4eaqLuocbBeSBg4MDSSccGDAlGTkDCgT6hIQEzomNhzKI6DR/+SL08ilWDQpIKNocR7qx
+sUE7ioiIoAenpqb6+vqyThdikJeXNzs7S7qgjxZJnmJio14Fb/BNAaMTGXZ3d21sbEhGyp3ny83N
+5ZCZQl9VVUV7npubq6io4CuqoaGBQsWZLSevIaJzCTjRDqxaFZDY1D1dj8tkcnIyZ1BfX9/T00OT
+4PVnZGSgjJWWlhY6BM4KK+DFm5ub9/X10XQ5hsnJydLSUhqz+GqmLebn5zc2NkLPGTDGmS0fUsBI
+fnHY39+n51hZWXV0dAQHB8NByVH3UuGRg+igJkkIS0tLnNny5vYhonMZ1HFDwapZgRDh5uZmaGhI
+hvNJb6YgBX1oaCgPLZlw+57+3QoYfX+Jo15pR6JwSQV6sKh7W1tbpmJdOGi8A4roNDcd90SsuhTI
+QaX9KANTvTfV9ym4vr5W/LYuot/c3Ojwwfq/AkkBo7+UhlDAL1QdPlj/GwroM+fn54hQ9perUHB7
+e6vNAUZ4n369q1SqqakpFN0pDfE7QBtgfPkHAzn0f771/+V/cWCEF/Z/ANSUcvs1SE0LAAAAAElF
+TkSuQmCC"></p><p class = "S3"><span class = "S2">Any model can access the configuration parameters for the AR Drone 2.0 by using a reference to the AR Drone Data Dictionary in which the configuration parameters sets are saved. This is why when you open the configuration parameters window you will be presented with the Configuration Reference menu as below:</span></p><p class = "S3"><span class = "S2"></span></p><p class = "S4"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,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"></p><p class = "S3"><span class = "S2">Clicking </span><span class = "S5">Open...</span><span class = "S2"> will bring you to the configuration parameters. You can choose two different reference configuration set names:</span></p><ul class = "S6"><li class = "S7"><span class = "S8">AR_Drone_ConfigSet: </span><span class = "S0">This configuration set is configured such that the code generated by Simulink runs on the AR Drone 2.0 in external mode.</span></li><li class = "S7"><span class = "S8">AR_Drone_ConfigSet_NOEXT:</span><span class = "S0"> </span><span class = "S8"> </span><span class = "S0">This configuration set is configured such that the code generated by Simulink runs on the AR Drone 2.0 in normal mode.</span></li></ul><p class = "S3"><span class = "S2">The most important settings on each pane of the configuration set will be explained below.</span></p><h2 class = "S9"><span class = "S2">Solver pane:</span></h2><p class = "S3"><span class = "S2">The solver tab in the configuration parameters window has a number of key settings related to how the code is sampled:</span></p><ul class = "S6"><li class = "S7"><span class = "S8">Solver options: </span><span class = "S0">The solver must be set to Fixed-step Type and discrete (no continuous states) as continuous states and Variable-step are not supported for AR Drone 2.0 code generation.</span></li><li class = "S7"><span class = "S8">Fixed-step size (fundamental sample time): </span><span class = "S0">This should be set to the highest rate needed for the implementation. The AR Drone 2.0 demo and flight controller are tuned for a step size of 1/400 [s].</span></li><li class = "S7"><span class = "S8">Tasking mode for periodic sample times: </span><span class = "S0">This setting defines how models with multiple different sample times are handled with respect to models with a single sampling time. This must be set to auto such that if only one sampling time is specified the model has one step function and if there are multiple sampling times there will be multiple step functions called at different rates.</span></li><li class = "S7"><span class = "S8">Higher priority value indicates higher task priority: </span><span class = "S0">This must be enabled else a higher priority value would indicate a lower task priority.</span></li></ul><h2 class = "S9"><span class = "S2">Optimization pane:</span></h2><p class = "S3"><span class = "S2">The Optimization tab contains options for generating code that executes faster or uses less memory, some of the key settings are:</span></p><ul class = "S6"><li class = "S7"><span class = "S8">Default for underspecified data type: </span><span class = "S0">Specify the default data type to use for inherited data types if Simulink software could not infer the data type of a signal during data type propagation. The AR Drone 2.0 supports the MATLAB default of double precision floats but this could be set to single precision for increased efficiency at the cost of accuracy.</span></li><li class = "S7"><span class = "S8">Remove " ... " zero initialization: </span><span class = "S0">This is left disabled for both root level I/O and internal data to ensure that the memory is not in an unknown state when the model executes.</span></li><li class = "S7"><span class = "S8">Remove code from floating-point to integer conversions that wraps out-of-range values: </span><span class = "S0">This is disabled as there are cases where doubles are converted to integers (for controlling the motors for example) and it is vital that these do not overflow.</span></li><li class = "S7"><span class = "S8">Signals and parameters &gt;&gt; Default parameter behavior: </span><span class = "S0">Set this to tunable if you wish to be able to change all parameters during runtime in external mode, set this to Inlined to reduce the global RAM usage and increase efficiency of the generated code. As normal mode execution is usually done without parameter tuning this should be set to 'inlined' for Normal mode.</span></li></ul><h2 class = "S9"><span class = "S2">Hardware implementation pane:</span></h2><p class = "S3"><span class = "S2">The hardware implementation pane is where you can select the desired external target (The AR Drone 2.0) and set some target specific parameters. Some key components are:</span></p><ul class = "S6"><li class = "S7"><span class = "S8">Hardware board: </span><span class = "S0">This must be set to "AR Drone 2 - Thread Timer Scheduler" with</span><span class = "S8"> Device vendor </span><span class = "S0">set to 'ARM Compatible' and </span><span class = "S8">Device type</span><span class = "S0"> to 'ARM Cortex' as the AR Drone 2.0 uses an ARM Cortex A-8 CPU</span></li><li class = "S7"><span class = "S8">Base rate task priority: </span><span class = "S0">This value indicates the priority of the model within the Linux operating system on the AR Drone 2.0. The default value is 40, setting this higher will increase the priority of the generated code.</span></li><li class = "S7"><span class = "S8">AR Drone IP Address:</span><span class = "S0"> This is the IP the AR Drone 2.0 has in the wireless network it sets up. The default IP is '192.168.1.1' but if it is changed on the AR Drone, changing the IP in this menu will make sure the build process uses the correct IP.</span></li><li class = "S7"><span class = "S8">Clocking:</span><span class = "S0"> The AR Drone 2.0 has an 800Mhz ARM Cortex A-8</span></li></ul><h2 class = "S9"><span class = "S2">Simulation target pane:</span></h2><p class = "S3"><span class = "S2">This pane allows you to include custom C code. For example: if the model contains a MATLAB function block which uses a structure defined in some C code this should be included here.</span></p><ul class = "S6"><li class = "S7"><span class = "S8">Insert custom C code in generated: &gt;&gt; Header file: </span><span class = "S0">Here we set '#include "IMU_Navdata.h" ' such that we can use a MATLAB function block to process IMU_Navdata packets.</span></li></ul><h2 class = "S9"><span class = "S2">Code generation pane:</span></h2><p class = "S3"><span class = "S2">The code generation pane contains settings for how the target specific executable is created. Some key settings are listed below:</span></p><ul class = "S6"><li class = "S7"><span class = "S8">System target file: </span><span class = "S0">This must be set to the Embedded Coder target 'ert.tlc' on which the AR Drone 2.0 Target relies, the </span><span class = "S8">Language</span><span class = "S0"> must be set to C.</span></li><li class = "S7"><span class = "S8">Build process: </span><span class = "S0">The toolchain is 'Code Sourcery' and the build configuration can be set to faster builds, faster runs or debug, depending on your need.</span></li><li class = "S7"><span class = "S8">Code generation objectives: </span><span class = "S0">Before enabling 'Check model before generating code' you must set the objectives against which the Code Generation Advisor will check your model. This will not impact the generated code but simply give advice on what settings you should change for your specific objectives.</span></li></ul><p class = "S3"><span class = "S5">Report tab: </span></p><p class = "S3"><span class = "S2">In the report tab you can enable the creation of a code generation report with links between the model and the code, this is useful if you want to see how a specific piece of the model is generated into C code. By default no report is generated.</span></p><p class = "S3"><span class = "S5">Interface tab: </span></p><ul class = "S6"><li class = "S7"><span class = "S8">Code replacement library:</span><span class = "S0"> Although there is a code replacement library for the ARM Cortex A-8 used in the AR Drone 2.0, code replacement is not currently supported for the AR Drone 2.0 and should be left to 'none'.</span></li><li class = "S7"><span class = "S8">Support: </span><span class = "S0">The code requires floating point numbers as the default calculation is done as a double or single, absolute time to support state-flow absolute time transitions and non-finite numbers for the use of 'inf' in some initialization code. The other supports are left disabled to improve efficiency.</span></li><li class = "S7"><span class = "S8">Code interface packaging: </span><span class = "S0">If you have multiple copies of a sub-system you can set this to 'Reusable function' to improve efficiency by using a pointer to a dynamic function instead of statically defining it for each occurrence. </span></li><li class = "S7"><span class = "S8">Data exchange: </span><span class = "S0">If you are using external mode the 'Interface' parameter must be set to 'External mode' using the 'tcpip' transport layer and the MEX-file arguments: 'extModeParams'. extModeParams.m is a function which retrieves and outputs the IP address from the configset.</span></li></ul><p class = "S3"><span class = "S5"></span></p><p class = "S3"><span class = "S2"></span></p></div></div>
+<!-- 
+##### SOURCE BEGIN #####
+%% Configuration parameters
+% The configuration parameters determine how the Simulink Coder software generates 
+% code and builds an executable from your model. What options are available depends 
+% on the selected target, in this case the AR Drone 2.0
+% 
+% To open the Configuration Parameters dialog box, press control + E or click 
+% the model configuration parameters icon:
+% 
+%  
+% 
+% Any model can access the configuration parameters for the AR Drone 2.0 
+% by using a reference to the AR Drone Data Dictionary in which the configuration 
+% parameters sets are saved. This is why when you open the configuration parameters 
+% window you will be presented with the Configuration Reference menu as below:
+% 
+% 
+% 
+%  
+% 
+% Clicking *Open...* will bring you to the configuration parameters. You 
+% can choose two different reference configuration set names:
+% 
+% * *AR_Drone_ConfigSet: *This configuration set is configured such that the 
+% code generated by Simulink runs on the AR Drone 2.0 in external mode.
+% * *AR_Drone_ConfigSet_NOEXT:* * *This configuration set is configured such 
+% that the code generated by Simulink runs on the AR Drone 2.0 in normal mode.
+% 
+% The most important settings on each pane of the configuration set will 
+% be explained below.
+%% Solver pane:
+% The solver tab in the configuration parameters window has a number of key 
+% settings related to how the code is sampled:
+% 
+% * *Solver options: *The solver must be set to Fixed-step Type and discrete 
+% (no continuous states) as continuous states and Variable-step are not supported 
+% for AR Drone 2.0 code generation.
+% * *Fixed-step size (fundamental sample time): *This should be set to the highest 
+% rate needed for the implementation. The AR Drone 2.0 demo and flight controller 
+% are tuned for a step size of 1/400 [s].
+% * *Tasking mode for periodic sample times: *This setting defines how models 
+% with multiple different sample times are handled with respect to models with 
+% a single sampling time. This must be set to auto such that if only one sampling 
+% time is specified the model has one step function and if there are multiple 
+% sampling times there will be multiple step functions called at different rates.
+% * *Higher priority value indicates higher task priority: *This must be enabled 
+% else a higher priority value would indicate a lower task priority.
+%% Optimization pane:
+% The Optimization tab contains options for generating code that executes faster 
+% or uses less memory, some of the key settings are:
+% 
+% * *Default for underspecified data type: *Specify the default data type to 
+% use for inherited data types if Simulink software could not infer the data type 
+% of a signal during data type propagation. The AR Drone 2.0 supports the MATLAB 
+% default of double precision floats but this could be set to single precision 
+% for increased efficiency at the cost of accuracy.
+% * *Remove " ... " zero initialization: *This is left disabled for both root 
+% level I/O and internal data to ensure that the memory is not in an unknown state 
+% when the model executes.
+% * *Remove code from floating-point to integer conversions that wraps out-of-range 
+% values: *This is disabled as there are cases where doubles are converted to 
+% integers (for controlling the motors for example) and it is vital that these 
+% do not overflow.
+% * *Signals and parameters >> Default parameter behavior: *Set this to tunable 
+% if you wish to be able to change all parameters during runtime in external mode, 
+% set this to Inlined to reduce the global RAM usage and increase efficiency of 
+% the generated code. As normal mode execution is usually done without parameter 
+% tuning this should be set to 'inlined' for Normal mode.
+%% Hardware implementation pane:
+% The hardware implementation pane is where you can select the desired external 
+% target (The AR Drone 2.0) and set some target specific parameters. Some key 
+% components are:
+% 
+% * *Hardware board: *This must be set to "AR Drone 2 - Thread Timer Scheduler" 
+% with* Device vendor *set to 'ARM Compatible' and *Device type* to 'ARM Cortex' 
+% as the AR Drone 2.0 uses an ARM Cortex A-8 CPU
+% * *Base rate task priority: *This value indicates the priority of the model 
+% within the Linux operating system on the AR Drone 2.0. The default value is 
+% 40, setting this higher will increase the priority of the generated code.
+% * *AR Drone IP Address:* This is the IP the AR Drone 2.0 has in the wireless 
+% network it sets up. The default IP is '192.168.1.1' but if it is changed on 
+% the AR Drone, changing the IP in this menu will make sure the build process 
+% uses the correct IP.
+% * *Clocking:* The AR Drone 2.0 has an 800Mhz ARM Cortex A-8
+%% Simulation target pane:
+% This pane allows you to include custom C code. For example: if the model contains 
+% a MATLAB function block which uses a structure defined in some C code this should 
+% be included here.
+% 
+% * *Insert custom C code in generated: >> Header file: *Here we set '#include 
+% "IMU_Navdata.h" ' such that we can use a MATLAB function block to process IMU_Navdata 
+% packets.
+%% Code generation pane:
+% The code generation pane contains settings for how the target specific executable 
+% is created. Some key settings are listed below:
+% 
+% * *System target file: *This must be set to the Embedded Coder target 'ert.tlc' 
+% on which the AR Drone 2.0 Target relies, the *Language* must be set to C.
+% * *Build process: *The toolchain is 'Code Sourcery' and the build configuration 
+% can be set to faster builds, faster runs or debug, depending on your need.
+% * *Code generation objectives: *Before enabling 'Check model before generating 
+% code' you must set the objectives against which the Code Generation Advisor 
+% will check your model. This will not impact the generated code but simply give 
+% advice on what settings you should change for your specific objectives.
+% 
+% *Report tab: *
+% 
+% In the report tab you can enable the creation of a code generation report 
+% with links between the model and the code, this is useful if you want to see 
+% how a specific piece of the model is generated into C code. By default no report 
+% is generated.
+% 
+% *Interface tab: *
+% 
+% * *Code replacement library:* Although there is a code replacement library 
+% for the ARM Cortex A-8 used in the AR Drone 2.0, code replacement is not currently 
+% supported for the AR Drone 2.0 and should be left to 'none'.
+% * *Support: *The code requires floating point numbers as the default calculation 
+% is done as a double or single, absolute time to support state-flow absolute 
+% time transitions and non-finite numbers for the use of 'inf' in some initialization 
+% code. The other supports are left disabled to improve efficiency.
+% * *Code interface packaging: *If you have multiple copies of a sub-system 
+% you can set this to 'Reusable function' to improve efficiency by using a pointer 
+% to a dynamic function instead of statically defining it for each occurrence. 
+% * *Data exchange: *If you are using external mode the 'Interface' parameter 
+% must be set to 'External mode' using the 'tcpip' transport layer and the MEX-file 
+% arguments: 'extModeParams'. extModeParams.m is a function which retrieves and 
+% outputs the IP address from the configset.
+% 
+% **
+% 
+%
+##### SOURCE END #####
+--></body></html>

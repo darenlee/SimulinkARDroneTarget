@@ -58,7 +58,7 @@ void videoInit1(void)
 	vid1.device = (char*)"/dev/video1";
 	vid1.w=1280;
 	vid1.h=720;
-	vid1.n_buffers = 4;
+	vid1.n_buffers = 1;
 	
 	img1 = (img_struct*)malloc(sizeof(img_struct));
 	img1->w=vid1.w;
@@ -74,7 +74,7 @@ void videoInit1(void)
 
 	vid1.seq=0;
 	vid1.trigger=0;
-	if(vid1.n_buffers==0) vid1.n_buffers=4;
+	if(vid1.n_buffers==0) vid1.n_buffers=1;
 	
 	vid1.fd = open(vid1.device, O_RDWR | O_NONBLOCK, 0);
 
@@ -82,7 +82,7 @@ void videoInit1(void)
 		printf("ioctl() VIDIOC_QUERYCAP failed.\n");
     }
 
-//     printf("2 driver = %s, card = %s, version = %d, capabilities = 0x%x\n", cap.driver, cap.card, cap.version, cap.capabilities);
+     //printf("2 driver = %s, card = %s, version = %d, capabilities = 0x%x\n", cap.driver, cap.card, cap.version, cap.capabilities);
 
     CLEAR(fmt);
     fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
@@ -145,9 +145,19 @@ void videoInit1(void)
 		}
     }
 
+	
     type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
-    if (ioctl(vid1.fd, VIDIOC_STREAMON, &type)< 0) {
-		printf("ioctl() VIDIOC_STREAMON failed.\n");  
+	int sleepTime = 0;
+
+    while (ioctl(vid1.fd, VIDIOC_STREAMON, &type)< 0) {
+		printf("ioctl() VIDIOC_STREAMON failed, sleeping for 1s before trying again.\n");  
+		sleepTime++;
+		sleep(1);
+		if (sleepTime > 10)
+		{
+			printf("Error: Unable to turn on camera 1\n");
+			return; 
+		}
     }
 
 
@@ -162,7 +172,7 @@ void videoInit2(void)
 	vid2.device = (char*)"/dev/video2";
 	vid2.w=320;
 	vid2.h=240;
-	vid2.n_buffers = 4;
+	vid2.n_buffers = 1;
 	
 	img2 = (img_struct*)malloc(sizeof(img_struct));
 	img2->w=vid2.w;
@@ -249,10 +259,19 @@ void videoInit2(void)
 		}
     }
 
-    type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
-    if (ioctl(vid2.fd, VIDIOC_STREAMON, &type)< 0) {
-		printf("ioctl() VIDIOC_STREAMON failed.\n");  
-    }
+	type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+	int sleepTime = 0;
+
+	while (ioctl(vid2.fd, VIDIOC_STREAMON, &type)< 0) {
+		printf("ioctl() VIDIOC_STREAMON failed, sleeping for 1s before trying again.\n");
+		sleepTime++;
+		sleep(1);
+		if (sleepTime > 10)
+		{
+			printf("Error: Unable to turn on camera 2\n");
+			return;
+		}
+	}
 
 
 #endif //MATLAB_MEX_FILE
@@ -288,7 +307,7 @@ void videoClose2(void)
 }
 
 
-void videorabImage1(unsigned char* mybuf) {
+void videoGrabImage1(unsigned char* mybuf) {
 	
 	#ifndef MATLAB_MEX_FILE
 	
@@ -328,11 +347,6 @@ void videorabImage1(unsigned char* mybuf) {
 	assert(buf.index < vid1.n_buffers);
 
 	vid1.seq++;	
-	vid1.img = img1;
-	vid1.img->timestamp = util_timestamp();
-	vid1.img->seq = vid1.seq;
- 	
-	memcpy(vid1.img->buf, vid1.buffers[buf.index].buf, vid1.w*vid1.h*2);
 	memcpy(mybuf, vid1.buffers[buf.index].buf, vid1.w*vid1.h*2);
 	
 	if (ioctl(vid1.fd, VIDIOC_QBUF, &buf) < 0) {
@@ -342,7 +356,7 @@ void videorabImage1(unsigned char* mybuf) {
 #endif //MATLAB_MEX_FILE
 }
 	
-void videorabImage2(unsigned char* mybuf) {
+void videoGrabImage2(unsigned char* mybuf) {
 	
 	#ifndef MATLAB_MEX_FILE
 	
@@ -382,11 +396,6 @@ void videorabImage2(unsigned char* mybuf) {
 	assert(buf.index < vid2.n_buffers);
 
 	vid2.seq++;	
-	vid2.img = img2;
-	vid2.img->timestamp = util_timestamp();
-	vid2.img->seq = vid2.seq;
- 	
-	memcpy(vid2.img->buf, vid2.buffers[buf.index].buf, vid2.w*vid2.h*2);
 	memcpy(mybuf, vid2.buffers[buf.index].buf, vid2.w*vid2.h*2);
 	
 	if (ioctl(vid2.fd, VIDIOC_QBUF, &buf) < 0) {

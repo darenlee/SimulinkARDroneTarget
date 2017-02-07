@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="MATLAB R2016a"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><title>Example: Configuring a model for the AR Drone 2.0</title><style type="text/css">
+* {margin: 0; padding: 0;}
+body {text-align: start; line-height: 17.2339992523193px; min-height: 0px; white-space: normal; color: rgb(0, 0, 0); font-family: Consolas, Inconsolata, Menlo, monospace; font-style: normal; font-size: 14px; font-weight: normal; text-decoration: none; white-space: normal; }
+h1, h2 {font-weight: normal;}
+.content { padding: 30px; }
+
+.S0 { margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S1 { line-height: 26.3999996185303px; min-height: 24px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-size: 22px; white-space: pre-wrap; margin-left: 4px; margin-top: 3px; margin-bottom: 15px; margin-right: 10px;  }
+.S2 { min-height: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S3 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S4 { line-height: 20.576000213623px; min-height: 20px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; white-space: pre-wrap; margin-left: 4px; margin-top: 15px; margin-bottom: 9px; margin-right: 10px;  }
+.S5 { font-family: Helvetica, Arial, sans-serif; margin-left: 0px; margin-top: 10px; margin-bottom: 20px; margin-right: 0px;  }
+.S6 { text-align: left; line-height: 21px; white-space: pre-wrap; white-space: pre-wrap; margin-left: 56px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S7 { font-weight: bold; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S8 { font-style: italic; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S9 { text-align: center; line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+
+.LineNodeBlock {margin: 10px 0 10px 0;}
+.LineNodeBlock+.paragraphNode {margin-top: 10px;}
+.lineNode {padding-left: 10px; background-color: #F7F7F7; border-left: 1px solid #E9E9E9; border-right: 1px solid #E9E9E9;}
+.inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
+.inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
+.lineNode .textBox {white-space: pre;}
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Example: Configuring a model for the AR Drone 2.0</span></h1><p class = "S3"><span class = "S2">The AR Drone 2.0 Target comes with pre configured models that will run on the AR Drone 2.0 out of the box. If you wish to enable AR Drone 2.0 code generation for your own models, you can do so by following the steps in this example.</span></p><h2 class = "S4"><span class = "S2">Configuring the model</span></h2><p class = "S3"><span class = "S2">Use the following steps to enable automatic code generation for your Simulink model:</span></p><ul class = "S5"><li class = "S6"><span class = "S7">Open your model</span><span class = "S0">: Open a new or existing Simulink model. Make sure that the components which you include support code generation (which is true for most Simulink blocks).</span></li><li class = "S6"><span class = "S7">Link the model to the data dictionary: </span><span class = "S0">Within your Simulink model navigate to </span><span class = "S8">File &gt;&gt; Model Properties &gt;&gt; Link to data dictionary... . </span><span class = "S0">To learn more about data dictionaries, see the </span><span class = "S7">Data dictionaries </span><span class = "S0">page in the concepts section of this documentation.</span></li><li class = "S6"><span class = "S7">Select the ArDroneDataDictionary: </span><span class = "S0">Click on </span><span class = "S8">Data Dictionary &gt;&gt; Browse... </span><span class = "S0">and then select </span><span class = "S8">\AR_Drone_Target\ArDroneDataDictionary.sldd</span></li><li class = "S6"><span class = "S7">Accept the dialogs: </span><span class = "S0">Press </span><span class = "S8">OK</span><span class = "S0"> followed by </span><span class = "S8">Yes </span><span class = "S0">to continue and finally press </span><span class = "S8">OK</span><span class = "S0"> again after the linking completes.</span></li><li class = "S6"><span class = "S7">Choose your simulation mode:</span><span class = "S0"> You can run code in external or normal mode, see the </span><span class = "S7">Simulation modes</span><span class = "S0"> concept page for more information on which to use. Enter the desired mode in the Simulink model area shown:</span></li></ul><p class = "S9"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,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"></p><ul class = "S5"><li class = "S6"><span class = "S7">Open the model explorer:</span><span class = "S0"> The data dictionary contains two configuration sets. To set one we need to open the model explorer using the </span><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAIAAADUsmlHAAABvElEQVR42qXRWyhsYRQH8PW+tmdF
+kolGMnR2mKQZbJfhtI/LSCNNaSIlSRJJMSWSSOTlPJ2Xk3JyyTX3kdwz7pdh5DKHydTIZXJpagyr
+vHyPbKv18n/49V9fH6QVGiUvpOirjx9eLfee3Rv3+vXL0uWj6exhwno7fODs3XZ0m+1/Vi5/L1x0
+mk5bp6xNY5b6of2avp2Knk2CIOSWSZClf80EISGzSPKCwWB4Y8br9Xo8Hrfb/fT87HK5bu/unM4b
+h8NxZbfbbP9Pz86t1pNDy9He/gFB0Ov1EuTW9g5B0Ol0HxKYIclGkmwkad7YJAharfarnSRX19YJ
+giiKEuTS8gpB0Gg0JH20XVxmO/erhfvZyGmMmFyLQhXGl2NcCSoNyOdjRA6GiRiSgkFqDIiZX1gk
+CIIgUKdPVgfbiUnVbCdG5rKd6Meb5uYJgkqlomu5jDZObObSG7jUOkyqwcRKVJdhbDFGF+CPPAzP
+xtB0DBYwMA79o9BXMT0zSxCUSuXn30nXUifJ8ckpgsDzvAQ5OjZOEBQKxYdkf5IkG0mykeTg8AhB
+kMvlX+0k2T8wSBBkMpkE+a+3nyAEfGPeATWGdNwb+3eTAAAAAElFTkSuQmCC"><span class = "S0"> button in the model or by pressing control + H.</span></li><li class = "S6"><span class = "S7">Add the configuration set by reference: </span><span class = "S0">Within the model explorer, select the model you wish to generate code for, then press the </span><span class = "S8">Add reference </span><span class = "S0">button </span><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAACW0lEQVR42pWR7U+SURiHz39Tf4CF
+2Vq1NvnS3FxabS2dpNN8yTdMN3UJzKkppKigQpnwICjJAqFNMI3mRHzB2XK21uaH1stmE3h4Uzj3
+ebof1A+tT55d59O57vvc53eI3Og/FwS38M9iggCCQEVYRmBpgR1nORJY6r8CPIYYowcs852lv7Hj
+zyy1CckVSCxC3A2xN2JBs2H5tLHYLyFA+FGv/Ub95PUnk7IejqXWIfkREj6IzwNvR5k06BZOrhMg
+Lm2aLOrk8uVm6/KOeTF0q3GqqN2Q36iDxALEnMDPoEzqtG4BIth42hso7JwZca5z73c8wV3n6qdx
+T1Bl+ZDfwlk8HMQcwFtRJtVqB6O/WebXtZoxvWvDF/rabvRKm43SJkOL3j3r31BxS1erBvEBEOVQ
+JpV9NpbeR1pHbRX9b32hL3lVw/RQjeRWDmHBPcVMq3YYeBtEp1Am5d1mdryHtGqnyp87fKE9iazn
+pOByWfesf/1ul/XpoAZ4jkZfoUzKul6yo20kr6JX51z1be3Kh+05JYqch111mulZ/5rS5JXIlBB9
+TSPjKJOSDj1LBRCzy3JbPqGdWzH7Ntxr287VrbH5FYXJe7N2xOTQ0IiBhkdRJg/atJBcFkks5ZZ2
+SmsUV8o1lsWgyRu4JBuQVndISttoxEjDOno4iDK5L1dD/N0ZHoi7Chq6LxarLhSpCuoV2Umydngo
+80eNMilu6BEzPmUOv1MMhLdA1ISvpJEJnIQeinbqZz/K5E6tEvjpM9AzY3xZ1UAjehrGiF+kDwaS
+P/pj+30ok8LHz87FXwCfGmfKWRQqAAAAAElFTkSuQmCC"><span class = "S0"> which will open up the following menu:</span></li></ul><p class = "S9"><span class = "S2"> </span><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAb8AAADrCAMAAADOpWgVAAADAFBMVEUAAAAFBwgAADMAADYAADoz
+AAA2AAA6AAAzADM2ADY6ADo2NjY5OTk6Ojo7OzsAAFMAAFoAAGAAAGYAOmYAM38zAFo2AGA6AGYz
+M38AWloORXcOSXoQSXwRS34aSnYAYGAAZmZaAABaADNgAABmAABgADZmADpkJwRgNgB1KQl/MwBm
+OjpaM39gAGBmAGZmZjpDQ0NLS0tTU1NbW1tcXFx/Wn9/f1pjY2NmZmZra2tzc3N6enp7e3sANocA
+OpA2Noc6OpAVU4kZWpIbXpcAWqAAYJIbcJ8AYKsAZrYqWIIgaaUmdbQpdbE2YKs6ZrYzf8FgNodm
+OpBIcJVgYKt/oH8ehLM2h4c6kJA7jb0Yg9cumsU2h846kNs/qNJYj7xgh4d1k698n71Gj8pYt95a
+oOFgq/Bmtv9/waBswed/weGGKw6HNgCULBOQOgCHNjaQOjqgLhaHYACgWgCrYAC2ZgCrYGC2ZmbT
+RgrZVRvaWB7cXSTBfzPeYyvgbDbBf1riekmHYIeHh2CQkGarq2DOhzbbkDrOh2DbkGbigFLjmXbh
+oFrwq2D/tmbBwX/hwX+CgoKDg4OHq4eQtpCtra2Qtv+rzoer8Ku2/7aHzs6HzvCQ2/+wwM+81emg
+4eGr8PC2///Ozofb25DO8Kvb/7bwzof/25Dh4aDw8Kv//7bJycnMzMzNzc3Pz8/Q0NDR0dHS0tLT
+09PU1NTV1dXW1tbX19fY2NjZ2dna2trb29vc3Nzd3d3e3t7f39/N1+DB4cHO8M7B4eHO8PDb///h
+4cHw8M7//9vg4ODh4eHi4uLj4+Pk5OTl5eXm5ubn5+fn6u3o6Ojq6urr6+vs7Ozt7e3v7+/j6/Pu
+8vXw8PDx8fHy8vLz8/P19fX29vb39/f4+Pj5+fn6+vr+/v7///8AAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAACXqTSTAAAYGElEQVR42u1dD3SU1ZV/JIQ2UKIlmCU0gYEoGhQbD3iWoWTYZajE
+nhzoopAi2QYihNLDcrohqexhNi5riOx2x+aoDUtQdJe/CbhWOrsVJG2X6AxHk+PoutWqmEhyMKJT
+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"></p><ul class = "S5"><li class = "S6"><span class = "S7">Select the desired configuration set: </span><span class = "S0">Choose </span><span class = "S8">AR_Drone_ConfigSet</span><span class = "S0"> if you want to use external mode, for normal mode select </span><span class = "S8">AR_Drone_ConfigSet_NOEXT</span></li><li class = "S6"><span class = "S7">Activate the reference configuration set: </span><span class = "S0">With two configuration sets set (the default one and the newly selected referenced configuration set), the correct configuration set needs to be activated. Right click the new </span><span class = "S8">Reference</span><span class = "S0"> and select </span><span class = "S8">activate </span><span class = "S0">such that it appears as in the below figure.</span></li></ul><p class = "S9"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,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
+AAAASUVORK5CYII="></p><p class = "S3"><span class = "S2">Your model is now all set for automatic code generation for the AR Drone 2.0, remember to save your model to make these changes persistent.</span></p><p class = "S3"><span class = "S2"></span></p><p class = "S3"><span class = "S2"></span></p></div></div>
+<!-- 
+##### SOURCE BEGIN #####
+%% Example: Configuring a model for the AR Drone 2.0
+% The AR Drone 2.0 Target comes with pre configured models that will run on 
+% the AR Drone 2.0 out of the box. If you wish to enable AR Drone 2.0 code generation 
+% for your own models, you can do so by following the steps in this example.
+%% Configuring the model
+% Use the following steps to enable automatic code generation for your Simulink 
+% model:
+% 
+% * *Open your model*: Open a new or existing Simulink model. Make sure that 
+% the components which you include support code generation (which is true for 
+% most Simulink blocks).
+% * *Link the model to the data dictionary: *Within your Simulink model navigate 
+% to _File >> Model Properties >> Link to data dictionary... . _To learn more 
+% about data dictionaries, see the *Data dictionaries *page in the concepts section 
+% of this documentation.
+% * *Select the ArDroneDataDictionary: *Click on _Data Dictionary >> Browse... 
+% _and then select _\AR_Drone_Target\ArDroneDataDictionary.sldd_
+% * *Accept the dialogs: *Press _OK_ followed by _Yes _to continue and finally 
+% press _OK_ again after the linking completes.
+% * *Choose your simulation mode:* You can run code in external or normal mode, 
+% see the *Simulation modes* concept page for more information on which to use. 
+% Enter the desired mode in the Simulink model area shown:
+% 
+%  
+% 
+% * *Open the model explorer:* The data dictionary contains two configuration 
+% sets. To set one we need to open the model explorer using the   button in the 
+% model or by pressing control + H.
+% * *Add the configuration set by reference: *Within the model explorer, select 
+% the model you wish to generate code for, then press the _Add reference _button   
+% which will open up the following menu:
+% 
+%   
+% 
+% * *Select the desired configuration set: *Choose _AR_Drone_ConfigSet_ if you 
+% want to use external mode, for normal mode select _AR_Drone_ConfigSet_NOEXT_
+% * *Activate the reference configuration set: *With two configuration sets 
+% set (the default one and the newly selected referenced configuration set), the 
+% correct configuration set needs to be activated. Right click the new _Reference_ 
+% and select _activate _such that it appears as in the below figure.
+% 
+%  
+% 
+% Your model is now all set for automatic code generation for the AR Drone 
+% 2.0, remember to save your model to make these changes persistent.
+% 
+% 
+% 
+%
+##### SOURCE END #####
+--></body></html>

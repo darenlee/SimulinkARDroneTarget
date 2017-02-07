@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="MATLAB R2016a"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><title>Actuator Drivers:</title><style type="text/css">
+* {margin: 0; padding: 0;}
+body {text-align: start; line-height: 17.2339992523193px; min-height: 0px; white-space: normal; color: rgb(0, 0, 0); font-family: Consolas, Inconsolata, Menlo, monospace; font-style: normal; font-size: 14px; font-weight: normal; text-decoration: none; white-space: normal; }
+h1, h2 {font-weight: normal;}
+.content { padding: 30px; }
+
+.S0 { margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S1 { line-height: 26.3999996185303px; min-height: 24px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-size: 22px; white-space: pre-wrap; margin-left: 4px; margin-top: 3px; margin-bottom: 15px; margin-right: 10px;  }
+.S2 { min-height: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S3 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S4 { min-height: 0px; color: rgb(0, 95, 206); margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S5 { min-height: 0px; font-style: italic; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S6 { line-height: 20.576000213623px; min-height: 20px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; white-space: pre-wrap; margin-left: 4px; margin-top: 15px; margin-bottom: 9px; margin-right: 10px;  }
+.S7 { text-align: center; line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S8 { font-family: Helvetica, Arial, sans-serif; margin-left: 0px; margin-top: 10px; margin-bottom: 20px; margin-right: 0px;  }
+.S9 { text-align: left; line-height: 21px; white-space: pre-wrap; white-space: pre-wrap; margin-left: 56px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S10 { font-style: italic; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+
+.LineNodeBlock {margin: 10px 0 10px 0;}
+.LineNodeBlock+.paragraphNode {margin-top: 10px;}
+.lineNode {padding-left: 10px; background-color: #F7F7F7; border-left: 1px solid #E9E9E9; border-right: 1px solid #E9E9E9;}
+.inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
+.inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
+.lineNode .textBox {white-space: pre;}
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Actuator Drivers:</span></h1><p class = "S3"><span class = "S2">The AR Drone 2.0 has 4 motor modules with LEDs. All motors and LEDs can be controlled indivually but are part of the same communication method. Because of thi their code is combined into a single source file. The first driver was created by </span><a href = 'http://blog.perquin.com/blog/2011/06/'><span class = "S0">Hugo Perquin</span></a><span class = "S2"> for the AR Drone 1.0. Only a slight change was needed by the Paparazzi community to make this driver work with the AR Drone 2.0. The device which controls the motors was changed from </span><span class = "S5">/dev/ttPA1 </span><span class = "S2">to </span><span class = "S5">/dev/ttyO0.</span></p><h2 class = "S6"><span class = "S2">Initialization</span></h2><p class = "S3"><span class = "S2">The LEDs and motors share their controller boards and are initialized together. This initiazation function is wrapped into a seperate Simulink block that needs to be placed in any model that uses the motors or LEDs. By placing it seperate we ensure that the initalization is called only once instead of being called by both the Simulink motor and LED blocks. The block is available in the</span><a href = 'matlab:AR_Drone_Actuators'><span class = "S0"> AR Drone 2.0 Actuators library</span></a><span class = "S2"> as shown below:</span></p><p class = "S7"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAABtCAIAAAA+ilrKAAAC+0lEQVR42u3WMUojURjA8QGzWAg5
+QQRFJKZIYSHaCBZiZaPgAay08AbeQDsLQbYQEdHewlt4AMU7WKXNvvXtfgyZJIqykHF/vypOXiZP
+8/fLK4qimJqaasKkSonOz8/3+/1iZmamDxPs9vZ2ZWVFrNTAzc3N8vKyWKmB6+vrbrcrVmrg6uqq
+0+mIlRq4vLxcXFxM81WsiBXEilhBrCBWxApiBbEiVhAriBWxglhBrIgVxApiRawgVhArYgWxglgR
+K4gVsYoVsYJYEatYESuIFbGCWEGsiBXECmJFrCBWECtiBbGCWBEriBXEilhBrCBWxApiBbEiVhAr
+YhUrYgWxIlaxIlYQK2IFsYJYESuIFcSKWEGsIFbECmIFsSJWECuIFbGCWEGsiBXECmJFrCBWxCpW
+xApi5X+PtdFo+HMwyc7OztrtdnpQZD/eNGDypD7n5uZ+x1pO+O7u7idMknQGiD4L3zLUhVgRK4gV
+sX4rnU5n/PWTk5N3l4169oNardb4BXkPH/HxlWL9PrGGzc3Nr7z8Xfv7+7u7u0dHR5/ew+dWirXG
+saYHzWazKIrysEwlpSsbGxvlH5NoIhYfHx8Xf0V5sX5Mi+lWz8/P5ehPT0/zq8pvmt9xZ2cnrzk8
+PKzup7yy/FS6Yf7t/nyQb87Pz8Va11hXV1fzg62trfL19GG/vLzkH1MrvV7v9fU1rynH+vT0lJ56
+fHyM++TX9t6kXIbGka8PLIg7pIu58vjfKMd6cXFR3U+sjLdO1e7t7cX1XLnJWu9YB4bW0Fhj5k1P
+T1djHSg1Fo8ZrrOzs7Eg3rG6cmisDw8P1f3klfE/kNzf36+vr5fvmb9Axh88xFrvWNMXffqAR03W
+lE651FHZjTliphGYh+vAbC4vi6cWFhYODg6q+xk1Was7qe5WrLWPNQ2/dru9tLQUMymNse3t7RxW
+xLq2thYzMoqJg+PQM2IUNrCZmJdxykx7yE+l03O+njaQjgHV/cTKgTNr9RjtzApirb88BUOcMvkX
+fgE5Yyu9/GE7jAAAAABJRU5ErkJggg=="></p><p class = "S3"><span class = "S2">It has no inputs or outputs as it only handles the initialization via the following steps:</span></p><ol class = "S8"><li class = "S9"><span class = "S0">Select the used GPIO pins for the motors (171-174)</span></li><li class = "S9"><span class = "S0">Open the device file descriptor </span><span class = "S10">/dev/ttyO0</span></li><li class = "S9"><span class = "S0">Send an initialization command to the motors.</span></li></ol><h2 class = "S6"><span class = "S2">Controlling the motors</span></h2><p class = "S3"><span class = "S2">The motors are controlled by calling the setPWM function of the actuators source file. It writes the 8 bit unsigned interger array given as input argument to the device and returns an error flag. In Simulink this model can be found in the</span><a href = 'matlab:AR_Drone_Actuators'><span class = "S0"> AR Drone 2.0 Actuators library</span></a><span class = "S2"> as shown below:</span></p><p class = "S7"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWAAAACvCAMAAAD0dvSrAAADAFBMVEUAAAAAAAABAQECAgIFBQUG
+BgYHBwcICAgNDQ0ODg4SEhITExMVFRUXFxcaGhobGxscHBwdHR0gICAhISEiIiIjIyMkJCQnJycp
+KSkuLi4vLy8wMDA3Nzc4ODg8PDw9PT0+Pj5AQEBERERGRkZJSUlMTExNTU1RUVFSUlJVVVVXV1da
+WlpbW1tcXFxdXV1eXl5gYGBhYWFiYmJmZmZnZ2doaGhsbGxtbW1ubm5vb29wcHBxcXFycnJzc3N0
+dHR1dXV2dnZ4eHh5eXl7e3t9fX2AgICCgoKGhoaHh4eIiIiJiYmKioqLi4uSkpKTk5OWlpaXl5eY
+mJiZmZmenp6fn5+kpKSlpaWmpqanp6erq6uzs7O3t7fa2trb29vo6Ojp6enw8PD29vYAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAfU/oXAAAAAXRSTlMAQObYZgAAB29JREFUeNrtnf9PE2ccxz9HKaXqnNATDlZJ
+AFnjFpUuthozndvcjFJXY4zbfjDrn7ZkWbJkPyxk1cRsy8x0C+Iy0alIRHCCqNDyxamloL09X67t
+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
+MTRLo2MAAAAASUVORK5CYII="></p><p class = "S3"><span class = "S2">The Simulink block takes PWM values (0% - 100% of the available rpm range) for each motor and converts these into an 8 bit unsigned integer array. This is passed to the setPWM C function. The GPIO_Fault_Pin flag is 0 by default (no fault) and will become 1 if a propeller hit something. The propellers wil stop when they hit something.</span></p><h2 class = "S6"><span class = "S2">Controlling the LEDs</span></h2><p class = "S3"><span class = "S2">The LEDs are controlled by writing one of four different modes to each one of the four LEDs. This is written to the actuators device </span><span class = "S5">/dev/ttyO0.</span><span class = "S2">  In Simulink this model can be found in the</span><a href = 'matlab:AR_Drone_Actuators'><span class = "S0"> AR Drone 2.0 Actuators library</span></a><span class = "S2"> as shown below:</span></p><p class = "S7"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMQAAAB5CAIAAADpkBmXAAAEsklEQVR42u2dP0/jMBiHIxiKgHZg
+A3oSUKSqDAWxsIDUATGxMLPA1oFvgFhY+LczMFyFOJXufJt+A77ArbmXs+SLnDSk6ZuDxs8zIOTg
+EiWPbMfxzw3CGEEQ/ADIzNLS0tzc3Ic5cZkqlUoIMA6zs7PJMolrXB0Yi1qthkyATPDNqFarr6+v
+yAQKLC4uPj09IRMgEyATlFmmZrO5ubmJTKAgk5gUBMHGxgYygUI3JyZFfUImmGjMZH0aDAZRmfb2
+9pxqtVotiPD4+OgUmpIorVaLy+3XANz4tLKyUq/XU2SKlwgnJye///L+/t5oNKKH5DPN9Cj49TRX
+qVTk3i8vL+eWSXh4eLi4uDDl19fX8vP4+JjLjUyfdHO2yYnK9Pb2ZmUyIBPdXP6WyRk2IRMD8Jxj
+pvhwG5mYGnA7tcPDw/jTnOnR0p/mkMkXmZi0BDWZeJ0ChTzNIRMgEyATIBMAMgEyATIBMiETIBMg
+EyATADIBMgEygU8ysQQF1GRicRxodnMkekFzzFRQorfT6ZhCQr1+DcCLSPSaDIJwfn4eDxpAmZ/m
+TAOjmOi1xMN0UHKZ1tbWikj0Rpso8EKms7Mz8WNhYUE30SsdHCb5JdPd3Z2YNDMzc3Nzo5jolQE4
+vZt3MolGIpMoFeoleqVNiv8llFymarUqN1u6OXOAeSbIKZOZETg4OLAHkAlyyrSzs9Nut6MHkAkU
+pgaQCZAJkAmQ6Vuhsrm0UzFlFiP7G+tJ3m3f398j07eQadzNpQ3RwpS51v8j09S9M/BUpsRX0Ykv
+p8PIvKu9u0YRp1yqS7mz3bmVyRyKrsORWnKRbXU5N1Pe7Xbth0+XT150cxlfRY9a1CB31FSxS2hE
+iF6v55RL9fi9t+rYMzw6OjK/1Ov14XBoql9dXTky0TJNWcsUV2fUshnHP1Hk8vLSKU9s2KxMcVfs
+yUj109NTZJriMVPiaMYZMxk5srdMY8nktEz2hO05INPXoLK59KinuexjprFkcsZMZnGz/He7x7Uc
+na6FzswzfRlWL+aZAJmQCYqWiUQvqMlEohc0uzkSvaA5Zioo0WsfoYkVeCRTWHCil3i4XzKFRSZ6
+kck7mYpI9JqejpyTXzIVlOg1jFrjASWUqaBErxUImTySqYhEb5j0ohRKLhOJXtCRiUQvqMlEohcK
+mRpAJkAmQCZAJgBkAmQCZAJkQiZAJkAmQCYAZAJkgimQaXt7m1UDoCOTWc+0v7+PTKDQzbHSEjTH
+TKPWgAOMLVP2dEqOXbaJpnj3NGdyc/Pz84rxcAMhTB+nBtbX19Xj4fL3/X4fmbyTKcteA2PFw1ut
+1nA4TPwKaCizTCq7oETj4fILX6vqo0zZ92fKt8s2JvkiU8rOcVq7bCOTFzKxpyWoycRuu1DI0xwy
+ATIBMgEyASATIBMgE3glU6/XS5ApCILBYNDv919eXp6fn38CpHJ7eyvOfJgTl2l1dXV3d7fdbm9t
+bTWbzQbAZ5h57+DTFuwXQCr/+jT6e9ACmQCZAJkAmcqPSqgLmSBZphyhLmSCPDI5oS7aKmTK2s2l
+h7q63S4XEJkmbZlsU2TM8zw3gUz5x0zxUFdiFWTyjklCXfYLPz0fM/0BB7g799snWNEAAAAASUVO
+RK5CYII="></p><p class = "S3"><span class = "S2">Inside the LEDs block the input data is converted to 8 bit unsigned integers. The available input commands for each LED are:</span></p><ul class = "S8"><li class = "S9"><span class = "S0">Turn LED off:                0</span></li><li class = "S9"><span class = "S0">Turn LED red:               1</span></li><li class = "S9"><span class = "S0">Turn LED green:           2</span></li><li class = "S9"><span class = "S0">Turn LED orange:         3</span></li></ul><p class = "S3"><span class = "S2"></span></p></div></div>
+<!-- 
+##### SOURCE BEGIN #####
+%% Actuator Drivers:
+% The AR Drone 2.0 has 4 motor modules with LEDs. All motors and LEDs can be 
+% controlled indivually but are part of the same communication method. Because 
+% of thi their code is combined into a single source file. The first driver was 
+% created by <http://blog.perquin.com/blog/2011/06/ Hugo Perquin> for the AR Drone 
+% 1.0. Only a slight change was needed by the Paparazzi community to make this 
+% driver work with the AR Drone 2.0. The device which controls the motors was 
+% changed from _/dev/ttPA1 _to _/dev/ttyO0._
+%% Initialization
+% The LEDs and motors share their controller boards and are initialized together. 
+% This initiazation function is wrapped into a seperate Simulink block that needs 
+% to be placed in any model that uses the motors or LEDs. By placing it seperate 
+% we ensure that the initalization is called only once instead of being called 
+% by both the Simulink motor and LED blocks. The block is available in the<matlab:AR_Drone_Actuators  
+% AR Drone 2.0 Actuators library> as shown below:
+% 
+%  
+% 
+% It has no inputs or outputs as it only handles the initialization via the 
+% following steps:
+% 
+% # Select the used GPIO pins for the motors (171-174)
+% # Open the device file descriptor _/dev/ttyO0_
+% # Send an initialization command to the motors.
+%% Controlling the motors
+% The motors are controlled by calling the setPWM function of the actuators 
+% source file. It writes the 8 bit unsigned interger array given as input argument 
+% to the device and returns an error flag. In Simulink this model can be found 
+% in the<matlab:AR_Drone_Actuators  AR Drone 2.0 Actuators library> as shown below:
+% 
+%  
+% 
+% The Simulink block takes PWM values (0% - 100% of the available rpm range) 
+% for each motor and converts these into an 8 bit unsigned integer array. This 
+% is passed to the setPWM C function. The GPIO_Fault_Pin flag is 0 by default 
+% (no fault) and will become 1 if a propeller hit something. The propellers wil 
+% stop when they hit something.
+%% Controlling the LEDs
+% The LEDs are controlled by writing one of four different modes to each one 
+% of the four LEDs. This is written to the actuators device _/dev/ttyO0._  In 
+% Simulink this model can be found in the<matlab:AR_Drone_Actuators  AR Drone 
+% 2.0 Actuators library> as shown below:
+% 
+%  
+% 
+% Inside the LEDs block the input data is converted to 8 bit unsigned integers. 
+% The available input commands for each LED are:
+% 
+% * Turn LED off:                0
+% * Turn LED red:               1
+% * Turn LED green:           2
+% * Turn LED orange:         3
+% 
+%
+##### SOURCE END #####
+--></body></html>

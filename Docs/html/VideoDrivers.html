@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="MATLAB R2016a"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><title>Video drivers</title><style type="text/css">
+* {margin: 0; padding: 0;}
+body {text-align: start; line-height: 17.2339992523193px; min-height: 0px; white-space: normal; color: rgb(0, 0, 0); font-family: Consolas, Inconsolata, Menlo, monospace; font-style: normal; font-size: 14px; font-weight: normal; text-decoration: none; white-space: normal; }
+h1, h2 {font-weight: normal;}
+.content { padding: 30px; }
+
+.S0 { margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S1 { line-height: 26.3999996185303px; min-height: 24px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-size: 22px; white-space: pre-wrap; margin-left: 4px; margin-top: 3px; margin-bottom: 15px; margin-right: 10px;  }
+.S2 { min-height: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S3 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S4 { min-height: 0px; color: rgb(0, 95, 206); margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S5 { text-align: center; line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S6 { line-height: 20.576000213623px; min-height: 20px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; white-space: pre-wrap; margin-left: 4px; margin-top: 15px; margin-bottom: 9px; margin-right: 10px;  }
+.S7 { font-family: Helvetica, Arial, sans-serif; margin-left: 0px; margin-top: 10px; margin-bottom: 20px; margin-right: 0px;  }
+.S8 { text-align: left; line-height: 21px; white-space: pre-wrap; white-space: pre-wrap; margin-left: 56px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S9 { min-height: 0px; font-weight: bold; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S10 { min-height: 0px; font-style: italic; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+
+.LineNodeBlock {margin: 10px 0 10px 0;}
+.LineNodeBlock+.paragraphNode {margin-top: 10px;}
+.lineNode {padding-left: 10px; background-color: #F7F7F7; border-left: 1px solid #E9E9E9; border-right: 1px solid #E9E9E9;}
+.inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
+.inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
+.lineNode .textBox {white-space: pre;}
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Video drivers</span></h1><p class = "S3"><span class = "S2">The AR Drone 2.0 has two video cameras. One forward facing HD (1280i * 720) camera which can record at 30 Fps and another downward facing camera that records QVGA (320 * 240) video at 60 Fps. The AR Drone 2.0 Target provides Simulink blocks that can read both camera outputs and these blocks can be compiled to C code which runs on the AR Drone 2.0 such that video processing can be done on the AR Drone 2.0 independent of Simulink. These blocks can be found in the </span><a href = 'matlab:AR_Drone_Video'><span class = "S0">AR Drone 2 Video library</span></a><span class = "S2"> as shown:</span></p><p class = "S3"><span class = "S2"></span></p><p class = "S5"><img class="imageNode" style="vertical-align: baseline" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAL8AAABoCAMAAACXD9GjAAADAFBMVEUAAAAAAAAHBwcODg4SEhIb
+GxscHBwdHR0fHx8jIyMnJycpKSk3Nzc9PT1AQEBERERGRkZMTExRUVFSUlJVVVVbW1tcXFxhYWFn
+Z2doaGhsbGxtbW19fX2GhoaKioqLi4uOjo6WlpaZmZmbm5uioqKpqamurq6zs7O3t7fDw8PGxsbO
+zs7V1dXa2trb29vd3d3o6Ojp6enw8PD29vYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAACeD3N+AAAAAXRSTlMAQObYZgAABeVJREFUeNrtWvtP4lgUvqWUR1stdhwQxh0G
+A2sWd5OJ///fYLK/TEycFdegMA4i7QC9vNq99/QWWtFSHnHTeE9iLfc7p3z30cPt6ScIKK7m0EMS
+nceU/gUcEyjexvn/b1aLOX+brx/O/x3zn8Wc/10Vfn9XG746TSF8Se73/SproR++6CEh1KFYDDb+
+1MU5+BzbwKbNiPw7e4/k27QKcq4HittEPtiXaeX1GOKwlO8Mt8P2dU1xvnf1bfknR1krCn8bl//5
+kFq+c/Km0ung+sMD2j++wbZcE5sPwXH14CqmuGI2YPq6BwoS6I9Pk0Y28bg4e2DBkhcQhf+nNpaH
+Efh3demwryODbJj2/SOemZAx+NrH56hpCH8lrrFDTjtsXIl3ou7BXZniuRGbkzRbY5Nz59qyTpPf
+SudNI0WDB8mv0DpQIvAXj28sZTV/uz2+QbJGVoR9HVgUmPBQECZ8c92UiLIIm6SLRf/6YfAvGXCv
+37/IYWRnM3sXSNDVlCOr9Go0WN1D0HoUfRGt9Bhm/iRTbchkxRw1fBNrd06ATVtHvfQQTl+4KQGW
+A03y7b7i3KrZDh3phSMN7kxQsDU0f7Zn2cFK/s4PSirX/EyOaqbFGNLF9AXuCTVzgfYPgb/au1jK
+SgAfY5bHajQBJU7c/KNetgRtPHekweQ2g9ZRlPVzN80MkSDE9/kljaPlz6XEjoTflU3wVcFr5s/j
+7yjO41++iff+QeT7T86f8+f8Of93yR+oCzGvPwP9mh3D0b9C3Li9jcGTligIgjbf/JEPlbDNIcFL
+z9o++9HSbphFen4pTNP3rADkq+/YlyEhWheh+2dthneStRDqVxpvlv/xJ+Ol0HyprIioALOiiIJC
+TwPDSmEXp3DeZLNXPiAHs8EitbRQKnjBiwvucPzLCekw33ALQChYAErOEC3w6A1hhqTfzHPUYcNq
+CCgxozDgez0CP2jeKLACkFtpsMboseSouT4NtklE5AJEVP5QAIIloRnBApCtGOUELfDQOyQ78dd/
+urQ+rBgI8C6Fe17cv2ySaKUHIbWLZNLnEQRLJMJt3iH/zIh8S56Oq+HvgN0ZlAkZbV7gkYr3y4se
+cLc+NLcn8revSnSg551KQ/GoQ2Y70LwDy8FRQbSwUygF8k+5xNY3BYv01EtKUAWisIsDvKj3uvlH
+FBIHFQqR+6FQgeDyvPmd2NrbNxFKOPZmDiuDuXHjxo0bN27cuHHjxu3155dY1p8d3/N7DN9fXyxO
++fsXzn99q8Wcv83XD+f/jvnPYs7/rrr4/Q2z9ZXPQeHzT73LNM8vuG0hgQbpcwT+Gyifs1Vx7mwb
+B8aLXd1WAg3S59X8X1c+WwFlc60VFD5nMqBtrt6b36aNKpziuc6ZOngS6CAEV+lEkUCD9BnORCFk
+Fh9lFU2y07v7VjvNJL3T/gHp11gc163eWXE4lYw/SuZscFYcYRAIT9vtVts6dMGPw5pVGbp+P05L
+t/oJtsFrKME/bNSPeukEg/CQXsUZ1yfQnHqdV+uDZo6VyarxD1E+2wFls//FF1k/qNm3AXSdXT9P
+5+xOEJNAu1pnBnlvwNaSQIfxD1E+mwFls7R0K/rAFxTQngR6EHjVOH8DtloCDdLnVfxXKJ99ymbl
+aSF8tv4myeoYAWjjq8lVzaeAnt9BrgQag9bZ61tqSK9Cr7xSAg3SZ/b8FcvnlzSOlD+fJ/Yw7XIk
+cfOOFNAgfY7x+IP0Ocb7B5HvPzl/zp/z5/zfJf8F67jXn+Oof+bSZ25vZFsKnz/7NM9LbjtRQIc/
+v2wgfIb6j/fBQMYrXrtSQIfn/w2Fzxmm+iyYkqk9kzmD7U4BLYaBZVlFeg+Naf1n5I0cq/9YKHlW
+HOZ7BFA+0vqP3mOlgVbbclywqdUsg/k5YzTWn/Q8eOUk1zldP+phxKAcrf/oDrmy27z9+tlE+Az1
+H9lOzOs/zI/JnF3bnQI6lP/mwmcf6Dtd2JsooDcSPrNk5YJpWVIWfiBzDuQfroCOvn3bSvi8ntMa
+9h/oltnhgCtMwAAAAABJRU5ErkJggg=="></p><h2 class = "S6"><span class = "S2">The legacy video driver</span></h2><p class = "S3"><span class = "S2">The TI OMAP processor used inside the AR Drone 2.0 interfaces with the cameras using the Video4Linux2 API of which </span><a href = 'https://linuxtv.org/downloads/v4l-dvb-apis/index.html'><span class = "S0">extensive documentation</span></a><span class = "S2"> is available. A working implementation of a video driver was made in 2011 by Hugo Perquin. He kept a blog detailing his progress with hacking into the AR Drone 2.0 which you can read at </span><a href = 'http://blog.perquin.com/'><span class = "S0">http://blog.perquin.com</span></a><span class = "S2">. This implementation was updated by Daren Lee as wrapped C code that can be implemented into an S function block using the Legacy Code Tool.</span></p><p class = "S3"><span class = "S2">The resulting video.c file contains two of the following functions (one for each camera, front camera: N = 1, bottom camera N = 2):</span></p><ul class = "S7"><li class = "S8"><span class = "S0">void videoInitN (void)</span></li><li class = "S8"><span class = "S0">void videoGrabImageN (unsigned char* mybuf)</span></li><li class = "S8"><span class = "S0">void videoCloseN (void)</span></li></ul><p class = "S3"><span class = "S2">These functions are used in the Legacy Code Tool definition as the StartFcnSpec, OutputFcnSpec and TerminateFcnSpec.</span></p><p class = "S3"><span class = "S9">Initializing the camera</span></p><p class = "S3"><span class = "S2">The StartFcnSpec for each camera's Simulink block is </span><span class = "S10">void videoInitN(void)</span><span class = "S2">. This si the function that is called when compiled model is executed on the AR Drone 2.0</span></p><p class = "S3"><span class = "S2">This function goes through a number of steps to initialize the specific camera using the Video4Linux2 arguments.</span></p><ul class = "S7"><li class = "S8"><span class = "S0">Define the camera device location as a file descriptor (/dev/video1 for the front camera, /dev/video2 for the bottom camera).</span></li><li class = "S8"><span class = "S0">Define the video resolution (1280*720 for the front camera, 320*240 for the bottom camera)</span></li><li class = "S8"><span class = "S0">Set the amount of frames that should be buffered (set to 1 for lowest latency)</span></li><li class = "S8"><span class = "S0">Open the camera device location and query the capabilities of the camera to verify it is working (using VIDIOC_QUERYCAP).</span></li><li class = "S8"><span class = "S0">Create a Video4Linux2 buffer and set the pixel format (buffer type = V4L2_BUF_TYPE_VIDEO_CAPTURE and pixel format = V4L2_PIX_FMT_UYVY). Query the camera to see if it supports this color map.</span></li><li class = "S8"><span class = "S0">Query whether the camera supports memory mapping (set the buffer type to V4L2_MEMORY_MMAP).</span></li><li class = "S8"><span class = "S0">Allocate memory for the specified amount of buffers and memory map them to the camera file descriptor.</span></li><li class = "S8"><span class = "S0">Queue the buffers (using VIDIOC_QBUF)</span></li><li class = "S8"><span class = "S0">Start the camera (send VIDIOC_STREAMON)</span></li></ul><p class = "S3"><span class = "S2">The initialization function is then complete allowing the grabbing of images.</span></p><p class = "S3"><span class = "S9">Grabbing images</span></p><p class = "S3"><span class = "S2">The OutputFcnSpec for each camera's Simulink block is </span><span class = "S10">void videoGrabImageN(unsigned char* mybuf)</span><span class = "S2">. When specifying this function to the Legacy Code Tool the input argument is specified as </span><span class = "S10">void videoGrabImageN( uint8 y1 [outputSize])</span><span class = "S2"> as the MATLAB uint8 specification is identical to the C unsigned char specification (0-255).</span></p><p class = "S3"><span class = "S2">Within Simulink the sample time can be set for the camera blocks and with this frequency the videoGrabImageN function is called. </span></p><p class = "S3"><span class = "S2">This function goes through the following steps:</span></p><ul class = "S7"><li class = "S8"><span class = "S0">Monitor the camera file descriptor until it is ready to be accessed</span></li><li class = "S8"><span class = "S0">Dequeue the camera's output buffer (using VIDIOC_DQBUF) placing it in the memory mapped buffer created during initialization.</span></li><li class = "S8"><span class = "S0">Memory copy the frame in the camera buffer to the 'mybuf' buffer pointed at by the argument of videoGrabImageN.</span></li></ul><p class = "S3"><span class = "S2">The argument outputSize passed to videoGrabImageN using the Legacy Code Tool must be a fixed number representing the amount of uint8's expected. Both cameras use sub sampling of the pixels meaning every 2 pixels are represented using four uint8 values which leads to the inputSize values:</span></p><ul class = "S7"><li class = "S8"><span class = "S0">Front camera output size:                1843200</span></li><li class = "S8"><span class = "S0">Bottom camera output size:             153600</span></li></ul><p class = "S3"><span class = "S9">Stopping the camera</span></p><p class = "S3"><span class = "S2">The TerminateFcnSpec for each camera's Simulink block is </span><span class = "S10">void videoCloseN( void ) </span><span class = "S2">and is called when the model terminates. </span></p><p class = "S3"><span class = "S2">This function works by:</span></p><ul class = "S7"><li class = "S8"><span class = "S0">Unmapping all memory maps</span></li><li class = "S8"><span class = "S0">Closing the camera file descriptor</span></li></ul><h2 class = "S6"><span class = "S2">Accessing the camera source blocks in Simulink</span></h2><p class = "S3"><span class = "S2">The video.c file contains all functions necessary for using both cameras on the AR Drone 2.0 in separated function calls. Using the Legacy Code Tool two Simulink blocks are generated by the /AR_Drone_Target/block/video/Generate_AR_Drone_Video.m file (which is automatically called by the startup script of the Simulink project if it detects the video library does not yet exist). Both blocks depend on the video.c file but can work independently or simultaneously on the AR Drone 2.0. The video source blocks are available in the AR Drone 2 library under the Video sub-library. </span></p><p class = "S3"><span class = "S2">To learn more about how legacy code can be implemented please read the 'Integrating Legacy Code' section of this documentation.</span></p><p class = "S3"><span class = "S2"></span></p></div></div>
+<!-- 
+##### SOURCE BEGIN #####
+%% Video drivers
+% The AR Drone 2.0 has two video cameras. One forward facing HD (1280i * 720) 
+% camera which can record at 30 Fps and another downward facing camera that records 
+% QVGA (320 * 240) video at 60 Fps. The AR Drone 2.0 Target provides Simulink 
+% blocks that can read both camera outputs and these blocks can be compiled to 
+% C code which runs on the AR Drone 2.0 such that video processing can be done 
+% on the AR Drone 2.0 independent of Simulink. These blocks can be found in the 
+% <matlab:AR_Drone_Video AR Drone 2 Video library> as shown:
+% 
+% 
+% 
+%  
+%% The legacy video driver
+% The TI OMAP processor used inside the AR Drone 2.0 interfaces with the cameras 
+% using the Video4Linux2 API of which <https://linuxtv.org/downloads/v4l-dvb-apis/index.html 
+% extensive documentation> is available. A working implementation of a video driver 
+% was made in 2011 by Hugo Perquin. He kept a blog detailing his progress with 
+% hacking into the AR Drone 2.0 which you can read at <http://blog.perquin.com 
+% http://blog.perquin.com>. This implementation was updated by Daren Lee as wrapped 
+% C code that can be implemented into an S function block using the Legacy Code 
+% Tool.
+% 
+% The resulting video.c file contains two of the following functions (one 
+% for each camera, front camera: N = 1, bottom camera N = 2):
+% 
+% * void videoInitN (void)
+% * void videoGrabImageN (unsigned char* mybuf)
+% * void videoCloseN (void)
+% 
+% These functions are used in the Legacy Code Tool definition as the StartFcnSpec, 
+% OutputFcnSpec and TerminateFcnSpec.
+% 
+% *Initializing the camera*
+% 
+% The StartFcnSpec for each camera's Simulink block is _void videoInitN(void)_. 
+% This si the function that is called when compiled model is executed on the AR 
+% Drone 2.0
+% 
+% This function goes through a number of steps to initialize the specific 
+% camera using the Video4Linux2 arguments.
+% 
+% * Define the camera device location as a file descriptor (/dev/video1 for 
+% the front camera, /dev/video2 for the bottom camera).
+% * Define the video resolution (1280*720 for the front camera, 320*240 for 
+% the bottom camera)
+% * Set the amount of frames that should be buffered (set to 1 for lowest latency)
+% * Open the camera device location and query the capabilities of the camera 
+% to verify it is working (using VIDIOC_QUERYCAP).
+% * Create a Video4Linux2 buffer and set the pixel format (buffer type = V4L2_BUF_TYPE_VIDEO_CAPTURE 
+% and pixel format = V4L2_PIX_FMT_UYVY). Query the camera to see if it supports 
+% this color map.
+% * Query whether the camera supports memory mapping (set the buffer type to 
+% V4L2_MEMORY_MMAP).
+% * Allocate memory for the specified amount of buffers and memory map them 
+% to the camera file descriptor.
+% * Queue the buffers (using VIDIOC_QBUF)
+% * Start the camera (send VIDIOC_STREAMON)
+% 
+% The initialization function is then complete allowing the grabbing of images.
+% 
+% *Grabbing images*
+% 
+% The OutputFcnSpec for each camera's Simulink block is _void videoGrabImageN(unsigned 
+% char* mybuf)_. When specifying this function to the Legacy Code Tool the input 
+% argument is specified as _void videoGrabImageN( uint8 y1 [outputSize])_ as the 
+% MATLAB uint8 specification is identical to the C unsigned char specification 
+% (0-255).
+% 
+% Within Simulink the sample time can be set for the camera blocks and with 
+% this frequency the videoGrabImageN function is called. 
+% 
+% This function goes through the following steps:
+% 
+% * Monitor the camera file descriptor until it is ready to be accessed
+% * Dequeue the camera's output buffer (using VIDIOC_DQBUF) placing it in the 
+% memory mapped buffer created during initialization.
+% * Memory copy the frame in the camera buffer to the 'mybuf' buffer pointed 
+% at by the argument of videoGrabImageN.
+% 
+% The argument outputSize passed to videoGrabImageN using the Legacy Code 
+% Tool must be a fixed number representing the amount of uint8's expected. Both 
+% cameras use sub sampling of the pixels meaning every 2 pixels are represented 
+% using four uint8 values which leads to the inputSize values:
+% 
+% * Front camera output size:                1843200
+% * Bottom camera output size:             153600
+% 
+% *Stopping the camera*
+% 
+% The TerminateFcnSpec for each camera's Simulink block is _void videoCloseN( 
+% void ) _and is called when the model terminates. 
+% 
+% This function works by:
+% 
+% * Unmapping all memory maps
+% * Closing the camera file descriptor
+%% Accessing the camera source blocks in Simulink
+% The video.c file contains all functions necessary for using both cameras on 
+% the AR Drone 2.0 in separated function calls. Using the Legacy Code Tool two 
+% Simulink blocks are generated by the /AR_Drone_Target/block/video/Generate_AR_Drone_Video.m 
+% file (which is automatically called by the startup script of the Simulink project 
+% if it detects the video library does not yet exist). Both blocks depend on the 
+% video.c file but can work independently or simultaneously on the AR Drone 2.0. 
+% The video source blocks are available in the AR Drone 2 library under the Video 
+% sub-library. 
+% 
+% To learn more about how legacy code can be implemented please read the 
+% 'Integrating Legacy Code' section of this documentation.
+% 
+%
+##### SOURCE END #####
+--></body></html>

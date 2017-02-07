@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Info Name="Reset sensors to default" Type="Basic" File="AR_Drone_Target/scripts/ResetCalibrationParameters.m" GroupUUID="4af4d871-b09c-4c1b-bf4e-085b033efed7" Icon="" />

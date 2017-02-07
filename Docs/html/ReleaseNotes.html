@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="MATLAB R2016a"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><title>Release notes</title><style type="text/css">
+* {margin: 0; padding: 0;}
+body {text-align: start; line-height: 17.2339992523193px; min-height: 0px; white-space: normal; color: rgb(0, 0, 0); font-family: Consolas, Inconsolata, Menlo, monospace; font-style: normal; font-size: 14px; font-weight: normal; text-decoration: none; white-space: normal; }
+h1, h2 {font-weight: normal;}
+.content { padding: 30px; }
+
+.S0 { margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S1 { line-height: 26.3999996185303px; min-height: 24px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-size: 22px; white-space: pre-wrap; margin-left: 4px; margin-top: 3px; margin-bottom: 15px; margin-right: 10px;  }
+.S2 { min-height: 0px; margin-left: 0px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+.S3 { line-height: 21px; min-height: 17px; white-space: pre-wrap; font-family: Helvetica, Arial, sans-serif; white-space: pre-wrap; margin-left: 4px; margin-top: 2px; margin-bottom: 9px; margin-right: 10px;  }
+.S4 { line-height: 20.576000213623px; min-height: 20px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; white-space: pre-wrap; margin-left: 4px; margin-top: 15px; margin-bottom: 9px; margin-right: 10px;  }
+.S5 { font-family: Helvetica, Arial, sans-serif; margin-left: 0px; margin-top: 10px; margin-bottom: 20px; margin-right: 0px;  }
+.S6 { text-align: left; line-height: 21px; white-space: pre-wrap; white-space: pre-wrap; margin-left: 56px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px;  }
+
+.LineNodeBlock {margin: 10px 0 10px 0;}
+.LineNodeBlock+.paragraphNode {margin-top: 10px;}
+.lineNode {padding-left: 10px; background-color: #F7F7F7; border-left: 1px solid #E9E9E9; border-right: 1px solid #E9E9E9;}
+.inlineWrapper:first-child .lineNode,.inlineWrapper.outputs+.inlineWrapper .lineNode {padding-top: 5px; border-top: 1px solid #E9E9E9;}
+.inlineWrapper:last-child .lineNode,.inlineWrapper.outputs .lineNode {padding-bottom: 5px; border-bottom: 1px solid #E9E9E9;}
+.lineNode .textBox {white-space: pre;}
+</style></head><body><div class = "content"><div class = 'SectionBlock containment active'><h1 class = "S1"><span class = "S2">Release notes</span></h1><p class = "S3"><span class = "S2">The release notes document the changes between releases of the AR Drone 2.0 Target</span></p><h2 class = "S4"><span class = "S2">Version 0.2</span></h2><ul class = "S5"><li class = "S6"><span class = "S0">The project now builds all models to the Build folder, removing out of date model referencing build failures</span></li><li class = "S6"><span class = "S0">Data is now stored in a data dictionary, including the configuration set and BUS objects</span></li><li class = "S6"><span class = "S0">A new structure of calibration parameters is defined for the accel offsets and gains, gyro offsets and magneto offsets without any internal conversions of the data</span></li><li class = "S6"><span class = "S0">Fixed IMU_Packets not being loaded before S function generation in the srtartup script</span></li><li class = "S6"><span class = "S0">Fixed RGB color conversion in AR Drone Video Viewer and DownScaleToRGB blocks which had a blue shift</span></li></ul><h2 class = "S4"><span class = "S2">Version 0.1</span></h2><ul class = "S5"><li class = "S6"><span class = "S0">The Ar Drone 2.0 Target is now placed inside a Simulink project</span></li><li class = "S6"><span class = "S0">The manual setup of compilers, loading configuration sets and generating s functions is now automated</span></li><li class = "S6"><span class = "S0">Example models are added </span></li><li class = "S6"><span class = "S0">Documentation is added</span></li><li class = "S6"><span class = "S0">Windows 10 is now supported by using built in MATLAB FTP functionality</span></li><li class = "S6"><span class = "S0">MATLAB support expanded from 2014b to 2016b</span></li><li class = "S6"><span class = "S0">Removed precompiled s functions</span></li><li class = "S6"><span class = "S0">Implemented old and new Simulink blocks in a library with user interface improvements</span></li><li class = "S6"><span class = "S0">Added a Simulink block to view the AR Drone cameras using external mode</span></li><li class = "S6"><span class = "S0">Added Simulink blocks to split and recombine large one dimension arrays into multiple packets to send via UDP</span></li><li class = "S6"><span class = "S0">Fixed IP adress setting to be user configurable and passed to external mode</span></li></ul></div></div>
+<!-- 
+##### SOURCE BEGIN #####
+%% Release notes
+% The release notes document the changes between releases of the AR Drone 2.0 
+% Target
+%% Version 0.2
+% * The project now builds all models to the Build folder, removing out of date 
+% model referencing build failures
+% * Data is now stored in a data dictionary, including the configuration set 
+% and BUS objects
+% * A new structure of calibration parameters is defined for the accel offsets 
+% and gains, gyro offsets and magneto offsets without any internal conversions 
+% of the data
+% * Fixed IMU_Packets not being loaded before S function generation in the srtartup 
+% script
+% * Fixed RGB color conversion in AR Drone Video Viewer and DownScaleToRGB blocks 
+% which had a blue shift
+%% Version 0.1
+% * The Ar Drone 2.0 Target is now placed inside a Simulink project
+% * The manual setup of compilers, loading configuration sets and generating 
+% s functions is now automated
+% * Example models are added 
+% * Documentation is added
+% * Windows 10 is now supported by using built in MATLAB FTP functionality
+% * MATLAB support expanded from 2014b to 2016b
+% * Removed precompiled s functions
+% * Implemented old and new Simulink blocks in a library with user interface 
+% improvements
+% * Added a Simulink block to view the AR Drone cameras using external mode
+% * Added Simulink blocks to split and recombine large one dimension arrays 
+% into multiple packets to send via UDP
+% * Fixed IP adress setting to be user configurable and passed to external mode
+##### SOURCE END #####
+--></body></html>

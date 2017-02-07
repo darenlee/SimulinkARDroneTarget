@@ -60,12 +60,12 @@ img_struct* img2;
 
 void videoInit1(void);
 //grabs next B&W image from stream (blocking)
-void videorabImage1(unsigned char* mybuf);
+void videoGrabImage1(unsigned char* mybuf);
 void videoClose1(void);
 
 void videoInit2(void);
 //grabs next B&W image from stream (blocking)
-void videorabImage2(unsigned char* mybuf);
+void videoGrabImage2(unsigned char* mybuf);
 void videoClose2(void);
 
 //return timestamp in seconds with microsecond resolution
